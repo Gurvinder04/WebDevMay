@@ -1,0 +1,18 @@
+p{
+    color: palevioletred;
+    font-size: 70px!important;
+    margin-left: 20%; 
+}
+
+table,th,td{
+    border-style: groove;
+    border: 1px solid black;
+    height: 50%;
+    width: 36%;
+    
+}
+
+thead{
+    color: red;
+}
+
