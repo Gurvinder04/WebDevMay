@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main id="login-container">
+    <h1>Login Page</h1>
+    <form method="get" action="/save">
+        <fieldset>
+            <legend>Form Input Data</legend>
+        <label for="username">Username</label><br>
+        <input type="text"  name="username" placeholder="enter your username" value="admin" required/><br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" placeholder="enter your email"/><br>
+        <input type="text" value="Aalst" readonly /><br>
+        <input type="hidden" value="token12566gfdjfghhhh" readonly required />
+        <label for="password">Password</label><br>
+        <input type="password" name="password" placeholder="enter your password"/><br>
+        <label for="city">City</label><br>
+        <select>
+            <option></option>
+            <option>Sint truiden</option>
+            <option>Brussel Centraal</option>
+            <option>Leuven</option>
+            <option>Tienen</option>
+            <option>Landen</option>
+        </select><br>
+    
+        <input type="submit" value="send"/>
+        
+    </fieldset>
+    </form>
+</main>
+</body>
+</html>

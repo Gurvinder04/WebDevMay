@@ -1,17 +1,20 @@
 p{
     font-size:22px; 
-    color: red; 
+    color: black; 
     text-shadow: 2px 2px 5px black;
 }
 
 nav{
     background-color: rgb(225, 225, 225);
     padding: 1px;
+    
 }
 
 li{
     display: inline;
-    padding: 10px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 400;
     
 }
 
@@ -19,6 +22,11 @@ ul{
     text-align: center;
 }
 
+h1{
+    text-align: center;
+    font-style: italic;
+    font-size: 40px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -26,7 +34,7 @@ a{
 
 #home{
     text-align: center;
-    background-color:red;
+    background-color:rgba(255, 123, 0, 0.781);
     padding: 20px;
 
 }
@@ -48,4 +56,16 @@ footer{
     background-color: grey;
     padding: 10px;
     text-align: center;
+}
+
+main#login-container{
+    background-color: rgba(165, 22, 81, 0.89);
+    padding: 3px;
+}
+form{
+     text-align: center;
+}
+
+#galley{
+    background-color: whitesmoke;
 }
