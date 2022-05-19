@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Smooch&display=swap');
+
+
+
+
+li{
+    list-style-type: upper-roman;
+    display:inline;
+    font-weight: 400;
+    
+}
+
+ul{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    font-family: 'Smooch', cursive;;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.active{
+    color: green;
+}
+
+#navbar{
+    background-color: black;
+}
+
+i{
+    color: white;
+    font-size: 20px;
+}
