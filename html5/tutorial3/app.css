@@ -1,0 +1,51 @@
+p{
+    font-size:22px; 
+    color: red; 
+    text-shadow: 2px 2px 5px black;
+}
+
+nav{
+    background-color: rgb(225, 225, 225);
+    padding: 1px;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+    
+}
+
+ul{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#home{
+    text-align: center;
+    background-color:red;
+    padding: 20px;
+
+}
+
+article >img{
+    width: 400px;
+    height: 300px;
+    float: left;
+    margin: 20px;
+    
+}
+
+#blog{
+    display: flex;
+    width: auto;
+}
+
+footer{
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+}
