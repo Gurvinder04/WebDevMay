@@ -5,7 +5,7 @@ p{
 }
 
 nav{
-    background-color: rgb(225, 225, 225);
+    background-color:black;
     padding: 1px;
     
 }
@@ -15,6 +15,7 @@ li{
     padding: 20px;
     font-size: 20px;
     font-weight: 400;
+    color: white;
     
 }
 
@@ -26,15 +27,16 @@ h1{
     text-align: center;
     font-style: italic;
     font-size: 40px;
+    text-decoration: underline;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #home{
     text-align: center;
-    background-color:rgba(255, 123, 0, 0.781);
+    
     padding: 20px;
 
 }
