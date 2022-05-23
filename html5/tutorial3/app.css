@@ -26,21 +26,28 @@ ul{
 h1{
     text-align: center;
     font-style: italic;
-    font-size: 40px;
+    font-size: 60px;
     text-decoration: underline;
+    color: white;
 }
 a{
     text-decoration: none;
     color: white;
 }
 
-#home{
+.home{
     text-align: center;
-    
     padding: 20px;
 
 }
+.center{
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
 
+}
 article >img{
     width: 400px;
     height: 300px;

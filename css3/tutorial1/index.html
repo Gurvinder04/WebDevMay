@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset class="container" id="main">
+        <legend>Input types</legend>
+        <!-- radio input checkbox file -->
+        <form>
+            <label>select your favorite computer brand:</label><br/>
+            <input type="checkbox" name="computer1"/><label>Lenovo</label>
+            <input type="checkbox" name="computer2"/><label>Asus</label><br/>
+            <input type="radio" name="pc"/><label>Gaming computer</label>
+            <input type="radio" name="pc"/><label>office computer</label><br/>
+            <input type="file" name="avatar"/><br/>
+            <select>
+                <option value="select your GPU" hidden>select your GPU</option>
+                <option value="GTX1060">GT1060</option>
+                <option value="GTX1080">GT1080</option>
+            </select><br/>
+            <label>Your comment:</label><br/>
+            <textarea placeholder="enter your comment" rows="5" cols="25"></textarea><br/>
+            <input type="reset"/>
+        </form>
+    </fieldset> 
+</body>
+</html>
