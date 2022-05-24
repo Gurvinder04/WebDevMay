@@ -1,0 +1,158 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: black;
+    height: 200px;
+    width: 200px;
+    /*padding: 3px;*/
+    /*padding-top: 5px;
+    padding-left: 20px;*/
+    padding: 10px 20px 0;
+    outline: 10px saddlebrown solid;
+    border: 10px rgba(255, 115, 0, 0.781) solid;
+}
+
+.container >p{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    text-shadow:0px 4px 0px rgb(255 115 0 / 78%);
+    /*transform: rotate(45deg);*/
+    /*transform: matrix3d();*/
+    transform: scale3d(1.5, 2.5, 5.5);
+    letter-spacing: 10px;
+}
+
+.content{
+    width: auto;
+    background-color: black;
+    padding: 1em;
+    color: white;
+    text-align: center;
+}
+
+.content >a{
+    color: white;
+}
+
+.content >a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+.content >a:visited{
+    color: red;
+    text-decoration: none;
+}
+.menuline{
+     border-bottom: 1px solid rgba(255, 255, 255, 0.301);
+     background-color: transparent;
+     color: transparent;
+}
+
+.menu{
+    height: 50px;
+}
+.menu >li{
+    list-style-type: none;
+    padding: 5px;
+    display: inline;
+}
+
+.menu >li:hover{
+    color: rgba(255, 136, 0, 0.993);
+    background-color: white;
+    text-decoration: underline;
+    font-size: larger;
+    font-style: italic;
+    padding: 5px;
+}
+
+.main{
+    text-align: center;
+    padding: 1em; /*1em is equal to 10px*/
+    background-image:url(https://i.pinimg.com/originals/ca/62/00/ca62002125c9bddd10e66bad2a971688.jpg);
+    
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 0.6em;
+    color: white;
+}
+
+th{
+    background-color: rgb(226 174 43);
+    color: black;
+}
+.main > #user_records{
+    margin: 0 auto;/*this bring the table in centre*/
+    outline: 2px solid rgb(226 174 43);
+    
+    
+}
+/*#user_records >tbody > tr >td:hover{
+    background-color: black;
+    color: white;
+}*/
+
+#user_records > tbody > tr:hover{
+    background-color: black;
+    color: white;
+}
+
+.boxcontainer{
+    position: relative;
+}
+.boxcontainer > div{
+    width: 100px;
+    height: 100px;
+    color: white;
+    padding: 3px;
+    position: absolute;
+}
+.box1{
+    background-color: red;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+}
+.box2{
+    background-color: black;
+    left: 20px;
+    top: 20px;
+    z-index: -3;
+}
+.box3{
+    background-color: green;
+    left: 30px;
+    top: 30px;
+    transform: rotate(70deg);
+    z-index: -2;
+}
+.box4{
+    background-color: blue;
+    left: 40px;
+    top: 40px;
+    transform: rotate(40deg);
+    z-index: -1;
+}
+
+footer{
+    background-color: black;
+    padding: 1em;
+    width: 100%;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    animation-duration: 1s;
+}
+
+@keyframes footer {
+    from {background-color: black;}
+    to {background-color: yellow;}
+  }
