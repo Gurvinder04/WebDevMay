@@ -1,0 +1,19 @@
+.carousel-item >img{
+     height: 700px;
+     object-fit: cover;
+     /*object-position: center;*/
+     object-position: 50% 50%;
+}
+
+.carousel-caption{
+    text-align: center;
+}
+
+.webdev-body{
+    background: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pictures-Images-1920x1080.jpg);
+    background-size: cover;
+}
+
+.webdev-footer{
+    background-color: transparent;
+}
