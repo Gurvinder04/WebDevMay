@@ -8,7 +8,10 @@ html,body{
    
 }
 
-.card >img{
+.png{
     height: 200px;
     object-fit: cover;
+   
 }
+
+

@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assign.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+   <!-- START OF NAVBAR -->
     <div class="container-fluid p-0 ">
         <nav class="navbar navbar-expand-lg  bg-dark">
             <div class="container-fluid d-flex">
@@ -31,6 +33,11 @@
           </nav>
     
     </div>
+    <!-- END OF NAVBAR -->
+
+
+
+    <!-- START OF CAROUSEL -->
     <div class="container-fluid p-0">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -42,8 +49,8 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="https://wallpaperaccess.com/full/7633804.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>ROME</h5>
+            <div class="carousel-caption d-none d-md-block ">
+              <h1 class="animate__animated animate__backInDown">ROME</h1>
               <p>Enjoy the fantastic view .</p>
             </div>
           </div>
@@ -79,14 +86,60 @@
         </button>
       </div>
     </div>
+    <!-- END OF CAROUSEL -->
+
+<div class="container mt-5">
+  <div class="row justify-content-center d-flex">
+    <div class="col-md-4 text-center">
+      <div class="card border-0">
+        <img src="https://www.oyster.com/wp-content/themes/oyster/assets/svg/icons/value-prop-expertise.svg" class="card-img-top" style="height: 72px;" alt="expertise">
+        <div class="card-body fst-italic">
+      <h3 class="card-title">Travel Expertise</h3>
+      <p>Travel expertise on everything from where to go, stay, and what to do, so you can easily find the best vacation for you.</p>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+      <div class="col-md-4 text-center">
+        <div class="card border-0">
+          <img src="https://www.oyster.com/wp-content/themes/oyster/assets/svg/icons/value-prop-reviews.svg" class="card-img-top" style="height: 72px;"  alt="reviews">
+        <div class="card-body fst-italic">
+        <h3 class="card-title">Unbiased Reviews</h3>
+        <p>Oyster shares honest reviews and undoctored photos so you know exactly what you’ll get before you check in.</p>
+      </div>
+      </div>
+     </div>
+  
+    
+        <div class="col-md-4 text-center">
+          <div class="card border-0">
+            <img src="https://www.oyster.com/wp-content/themes/oyster/assets/svg/icons/value-prop-indepth.svg" class="card-img-top" style="height: 72px;"  alt="depth">
+          <div class="card-body fst-italic">
+          <h3 class="card-title">In-Depth</h3>
+          <p>Everything you need to know to plan your perfect vacation.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
 
 
+
+
+
+
+
+
+
+     <!-- START OF 1 CARD ROW -->
     <div class="container">
         <div class="row">
             <div class="col-md-3 mt-5">
                  <div class="card shadow-lg" style="width: 18rem;"><!--height: 25rem; -->
-                    <img src="https://lp-cms-production.imgix.net/2020-09/shutterstockRF_519864937.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top" alt="...">
+                    <img src="https://lp-cms-production.imgix.net/2020-09/shutterstockRF_519864937.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
                     <div class="card-body">
                         <h2 fst-italic>Centraal park</h2>
                       <p class="card-text">One of the world’s most renowned green spaces, Central Park comprises 843 acres of rolling meadows, boulder-studded outcroppings, elm-lined walkways.</p>
@@ -98,7 +151,7 @@
             </div>
             <div class="col-md-3 mt-5">
                   <div class="card shadow-lg" style="width: 18rem;">
-                    <img src="https://lp-cms-production.imgix.net/2019-06/10dde96588c6cddf880e59c2f99f1fdd-ellis-island.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top" alt="...">
+                    <img src="https://lp-cms-production.imgix.net/2019-06/10dde96588c6cddf880e59c2f99f1fdd-ellis-island.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
                     <div class="card-body">
                         <h2 class="fst-italic">Ellis Island</h2>
                       <p class="card-text">Located in New York Harbor, Ellis Island is the US's most famous and historically important gateway and is home to one of the country’s most moving museums</p>
@@ -106,7 +159,7 @@
                       <button type="button" class="btn btn-success m-2 w-50" data-bs-toggle="modal" data-bs-target="#added">
                         Add to favourite
                       </button>
-                    
+                       <!-- START OF BUTTON MODAL -->
                       <div class="modal fade" id="added" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
@@ -124,12 +177,13 @@
                           </div>
                         </div>
                       </div>
+                       <!-- END OF BUTTON MODAL -->
                     
                   </div>
             </div>
             <div class="col-md-3 mt-5">
                 <div class="card shadow-lg" style="width: 18rem;">
-                  <img src="https://lp-cms-production.imgix.net/2020-09/500pxRF_100424161.jpg?auto=compress&crop=entropy&fit=crop&format=auto&h=416&w=960" class="card-img-top" alt="...">
+                  <img src="https://lp-cms-production.imgix.net/2020-09/500pxRF_100424161.jpg?auto=compress&crop=entropy&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
                   <div class="card-body">
                       <h2 class="fst-italic">Empire State Building</h2>
                     <p class="card-text">The Chrysler Building may be prettier, and One World Trade Center taller, but the queen bee of the New York skyline remains the Empire State Building. NYC's form</p>
@@ -142,6 +196,7 @@
                       </button>
                 </div>
           </div>
+          <!-- START OF ACCORDION -->
           <div class="col-md-3 mt-5 border" style="width:20rem;">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -189,13 +244,133 @@
               </div>
 
           </div>
+          <!-- END OF ACCORDION -->
     </div>
     </div>
+    <!-- END OF 1 CARD ROW -->
+
+    <!-- START OF 2 CARD ROW -->
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3 mt-5">
+               <div class="card shadow-lg" style="width: 18rem;"><!--height: 25rem; -->
+                  <img src="https://lp-cms-production.imgix.net/2020-09/shutterstockRF_519864937.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
+                  <div class="card-body">
+                      <h2 fst-italic>Centraal park</h2>
+                    <p class="card-text">One of the world’s most renowned green spaces, Central Park comprises 843 acres of rolling meadows, boulder-studded outcroppings, elm-lined walkways.</p>
+                  
+                  </div>  <button type="button" class="btn btn-success m-2 w-50" data-bs-toggle="modal" data-bs-target="#added">
+                      Add to favourite
+                    </button>
+                </div>
+          </div>
+          <div class="col-md-3 mt-5">
+                <div class="card shadow-lg" style="width: 18rem;">
+                  <img src="https://lp-cms-production.imgix.net/2019-06/10dde96588c6cddf880e59c2f99f1fdd-ellis-island.jpg?auto=compress&crop=center&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
+                  <div class="card-body">
+                      <h2 class="fst-italic">Ellis Island</h2>
+                    <p class="card-text">Located in New York Harbor, Ellis Island is the US's most famous and historically important gateway and is home to one of the country’s most moving museums</p>
+                  </div>
+                    <button type="button" class="btn btn-success m-2 w-50" data-bs-toggle="modal" data-bs-target="#added">
+                      Add to favourite
+                    </button>
+                     <!-- START OF BUTTON MODAL -->
+                    <div class="modal fade" id="added" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Added</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     <!-- END OF BUTTON MODAL -->
+                  
+                </div>
+          </div>
+          <div class="col-md-3 mt-5">
+              <div class="card shadow-lg" style="width: 18rem;">
+                <img src="https://lp-cms-production.imgix.net/2020-09/500pxRF_100424161.jpg?auto=compress&crop=entropy&fit=crop&format=auto&h=416&w=960" class="card-img-top png" alt="...">
+                <div class="card-body">
+                    <h2 class="fst-italic">Empire State Building</h2>
+                  <p class="card-text">The Chrysler Building may be prettier, and One World Trade Center taller, but the queen bee of the New York skyline remains the Empire State Building. NYC's form</p>
+                
+                  
+                   
+              </div> 
+               <button type="button" class="btn btn-success w-50 " data-bs-toggle="modal" data-bs-target="#added">
+                      Add to favourite
+                    </button>
+              </div>
+        </div>
+        <!-- START OF 1 ACCORDION -->
+        <div class="col-md-3 mt-5 border" style="width:20rem;">
+          <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Read COVID Restrictions
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>The travel information is provided on an advice basis only and is not binding.</strong>
+
+                      Important: non-essential travel to countries outside the EU is strongly discouraged for unvaccinated travellers.
+                      
+                      Travellers need to be aware that new outbreaks of COVID-19 and new measures abroad can have important repercussions on their trip. Repatriation can not be guaranteed in case of cancellation of commercial flights or closure of borders.
+                      
+                      All information on the applicable rules for travels to Belgium can be found on info-coronavirus.be(link is external).
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Accordion Item #2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <!-- END OF  2 ACCORDION -->
+  </div>
+  </div>
+  <!-- END OF 2 CARD ROW -->
  
+  
+  <!-- START OF SUBSCRIBE -->
 <div class="container-fluid mt-5" style="height: 15rem; background-color:#00224f;">
-  <div class="newsletter text-center text-white p-5 fw-light">
+  <div class="newsletter text-center text-white pt-5 fw-light">
     <h2 class="fs-1 m-0" style="font-family: 'Dancing Script', cursive;">Save time,save money!</h2>
     <p class="text-secondary p-0">Sign up and we'll send the best deals to you</p>
+  </div>
   
     <div class="row d-flex justify-content-center mt-3">
       <div  class="col-3">
@@ -206,16 +381,14 @@
         </div>
     </div>
 
-    <div class="col">
+    <div class="col text-center text-white">
       <input type="checkbox" class="input-form-check">
       <label>Send me a link to get the FREE Booking.com app!</label>
     </div>
   
-  </div>
-
-  
  
 </div>
+<!-- END OF SUBSCRIBE -->
 
     <footer class="bg-dark h-500px mt-5 text-white text-center">waiting to be designed</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/js/bootstrap.bundle.min.js" integrity="sha512-ndrrR94PW3ckaAvvWrAzRi5JWjF71/Pw7TlSo6judANOFCmz0d+0YE+qIGamRRSnVzSvIyGs4BTtyFMm3MT/cg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
