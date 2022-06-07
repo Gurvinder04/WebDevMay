@@ -14,4 +14,18 @@ html,body{
    
 }
 
+ul{
+    list-style-type: none;
+    text-align: start;
+    padding-left: 10rem;
+}
 
+i{
+    font-size: 34px;
+    padding: 4px;
+}
+
+.checked{
+    color: orange;
+    
+}
