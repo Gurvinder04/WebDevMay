@@ -29,3 +29,8 @@ i{
     color: orange;
     
 }
+
+.card-hover:hover{
+    border:2px solid transparent;
+    box-shadow: 0px 0px 4px 4px;
+}
