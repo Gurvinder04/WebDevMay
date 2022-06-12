@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Temperature</title>
     <script>
     //     var username = "admin";  //re declare variable
     //     username = "joe"; //updated
@@ -33,9 +33,55 @@
     </script>
 </head>
 <body>
-    <h1 id="message">Hello World</h1>
-    <div id="container"></div>
-    <script src="app.js"></script>
+    <div id="container">
+        <div class="row bg-dark">
+        <div class="col-md-4">
+            <!-- <h1 id="date">Current Date</h1>
+        <button onclick="myFunction()">Check temperature</button>   -->
+        <button onclick="myAddition()">ADD</button>
+    </div> 
+</div> 
+    </div>
+    <script>
+        // const d= new Date("Mar 25 2015");
+        // document.getElementById("date").innerHTML="current date is:" + d;
+        // function myFunction(){
+        // var temp = window.prompt("Enter date: "); 
+        // result = temp>=20 ? "you don't  need a scarf":"you need a scarf";
+        // window.alert(result);
+        // }
+
+        
+      
+        function myAddition(){
+            let n1 =parseInt(prompt("Enter first number: "));
+            let n2 = parseInt(prompt("Enter second number: "));
+            let add;
+            add = n1 + n2;
+            //add = "n1"+"n2";
+            console.log(add);    
+        }
+
+        var example1 ="gurvinder kaur";
+        const array= ["gurvinder","kaur", "40", "limburg", " belgium"];
+        let show = example1.length;
+         show = example1.indexOf( "kaur");
+         show = example1.slice(5, 9);
+         show = example1.substring(6,);
+         show = example1.search("vinder");
+         show = array.length;
+         array[2]=15;
+         show = array.pop();
+         show = array.push("belgie");
+         show = array.shift();
+         show = array.unshift("gurvinder");
+         console.log(array);
+         console.log(show);
+
+        var example2 = "I am studying web the \"web development\" course";
+        let show2 = example2.indexOf( "web",22)
+        console.log(show2); 
+    </script>
 </body>
 </html>
 
