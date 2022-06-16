@@ -95,15 +95,17 @@ var l= _students.length;
 console.log(l);
 // whoPassedExam?
 function whoPassedExam(param){
- for(i=0;i<=l; i++){
-     if(param.score>=55){
-         //result=param.name;
-         console.log(param.name + "is passed")
-         
-     }
-     else{
-        console.log(param.name + "is not passed")
-     }
+    param.forEach(function(temp){
+        if(temp.score>=65){
+            //result=param.name;
+            console.log(temp.name.toUpperCase() +" "+  "is passed")
+            
+        }
+        else{
+           console.log(temp.name.toUpperCase() +" "+  "is not passed")
+        }
+});
+     
  }
  whoPassedExam(_students);
  
@@ -118,7 +120,7 @@ function whoPassedExam(param){
 else{
     return[{title:"no one is passed"}]
 }*/
-}
+
 //console.log(whoPassedExam(_students))
 
 
