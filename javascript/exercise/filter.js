@@ -92,7 +92,7 @@ var _students = [
 
 var result
 var l= _students.length;
-console.log(l);
+//console.log(l);
 // whoPassedExam?
 function whoPassedExam(param){
  for(i=0;i<=l; i++){
@@ -105,7 +105,9 @@ function whoPassedExam(param){
         console.log(param.name + "is not passed")
      }
  }
- whoPassedExam(_students);
+ //whoPassedExam(_students);
+ console.log([_students.course]);
+ console.log
  
  
 

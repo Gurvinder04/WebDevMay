@@ -68,8 +68,13 @@ var students = prompt("enter number of students appeared in exam");
 var s1 = parseInt(students);
 for(var i=0; i<s1; i++){
     var input = prompt("enter marks");
+    if(input!=" "){
         var convert = parseInt(input);
         marks.push(convert)   
+    }
+    else{
+        marks.push(0);
+    }
 }
 
 for(var i=0; i<s1; i++){
