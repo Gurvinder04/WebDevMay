@@ -398,3 +398,34 @@ CheckRepetition(n);
 console.log("repetition of:" +repeat+" " +"is"+" "  +count + "times");
 console.log("length of array is:" +n.length);
 
+
+// function with for loop for Number divisible by 5
+/*let divisibility =[];
+function Isdivisible(n){
+  for(i=0;i<=n.length;i++){
+      if(n[i]%5==0 && n[i]<=150){
+        divisibility.push(n[i]);
+      }
+      else{
+          
+      }
+      
+  }
+  return divisibility;
+}
+
+divisible =[5,8,56,55,47,40,60,35];
+Isdivisible(divisible);
+console.log(divisibility);*/
+
+    //function with arrow and filter for number divisible by 5
+    let rel =[];
+ rel =div.filter(dum => dum%5==0 && dum<=150);
+             
+     
+
+
+
+divisible =[5,8,56,55,47,40,60,35];
+//Isdivisible(divisible);
+console.log(rel)
