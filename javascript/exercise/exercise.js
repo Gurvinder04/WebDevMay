@@ -68,6 +68,15 @@ var students = prompt("enter number of students appeared in exam");
 var s1 = parseInt(students);
 for(var i=0; i<s1; i++){
     var input = prompt("enter marks");
+<<<<<<< HEAD
+    if(input!=" "){
+        var convert = parseInt(input);
+        marks.push(convert)   
+    }
+    else{
+        marks.push(0);
+    }
+=======
     if(input==undefined) {
         marks.push(0) ;
     }
@@ -75,6 +84,7 @@ for(var i=0; i<s1; i++){
         var convert = parseInt(input);
         marks.push(convert) 
     }  
+>>>>>>> c67501576fea15443426b78c03c8d28b73b9f03d
 }
 
 for(var i=0; i<s1; i++){
