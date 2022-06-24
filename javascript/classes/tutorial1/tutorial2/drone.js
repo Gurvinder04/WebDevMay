@@ -9,9 +9,10 @@ class Drone{
 }
 
 class CivilDrone extends Drone{
-    constructor(type='civl drone', speed=50, battery=100){  //default value if user doesnt enter anything
+    constructor(type='civl drone', speed=50, battery=100){  //default value if user doesn't enter anything
         super(type,speed,battery);
         this.owners=[];
+        
     }
 
     registerDroneOwner(deviceId,fullname,address){
@@ -58,12 +59,14 @@ let civil = new CivilDrone();  //empty coz we have set the default value but u c
 civil.registerDroneOwner('drone001','william','brussels');
 civil.registerDroneOwner('drone002','shakespare','brussels');
 civil.registerDroneOwner('drone003','anthony','luxembourg');
+civil.registerDroneOwner('drone004')
 console.log(civil.getDroneOwners());
 
 let military = new MilitaryDrone('simple drone',300,20);
 military.registerDroneOwner('drone001','Rahul','Mumbai');
 military.registerDroneOwner('drone002','Simran','Delhi');
 military.registerDroneOwner('drone003','Rahul','Goa');
+military.registerDroneOwner('drone004','Anjali','Chandigarh');
 //console.log(military.getDroneOwners());
               //OR
 military.getDroneOwners().forEach(owners=>{
