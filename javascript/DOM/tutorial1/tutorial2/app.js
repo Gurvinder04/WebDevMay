@@ -20,5 +20,20 @@ result.forEach(col=>{
 
 //result = document.querySelector('.try')
 //result = document.querySelector('#validationDefaultUsername').getAttribute('placeholder')
-result.innertext = "user"
+//result.innertext = "user"
+
+
+//HISTORY//
+
+// +ve no 4 next urls & -ve 4 previous
+
+
+
+//result=window.localStorage.getItem('intec')
+//result=window.localStorage.length
+//window.localStorage.removeItem('intec1')
+window.localStorage.setItem('data','secretvalue')
+//convert the object into string with JSON.stringify() and from string to objct use JSON.parse()
+window.localStorage.clear()
+
 console.log(result)
