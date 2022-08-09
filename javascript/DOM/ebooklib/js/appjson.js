@@ -9,19 +9,23 @@ const price = document.querySelector('#price')
 
 
 const addBookbtn = document.querySelector('.addbookbtn')
-
-
+var obj;
+function book(){
+    obj = {
+        title:`${bookName.value}`,
+        author:bookAuthor.value,
+        category:category.value,
+        date:date.value,
+        price:price.value      
+    }
+    return obj
+        
+}
 
 //http://localhost:5000/books
 addBookbtn.addEventListener('click',(e)=>{
-    e.preventDefault()
-   const obj ={
-           title:bookName.value,
-           author:bookAuthor.value,
-           category:category.value,
-           date:date.value,
-           price:price.value
-   }
+           book()
+   console.log(bookName.value)
    fetch('http://localhost:5000/books',{
             method:'POST',
             headers:{
@@ -33,6 +37,4 @@ addBookbtn.addEventListener('click',(e)=>{
         .then(data=>{
             console.log(data)
         })
-
-
 })
