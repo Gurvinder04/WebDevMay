@@ -17,11 +17,11 @@ var user;
     }
 }, 3000)*/
 
-setInterval(()=>{
+/*setInterval(()=>{
     user = prompt('enter the username')
     console.log(user)
 },3000)
-
+*/
 
 
 /*window.localStorage.setItem('record1','exist1')
@@ -47,7 +47,7 @@ saveBtn.addEventListener('click', () => {
     if (JSON.parse(localStorage.getItem('students')) !== null) {
         let temp = JSON.parse(localStorage.getItem('students'))  //create a temp array
         temp.push(userInput.value) //push the value in the array
-        temp.push(user)
+        //temp.push(user)
         localStorage.setItem('students', JSON.stringify(temp))  //set the value back to the storage
     }
     else {
@@ -61,9 +61,9 @@ saveBtn.addEventListener('click', () => {
 getBtn.addEventListener('click', () => {
     let getnames = JSON.parse(localStorage.getItem('students'))
     console.log(getnames)
-    console.log(user)  // to print prompt value
+    //console.log(user)  // to print prompt value
 
-    window.open('https://www.w3schools.com/jsref/prop_win_innerwidth.asp','_blank','width=1000','height=1000')
+    //window.open('https://www.w3schools.com/jsref/prop_win_innerwidth.asp','_blank','width=1000','height=1000')
 })
 
 
