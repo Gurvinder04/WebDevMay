@@ -19,12 +19,14 @@ addBookbtn.addEventListener('click',(e)=>{
         "date":date.value,
         "Price":price.value
     }
+
+   
     
    console.log(bookName.value)
    fetch('http://localhost:5000/books',{
             method:'POST',
             headers:{
-                'content-type':application/json
+                'content-type':'application/json'
             },
             body:JSON.stringify(obj)
         })
@@ -33,3 +35,4 @@ addBookbtn.addEventListener('click',(e)=>{
             console.log(data)
         })
 })
+

@@ -1,0 +1,12 @@
+{
+  "todos": [
+    {
+      "title": "hit the gym",
+      "id": 1
+    },
+    {
+      "title": "Visit birthday",
+      "id": 2
+    }
+  ]
+}

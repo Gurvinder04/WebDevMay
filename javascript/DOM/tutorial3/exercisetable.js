@@ -202,5 +202,5 @@ MakeCardComponent('https://picsum.photos/id/237/200/300','btn-warning','You can 
 
 
 document.querySelector('.remove').addEventListener('click',()=>{
-    document.body.removeChild(document.body.children[3])
+    
 })

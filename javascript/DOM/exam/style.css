@@ -1,0 +1,26 @@
+
+body{
+    background-image: url(https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?cs=srgb&dl=pexels-pixabay-257360.jpg&fm=jpg);
+}
+
+
+i{
+    color: white;
+    font-size: 20px;
+    padding: 10px
+}
+  
+h2{
+    color: brown;
+    font-size: 50px;
+    text-align: center;
+}
+
+.designUl{
+    list-style: none;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration-line: overline;
+
+}
+
