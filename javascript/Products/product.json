@@ -1,0 +1,61 @@
+{
+  "Products": [
+    {
+      "Company": "Nike Air Force",
+      "Description": "The radiance lives on in the Nike Air Force 1 '07. This b-ball original puts a fresh spin on the legendary comfort and style of the AF-1 with its crisp white leather upper and hidden Air units. Embroidered Swoosh designs add the perfect amount of hoops style to make heads turn.",
+      "Price": "129",
+      "id": 1,
+      "image": "https://free4kwallpapers.com/uploads/originals/2015/07/18/nike-shoes.jpg"
+    },
+    {
+      "Company": "Nike Air Force 1 LV8",
+      "Description": "Capture everyone's attention in this fresh update to a b-ball original. Crossing hardwood comfort with off-court flair, a kaleidoscope of bright colours and playful graphics (including a smiling Swoosh design) put a fun spin on an '80s classic and help you make a creative style statement wherever you go.",
+      "Price": "99",
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1562687782-9f2fd422a334?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG5pa2UlMjBzaG9lfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+    },
+    {
+      "image": "https://media.istockphoto.com/photos/nike-air-jordan-picture-id472046671?k=20&m=472046671&s=612x612&w=0&h=cY-Xpnd2rvAR1rJ8V2aIKKssjKa5Ban47xJ_nxrzQgE=",
+      "id": 3,
+      "Company": "Nike Air Force 1 MAX",
+      "Description": "Capture everyone's attention in this fresh update to a b-ball original. Crossing hardwood comfort with off-court flair, a kaleidoscope of bright colours and playful graphics (including a smiling Swoosh design) put a fun spin on an '80s classic and help you make a creative style statement wherever you go.",
+      "Price": "129.99"
+    },
+    {
+      "Company": "Nike Air Max Plus",
+      "Description": "Be one with the beach in the Nike Air Max Plus. With its wavy lines and sunset-inspired hues, it evokes salty ocean breezes and hot summer style. Nike Air units in the heel and forefoot create a Tuned Air experience that brings incredible stability and unbelievable cushioning to every step you take, be it on the sand or off.",
+      "Price": "179.99",
+      "id": 4
+    },
+    {
+      "Company": "Nike Air Max 90",
+      "Description": "Lace up and feel the legacy. Produced at the cross-section of art, music and culture, this champion running shoe helped define the '90s. Worn by presidents, revolutionised through collabs and celebrated through rare colourways, its striking visuals, Waffle outsole and exposed Air cushioning keep it alive and well.",
+      "Price": "149.99",
+      "id": 5
+    },
+    {
+      "Company": "Nike ZoomX Zegama",
+      "Description": "Navigate the up and downs of uncompromising terrain with the Nike ZoomX Zegama. Developed with great grip and stability, it has you covered, so you can keep climbing and reach greater personal heights when the going gets grimy and gritty. Whether it's a challenging, rocky landscape going uphill or a steep, slick decline down a treacherous trail, feel confident when you decide to off-road it.",
+      "Price": "159.99",
+      "id": 6
+    },
+    {
+      "Company": "Nike Air Force 1 Fontanka",
+      "Description": "Saturated with a burst of tangy colours, the AF-1 Fontanka brings an extra zest to your step. Real and synthetic leather overlays, intricate stitching and a lifted midsole celebrate rebellious style while a cassette-shaped block of ultra-soft React foam in the heel adds a bold look steeped in comfort. Vibrant hues evoke the essence of summer, ensuring a hint of sunshine follows you wherever you go.",
+      "Price": "129.99",
+      "id": 7
+    },
+    {
+      "Company": "Nike Blazer Mid '77 Vintage",
+      "Description": "In the '70s, Nike was the new shoe on the block. So new in fact, we were still breaking into the basketball scene and testing prototypes on the feet of our local team. Of course, the design improved over the years, but the name stuck. The Nike Blazer Mid '77 Vintage—classic since the beginning.",
+      "Price": "109.99",
+      "id": 8
+    },
+    {
+      "Company": "Nike Air Max Bella TR 5",
+      "Description": "The Nike Air Max Bella TR 5 combines the bounce and beauty of Max Air cushioning with a flat sole that lends a stabilising advantage while you tone and sculpt with weight. This updated design increases the containment and support around the sides and top of your foot to help keep you steady on your feet and secure during demanding strength workouts.",
+      "Price": "84.99",
+      "id": 9
+    }
+  ]
+}
