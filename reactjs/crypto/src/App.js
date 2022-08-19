@@ -7,18 +7,11 @@ function App() {
     const[currentcoin,setCurrentCoin] = useState()
     
    
-    const fetchData = async()=>{
+    const fetchData = ()=>{
         console.log('retreiving data...')
-     fetch(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=46cb6a30-7b16-428c-833a-0f1a4642c3dc&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=EUR`,{
-          method: 'GET',    
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            //body: JSON.stringify()
-            mode:'no-cors'
-          })
-          .then(response =>response.json())
-          .then(data => {
+           fetch('./data')
+          .then((response)=>response.json())
+          .then(data=>{
             console.log(data)
           })
     }

@@ -2,6 +2,7 @@
   "name": "tutorial1",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=46cb6a30-7b16-428c-833a-0f1a4642c3dc&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=EUR",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -38,3 +39,4 @@
     ]
   }
 }
+
