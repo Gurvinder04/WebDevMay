@@ -1,29 +1,41 @@
-import {React,useState,apiKey} from 'react'
+import {React,useState} from 'react'
 import {Container,Row, Col,InputGroup,Form,Button, Table } from 'react-bootstrap'
 
 
 function App() {
     const[cryptodata,setCyrptoData] = useState([])
-    const[currentcoin,setCurrentCoin] = useState()
+    const[currentcoin,setCurrentCoin] = useState({})
     
    
-    const fetchData = ()=>{
-        console.log('retreiving data...')
-           fetch('./data')
-          .then((response)=>response.json())
-          .then(data=>{
-            console.log(data)
-          })
-    }
+    // const fetchData = ()=>{
+    //     console.log('retreiving data...')
+    //        fetch('http://arkakapi.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=46cb6a30-7b16-428c-833a-0f1a4642c3dc&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=EUR')
+    //       .then((response)=>response.json())
+    //       .then(data=>{
+    //         console.log(data)
+    //         setCyrptoData(data)
+    //       })
+          
+    // }
+
+    const fetchingData =async()=>{
+      console.log('retreiving data...')
+      let response = await fetch('http://arkakapi.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=46cb6a30-7b16-428c-833a-0f1a4642c3dc&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=EUR')
+      let data = await response.json()
+      console.log(data)
+      setCyrptoData(data)
+  }
+
+
     const getName =(param)=>{
         console.log(param)
         console.log(cryptodata)
-        // if(param ==(cryptodata.data.name)){
-        // setCurrentCoin(param)
+        //  if(param ==(cryptodata.data.name)){
+        //  setCurrentCoin(param)
         // }
-        // else{
-        //     console.log('erorr')
-        // }
+        //  else{
+        //      console.log('erorr')
+        //  }
     }
     const getPrice =(e)=>{
         console.log(e.target)
@@ -41,7 +53,7 @@ function App() {
             aria-describedby="basic-addon1"
             />
             </InputGroup>
-            <Button onClick={fetchData}>CALCULATE</Button>
+            <Button onClick={fetchingData}>CALCULATE</Button>
             <h1>{cryptodata}</h1>
             </Col>
         </Row>
@@ -53,11 +65,11 @@ function App() {
         </tr>
       </thead>
       <tbody>
-      {/* {
-        cryptodata.map(currentcoin,index=>(
+       {/* {
+        cryptodata.map(coin,index=>(
             <tr key={index}>{cryptodata.data.name}</tr>
         ))
-      } */}
+      }  */}
       </tbody>
       </Table>
     </Container>
