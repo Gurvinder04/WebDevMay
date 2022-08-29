@@ -3,6 +3,8 @@ import { CardGroup, Container } from 'react-bootstrap'
 import CarouselComponents from './components/Homepage/CarouselComponents'
 import MovieCard from './components/Homepage/MovieCard'
 
+
+//https://api.themoviedb.org/3/movie/616037?api_key=07a61de5b731a869bc9cec8e25d2c8a8&language=en-US
 function Home() {
   const[movies,setMovies] = useState([])
   const fetchMovies = async()=>{
@@ -14,22 +16,24 @@ function Home() {
          fetchMovies()
     },[])
   return (
+    <>
     <Container fluid={true} className="p-0">
         <CarouselComponents/>
         {
           console.log(movies)
         }
-        <CardGroup>
-          {
-            movies !=undefined?
-            movies.map((movie,index)=>(
-              <MovieCard movie={movie}/>
-            ))
-            :
-            ''
-          }
-        </CardGroup>
-    </Container>
+         </Container>
+         <ul className="movies p-4  bg-dark">
+        {
+          movies !=undefined?
+          movies.map((movie,index)=>(
+            <MovieCard movie={movie} test={'this is a test props data'}/>
+          ))
+          :
+          ''
+        }
+      </ul>
+        </>
   )
 }
 
