@@ -265,7 +265,9 @@ img{
 			top: 50%;
 			margin: -40px 0 0 -40px;
 		}
-	
+.play_button:hover{
+    box-shadow: 0px 0px 2px 2px black;
+}
  #content {
     float: left;
     width: 500px;

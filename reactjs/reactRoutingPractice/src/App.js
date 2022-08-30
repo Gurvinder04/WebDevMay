@@ -6,7 +6,6 @@ function App() {
     const[search,setSearch] = useState([])
     const[enteredData1,setEnteredData1] = useState('')
     const[enteredData2,setEnteredData2] = useState('')
-    const[]
     const[result,setResult] = useState([])
     const fetchData =async()=>{
         let response = await fetch('https://jsonplaceholder.typicode.com/users')

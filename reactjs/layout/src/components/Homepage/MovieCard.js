@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // https://image.tmdb.org/t/p/w500/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg
 
-function MovieCard({movie}) {
+function MovieCard({movie,movies}) {
+
+  useEffect(()=>{
+
+  },[movies])
+  
   return (
   //   <ul className='movies p-4'>
   //     <li  className='' data-toggle='modal' data-target='#moviedatail'>
@@ -31,6 +36,7 @@ function MovieCard({movie}) {
   </div>
 </li>
   )
+  
 }
 
 export default MovieCard
