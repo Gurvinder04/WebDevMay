@@ -9,6 +9,22 @@ import SearchResults from './SearchResults'
 
 function App() {
   const [result,setResult] = useState([])
+  const [inputValue,setInputValue] = useState('')
+
+  const inputHandler = (e) =>{
+    if(inputValue !==''){
+        setInputValue(e.target.value)
+    }else{
+        setInputValue('a')
+        
+    }
+    let inputVal = e.target.value
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=07a61de5b731a869bc9cec8e25d2c8a8&language=en-US&page=1&query=${inputVal}`)
+    .then(response=>response.json())
+    .then(data=>{
+        setResult(data.results)
+    })
+}
   const searchResult = ()=>{
       console.log('This is search handler')
       setResult([{
@@ -20,6 +36,7 @@ function App() {
     <Layout >
     <Routes>
         <Route path ='/' element={<Home/>} />
+        <Route path='/search' element={<SearchResults result={result}/>}/>
         <Route path='/search' element={<SearchResults result={result}/>}/>
         <Route path ='/:movie_id' element={<MovieDetail/>} />
         <Route path ='/contact' element={<Contact/>} />

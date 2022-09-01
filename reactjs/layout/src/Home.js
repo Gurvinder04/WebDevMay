@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, ButtonGroup, CardGroup, Container, Form, InputGroup, Row } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import CarouselComponents from './components/Homepage/CarouselComponents'
 import MovieCard from './components/Homepage/MovieCard'
 
@@ -9,7 +10,9 @@ function Home() {
   const[movies,setMovies] = useState([])
   const[page,setPage]     = useState(1)
   const[searchResults ,setSearchResults] = useState([])
+  const history = useNavigate()
  // const inputRef = useRef(null)
+
   const nextPage =()=>setPage(page+1)
   const prevPage =()=>{
     if(page <=1){
@@ -27,6 +30,8 @@ function Home() {
       .then(data=>{
         setSearchResults(data.results)
       })
+      .catch(err=>console.error(err))
+   
  
       console.log(param)
   }
@@ -47,14 +52,14 @@ function Home() {
         } */}
         
          </Container>
-         <Row className='justify-content-center p-5 bg-dark'>
+         <Row className='justify-content-center p-5 bg-dark w-100 m-0'>
          <InputGroup className="mb-3 w-25">
         <Form.Control onChange={(e)=>findMovie(e.target.value)}
           placeholder="search movie"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
-        <Button variant="success" id="button-addon2">Search</Button>
+        <Button variant="success"  id="button-addon2">Search</Button>
        
       </InputGroup>
          </Row>
@@ -100,11 +105,11 @@ function Home() {
       
       <div className='pagination bg-dark justify-content-center d-flex pb-2'>
       <ButtonGroup aria-label="Basic example">
-      <Button variant="primary"  onClick={()=>{
+      <Button variant="light"  onClick={()=>{
         prevPage()
         findMovie()
       }} className='rounded-0'>Previous</Button>
-      <Button variant="primary"  onClick={()=>{
+      <Button variant="light"  onClick={()=>{
         nextPage()
         findMovie()
       }} className='rounded-0'>Next</Button>

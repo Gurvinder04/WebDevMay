@@ -1,8 +1,9 @@
 import React from 'react'
-import {Container,Nav,Navbar,NavDropdown} from 'react-bootstrap'
+import {Container,Form,Nav,Navbar,NavDropdown} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import {FaTwitter,FaLinkedin,FaInstagram} from 'react-icons/fa'
-function Header() {
+function Header({ searchResultHandler,inputHandler }) {
+
   return (
     <>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -26,6 +27,15 @@ function Header() {
             <Link to={'/social'}><FaLinkedin fill='white' className="display-6 bg-primary border-0 p-1 rounded-1 me-1"/></Link>
             <Link to={'/social'}><FaInstagram fill='white' className="display-6 bg-instagram border-0 p-1 rounded-1"/></Link>
           </Nav>
+          <Form className="d-flex">
+                        <Form.Control
+                        onChange={inputHandler}
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                    </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
