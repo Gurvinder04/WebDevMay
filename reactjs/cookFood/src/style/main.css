@@ -30,5 +30,8 @@ a.nav-link {
 }
 
 .roundImg{
-    
+    width: 27rem;
+    height: 72vh;
+    margin-top: 20px;
+    border-radius: 211px;
 }
