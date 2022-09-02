@@ -11,7 +11,7 @@ function App() {
    <Layout>
    <Routes>
     <Route path='/' element={<Home/>} />
-    <Route path='/:idMeal' element={<ReceipeDetail/>} />
+    <Route path='/:mid' element={<ReceipeDetail/>} />
    </Routes>
    </Layout>
   )
