@@ -7,6 +7,7 @@ import MovieDetail from './MovieDetail'
 import SearchResults from './SearchResults'
 
 
+
 function App() {
   const [result,setResult] = useState([])
   const searchResult = ()=>{
