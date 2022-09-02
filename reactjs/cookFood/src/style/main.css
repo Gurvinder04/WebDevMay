@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.bg-instagram{
+    background: #f09433; 
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+a.nav-link {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.carousel-item{
+    height: 80vh;
+}
+
+.carousel-item >img{
+    object-fit: cover !important;
+    object-position: center !important ;
+    height: 100%;
+}
+
+.carouselcaption{
+    font-family: 'Dancing Script', cursive;
+    font-size: 13.75rem;
+}
+
+.roundImg{
+    width: 27rem;
+    height: 72vh;
+    margin-top: 20px;
+    border-radius: 211px;
+}
