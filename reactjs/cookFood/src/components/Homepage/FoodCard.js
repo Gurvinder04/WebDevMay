@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { Col } from 'react-bootstrap'
 
-function FoodCard({ food }) {
+function FoodCard({ food,foodItems }) {
     useEffect(() => {
 
-    }, [food])
+    }, [foodItems])
     return (
         <>
         {/* <Col>
@@ -38,7 +38,7 @@ function FoodCard({ food }) {
                                     <p>{food.strInstructions}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Read more</span></div>
+                                    <div class="wcf-left"><span class="price"><a href='/ReceipeDetail'>Read more</a></span></div>
                                     <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
                                 </div>
                             </div>

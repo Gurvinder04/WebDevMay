@@ -17,7 +17,7 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">MENU</Nav.Link>
+            <Nav.Link href="Home">MENU</Nav.Link>
             <Nav.Link href="#pricing">CATERING MENU</Nav.Link>
             <Nav.Link href="#pricing">CONTACT</Nav.Link>
             <Nav.Link href="#pricing">HIRING</Nav.Link>

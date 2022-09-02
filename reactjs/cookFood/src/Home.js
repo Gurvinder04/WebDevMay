@@ -38,7 +38,7 @@ function Home() {
           {
             foodItems != undefined ?
               foodItems.map((food, index) => (
-                <FoodCard food={food} key={index} />
+                <FoodCard food={food} key={index} test={foodItems} />
               ))
               :
               ''
