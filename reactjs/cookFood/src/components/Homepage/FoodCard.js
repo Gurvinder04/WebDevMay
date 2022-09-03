@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { Col } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-function FoodCard({ food,index,foodItems }) {
+function FoodCard({ food, index, foodItems }) {
     useEffect(() => {
 
     }, [foodItems])
     return (
         <>
-        {/* <Col>
+            {/* <Col>
             <img src={food.strMealThumb} className='image' />
             <div className="content-box">
                 <h4 className="name">{food.strMeal}</h4>
@@ -22,33 +22,34 @@ function FoodCard({ food,index,foodItems }) {
         </Col> */}
 
 
-                    
-                    <div class="col-md-3">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img">
-                                <img src={food.strMealThumb} />
-                            </div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>{food.strCategory}</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>{food.strMeal}</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>{food.strInstructions}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price"><a href='/ReceipeDetail'>Read more</a></span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
+
+            <div class="col-md-3">
+                <div class="wsk-cp-product">
+                    <div class="wsk-cp-img">
+                        <img src={food.strMealThumb} />
+                    </div>
+                    <div class="wsk-cp-text">
+                        <div class="category">
+                            <span>{food.strCategory}</span>
+                        </div>
+                        <div class="title-product">
+                            <h3>{food.strMeal}</h3>
+                        </div>
+                        <div class="description-prod">
+                            <p>{food.strInstructions}</p>
+                        </div>
+                        <div class="card-footer">
+                            {/* <div class="wcf-left"><span class="price"><a href='/ReceipeDetail'>Read more</a></span></div> */}
+                            <Link to={`/${food.idMeal}`} className="wcf-left a_read"><span className='price'>Get Receipe</span></Link>
+                            <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
                         </div>
                     </div>
-                    
-                    
-              
-      </>
+                </div>
+            </div>
+
+
+
+        </>
 
     )
 }

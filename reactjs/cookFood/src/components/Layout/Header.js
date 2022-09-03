@@ -9,18 +9,22 @@ function Header() {
    <Navbar collapseOnSelect expand="lg">
       <Container className='text-light'>
         <Navbar.Brand href="#home"><img
-              src="	https://images.squarespace-cdn.com/content/v1/5dfa2bfbdaf82940e4afd01f/1584582142266-ZH5X1F9OWE5KJMKW72NO/Logo.png"
-              style={{"width": "9rem"}}
+              // src="	https://images.squarespace-cdn.com/content/v1/5dfa2bfbdaf82940e4afd01f/1584582142266-ZH5X1F9OWE5KJMKW72NO/Logo.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Jq3bk3mXllU58cgnNQfiOHeutpNym3CujQ&usqp=CAU"
+              style={{"width": "6rem","border-radius": "53px"}}
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="Home">MENU</Nav.Link>
+            {/* <Nav.Link href="Home">MENU</Nav.Link>
             <Nav.Link href="#pricing">CATERING MENU</Nav.Link>
             <Nav.Link href="#pricing">CONTACT</Nav.Link>
-            <Nav.Link href="#pricing">HIRING</Nav.Link>
+            <Nav.Link href="#pricing">HIRING</Nav.Link> */}
+            <Link to={'/'} className="nav-link text-decoration-none">HOME</Link>
+            <Link to={'/category'} className="nav-link text-decoration-none">CATEGORY</Link>
+            <Link to={'/contact'} className="nav-link text-decoration-none">CONTACT</Link>
            
           </Nav>
           <Nav className='d-flex flex-row'>

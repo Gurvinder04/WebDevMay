@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+
+
+body{
+  background-color: #d3d3d396;
+}
 .bg-instagram{
     background: #f09433; 
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
@@ -13,6 +18,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 a.nav-link {
     font-size: large;
     font-weight: bolder;
+}
+.navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: ghostwhite;
 }
 
 .carousel-item{
@@ -123,7 +133,7 @@ a.nav-link {
     border-radius: 7px;
   } */
 
-
+         /*FOOD CARD CSS   */
 
   .shell{
     padding:80px 0;
@@ -253,6 +263,11 @@ a.nav-link {
   .price{
     font-size:18px;
     font-weight:bold;
+    
+  }
+  .a_read{
+    --bs-link-hover-color: #2e2828;
+    color: #c21d1d;
   }
   
   a.buy-btn{
@@ -318,4 +333,83 @@ a.nav-link {
     background: #FF9800;
     color: #fff;
   }
+  }
+
+  /* RECEIPE DETAIL CSS */
+
+  .recipe-card {
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(240,241,243,1);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(240,241,243,1);
+    box-shadow: 0px 0px 20px 1px rgba(240,241,243,1);
+    border:1px solid #f0f1f3;
+    width: 300px;
+    margin: 50px auto;
+  }
+  .recipe-card__body {    
+      padding: 20px;
+  }
+  .recipe-card__heading {
+    padding: 0;
+    margin: 0 0 0;
+    color: #444;
+  }
+  .recipe-card__subhead {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  .recipe-card__ingredients {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    column-count: 1;
+  }
+    li {
+      margin-bottom: 5px;
+    }
+    li:before {
+      content: '\2022';
+      color: #eb9376;
+      margin-right: 5px;
+    }
+  
+  
+  .recipe-card__nav {
+    margin: 0 0 20px;
+    padding: 0;
+    border-bottom: 1px solid #eb9376;
+  }
+    li {
+      display: inline-block;
+      margin-right: 30px
+    }
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+    h3:after {
+      content: '';
+      display: block;
+      width: 0%;
+      padding-top: 10px;
+      margin: 0 auto;
+      border-bottom: 5px solid #eb9376;
+      transition: width 250ms ease-in-out 0s;
+    }
+    h3:hover {
+      cursor: pointer;
+    }
+    h3:hover:after, h3.active:after {
+     width: 100%; 
+    }
+  
+  
+  @media (min-width:599px) {
+    .recipe-card {
+      width: 600px
+    }
+    .recipe-card__ingredients {
+      column-count: 2
+    }
   }
