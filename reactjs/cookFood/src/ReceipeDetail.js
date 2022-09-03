@@ -10,13 +10,13 @@ function ReceipeDetail() {
       .then(data => {
         setreceipe(data)
       })
-  }, [])
+  }, [mid])
   return (
     <>
       <div className='recipe-card'>
-        <div style={{"background":"url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)","background-size":"cover","height": "150px"}}></div>
+        <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div>
         <div className="recipe-card__body">
-          <h1 className="recipe-card__heading">Oatmeal Cookies</h1>
+          <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
           <h2 className="recipe-card__subhead">Crunchy around the edges, softer in the center, these oatmeal cookies feature the nutty taste and nubbly texture of oats. </h2>
 
           <ul className="recipe-card__nav">
@@ -49,6 +49,12 @@ function ReceipeDetail() {
         </div>
 
       </div>
+      {
+        receipe.map((rep) => {
+          console.log(rep)
+        })
+      }
+
     </>
 
   )
