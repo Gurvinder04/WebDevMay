@@ -20,6 +20,10 @@ function QuizLayout() {
     const question = () => {
         setCurrrentQuestion(quiz[0])
     }
+
+    const handleOutput = ()=>{
+
+    }
     return (
         <Container className='bg-dark text-center text-light p-5'>
             <Row>
@@ -36,7 +40,7 @@ function QuizLayout() {
                         {
                          quiz[currentquestion].incorrect_answers.map(answer=>(
                         //    console.log(answer)   
-                             <li>{answer}</li>
+                             <button onClick={handleOutput}>{answer}</button>
                          ))   
                         }
                     </ul> 
