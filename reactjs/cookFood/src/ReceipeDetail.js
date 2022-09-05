@@ -5,10 +5,10 @@ function ReceipeDetail() {
   const { mid } = useParams()
   const [receipe, setreceipe] = useState([])
   useEffect(() => {
-    fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${mid}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mid}`)
       .then(response => response.json())
       .then(data => {
-        setreceipe(data)
+        setreceipe(data.meals[0])
       })
   }, [mid])
   return (
@@ -50,9 +50,9 @@ function ReceipeDetail() {
 
       </div>
       {
-        receipe.map((rep) => {
-          console.log(rep)
-        })
+        
+       
+        
       }
 
     </>

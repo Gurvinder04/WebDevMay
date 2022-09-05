@@ -8,9 +8,11 @@ import SearchResults from './SearchResults'
 
 
 
+
 function App() {
   const [result,setResult] = useState([])
   const [inputValue,setInputValue] = useState('')
+  
 
   const inputHandler = (e) =>{
     if(inputValue !==''){
@@ -34,6 +36,7 @@ function App() {
       }])
   }
   return (
+ 
     <Layout >
     <Routes>
         <Route path ='/' element={<Home/>} />
@@ -43,6 +46,7 @@ function App() {
         <Route path ='/contact' element={<Contact/>} />
     </Routes>
     </Layout>
+   
     
   )
 }
