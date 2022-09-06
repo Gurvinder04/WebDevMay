@@ -2,4 +2,5 @@
 import {createContext} from 'react'
 
 // create context
-export const Database = createContext()
+const Database = createContext();
+export default  Database

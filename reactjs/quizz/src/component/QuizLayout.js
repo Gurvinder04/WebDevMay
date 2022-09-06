@@ -13,7 +13,12 @@ function QuizLayout() {
             .then(response => response.json())
             .then(data => {
                 setQuiz(data.results)
+                let correct_answer = data.results[currentquestion].correct_answer
+                let incorect_answers = data.results[currentquestion].incorect_answers
+                {console.log(correct_answer)}
+
             })
+           
         // question()
     },[])
 
@@ -21,31 +26,29 @@ function QuizLayout() {
         setCurrrentQuestion(quiz[0])
     }
 
-    const handleOutput = ()=>{
-
-    }
     return (
         <Container className='bg-dark text-center text-light p-5'>
             <Row>
                 <Col md={12}>
                     <h1>Question:</h1>
                     {
-                        quiz[0]!== undefined ?
+                        quiz[currentquestion]!== undefined ?
                             <p>{quiz[currentquestion].question}</p>
                             :
                             'over'
                     }
                    
                      <ul>
-                        {
+                        {/* {
                          quiz[currentquestion].incorrect_answers.map(answer=>(
                         //    console.log(answer)   
-                             <button onClick={handleOutput}>{answer}</button>
+                             <button>{answer}</button>
                          ))   
-                        }
+                        } */}
                     </ul> 
                    
-                    {/* // console.log(quiz[currentquestion].incorrect_answers) */}
+                   
+                    {console.log(quiz)}
                     
                    
                 </Col>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import ChildComponent from './ChildComponent'
-import {Database} from './context/index'
+import Database from './context/index'
 function App() {
     const[count,setCount] = useState(0)
   const myStr = "Hello World"
@@ -27,7 +27,7 @@ function App() {
     
   }, [])
   return (
-    <Database.Provider value={[myStr,Numbers,myObj,isUserLoggedIn,EventHandler,users,setCount,count]}>
+    <Database.Provider value={{myStr,Numbers,myObj,isUserLoggedIn,EventHandler,users,setCount,count}}>
       <div className="container-fluid bg-dark text-light p-4">
       <h1>App.js</h1>
       <ChildComponent/>

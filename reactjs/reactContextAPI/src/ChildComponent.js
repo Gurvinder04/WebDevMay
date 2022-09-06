@@ -1,12 +1,12 @@
 //import useContext hook
 import React, {useContext}from 'react'
 //import Database context
-import {Database} from './context/index'
+import Database from './context/index'
 import GrandChild from './GrandChild'
 
 
 function ChildComponent() {
-    const[myStr,Numbers,myObj,isUserLoggedIn,EventHandler,users]= useContext(Database)
+    // const[myStr,Numbers,myObj,isUserLoggedIn,EventHandler,users]= useContext(Database)
   return (
     <div>
         <h1>ChildComponent.js</h1>
