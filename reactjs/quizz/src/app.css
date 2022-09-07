@@ -1,8 +1,12 @@
+.bgcontainer{
+  background-color: cadetblue;
+}
+
 ul{
   list-style: none;
 }
 li{
-    background-color: darkgrey;
+    background-color: #41464b;
     padding: 16px;
     border: 3px solid white;
     border-radius: 20px;

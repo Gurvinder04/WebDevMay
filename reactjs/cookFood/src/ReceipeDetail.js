@@ -4,18 +4,26 @@ import { useParams } from 'react-router-dom'
 function ReceipeDetail() {
   const { mid } = useParams()
   const [receipe, setreceipe] = useState([])
-  const[ingred,setIngred] = useState([])
+  const [ingred, setIngred] = useState([])
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mid}`)
       .then(response => response.json())
       .then(data => {
-        setreceipe(data.meals)
+        setreceipe(data.meals[0])
       })
-  
+
   }, [mid])
 
+  //   const names = Object.keys(receipe)
+  //   .filter((key) => key.includes("Ingredient"))
+  //   .reduce((obj, key) => {
+  //       return Object.assign(obj, {
+  //         [key]: receipe[key]
+  //       });
+  // }, {});
 
- 
+
+
   return (
     <>
       <div className='recipe-card'>
@@ -53,25 +61,30 @@ function ReceipeDetail() {
           </ul> */}
 
           <ul>
-          {/* {Object.keys(receipe).map((value, index) => {
-        return (
-          <div key={index}>
-          if(value == )
-               <h2>{value}</h2>
-            {console.log(index,value)}
-             
-            <hr />
-          </div>
-        );
-      })} */
-        console.log(Object.enteries(receipe))
-      }
-     
+            {
+              //  Object.keys(receipe).map((key, index) => {
+              //   return (
+              //     <div key={index}>
+              //       <h2>
+
+              //         {key}: {receipe[key]}
+              //       </h2>
+
+              //       <hr />
+              //     </div>
+              //   );
+              // })
+
+             Object.keys(receipe)
+                .filter(key => key.includes("Ingredient"))
+                .map(obj => {
+                   return setIngred(obj);
+                })
+              }
+              { console.log(ingred)}
           </ul>
         </div>
-
       </div>
-
     </>
 
   )
