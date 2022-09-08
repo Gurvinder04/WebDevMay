@@ -4,12 +4,32 @@ import { useParams } from 'react-router-dom'
 function ReceipeDetail() {
   const { mid } = useParams()
   const [receipe, setreceipe] = useState([])
-  const [ingred, setIngred] = useState([])
+  const [ingredients, setIngredients] = useState([])
+  const [measures, setMeasures] = useState([])
+  const [showmethod, setShowMethod] = useState(false)
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mid}`)
       .then(response => response.json())
       .then(data => {
         setreceipe(data.meals[0])
+        let ingredients = []
+        let measures = []
+        Object.keys(data.meals[0])
+          .filter(check => check.includes("Ingredient"))
+          .map((obj, key) => {
+            ingredients.push(data.meals[0][obj])
+            //     console.log(data.meals[0][obj],'ingredientsssssss')
+
+          })
+        Object.keys(data.meals[0])
+          .filter(check => check.includes("Measure"))
+          .map((obj, key) => {
+            measures.push(data.meals[0][obj])
+            //     console.log(data.meals[0][obj],'ingredientsssssss')
+
+          })
+        setIngredients(ingredients.filter(item => item !== '' && item !== null)) // prvious state '',item1,item2,
+        setMeasures(measures.filter(item => item !== '')) // prvious state '',item1,item2,
       })
 
   }, [mid])
@@ -23,21 +43,49 @@ function ReceipeDetail() {
   // }, {});
 
 
+const Toggle1 = ()=>{
+       setShowMethod()
+}
+const Toggle2 = ()=>{
+  setShowMethod(true)
+}
 
   return (
     <>
       <div className='recipe-card'>
-        <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div>
+        {/* <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div> */}
+        <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "364px", width: "-webkit-fill-available" }} /></div>
         <div className="recipe-card__body">
           <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
-          <h2 className="recipe-card__subhead">{receipe.strInstructions} </h2>
+          <h2 className="recipe-card__subhead"></h2>
 
           <ul className="recipe-card__nav">
             <li>
-              <h3 className="active">Ingredients</h3>
+              <h3 className="" onClick={Toggle1}>Ingredients</h3>
+              {showmethod ?null
+              :
+              <ul className="recipe-card__ingredients">
+              {/*
+                Object.keys(receipe)
+                  .filter(check => check.includes("Ingredient"))
+                  .map((obj, key) => {
+                    console.log(receipe[obj])
+                    setIngredients(receipe[obj]);
+                  })
+            } */
+                ingredients.map((ingred, index) => (
+                  <li key={index}>{measures[index]} {ingred}</li>
+  
+                ))
+              }
+            </ul>  
+            
+            
+            }
             </li>
             <li>
-              <h3>Method</h3>
+              <h3 onClick={Toggle2}>Method</h3>
+              { showmethod ? <p>{receipe.strInstructions}</p> : null }
             </li>
           </ul>
 
@@ -60,29 +108,13 @@ function ReceipeDetail() {
             <li>1 cup golden raisins, optional</li>
           </ul> */}
 
-          <ul>
-            {
-              //  Object.keys(receipe).map((key, index) => {
-              //   return (
-              //     <div key={index}>
-              //       <h2>
+         
+          
 
-              //         {key}: {receipe[key]}
-              //       </h2>
 
-              //       <hr />
-              //     </div>
-              //   );
-              // })
 
-             Object.keys(receipe)
-                .filter(key => key.includes("Ingredient"))
-                .map(obj => {
-                   return setIngred(obj);
-                })
-              }
-              { console.log(ingred)}
-          </ul>
+            {console.log(ingredients,)}
+            {console.log(measures,'vdiyaaa')}
         </div>
       </div>
     </>

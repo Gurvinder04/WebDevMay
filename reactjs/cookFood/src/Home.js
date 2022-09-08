@@ -13,6 +13,7 @@ function Home() {
   }
   useEffect(()=>{
        fetchData()
+    
   },[foodItems])
 
   return (
@@ -34,6 +35,7 @@ function Home() {
         </Row>
         <div className='shell'>
           <div className ='container'>
+          <h2 class="underline">Our Receipes</h2>
           <div className ='row'>
           {
             foodItems != undefined ?

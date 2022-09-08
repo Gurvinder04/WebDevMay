@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Col } from 'react-bootstrap'
+import { Col, Container } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 
 function FoodCard({ food, index, foodItems }) {
@@ -22,7 +22,7 @@ function FoodCard({ food, index, foodItems }) {
         </Col> */}
 
 
-
+            
             <div class="col-md-3">
                 <div class="wsk-cp-product">
                     <div class="wsk-cp-img">
@@ -46,6 +46,7 @@ function FoodCard({ food, index, foodItems }) {
                     </div>
                 </div>
             </div>
+           
 
 
 
