@@ -8,6 +8,17 @@ import ReceipeDetail from './ReceipeDetail'
 
 
 function App() {
+  const [foodItems, setfoodItems] = useState([])
+
+  const fetchData = async()=> {
+    let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+    let data = await response.json()
+    setfoodItems(data.meals)
+  }
+  useEffect(()=>{
+       fetchData()
+    
+  },[foodItems])
  
  
   return (

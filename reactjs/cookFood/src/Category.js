@@ -19,6 +19,7 @@ function Category() {
   return (
     <div>
         <h2>Category</h2>
+        
        {console.log(cat)}
     </div>
    
