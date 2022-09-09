@@ -15,18 +15,13 @@ function App() {
     let data = await response.json()
     setfoodItems(data.meals)
   }
-  useEffect(()=>{
-       fetchData()
-    
-  },[foodItems])
- 
- 
+  
   return (
    <Layout>
    <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
-    <Route path='category/:cat' element ={<Category/>} />
+    <Route path='category/:cat' element ={<Category result={foodItems}/>} />
     
    </Routes>
    </Layout>

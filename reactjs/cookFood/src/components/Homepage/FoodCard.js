@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Col, Container } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 
-function FoodCard({ food, index, foodItems }) {
+function FoodCard({ food, index, foodItems, category }) {
     useEffect(() => {
 
     }, [foodItems])
@@ -35,9 +35,9 @@ function FoodCard({ food, index, foodItems }) {
                         <div class="title-product">
                             <h3>{food.strMeal}</h3>
                         </div>
-                        <div class="description-prod">
+                        {/* <div class="description-prod">
                             <p>{food.strInstructions}</p>
-                        </div>
+                        </div> */}
                         <div class="card-footer">
                             {/* <div class="wcf-left"><span class="price"><a href='/ReceipeDetail'>Read more</a></span></div> */}
                             <Link to={`/${food.idMeal}`} className="wcf-left a_read"><span className='price'>Get Receipe</span></Link>
