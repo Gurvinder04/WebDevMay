@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-app",
+  "version": "0.0.1",
+  "description": "first node application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "learning",
+    "beginner"
+  ],
+  "author": "gurvinder",
+  "license": "ISC",
+  "dependencies": {
+    "install": "^0.13.0",
+    "node-fetch": "^2.6.7"
+  }
+}
