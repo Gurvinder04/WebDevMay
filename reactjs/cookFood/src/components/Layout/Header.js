@@ -12,7 +12,7 @@ function Header() {
           <Navbar.Brand href="#home"><img
             // src="	https://images.squarespace-cdn.com/content/v1/5dfa2bfbdaf82940e4afd01f/1584582142266-ZH5X1F9OWE5KJMKW72NO/Logo.png"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Jq3bk3mXllU58cgnNQfiOHeutpNym3CujQ&usqp=CAU"
-            style={{ "width": "6rem", "bordeRadius": "53px" }}
+            style={{ "width": "6rem", "borderRadius": "53px" }}
             className="d-inline-block align-top"
             alt="React Bootstrap logo"
           /></Navbar.Brand>
@@ -25,7 +25,7 @@ function Header() {
                 <Link to={'category/Chicken'} className='dropdown-item'>Chicken</Link>
                 <Link to={'category/Dessert'} className='dropdown-item'>Dessert</Link>
                 <Link to={'category/Lamb'} className='dropdown-item'>Lamb</Link>
-                <Link to={'category/Miscellaneous'} className='dropdown-item'>Miscellaneous"</Link>
+                <Link to={'category/Miscellaneous'} className='dropdown-item'>Miscellaneous</Link>
                 <Link to={'category/Pasta'} className='dropdown-item'>Pasta</Link>
                 <Link to={'category/Pork'} className='dropdown-item'>Pork</Link>
                 <Link to={'category/Seafood'} className='dropdown-item'>Seafood</Link>

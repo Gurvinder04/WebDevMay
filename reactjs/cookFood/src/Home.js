@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
 import FoodCard from './components/Homepage/FoodCard'
 import FoodCarousel from './components/Homepage/FoodCarousel'
 
@@ -40,7 +41,7 @@ function Home() {
           {
             foodItems != undefined ?
               foodItems.map((food, index) => (
-                <FoodCard food={food} key={index} test={foodItems} />
+                <FoodCard food={food} key={index}  />
               ))
               :
               ''

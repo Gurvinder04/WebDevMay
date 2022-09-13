@@ -446,6 +446,7 @@ a.nav-link {
       /* background-color: #004658; */
       background-color: #c21d1d;
       color: #fff;
+      
   }
   .footer-wave-svg {
       background-color: transparent;
@@ -463,7 +464,7 @@ a.nav-link {
       margin-left: auto;
       margin-right: auto;
       max-width: 1230px;
-      padding: 40px 15px 450px;
+      /* padding: 40px 15px 450px; */
       position: relative;
   }
   
@@ -723,7 +724,7 @@ a.nav-link {
         margin-left: auto;
         margin-right: auto;
         max-width: 1230px;
-        padding: 40px 15px 450px;
+        /* padding: 40px 15px 450px; */
         position: relative;
     }
   
@@ -741,3 +742,7 @@ a.nav-link {
     } */
   }  
     
+
+     
+
+ 

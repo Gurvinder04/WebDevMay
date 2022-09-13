@@ -54,7 +54,7 @@ const Toggle2 = ()=>{
     <>
       <div className='recipe-card'>
         {/* <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div> */}
-        <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "364px", width: "-webkit-fill-available" }} /></div>
+        <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "430px", width: "-webkit-fill-available" }} /></div>
         <div className="recipe-card__body">
           <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
           <h2 className="recipe-card__subhead"></h2>

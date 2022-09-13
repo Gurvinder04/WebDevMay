@@ -27,8 +27,8 @@ function Category ({items}){
           <div className ='row'>
          {
           category != undefined ?
-          category.map((food, index) => (
-            <FoodCard food={food} key={index} test={cat} />
+          category.map((food, index,) => (
+            <FoodCard food={food} key={index} test={items} />
           ))
           :
           ''
