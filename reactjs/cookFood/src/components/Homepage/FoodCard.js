@@ -43,7 +43,7 @@ function FoodCard({ food, index, foodItems, category }) {
                             {/* <div class="wcf-left"><span class="price"><a href='/ReceipeDetail'>Read more</a></span></div> */}
                             <Link to={`/${food.idMeal}`} className="wcf-left a_read"><span className='price'>Get Receipe</span></Link>
                             {/* <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div> */}
-                            <div class="wcf-right"><a href="#" class="buy-btn"><BiLike></BiLike></a></div>
+                            <div class="wcf-right"><a href='#' class="buy-btn"><BiLike></BiLike></a></div>
                         </div>
                     </div>
                 </div>
