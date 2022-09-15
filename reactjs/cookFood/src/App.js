@@ -31,7 +31,7 @@ function App() {
   return (
    <Layout>
    <Routes>
-    <Route path='/' element={<Home result={result}/>} />
+    <Route path='/' element={<Home result={result} search={searchItem}/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
     <Route path='category/:cat' element ={<Category/>} />
     

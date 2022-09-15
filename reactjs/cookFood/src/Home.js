@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import FoodCard from './components/Homepage/FoodCard'
 import FoodCarousel from './components/Homepage/FoodCarousel'
 
-function Home({result}) {
+function Home({result,searchItem}) {
   const [foodItems, setfoodItems] = useState([])
   const [searchReceipe, setSearchReceipe] = useState([])
   const history = useNavigate()
@@ -86,8 +86,8 @@ function Home({result}) {
           
           </div>
         {
-           console.log(foodItems)
-          // console.log(result)
+          //  console.log(foodItems)
+          console.log(searchItem)
          
         }
     </Container>
