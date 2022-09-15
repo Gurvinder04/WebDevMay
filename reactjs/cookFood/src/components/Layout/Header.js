@@ -3,7 +3,7 @@ import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstr
 import { Link } from 'react-router-dom'
 import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
-function Header() {
+function Header({searchInput}) {
  
   return (
     <>
@@ -42,12 +42,13 @@ function Header() {
             </Nav>
             <Form className="d-flex">
               <Form.Control
+              onChange={searchInput}
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              {/* <Button variant="outline-success">Search</Button> */}
             </Form>
             <Nav className='d-flex flex-row'>
               <Link to={'/social'}><FaTwitter fill='black' className="display-6   p-1 rounded-1 mx-1" /></Link>

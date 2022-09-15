@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Col, Container } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import { BiLike } from 'react-icons/bi'
+import { BsStarFill,BsStarHalf } from 'react-icons/bs'
 
 function FoodCard({ food, index, foodItems, category }) {
     useEffect(() => {
@@ -32,6 +33,13 @@ function FoodCard({ food, index, foodItems, category }) {
                     <div class="wsk-cp-text">
                         <div class="category">
                             <span>{food.strCategory}</span>
+                        </div>
+                        <div class="description-prod">
+                            <BsStarFill fill='#fd7e14'></BsStarFill>
+                            <BsStarFill fill='#fd7e14'></BsStarFill>
+                            <BsStarFill fill='#fd7e14'></BsStarFill>
+                            <BsStarFill fill='#fd7e14'></BsStarFill>
+                            <BsStarHalf fill='#fd7e14'></BsStarHalf>
                         </div>
                         <div class="title-product">
                             <h3>{food.strMeal}</h3>

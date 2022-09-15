@@ -17,6 +17,7 @@ function App() {
   const inputHandler = (e) =>{
     if(inputValue !==''){
         setInputValue(e.target.value)
+        
     }else{
         setInputValue('a')
         

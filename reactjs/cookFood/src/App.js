@@ -8,28 +8,32 @@ import ReceipeDetail from './ReceipeDetail'
 
 
 function App() {
-  const [foodItems, setfoodItems] = useState([])
-  const [searchItem, setsearchItem] = useState()
+  const [result, setResult] = useState([])
+  const [searchItem, setsearchItem] = useState('')
 
-  const fetchData = async()=> {
-    let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
-    let data = await response.json()
-    setfoodItems(data.meals)
-  }
   const searchInput = (e)=>{
     if(searchInput !== ''){
       setsearchItem(e.target.value)
+      console.log(searchItem)
     }
     else{
-      fetchData()
+      setsearchItem('b')
     }
+  
+  // let search = e.target.value
+  //  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${search}`)
+  //   .then(res=>res.json())
+  //   .then(data=>{
+  //     setResult(data.meals)
+  //     console.log(result)
+  //   })
   }
   return (
    <Layout>
    <Routes>
-    <Route path='/' element={<Home/>} />
+    <Route path='/' element={<Home result={result}/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
-    <Route path='category/:cat' element ={<Category result={foodItems}/>} />
+    <Route path='category/:cat' element ={<Category/>} />
     
    </Routes>
    </Layout>

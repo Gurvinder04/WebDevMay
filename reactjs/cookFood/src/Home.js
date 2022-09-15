@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import FoodCard from './components/Homepage/FoodCard'
 import FoodCarousel from './components/Homepage/FoodCarousel'
 
-function Home() {
+function Home({result}) {
   const [foodItems, setfoodItems] = useState([])
+  const [searchReceipe, setSearchReceipe] = useState([])
+  const history = useNavigate()
 
   const fetchData = async()=> {
-    let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+    let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=m')
     let data = await response.json()
     setfoodItems(data.meals)
   }
+
+//   const findReceipe = (param)=>{
+//     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${param !==''? param : 'a'}`)
+//     .then(res=>res.json())
+//     .then(data=>{
+//       setSearchReceipe(data.meals)
+//       console.log(searchReceipe)
+//     })
+//     .catch(err=>console.error(err))
+ 
+
+//     console.log(param)
+// }
   useEffect(()=>{
        fetchData()
     
@@ -46,12 +61,34 @@ function Home() {
               :
               ''
           }
+          {/* {
+             searchReceipe.length ==0?
+             (
+              foodItems != undefined ?
+              foodItems.map((food, index) => (
+                <FoodCard food={food} key={index}  />
+                
+              ))
+              :
+              ''
+             )
+             :
+             searchReceipe !=undefined?
+             searchReceipe.map((receipe,index)=>(
+               <FoodCard receipe={receipe} key={index} test={foodItems}/>
+             ))
+             :
+             'vdiya'
+            } */}
+          
           </div>
           </div>
           
           </div>
         {
-          console.log(foodItems)
+           console.log(foodItems)
+          // console.log(result)
+         
         }
     </Container>
     </>

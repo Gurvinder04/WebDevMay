@@ -178,7 +178,7 @@ a.nav-link {
     text-align:center;
     font-size:12px;
     font-weight:bold;
-    padding:5px;
+    /* padding:5px; */
     /* margin-bottom:45px;
     position:relative; */
     transition: all 0.2s ease-in-out;
@@ -238,6 +238,7 @@ a.nav-link {
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
     margin-bottom:15px;
+    font-size: 25px;
   }
   .card-footer{
     padding: 25px 0 5px;
@@ -266,8 +267,10 @@ a.nav-link {
     
   }
   .a_read{
-    --bs-link-hover-color: #2e2828;
-    color: #c21d1d;
+    --bs-link-hover-color: #2e2828; 
+    /* color: #c21d1d; */
+    color: #fd7e14;
+    
   }
   
   a.buy-btn{
