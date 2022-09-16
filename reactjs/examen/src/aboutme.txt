@@ -1,0 +1,2 @@
+firstly i made a input value holder which can hold your input value and then by clicking on add button it will send the inputed value to the AddItem() function.The AddItem() function takes the input value through inputRef hook and add it to the Todolist,then by using map() function,the todolist displays all the todos.
+To delete the todo's ,i use a DeleteItem() function which takes the index of the  clicked todo and then filter it on the basis that if the index of current todo is not same as the requested todo to delete than it will send it to the TodoList.

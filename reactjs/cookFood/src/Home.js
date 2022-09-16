@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import FoodCard from './components/Homepage/FoodCard'
 import FoodCarousel from './components/Homepage/FoodCarousel'
 
-function Home({result,searchItem}) {
+function Home({searchItem}) {
   const [foodItems, setfoodItems] = useState([])
   const [searchReceipe, setSearchReceipe] = useState([])
   const history = useNavigate()
@@ -13,23 +13,25 @@ function Home({result,searchItem}) {
     let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=m')
     let data = await response.json()
     setfoodItems(data.meals)
+    
   }
 
-//   const findReceipe = (param)=>{
-//     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${param !==''? param : 'a'}`)
-//     .then(res=>res.json())
-//     .then(data=>{
-//       setSearchReceipe(data.meals)
-//       console.log(searchReceipe)
-//     })
-//     .catch(err=>console.error(err))
- 
+  const findReceipe = ()=>{
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchItem}`)
+    .then(res=>res.json())
+    .then(data=>{
+      setSearchReceipe(data.meals)
+      console.log(searchReceipe)
+    })
+    .catch(err=>console.error(err))
 
-//     console.log(param)
-// }
+
+    console.log(searchItem)
+}
   useEffect(()=>{
        fetchData()
-    
+      
+
   },[foodItems])
 
   return (
@@ -53,21 +55,21 @@ function Home({result,searchItem}) {
           <div className ='container'>
           <h2 class="underline">Our Receipes</h2>
           <div className ='row'>
-          {
+          {/* {
             foodItems != undefined ?
               foodItems.map((food, index) => (
                 <FoodCard food={food} key={index}  />
               ))
               :
               ''
-          }
-          {/* {
+          } */}
+          {
              searchReceipe.length ==0?
              (
               foodItems != undefined ?
               foodItems.map((food, index) => (
                 <FoodCard food={food} key={index}  />
-                
+
               ))
               :
               ''
@@ -79,16 +81,16 @@ function Home({result,searchItem}) {
              ))
              :
              'vdiya'
-            } */}
-          
+            }
+
           </div>
           </div>
-          
+
           </div>
         {
           //  console.log(foodItems)
-          console.log(searchItem)
-         
+           console.log(searchItem)
+
         }
     </Container>
     </>

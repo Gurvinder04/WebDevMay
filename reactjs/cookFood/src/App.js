@@ -12,13 +12,13 @@ function App() {
   const [searchItem, setsearchItem] = useState('')
 
   const searchInput = (e)=>{
-    if(searchInput !== ''){
+    if(searchItem == ''){
       setsearchItem(e.target.value)
-      console.log(searchItem)
     }
     else{
       setsearchItem('b')
     }
+    console.log(searchItem)
   
   // let search = e.target.value
   //  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${search}`)
@@ -31,7 +31,7 @@ function App() {
   return (
    <Layout>
    <Routes>
-    <Route path='/' element={<Home result={result} search={searchItem}/>} />
+    <Route path='/' element={<Home search={searchItem}/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
     <Route path='category/:cat' element ={<Category/>} />
     
