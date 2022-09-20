@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-   await mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Cluster0?retryWrites=true&w=majority', (err) => {
+   await mongoose.connect('mongodb://localhost:27017', (err) => {
         if (err) {
             console.log('eror in connecting db')
         }
