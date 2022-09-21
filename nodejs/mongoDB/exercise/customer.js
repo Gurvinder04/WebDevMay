@@ -46,7 +46,6 @@ function EmailValidation(email) {
 // }
 
 function isCustomerExist(checkcustomer) {
-    let count =0
     return Customer.exists({
         fullname: checkcustomer.fullname.toLowerCase(),
         email: checkcustomer.email,
@@ -55,10 +54,7 @@ function isCustomerExist(checkcustomer) {
         website: checkcustomer.website
         
     })
-        .then(res =>{
-            count++
-            console.log(count)
-        })
+        .then(res =>res)
 }
 
 prompt.start();
@@ -146,8 +142,10 @@ function DeleteCustomer(delname){
     Customer.findOneAndDelete({
                     fullname:delname
                 })
-                .then(()=>console.log(`${fullname} is deleted`))
-                console.log('customer doesn"t exist')
+                .then(res=>{
+                    console.log('customer is deleted')
+                })
+                
             
 }
 
@@ -194,14 +192,14 @@ function Menu() {
                         if(res.length>1){
                             prompt.get(['email'],(err,customer)=>{
                                 Customer.find({email:customer.email})
-                                .then(res=>{
-                                    console.log(res)
-                                    DeleteCustomer(customer.fullname)
+                                .then(data=>{
+                                    console.log(data)
+                                    DeleteCustomer(data.fullname)
                                 })
                             })
                         }
                         else{
-                           DeleteCustomer()
+                           DeleteCustomer(customer.fullname)
                         }
                         
                     })

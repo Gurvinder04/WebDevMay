@@ -45,6 +45,10 @@ function ReadFiles(ext){
          })
 }
 
+function ApppendToFile(file){
+    fs.read()
+}
+
 // ReadFiles('.doc')  //readfiles with passed extension
 
 //WRITE FILE
