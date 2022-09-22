@@ -10,7 +10,7 @@ async function main() {
 const customerSchema = new mongoose.Schema({
     fullname: {
         type: String,
-        lowercase:true
+        lowercase: true
     },
     email: String,
     phone: Number,
@@ -18,7 +18,7 @@ const customerSchema = new mongoose.Schema({
     website: String
 })
 
-const Customer = mongoose.model('customer', customerSchema)
+const Customer = mongoose.model('Customer', customerSchema)
 
 
 
@@ -52,9 +52,18 @@ function isCustomerExist(checkcustomer) {
         phone: checkcustomer.phone,
         address: checkcustomer.address,
         website: checkcustomer.website
-        
+
     })
-        .then(res =>res)
+        .then(res => res)
+}
+
+function clean(obj) {
+    for (var propName in obj) {
+        if (obj[propName] === '' || obj[propName] === undefined) {
+            delete obj[propName];
+        }
+    }
+    return obj
 }
 
 prompt.start();
@@ -81,44 +90,57 @@ function AddCustomer() {
 
 }
 
-function UpdateCustomerData(){
+function UpdateCustomer(customerFullname) {
     prompt.get(['fullname', 'email', 'phone', 'address', 'website'], (err, customer) => {
         console.log(customer)
+        Customer.updateOne({ fullname: customerFullname }, { $set: clean(customer) })
+            .then(response => console.log(response))
+            .finally(() => {
+                console.log('To return menu press 0')
+                prompt.get(['return'], (err, answer) => {
+                    if (answer.return === '0') {
+                        console.clear()
+                        Menu()
+                    }
+                })
+            })
+        console.log(customerFullname)
+        //    console.log(clean(customer))
     })
 }
 
-function GetCustomer(){
+function GetCustomer() {
     Customer.find({})
-        .then(data=>{
-            data.forEach(customer=>{
-              console.table({
-                fullname:customer.fullname,
-                email:customer.email,
-                phone:customer.phone,
-                address:customer.address,
-                website:customer.website
-              })
+        .then(data => {
+            data.forEach(customer => {
+                console.table({
+                    fullname: customer.fullname,
+                    email: customer.email,
+                    phone: customer.phone,
+                    address: customer.address,
+                    website: customer.website
+                })
             })
-           
+
         })
-         .finally(() => {
+        .finally(() => {
             // setTimeout(() =>{
             //     console.clear()
             //     Menu()
             // }, 2000)
             console.log('Press 0 to return to menu')
-            prompt.get(['return'],(err,choice)=>{
-                if(choice.return === '0'){
-                   console.clear()
-                   Menu()
+            prompt.get(['return'], (err, choice) => {
+                if (choice.return === '0') {
+                    console.clear()
+                    Menu()
                 }
             })
         })
-    
+
 }
 
 
-function DeleteCustomer(delname){
+function DeleteCustomer(customer) {
     // prompt.get(['fullname'],(err,customer)=>{
     //     isCustomerExist(customer.fullname)
     //     .then(fullname=>{
@@ -139,14 +161,10 @@ function DeleteCustomer(delname){
     // })
 
 
-    Customer.findOneAndDelete({
-                    fullname:delname
-                })
-                .then(res=>{
-                    console.log('customer is deleted')
-                })
-                
-            
+    Customer.deleteOne(customer)
+        .then(response => console.log(response))
+
+
 }
 
 function Menu() {
@@ -171,41 +189,41 @@ function Menu() {
                 break;
             case '2':
                 // console.log('Update Customer')
-                prompt.get(['fullname'],(err,customer)=>{
-                    Customer.find({fullname:customer.fullname})
-                    .then(res=>res.length>0)
-                    .then(bool=>{
-                        if(bool){
-                            UpdateCustomerData()
-                        }
-                       
-                    })
-                
+                prompt.get(['fullname'], (err, customer) => {
+                    Customer.find({ fullname: customer.fullname })
+                        .then(res => res.length > 0)
+                        .then(bool => {
+                            if (bool) {
+                                UpdateCustomer(customer.fullname)
+                            }
+
+                        })
+
                 })
-                
+
                 break;
             case '3':
-                prompt.get(['fullname'],(err,customer)=>{
-                    Customer.find({fullname:customer.fullname})
-                    .then(res=>{
-                        console.log(`There exist ${res.length} customers.please enter email address for further clarification`)
-                        if(res.length>1){
-                            prompt.get(['email'],(err,customer)=>{
-                                Customer.find({email:customer.email})
-                                .then(data=>{
-                                    console.log(data)
-                                    DeleteCustomer(data.fullname)
+                prompt.get(['fullname'], (err, customer) => {
+                    Customer.find({ fullname: customer.fullname })
+                        .then(res => {
+                            if (res.length > 1) {
+                                console.log(`There exist ${res.length} customers.please enter email address for further clarification`)
+                                prompt.get(['email'], (err, _customer) => {
+                                    Customer.find({ email: _customer.email })
+                                        .then(data => {
+                                            console.log(data)
+                                            DeleteCustomer({ fullname: customer.fullname, email: _customer.email })
+                                        })
                                 })
-                            })
-                        }
-                        else{
-                           DeleteCustomer(customer.fullname)
-                        }
-                        
-                    })
-                    
-                    
-                
+                            }
+                            else {
+                                DeleteCustomer({ fullname: customer.fullname })
+                            }
+
+                        })
+
+
+
                 })
                 break;
             case '4':
