@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import FoodCard from './components/Homepage/FoodCard'
 import FoodCarousel from './components/Homepage/FoodCarousel'
 
-function Home({searchItem}) {
+function Home() {
   const [foodItems, setfoodItems] = useState([])
   const [searchReceipe, setSearchReceipe] = useState([])
   const history = useNavigate()
@@ -16,22 +16,21 @@ function Home({searchItem}) {
     
   }
 
-  const findReceipe = ()=>{
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchItem}`)
-    .then(res=>res.json())
-    .then(data=>{
-      setSearchReceipe(data.meals)
-      console.log(searchReceipe)
-    })
-    .catch(err=>console.error(err))
+//   const findReceipe = (searchItem)=>{
+//     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchItem !==''? searchItem : 'a'}`)
+//     .then(res=>res.json())
+//     .then(data=>{
+//       setSearchReceipe(data.meals)
+//       console.log(searchReceipe)
+//     })
+//     .catch(err=>console.error(err))
 
 
-    console.log(searchItem)
-}
+//     console.log(searchItem)
+// }
   useEffect(()=>{
        fetchData()
-      
-
+      //findReceipe()
   },[foodItems])
 
   return (
@@ -82,15 +81,14 @@ function Home({searchItem}) {
              :
              'vdiya'
             }
+            
 
           </div>
           </div>
 
           </div>
         {
-          //  console.log(foodItems)
-           console.log(searchItem)
-
+         console.log(searchReceipe)
         }
     </Container>
     </>

@@ -3,8 +3,8 @@ import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstr
 import { Link } from 'react-router-dom'
 import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
-function Header({searchInput}) {
- 
+function Header({Input}) {
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg">
@@ -42,7 +42,7 @@ function Header({searchInput}) {
             </Nav>
             <Form className="d-flex">
               <Form.Control
-              onChange={searchInput}
+                onChange={Input}
                 type="search"
                 placeholder="Search"
                 className="me-2"
@@ -58,7 +58,7 @@ function Header({searchInput}) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
- 
+
     </>
   )
 }
