@@ -4,6 +4,7 @@ import Category from './Category'
 import Layout from './components/Layout/Layout'
 import Home from './Home'
 import ReceipeDetail from './ReceipeDetail'
+import SignUp from './SignUp'
 
 
 
@@ -28,6 +29,7 @@ function App() {
     <Route path='/' element={<Home/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
     <Route path='category/:cat' element ={<Category/>} />
+    <Route path='/signup' element={<SignUp/>} />
     
    </Routes>
    </Layout>

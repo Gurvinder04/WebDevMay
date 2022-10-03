@@ -38,6 +38,7 @@ function Header({Input}) {
 
               </NavDropdown>
               <Link to={'/contact'} className="nav-link text-decoration-none">CONTACT</Link>
+              <Link to={'/signup'} className="nav-link text-decoration-none">SIGNUP</Link>
 
             </Nav>
             <Form className="d-flex">
@@ -55,6 +56,7 @@ function Header({Input}) {
               <Link to={'/social'}><FaLinkedin fill='black' className="display-6  border-0 p-1 rounded-1 me-1" /></Link>
               <Link to={'/social'}><FaInstagram fill='white' className="display-6 bg-instagram border-0 p-1 rounded-1" /></Link>
             </Nav>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>
