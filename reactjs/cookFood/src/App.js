@@ -5,6 +5,8 @@ import Layout from './components/Layout/Layout'
 import Home from './Home'
 import ReceipeDetail from './ReceipeDetail'
 import SignUp from './SignUp'
+import Login from './Login'
+
 
 
 
@@ -30,6 +32,7 @@ function App() {
     <Route path='/:mid' element ={<ReceipeDetail/>} />
     <Route path='category/:cat' element ={<Category/>} />
     <Route path='/signup' element={<SignUp/>} />
+    <Route path='/login' element={<Login/>} />
     
    </Routes>
    </Layout>
