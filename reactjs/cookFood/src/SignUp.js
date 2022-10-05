@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 function SignUp() {
     const inputRef = useRef()
+    const[show,setShow] = useState('true')
     const [user, setUser] = useState({
         name: "",
         email: "",
@@ -78,7 +79,10 @@ function SignUp() {
             console.log('invalid input')
         }
     }
-
+    const toggleForm = () => {
+        console.log('signup')
+        setShow(! show)
+      }
     return (
         // <Container className='justify-content-center'>
         //     <Form onSubmit={(e)=>{
@@ -107,63 +111,107 @@ function SignUp() {
         //         </Button>
         //     </Form>
         // </Container>
-        <>
-            <div class="login-wrap">
-                <div class="login-html">
-                    <input id="tab-1" type="radio" name="tab" className="sign-in" checked/><label for="tab-1" class="tab">Sign In</label>
-                        <input id="tab-2" type="radio" name="tab" className="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
-                            <div class="login-form">
-                                <div class="sign-in-htm">
-                                    <div class="group">
-                                        <label className='label'>Email</label>
-                                        <input type="email" className="input" name='email' value={user.email} onChange={LoginData}/>
-                                    </div>
-                                    <div class="group">
-                                        <label for="pass" class="label">Password</label>
-                                        <input id="pass" type="password" class="input" data-type="password" name='password' value={user.password} onChange={LoginData}/>
-                                    </div>
-                                    <div class="group">
-                                        <input id="check" type="checkbox" class="check" checked/>
-                                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                                    </div>
-                                    <div class="group">
-                                        <input type="submit" class="button" value="Sign In" onClick={LoginVerify}/>
-                                    </div>
-                                    <div class="hr"></div>
-                                    <div class="foot-lnk">
-                                        <a href="#forgot">Forgot Password?</a>
-                                    </div>
-                                </div>
-                                <div class="sign-up-htm">
-                                    <div class="group">
-                                        <label for="user" class="label">Username</label>
-                                        <input id="user" type="text" class="input" name='name' value={user.name} onChange={AddUser} />
-                                    </div>
-                                    <div class="group">
-                                        <label for="pass" class="label">Email Address</label>
-                                        <input id="pass" type="text" class="input" name='email' value={user.email} onChange={AddUser}/>
-                                    </div>
-                                    <div class="group">
-                                        <label for="pass" class="label">Password</label>
-                                        <input id="pass" type="password" class="input" data-type="password" name='password' value={user.password} onChange={AddUser}/>
-                                    </div>
-                                    {/* <div class="group">
-                                        <label for="pass" class="label">Repeat Password</label>
-                                        <input id="pass" type="password" class="input" data-type="password"/>
-                                    </div> */}
+        // <>
+        //     <div class="login-wrap">
+        //         <div class="login-html">
+        //             <input id="tab-1" type="radio" name="tab" className="sign-in" checked/><label for="tab-1" class="tab">Sign In</label>
+        //                 <input id="tab-2" type="radio" name="tab" className="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
+        //                     <div class="login-form">
+        //                         <div class="sign-in-htm">
+        //                             <div class="group">
+        //                                 <label className='label'>Email</label>
+        //                                 <input type="email" className="input" name='email' value={user.email} onChange={LoginData}/>
+        //                             </div>
+        //                             <div class="group">
+        //                                 <label for="pass" class="label">Password</label>
+        //                                 <input id="pass" type="password" class="input" data-type="password" name='password' value={user.password} onChange={LoginData}/>
+        //                             </div>
+        //                             <div class="group">
+        //                                 <input id="check" type="checkbox" class="check" checked/>
+        //                                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        //                             </div>
+        //                             <div class="group">
+        //                                 <input type="submit" class="button" value="Sign In" onClick={LoginVerify}/>
+        //                             </div>
+        //                             <div class="hr"></div>
+        //                             <div class="foot-lnk">
+        //                                 <a href="#forgot">Forgot Password?</a>
+        //                             </div>
+        //                         </div>
+        //                         <div class="sign-up-htm">
+        //                             <div class="group">
+        //                                 <label for="user" class="label">Username</label>
+        //                                 <input id="user" type="text" class="input" name='name' value={user.name} onChange={AddUser} />
+        //                             </div>
+        //                             <div class="group">
+        //                                 <label for="pass" class="label">Email Address</label>
+        //                                 <input id="pass" type="text" class="input" name='email' value={user.email} onChange={AddUser}/>
+        //                             </div>
+        //                             <div class="group">
+        //                                 <label for="pass" class="label">Password</label>
+        //                                 <input id="pass" type="password" class="input" data-type="password" name='password' value={user.password} onChange={AddUser}/>
+        //                             </div>
+        //                             {/* <div class="group">
+        //                                 <label for="pass" class="label">Repeat Password</label>
+        //                                 <input id="pass" type="password" class="input" data-type="password"/>
+        //                             </div> */}
                                    
-                                    <div class="group">
-                                        <input type="submit" class="button" value="Sign Up" onClick={PostData} />
-                                    </div>
-                                    <div class="hr"></div>
-                                    <div class="foot-lnk">
-                                        <label for="tab-1">Already Member?</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </>
+        //                             <div class="group">
+        //                                 <input type="submit" class="button" value="Sign Up" onClick={PostData} />
+        //                             </div>
+        //                             <div class="hr"></div>
+        //                             <div class="foot-lnk">
+        //                                 <label for="tab-1">Already Member?</label>
+        //                             </div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //         </div>
+        //     </>
+
+        <>
+         <section>
+      <div class="container">
+      {
+    show ?  <div class="user signinBx">
+        <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
+        <div class="formBx">
+          <form action="" onsubmit="return false;">
+            <h2>Sign In</h2>
+            <input type="text" name="" placeholder="Username" />
+            <input type="password" name="" placeholder="Password" />
+            <input type="submit" name="" value="Login" />
+            <p class="signup">
+              Don't have an account ?
+              <a href="#" >Sign Up.</a>
+            </p>
+          </form>
+        </div>
+      </div>
+:
+      <div class="user signupBx">
+        <div class="formBx">
+          <form action="" onsubmit="return false;">
+            <h2>Create an account</h2>
+            <input type="text" name="" placeholder="Username" />
+            <input type="email" name="" placeholder="Email Address" />
+            <input type="password" name="" placeholder="Create Password" />
+            <input type="password" name="" placeholder="Confirm Password" />
+            <input type="submit" name="" value="Sign Up" />
+            <p class="signup">
+              Already have an account ?
+              <a href="#" onclick={toggleForm}>Sign in.</a>
+            </p>
+          </form>
+        </div>
+        <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
+      </div>
+}
+    </div>
+
+  </section>
+       
+        </>
             )
 }
 
