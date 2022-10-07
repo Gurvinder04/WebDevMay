@@ -37,7 +37,7 @@ function Header({Input}) {
                 <NavDropdown.Divider />
 
               </NavDropdown>
-              <Link to={'/contact'} className="nav-link text-decoration-none">CONTACT</Link>
+              <Link to={'/contact'} className="nav-link text-decoration-none">BLOG</Link>
               <Link to={'/signup'} className="nav-link text-decoration-none">SIGNUP</Link>
               
 

@@ -1,0 +1,28 @@
+
+.bottom-bar{
+    position: absolute;
+    top: 40%;
+    left: 91%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 20px 0;
+    background: #fff;
+    display:flex;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0,.3);
+}
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        display: block;
+    }
+}
+.icon{
+    font-size: xx-large;
+    padding: 7px;
+}
+
+.bg{
+    background-color: black;
+}
+

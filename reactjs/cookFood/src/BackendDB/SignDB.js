@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const bcrypt = require('bcrypt')
 const server = express();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const { Alert } = require('react-bootstrap');
@@ -21,12 +22,13 @@ const SignSchema = mongoose.Schema({
 
 const User = mongoose.model('User', SignSchema)
 const IsUserExist = (req, res, next) => {
-    const{email,password} = req.body
+    const { email, password } = req.body
     User.find({ email: email })
         .then(result => {
             console.log(result)
             if (result.length === 1) {
-                if (result[0].password === password) {
+                let isPasscorrect = bcrypt.compareSync(password,result[0].password)
+                if (isPasscorrect) {
                     console.log('user exist')
                 }
                 else {
@@ -42,15 +44,16 @@ const IsUserExist = (req, res, next) => {
 
 server.post('/register', (req, res) => {
     //  console.log(req.body)
-    const user_data = new User({ Username: req.body.name, email: req.body.email, password: req.body.password })
+    const password =bcrypt.hashSync(req.body.password,10)
+    const user_data = new User({ Username: req.body.name, email: req.body.email, password:password })
     user_data.save()
         .then(result => {
             console.log('successfully saved')
         })
 })
 
-server.post('/login',IsUserExist, (req, res) => {
-   
+server.post('/login', IsUserExist, (req, res) => {
+
 })
 
 // server.use(
