@@ -16,18 +16,45 @@
         display: block;
     }
 }
+.box{
+    position:relative;
+    display:flex;
+    gap: 25px;
+}
+.uuli{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0,0,0.1);
+    transition: 0.5s;
+}
+.uuli:hover{
+         width: 180px;
+}
+
 .icon{
     font-size: xx-large;
     padding: 7px;
     color: white;
 }
 
+
 .name{
      color: #f1c40f; 
-     font-weight: 600;
+     font-weight: 700;
+     font-size: xxx-large;
 } 
 .info{
     color: white;
+    font-weight: 700;
+    font-size: xxx-large;
+    padding-left: 29px;
 }
 .partition{
     top: 5%;
