@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap'
+import { BiLike } from 'react-icons/bi'
+import { BsStarFill,BsStarHalf } from 'react-icons/bs'
 
 function ReceipeDetail() {
   const { mid } = useParams()
@@ -43,81 +46,71 @@ function ReceipeDetail() {
   // }, {});
 
 
-const Toggle1 = ()=>{
-       setShowMethod()
-}
-const Toggle2 = ()=>{
-  setShowMethod(true)
-}
+  const Toggle1 = () => {
+    setShowMethod()
+  }
+  const Toggle2 = () => {
+    setShowMethod(true)
+  }
 
   return (
-    <>
-      <div className='recipe-card'>
-        {/* <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div> */}
-        <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "430px", width: "-webkit-fill-available" }} /></div>
-        <div className="recipe-card__body">
-          <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
-          <h2 className="recipe-card__subhead"></h2>
+    //     <>
+    //        <div className='recipe-card'>
+    //         {/* <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div> */}
+    //         <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "430px", width: "-webkit-fill-available" }} /></div>
+    //         <div className="recipe-card__body">
+    //           <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
+    //           <h2 className="recipe-card__subhead"></h2>
 
-          <ul className="recipe-card__nav">
-            <li>
-              <h3 className="" onClick={Toggle1}>Ingredients</h3>
-              {showmethod ?null
-              :
-              <ul className="recipe-card__ingredients">
-              {/*
-                Object.keys(receipe)
-                  .filter(check => check.includes("Ingredient"))
-                  .map((obj, key) => {
-                    console.log(receipe[obj])
-                    setIngredients(receipe[obj]);
-                  })
-            } */
-                ingredients.map((ingred, index) => (
-                  <li key={index}>{measures[index]} {ingred}</li>
-  
-                ))
-              }
-            </ul>  
-            
-            
-            }
-            </li>
-            <li>
-              <h3 onClick={Toggle2}>Method</h3>
-              { showmethod ? <p>{receipe.strInstructions}</p> : null }
-            </li>
-          </ul>
+    //           <ul className="recipe-card__nav">
+    //             <li>
+    //               <h3 className="" onClick={Toggle1}>Ingredients</h3>
+    //               {showmethod ?null
+    //               :
+    //               <ul className="recipe-card__ingredients">
+    //               {/*
+    //                 Object.keys(receipe)
+    //                   .filter(check => check.includes("Ingredient"))
+    //                   .map((obj, key) => {
+    //                     console.log(receipe[obj])
+    //                     setIngredients(receipe[obj]);
+    //                   })
+    //             } */
+    //                 ingredients.map((ingred, index) => (
+    //                   <li key={index}>{measures[index]} {ingred}</li>
 
+    //                 ))
+    //                 }
+    //             </ul>  
+    // }
+    //             </li>
+    //             <li>
+    //               <h3 onClick={Toggle2}>Method</h3>
+    //               { showmethod ? <p>{receipe.strInstructions}</p> : null }
+    //             </li>
+    //           </ul>
+    //             {console.log(ingredients,)}
+    //             {console.log(measures,'vdiyaaa')}
+    //         </div>
+    //       </div>
+    //     </>
 
-
-          {/* <ul className="recipe-card__ingredients">
-            <li>{receipe.strMeasure1} {receipe.strIngredient1}</li>
-            <li>{receipe.strMeasure2} {receipe.strIngredient2}</li>
-            <li>{receipe.strMeasure3} {receipe.strIngredient3}</li>
-            <li>{receipe.strMeasure4} {receipe.strIngredient4}</li>
-            <li>{receipe.strMeasure1} {receipe.strIngredient1}</li>
-            <li>1 &frac14;{receipe.strIngredient1}</li>
-            <li>&#8539; teaspoon ground nutmeg</li>
-            <li>1/2 teaspoon salt</li>
-            <li>1 teaspoon cider or white vinegar*</li>
-            <li>1 large egg</li>
-            <li>&frac12; teaspoon baking soda</li>
-            <li>&frac34; cup All-Purpose Flour</li>
-            <li>1 &frac12; cups rolled oats</li>
-            <li>1 cup golden raisins, optional</li>
-          </ul> */}
-
-         
-          
-
-
-
-            {console.log(ingredients,)}
-            {console.log(measures,'vdiyaaa')}
+    <Container>
+       <h1>{receipe.strMeal}</h1>
+        <div>
+        <BsStarFill fill='#fd7e14'></BsStarFill>
+        <BsStarFill fill='#fd7e14'></BsStarFill>
+        <BsStarFill fill='#fd7e14'></BsStarFill>
+        <BsStarFill fill='#fd7e14'></BsStarFill>
+        <BsStarHalf fill='#fd7e14'></BsStarHalf><p>|</p><p>7reviews</p> 
         </div>
-      </div>
-    </>
+        
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+    <div>
+      <img src={`${receipe.strYoutube}`}></img>
+    </div>
+
+    </Container>
 
   )
 }
