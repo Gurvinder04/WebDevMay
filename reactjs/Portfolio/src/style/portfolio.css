@@ -23,9 +23,16 @@
     font-size: xx-large;
     padding: 7px;
     color: white;
+    border-radius: 20px;
+    
 }
-
-
+svg:hover{
+    background-color: #f1c40f;
+   
+}
+svg {
+    background-color: gray;
+}
 .name{
      color: #f1c40f; 
      font-weight: 700;
@@ -40,4 +47,26 @@
 .partition{
     top: 5%;
     position: relative;
+}
+
+.about{
+    margin-top: 20px;
+    border-radius: 25px !important;
+    background-color: transparent !important;
+    border-color: #f1c40f !important;
+    width: 21% !important;
+    height: 20% !important;
+}
+.about:hover{
+    background-color: #f1c40f !important;
+    transition: .3s ease-out all !important;
+}
+span{
+    color: #f1c40f;
+}
+
+.about-heading{
+    padding-top: 20px;
+    font-size: 50px;
+    font-weight: 800;
 }
