@@ -9,11 +9,11 @@ function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto vertical">
-          <Nav.Link><BsFillHouseFill className="icon"></BsFillHouseFill></Nav.Link>
-          <Nav.Link><BsFillPersonFill className="icon"></BsFillPersonFill></Nav.Link>
-          <Nav.Link><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill></Nav.Link>
-          <Nav.Link><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill></Nav.Link>
-          <Nav.Link><BsCardChecklist className="icon" ></BsCardChecklist></Nav.Link>
+          <Nav.Link><BsFillHouseFill className="icon"></BsFillHouseFill><p>HOME</p></Nav.Link>
+          <Nav.Link><BsFillPersonFill className="icon"></BsFillPersonFill><p>ABOUT</p></Nav.Link>
+          <Nav.Link><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill><p>PORTFOLIO</p></Nav.Link>
+          <Nav.Link><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill><p>CONTACT</p></Nav.Link>
+          <Nav.Link><BsCardChecklist className="icon"></BsCardChecklist><p>BLOG</p></Nav.Link>
          
         </Nav>
         <Nav>
