@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap'
+
 
 function ReceipeDetail() {
   const { mid } = useParams()
@@ -43,82 +45,78 @@ function ReceipeDetail() {
   // }, {});
 
 
-const Toggle1 = ()=>{
-       setShowMethod()
-}
-const Toggle2 = ()=>{
-  setShowMethod(true)
-}
+  const Toggle1 = () => {
+    setShowMethod()
+  }
+  const Toggle2 = () => {
+    setShowMethod(true)
+  }
 
   return (
-    <>
-      <div className='recipe-card'>
-        {/* <div style={{ "background": "url(https://d2gk7xgygi98cy.cloudfront.net/6267-3-large.jpg)", "backgroundSize": "cover", "height": "150px" }}></div> */}
+<>
+      {/* <div className='recipe-card'>
         <div><img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "430px", width: "-webkit-fill-available" }} /></div>
         <div className="recipe-card__body">
           <h1 className="recipe-card__heading">{receipe.strMeal}</h1>
           <h2 className="recipe-card__subhead"></h2>
-
           <ul className="recipe-card__nav">
             <li>
               <h3 className="" onClick={Toggle1}>Ingredients</h3>
-              {showmethod ?null
-              :
-              <ul className="recipe-card__ingredients">
-              {/*
+              {showmethod ? null
+                :
+                <ul className="recipe-card__ingredients">
+                  {/*
                 Object.keys(receipe)
                   .filter(check => check.includes("Ingredient"))
                   .map((obj, key) => {
                     console.log(receipe[obj])
                     setIngredients(receipe[obj]);
                   })
-            } */
-                ingredients.map((ingred, index) => (
-                  <li key={index}>{measures[index]} {ingred}</li>
-  
-                ))
+            } 
+                    ingredients.map((ingred, index) => (
+                      <li key={index}>{measures[index]} {ingred}</li>
+
+                    ))
+                  }
+                </ul>
               }
-            </ul>  
-            
-            
-            }
             </li>
             <li>
               <h3 onClick={Toggle2}>Method</h3>
-              { showmethod ? <p>{receipe.strInstructions}</p> : null }
+              {showmethod ? <p>{receipe.strInstructions}</p> : null}
             </li>
           </ul>
-
-
-
-          {/* <ul className="recipe-card__ingredients">
-            <li>{receipe.strMeasure1} {receipe.strIngredient1}</li>
-            <li>{receipe.strMeasure2} {receipe.strIngredient2}</li>
-            <li>{receipe.strMeasure3} {receipe.strIngredient3}</li>
-            <li>{receipe.strMeasure4} {receipe.strIngredient4}</li>
-            <li>{receipe.strMeasure1} {receipe.strIngredient1}</li>
-            <li>1 &frac14;{receipe.strIngredient1}</li>
-            <li>&#8539; teaspoon ground nutmeg</li>
-            <li>1/2 teaspoon salt</li>
-            <li>1 teaspoon cider or white vinegar*</li>
-            <li>1 large egg</li>
-            <li>&frac12; teaspoon baking soda</li>
-            <li>&frac34; cup All-Purpose Flour</li>
-            <li>1 &frac12; cups rolled oats</li>
-            <li>1 cup golden raisins, optional</li>
-          </ul> */}
-
-         
-          
-
-
-
-            {console.log(ingredients,)}
-            {console.log(measures,'vdiyaaa')}
+          {console.log(ingredients,)}
+          {console.log(measures, 'vdiyaaa')}
         </div>
-      </div>
-    </>
+      </div> */}
 
+<Container fluid={true}>
+   <Row>
+   <Col className='m-5 text-center'>
+   <h1 className='heading text-center'>{receipe.strMeal}</h1>
+   <p className='text-center'><em>Category:</em>{receipe.strCategory}</p>
+   <p className='text-center'><em>Area:</em>{receipe.strArea}</p>
+   <h6 className='ingredient'><b>INGREDIENTS</b></h6>
+   <ul>
+    {
+      ingredients.map((ingred, index) => (
+        <li key={index}>{measures[index]} {ingred}</li>
+
+      ))
+    }
+    
+   </ul>
+   <h6 className='ingredient'>Method:</h6><p>{receipe.strInstructions}</p>
+   </Col>
+
+   <Col>
+   <img src={`${receipe.strMealThumb}`} style={{ backgroundSize: "cover", height: "589px", width: "681px",float:"right",marginTop:"20px" }} />
+   </Col>
+   </Row>
+</Container>
+   
+</>
   )
 }
 
