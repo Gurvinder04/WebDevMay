@@ -62,12 +62,54 @@ svg {
     background-color: #f1c40f !important;
     transition: .3s ease-out all !important;
 }
-span{
+.span1{
     color: #f1c40f;
 }
 
 .about-heading{
-    padding-top: 20px;
-    font-size: 50px;
+    padding-top: 53px;
+    font-size: 60px;
     font-weight: 800;
 }
+.personal{
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.bio{
+    margin-left: 247px;
+    justify-content:space-evenly;
+}
+
+.span2{
+    color: gray;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #f1c40f !important;
+}
+svg {
+     background-color: transparent !important;
+}
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #fff !important;
+}
+.cv{
+    margin-left: 330px;
+    height: 14% !important;
+}
+hr {
+    margin: 1rem 0;
+    color: gray;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+    width: 680px;
+}
+.v1{
+    border-left: 6px solid black;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+   
+  }
