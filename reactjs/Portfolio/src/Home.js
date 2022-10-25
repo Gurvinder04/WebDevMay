@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import {FaArrowRight} from 'react-icons/fa'
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
         <h1 className='name animate__animated animate__fadeInDown'>- I'M GURVINDER KAUR.</h1>
         <h1 className='info'>WEB DESIGNER</h1>
       <p className='text-light fs-5'>I'm a Tunisian based web designer & front‑end developer focused on crafting clean<br></br> & user‑friendly experiences, I am passionate about building excellent software that<br></br> improves the lives of those around me.</p>
-      <Button className='about'>MORE ABOUT ME</Button>
+      <Button className='about'>MORE ABOUT ME<FaArrowRight className='arrow'></FaArrowRight></Button>
       </Col>
      
     </Row>

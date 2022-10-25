@@ -1,6 +1,7 @@
 import React from 'react'
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap'
 import { CircularProgressbar } from 'react-circular-progressbar';
+import {FaGraduationCap,FaBriefcase} from 'react-icons/fa'
 
 function About() {
   return (
@@ -72,9 +73,44 @@ function About() {
     </Container>
      
     <h1 className=' text-center m-5 text-decoration-underline'>EXPERIENCE & EDUCATION</h1>
-      <div className='v1 d-flex'></div>
-      <div>frdgfd</div>
-      <div className=''>fthgtrh</div>
+    <div className='d-flex main'>
+      <Col className=''>
+      <div className='animate__animated animate__flipInX animate__delay-1s backcolor sidechange setmargin1'>
+        <Badge className='bg-dark year'>2022</Badge><FaBriefcase></FaBriefcase><br></br>
+        <h5 className='web'>PRODUCTIE-<span className='span2'> A&L JEUBIS</span></h5>
+       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+        </div>
+        <hr></hr>
+        <div className='animate__animated animate__flipInX animate__delay-3s backcolor fruit'>
+        <Badge className='bg-dark year'>2022</Badge><br></br>
+       <h5 className='web'>FRUIT SECTOR-<span className='span2'> A&L JEUBIS</span></h5>
+       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+        </div>
+       
+      </Col>
+      <div className='v1'></div>
+      <Col className='education'>
+        <div className='animate__animated animate__flipInX  backcolor'>
+        <Badge className='bg-dark year'>2022</Badge><FaGraduationCap></FaGraduationCap><br></br>
+        
+       <h5 className='web'>WEB DEVELOPER-<span className='span2'> INTEC BRUSSEL</span></h5>
+       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+        </div>
+       
+      <div className='animate__animated animate__flipInX animate__delay-2s backcolor setmargin2'>
+      <Badge className='bg-dark year'>2016-2020</Badge><FaGraduationCap></FaGraduationCap><br></br>
+       <h5 className='web'>BACHELOR IN COMPUTER WETENSCHAPPEN-<span className='span2'> ACE COLLEGE</span></h5>
+       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+      </div>
+      
+      <div className='animate__animated animate__flipInX animate__delay-4s backcolor setmargin2'>
+       <Badge className='bg-dark year'>2017</Badge><FaGraduationCap></FaGraduationCap><br></br>
+       <h5 className='web'>INFOSYS CAMPUS CONNECT 5.0-<span className='span2'> ACE COLLEGE</span></h5>
+       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+      </div>
+      </Col>
+    </div>
+     
 
      </>
   )

@@ -6,7 +6,7 @@
     transform: translate(-50%,-50%);
     margin: 0;
     padding: 20px 0;
-    display:flex;
+    display:flex !important;
     border-radius: 10px;
     /*box-shadow: 0 10px 30px rgba(0, 0, 0,.3);*/
 }
@@ -21,18 +21,29 @@
 
 
 .icon{
-    font-size: xx-large;
+    font-size: 40px;
     padding: 7px;
     color: white;
     border-radius: 20px;
     
 }
-svg:hover{
-    background-color: #f1c40f;
+a{
+    text-decoration: none !important;
+    color: #f1c40f !important;
+    padding: 10px !important;
+}
+svg.icon:hover,svg.icon:active{
+    background-color: #f1c40f !important;
    
 }
-svg {
-    background-color: gray;
+svg.icon {
+    background-color:gray !important ;
+}
+svg.arrow{
+    border-radius: 18px;
+    background-color: #f1c40f !important;
+    font-size: 37px;
+    float: right;
 }
 .name{
      color: #f1c40f; 
@@ -56,7 +67,8 @@ svg {
     background-color: transparent !important;
     border-color: #f1c40f !important;
     width: 21% !important;
-    height: 20% !important;
+    font-weight: 500 !important;
+   /* height: 20% !important;*/
 }
 .about:hover{
     background-color: #f1c40f !important;
@@ -88,8 +100,12 @@ svg {
     stroke: #f1c40f !important;
 }
 svg {
-     background-color: transparent !important;
+     background-color:transparent !important;
+     vertical-align: middle;
+    font-size: 26px;
+    padding-left: 7px;
 }
+
 .CircularProgressbar .CircularProgressbar-text {
     fill: #fff !important;
 }
@@ -107,9 +123,62 @@ hr {
 }
 .v1{
     border-left: 6px solid black;
-    height: 500px;
+    height: 850px;
     position: absolute;
     left: 50%;
     margin-left: -3px;
    
   }
+
+.main{
+    justify-content:space-evenly;
+}
+.education{
+    justify-content: center;
+    padding-left: 48px;
+}
+
+span.bg-dark.year.badge.bg-primary {
+    width: 75px;
+    height: fit-content;
+    border-radius: 13px;
+    color: gray;
+}
+.web{
+    margin-top: 10px;
+    font-style: oblique;
+}
+.description{
+    width: 350px;
+    text-align: justify;
+}
+.backcolor{
+    background-color: #f1c40f;
+    width: fit-content;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 0px;
+    box-shadow:4px 0px 4px 0px
+
+}
+
+.sidechange{
+    float: right;
+}
+
+.setmargin1{
+    margin-top: 125px;
+}
+.setmargin2{
+    margin-top: 90px;
+}
+.fruit{
+    float: right;
+    margin-top: 120px;
+}
+hr {
+   border-top: 0px !important;
+   opacity: 0 !important;
+}

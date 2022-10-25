@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar,Container, Nav} from 'react-bootstrap'
+import {Navbar,Container, Nav, NavLink} from 'react-bootstrap'
 import{BsFillHouseFill,BsFillPersonFill,BsFillBriefcaseFill,BsChatSquareDotsFill,BsCardChecklist} from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 function Header() {
@@ -10,20 +10,20 @@ function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto vertical">
-          <Nav.Link><BsFillHouseFill className="icon"></BsFillHouseFill><p>HOME</p></Nav.Link>
-          <Nav.Link><BsFillPersonFill className="icon"></BsFillPersonFill><p>ABOUT</p></Nav.Link>
-          <Nav.Link><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill><p>PORTFOLIO</p></Nav.Link>
-          <Nav.Link><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill><p>CONTACT</p></Nav.Link>
-          <Nav.Link><BsCardChecklist className="icon"></BsCardChecklist><p>BLOG</p></Nav.Link>
-         
-        </Nav>
-        <Nav>
+        
+          <Link to={'/'}><BsFillHouseFill className="icon"></BsFillHouseFill><br></br></Link><br></br>
+          <Link to={'about'}><BsFillPersonFill className="icon"></BsFillPersonFill><br></br></Link><br></br>
+          <Link to={'portfolio'}><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill><br></br></Link><br></br>
+          <Link to={'contact'}><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill><br></br></Link><br></br>
+          <Link to={'blog'}><BsCardChecklist className="icon"></BsCardChecklist><br></br></Link> <br></br>
+     
+
         </Nav>
       </Navbar.Collapse>
     </Container>
     
     </Navbar>
-    </div>
+   </div>
     
   )
 }
