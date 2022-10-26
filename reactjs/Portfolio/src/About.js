@@ -82,7 +82,7 @@ function About() {
         </div>
         <hr></hr>
         <div className='animate__animated animate__flipInX animate__delay-3s backcolor fruit'>
-        <Badge className='bg-dark year'>2022</Badge><br></br>
+        <Badge className='bg-dark year'>2022</Badge><FaBriefcase></FaBriefcase><br></br>
        <h5 className='web'>FRUIT SECTOR-<span className='span2'> A&L JEUBIS</span></h5>
        <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
         </div>

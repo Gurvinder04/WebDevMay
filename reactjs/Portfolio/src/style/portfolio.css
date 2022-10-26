@@ -1,14 +1,17 @@
 
-.bottom-bar{
+.navbar-nav{
     position: absolute;
-    top: 40%;
+    top: 100%;
     left: 95%;
-    transform: translate(-50%,-50%);
+    /*transform: translate(-50%,-50%);*/
     margin: 0;
     padding: 20px 0;
-    display:flex !important;
+   margin-top: 150px;
     border-radius: 10px;
     /*box-shadow: 0 10px 30px rgba(0, 0, 0,.3);*/
+}
+a.nav-link {
+    margin-bottom: 22px;
 }
 @media (min-width: 992px){
     .navbar-expand-lg .navbar-nav {
@@ -17,7 +20,12 @@
         
     }
 }
-
+@media (min-width: 200px) and (max-width:768px){
+    p,h1.info{
+        background-color: black;
+        
+    }
+}
 
 
 .icon{
@@ -29,11 +37,12 @@
 }
 a{
     text-decoration: none !important;
-    color: #f1c40f !important;
-    padding: 10px !important;
+    color: #fff !important;
+    padding-top: 10px !important;
 }
 svg.icon:hover,svg.icon:active{
     background-color: #f1c40f !important;
+    
    
 }
 svg.icon {
@@ -66,13 +75,14 @@ svg.arrow{
     border-radius: 25px !important;
     background-color: transparent !important;
     border-color: #f1c40f !important;
-    width: 21% !important;
+    width: 28% !important;
     font-weight: 500 !important;
    /* height: 20% !important;*/
 }
 .about:hover{
     background-color: #f1c40f !important;
     transition: .3s ease-out all !important;
+    color: #fff !important;
 }
 .span1{
     color: #f1c40f;
@@ -132,6 +142,7 @@ hr {
 
 .main{
     justify-content:space-evenly;
+    background-color: #14161912;
 }
 .education{
     justify-content: center;
@@ -160,8 +171,19 @@ span.bg-dark.year.badge.bg-primary {
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 0px;
-    box-shadow:4px 0px 4px 0px
+    box-shadow:4px 0px 4px 0px;
+    margin-top: 41px;
 
+}
+.color-block {
+    height: 200%;
+    left: -83%;
+    position: fixed;
+    top: -50%;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    width: 100%;
+   
 }
 
 .sidechange{
