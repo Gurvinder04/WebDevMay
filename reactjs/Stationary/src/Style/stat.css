@@ -1,0 +1,10 @@
+
+a.navbar-brand{
+    color:green !important;
+    font-weight:500;
+    font-style: italic;
+}
+
+a.nav-link {
+    color: green !important;
+}

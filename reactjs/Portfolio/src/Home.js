@@ -14,7 +14,7 @@ function Home() {
       
       </Col>
       <Col md={6}>
-        <h1 className='name animate__animated animate__fadeInDown'>- I'M GURVINDER KAUR.</h1>
+        <h1 className='name typing-demo '>- I'M GURVINDER KAUR.</h1>
         <h1 className='info'>WEB DESIGNER</h1>
       <p className='text-light fs-5'>I'm a Tunisian based web designer & front‑end developer focused<br></br> on crafting clean & user‑friendly experiences, I am passionate<br></br> about building excellent software that improves the lives of those<br></br> around me.</p>
       <Button className='about'><Link to={'/about'}>MORE ABOUT ME</Link><FaArrowRight className='arrow'></FaArrowRight></Button>

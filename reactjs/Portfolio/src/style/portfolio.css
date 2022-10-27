@@ -1,4 +1,5 @@
 
+
 .navbar-nav{
     position: absolute;
     top: 100%;
@@ -64,6 +65,7 @@ svg.arrow{
     font-weight: 700;
     font-size: xxx-large;
     padding-left: 29px;
+    font-family: 'Waiting for the Sunrise', cursive;
 }
 .partition{
     top: 5%;
@@ -75,7 +77,7 @@ svg.arrow{
     border-radius: 25px !important;
     background-color: transparent !important;
     border-color: #f1c40f !important;
-    width: 28% !important;
+    /*width: 28% !important;*/
     font-weight: 500 !important;
    /* height: 20% !important;*/
 }
@@ -204,3 +206,57 @@ hr {
    border-top: 0px !important;
    opacity: 0 !important;
 }
+.getIn{
+    justify-content:center;
+}
+
+.mail{
+        font-size: 40px;
+        color: #f1c40f;
+}
+/*.vision {
+    width: 22rem;
+    margin-left: 147px;
+    text-align: justify;
+}*/
+
+.form-control {
+    display: block;
+    /* width: 100%; */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.5 !important;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 5px !important;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 37px;
+}
+.budy{
+    background-color: var(--bs-body-color);
+}
+
+.Acard{
+    color: black !important;
+}
+.typing-demo  {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 3em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  
