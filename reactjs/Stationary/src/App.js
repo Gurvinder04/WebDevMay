@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route,Routes} from 'react-router-dom'
 import Home from './Home'
+import Sign from './Sign'
 import Layout from './Components/Layout'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Layout>
     <Routes>
     <Route path='/' element={<Home/>} />
+    <Route path='/sign' element={<Sign/>} />
     </Routes>
    
     </Layout>

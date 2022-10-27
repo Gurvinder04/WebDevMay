@@ -14,7 +14,7 @@ function header() {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
-          <Link to={'/signup'} className="nav-link text-decoration-none">SignUp</Link>
+          <Link to={'/sign'} className="nav-link text-decoration-none">SignUp</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
