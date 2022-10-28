@@ -19,7 +19,7 @@ const IsUserExist = (req, res, next) => {
   const { email, password } = req.body
   User.find({ Email: email })
       .then(result => {
-          console.log('hello',result[0].password)
+          console.log('hello',result[password[0]])
           if (result.length === 1) {
               if (result[0].password === password) {
                   console.log('user exist')
