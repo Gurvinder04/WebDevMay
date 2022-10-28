@@ -15,14 +15,37 @@ const StatUser =mongoose.Schema({
     Password:String
 })
 const User = mongoose.model('User',StatUser)
+const IsUserExist = (req, res, next) => {
+  const { email, password } = req.body
+  User.find({ Email: email })
+      .then(result => {
+          console.log('hello',result[0].password)
+          if (result.length === 1) {
+              if (result[0].password === password) {
+                  console.log('user exist')
+              }
+              else {
+                  console.log('Incorrect password')
+              }
 
-server.post('sign',(req,res)=>{
-  console.log(entered)
+          }
+          else {
+              console.log('User doesnt exist')
+          }
+      })
+}
+
+server.post('/sign',(req,res)=>{
+  console.log('entered')
   const user_data = new User({ Firstname: req.body.firstname,Lastname: req.body.lastname, Email: req.body.email, Password:req.body.password })
     user_data.save()
         .then(result => {
             console.log('successfully saved')
         })
+})
+
+server.post('/login', IsUserExist, (req, res) => {
+  console.log('entered login')
 })
 
 
