@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
 
 
@@ -10,6 +10,7 @@ function Sign() {
     email:'',
     password:''
    })
+   const[allentry,setallentry] = useState([])
 let name,value
     // const getData=(e)=>{
     //    name=e.target.name
@@ -42,8 +43,8 @@ let name,value
     const LoginData=(e)=>{
       name=e.target.name
       value=e.target.value
-      setUser({...User, [name]:value})
-      console.log(User)
+      setUser({...User,[name]:value})
+      console.log(value)
    }
    const LoginVerify= async()=>{
        console.log('helooooooo')
@@ -59,12 +60,15 @@ let name,value
           
            let res = await data.json()
            console.log(res)  
+           
        }
        else{
            console.log('INVALID INPUT')
        }
 
    }
+   useEffect(()=>{
+},[allentry])
   return (
   //   <Form action='POST' onSubmit={(e)=>{
   //     e.preventDefault()
@@ -100,20 +104,22 @@ let name,value
   //   </Button>
   // </Form>
 
-
+<>
 
   <Form action='POST' onSubmit={(e)=>{
     e.preventDefault()
+    const NewEntry={email:User.email,password:User.password}
+    setallentry([...allentry,NewEntry])
   }}>
     <Row className="mb-3">
     <Form.Group as={Col}>
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" name='email'  value={User.email} onChange={LoginData}/>
+      <Form.Control type="email"  name='email'  value={User.email} onChange={LoginData} placeholder="Enter email"/>
     </Form.Group>
 
     <Form.Group as={Col}>
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" name='password'  value={User.password} onChange={LoginData}/>
+      <Form.Control type="text" name='password'  value={User.password} onChange={LoginData}  placeholder="Password"/>
     </Form.Group>
   </Row>
 
@@ -125,7 +131,20 @@ let name,value
    login
   </Button>
 </Form>
-
+<div>
+{
+  allentry.map((curr)=>{
+    return(
+      <div className='bg-dark text-light'>
+      <p>{curr.email}</p>
+      <p>{curr.password}</p>
+      </div>
+    )
+  })
+}
+</div>
+</>
+ 
 
 
 
