@@ -1,4 +1,25 @@
 
+.marquee{
+    width: 100%;
+    background-color: red;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee div {
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: animate 10s linear infinite;
+    padding-left: 100%;
+    display: inline-block;
+}
+
+@keyframes animate{
+    100%{
+        transform: translate(-100%,0);
+    }
+}
 a.navbar-brand{
     color:green !important;
     font-weight:500;

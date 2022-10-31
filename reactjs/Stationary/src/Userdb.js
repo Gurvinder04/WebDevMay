@@ -31,6 +31,7 @@ const IsUserExist = (req, res, next) => {
           }
           else {
               console.log('User doesnt exist')
+              return false
           }
       })
 }
@@ -44,9 +45,31 @@ server.post('/sign',(req,res)=>{
         })
 })
 
-server.post('/login', IsUserExist, (req, res) => {
+server.post('/login',(req, res) => {
   console.log('entered login')
-})
+   const {email,password} = req.body
+   console.log(email,password)
+   User.find({Email:email,Password:password})
+   .then(result=>{
+    //console.log(result)
+    if(result.length >0){
+      console.log(result.length)
+      const currentuser = {
+         mail:result[0].Email,
+         pass :result[0].Password
+         }
+        // res.status(200).send(currentuser)
+        console.log(currentuser)
+       
+    }
+    else{
+        res.status(400).send(0)
+    
+   }
+    })
+  
+  })
+
 
 
 server.listen(4000,()=>console.log('I M running on 4000'))
