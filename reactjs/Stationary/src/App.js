@@ -4,6 +4,7 @@ import Home from './Home'
 import Sign from './Sign'
 import Layout from './Components/Layout'
 import Header from './Components/Header'
+import AddProduct from './AdminPanel/addProduct'
 import { initialstate,reducer } from './reducer/UseReducer'
 export const UserContext = createContext()
 
@@ -20,6 +21,7 @@ function App() {
          <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/sign' element={<Sign/>} />
+         <Route path='/add' element={<AddProduct/>} />
          </Routes>
          </Layout>
       

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import {UserContext} from './App'
 
 
@@ -54,35 +55,37 @@ let name,value
    const LoginVerify= async()=>{
        console.log('helooooooo')
        const {email,password} = User
-       if(email && password){
-           let data = await fetch('/login',{
-               method:'POST',
-               headers:{
-                   'Content-Type':'application/json'
-               },
-               body:JSON.stringify({email,password})
-           })
+        if(email && password){
+          let data = await fetch('/login',{
+              method:'POST',
+              headers:{
+                  'Content-Type':'application/json'
+              },
+              body:JSON.stringify({email,password})
+          })
+         
+          let res = await data.json()
+          console.log('hey',res) 
+          if(res.status === 400 || res === null){
+           window.alert("Invalid details")
+          }
+          else{
+           dispatch({type:"USER",payload:true})
+           window.alert("successfully logged in")
           
-           let res = await data.json()
-           console.log('hey',res) 
-           if(res.status === 400 || res === null){
-            window.alert("Invalid details")
-           }
-           else{
-            dispatch({type:"USER",payload:true})
-            window.alert("successfully logged in")
+          }
            
-           }
-            
-          
-          
+         
+         
+      }
+      
+      else{
+          console.log('INVALID INPUT')
+      }
        }
        
-       else{
-           console.log('INVALID INPUT')
-       }
 
-   }
+   
    useEffect(()=>{
 
 },[])

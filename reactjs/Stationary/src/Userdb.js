@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose');
-const cors = require('cors')
+const cors = require('cors');
+const { Link } = require('react-router-dom');
 const server = express();
 
 server.use(express.json())
@@ -15,26 +16,7 @@ const StatUser =mongoose.Schema({
     Password:String
 })
 const User = mongoose.model('User',StatUser)
-const IsUserExist = (req, res, next) => {
-  const { email, password } = req.body
-  User.find({ Email: email })
-      .then(result => {
-          console.log('hello',result)
-          if (result.length === 1) {
-              if (result[0].Password[0] === password) {
-                  console.log('user exist')
-              }
-              else {
-                  console.log('Incorrect password')
-              }
 
-          }
-          else {
-              console.log('User doesnt exist')
-              return false
-          }
-      })
-}
 
 server.post('/sign',(req,res)=>{
   console.log('entered')
@@ -49,25 +31,25 @@ server.post('/login',(req, res) => {
   console.log('entered login')
    const {email,password} = req.body
    console.log(email,password)
-   User.find({Email:email,Password:password})
-   .then(result=>{
-    //console.log(result)
-    if(result.length >0){
-      console.log(result.length)
-      const currentuser = {
-         mail:result[0].Email,
-         pass :result[0].Password
-         }
-        // res.status(200).send(currentuser)
-        console.log(currentuser)
-       
+    User.find({Email:email,Password:password})
+    .then(result=>{
+     //console.log(result)
+     if(result.length >0){
+       console.log(result.length)
+       const currentuser = {
+          mail:result[0].Email,
+          pass :result[0].Password
+          }
+         // res.status(200).send(currentuser)
+         console.log(currentuser)
+        
+     }
+     else{
+         res.status(400).send(0)
+     
     }
-    else{
-        res.status(400).send(0)
-    
-   }
-    })
-  
+     })
+   
   })
 
 
