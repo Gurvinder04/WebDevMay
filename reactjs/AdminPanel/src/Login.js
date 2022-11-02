@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Form,Button,Navigate} from 'react-bootstrap'
+import {Form,Button,Navigate, Container} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
 import {addproduct} from './AddProduct'
 
@@ -19,31 +19,39 @@ function Login() {
     }
 
     const SubmitData = ()=>{
-     return navigate('/addproduct')
+      if(User.email ==='admin@gmail.com' && User.password ==='admin'){
+         navigate('/addproduct')
+      }
+      else{
+        console.log('wrong')
+      }
+    
         
     }
   return (
-    <>
+    <Container className='justify-content-center'>
     <Form action='POST' onSubmit={(e)=>{
       e.preventDefault()
-      navigate('/addproduct')
-    }}>
+      //navigate('/addproduct')
+    }} className='loginForm'>
+      <h2>ADMIN PANEL</h2>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" name='email'  value={User.email} onChange={LoginData} />
+        <Form.Control type="email"  name='email'  value={User.email} onChange={LoginData} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" name='password'  value={User.password} onChange={LoginData}/>
+        <Form.Control type="password"  name='password'  value={User.password} onChange={LoginData}/>
       </Form.Group>
       <Button variant="primary" type="submit" onClick={SubmitData}>
         Submit
       </Button>
     </Form>
+
     
     
-    </>
+    </Container>
   )
 }
 
