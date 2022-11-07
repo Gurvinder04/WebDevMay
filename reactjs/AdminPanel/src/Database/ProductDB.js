@@ -44,8 +44,18 @@ admin.post('/product',(req,res)=>{
         })
 })
 
+
+admin.patch('/product/:id',(req,res)=>{
+      const uid = req.params.id
+    
+      let data = Product.findById(uid)
+      res.send(data)
+
+})
+
+
 admin.delete('/product/:id',async(req,res)=>{
-   
+   console.log('deleting processss')
      let data = await Product.findByIdAndDelete({_id:req.params.id})
      console.log('hey u did it')
      res.send(data)

@@ -64,7 +64,7 @@ input#formBasicEmail,input#formBasicPassword  {
 
 /* HOME  */
 .container1 {
-	display: flex;
+	/*display: flex; */
 	height: 100vh;
 	width: 100vw;
 	flex-wrap: wrap;
@@ -225,6 +225,7 @@ input#formBasicEmail,input#formBasicPassword  {
 		margin-top: 71px;
 		width: 40rem;
 		height: fit-content;
+		/*margin-top: -882px !important;*/
 }
 
 h3.panel-title {
@@ -234,4 +235,8 @@ h3.panel-title {
 }
 .addbutton{
 	margin-bottom: 30px;
+}
+
+.desp{
+	width: 17rem !important;
 }

@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import {MdDelete} from 'react-icons/md'
 
-function AddProduct() {
-  
+function EditProduct() {
+    const {id} = useParams()
   const navigate = useNavigate()
-
-  
   const [Sample, setsample] = useState({
+    productid: '',
     productname: '',
     category:'',
     description: '',
@@ -54,22 +53,52 @@ function AddProduct() {
     }
 
   }
+  
+  const  fetchData =async()=>{
+    let data= await   fetch(`/product/${id}`,{
+           method:'GET',
+           headers:{
+             'Content-Type':'application/json'
+           },
+           body:JSON.stringify()
+         })
+      let res = await data.json()
+      console.log(res)
+      setsample(res)
+      console.log('hey sample1',Sample)
+      
+   }
+
+  useEffect(()=>{
+    //fetchData();
+  
+    },[])
+
+        
 
  
   
  
   return (
     <>
+    
+        
         <div className="container container_product">
 
           <section className="panel panel-default">
           <div className="panel-heading">
-          <h3 className="panel-title">Product Form</h3>
+          <h3 className="panel-title">Edit Product</h3>
         </div>
 
             <div className="panel-body">
 
               <form  action='POST'  className="form-horizontal" role="form">
+                <div className="form-group">
+                  <label className="col-sm-3 control-label">Product ID</label>
+                  <div className="col-sm-9">
+                    <input type="text" className="form-control" name='productid' value={Sample.productid} onChange={Data} />
+                  </div>
+                </div>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">
@@ -119,7 +148,7 @@ function AddProduct() {
                 <hr></hr>
                 <div className="form-group">
                   <div className="col-sm-offset-3 col-sm-9">
-                    <button type="submit" className="btn btn-primary addbutton" onClick={SubmitData}>Add Product</button>
+                    <button type="submit" className="btn btn-primary addbutton" onClick={SubmitData}>UPDATE</button>
                    
                     
                   </div>
@@ -131,8 +160,13 @@ function AddProduct() {
 
 
         </div>
-      
-
+        
+    
+        
+      <Button onClick={fetchData}>get data</Button>
+{
+    console.log(id)
+}
       
 
 
@@ -140,4 +174,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct
+export default EditProduct
