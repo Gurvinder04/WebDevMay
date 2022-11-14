@@ -1,7 +1,11 @@
 
+.body-divide{
+    height:55vh;
+    background: linear-gradient(-25deg, #9e9e9e24 50%, #8bc34a 50%);
+}
 .marquee{
-    width: 100%;
-    background-color: red;
+    width: 100%; 
+    background-color: #8bc34a;
     text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
@@ -28,4 +32,90 @@ a.navbar-brand{
 
 a.nav-link {
     color: green !important;
+}
+
+.stationero{
+    background-color: #9e9e9e24;
+    height: 12vh;
+    
+}
+
+.heading{
+    float: right;
+    color: yellowgreen;
+}
+.stat,.onero{
+    color: #8bc34a ;
+}
+
+.form-style {
+    width: 650px !important;
+    height: 50px !important;
+    background-color: white !important;
+    border-radius: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px !important;
+}
+
+.fasearch{
+    font-size: 23px;
+    color: #777;
+    
+}
+
+.form-control{
+    border: none !important;
+   
+}
+.form-control:hover{
+    border: none !important;
+}
+.btn:hover {
+     color:none !important ;
+     background-color: none !important;
+     border-color: none !important;
+}
+
+.vl {
+    border-left: 1px solid  grey;
+    height: 70px;
+    margin-left: 53px;
+  }
+
+  .office-desk{
+    margin-right: 20px;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+  }
+  .cont2 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.shop-now{
+    margin-top: 25px;
+    background-color: transparent !important;
+    border-radius: 25px !important;
+    border: 2px solid white !important;
+    width: 9rem !important;
+  }
+
+  .deal{
+    background-color: #673ab7c2;
+    color: white;
+  }
+
+.deal-img{
+        width: 200px;
+        height: 200px;
+}
+
+.count{
+    font-size: 40px;
 }

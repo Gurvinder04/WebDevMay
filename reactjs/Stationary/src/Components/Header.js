@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
+import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import {UserContext} from '../App'
 
@@ -10,10 +11,9 @@ function Header() {
     if (state) {
       return (
         <>
-        
           <Navbar collapseOnSelect expand="lg" variant="dark">
             <Container>
-              <Navbar.Brand href="#home">ShoPIfy</Navbar.Brand>
+             
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
@@ -34,9 +34,9 @@ function Header() {
     else{
       return(
         <>
-        <Navbar collapseOnSelect expand="lg" variant="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-center">
         <Container>
-          <Navbar.Brand href="#home">ShoPIfy</Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -61,7 +61,40 @@ function Header() {
     <>
     <div className='marquee'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
-        </div>           
+        </div> 
+        <Row className='stationero mt-5 text-center'>
+          <Col className='mt-5'>
+          <h2 className='heading'><span className='stat'>S</span>tati<span className='onero'>Onero</span></h2>
+          </Col>
+     
+      <Col className='mt-4 searchbar'>
+      <InputGroup className="mt-2 form-style">
+        <Form.Control aria-label="Text input with dropdown button">
+          </Form.Control>
+        
+        <DropdownButton
+          variant=""
+          title="All Categories"
+          id="input-group-dropdown-2"
+          align="end"
+        >
+          <Dropdown.Item href="#">Action</Dropdown.Item>
+          <Dropdown.Item href="#">Another action</Dropdown.Item>
+          <Dropdown.Item href="#">Something else here</Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Item href="#">Separated link</Dropdown.Item>
+        </DropdownButton>
+        <FaSearch className='fasearch'></FaSearch>
+       
+      </InputGroup>
+      </Col>
+      <Col className='mt-5'>
+      <FaRegHeart className='fasearch'></FaRegHeart>
+       <FaShoppingCart className='fasearch'></FaShoppingCart>
+      </Col>
+      
+      
+    </Row>          
     <RenderMenu />
     </>
   )
