@@ -8,7 +8,7 @@ const admin = express()
 //middleware
 admin.use(express.json())
 admin.use(cors())
-admin.use(express.static(__dirname+"../uploads/"))
+// admin.use(express.static(__dirname+"./public/"))
 mongoose.connect('mongodb://localhost:27017/Stationary',(err)=>console.log('connected....'))
 
 const ProductSchema = mongoose.Schema({
@@ -25,7 +25,7 @@ const Product = mongoose.model('Product',ProductSchema)
 
 //storage
 const Storage = multer.diskStorage({
-    destination:(req,file,cb)=>cb(null, '../uploads/'),
+    destination:(req,file,cb)=>cb(null, './public/uploads/'),
     filename:(req,file,cb)=>cb(null, file.originalname + "_" + Date.now() +path.extname(file.originalname))
 })
 const upload = multer({

@@ -1,10 +1,21 @@
-import React from 'react'
-import { Button, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Button, Card, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
 import {BsTruck,BsFillGiftFill,BsChatDots} from 'react-icons/bs'
 import {MdPayment} from 'react-icons/md'
-import Countdown from 'react-countdown'
+import Countdown from 'react-countdown';
+import {Animated} from "react-animated-css";
 
 function Home() {
+  const [Items,setItems] = useState()
+  const fetchData = async()=> {
+    let response = await fetch('http://localhost:4000/product/637643b9cac7bd40baf09c6f')
+    let data = await response.json()
+    setItems(data)
+  }
+
+  useEffect(()=>{
+       fetchData()
+  },[])
   return (
     <>
     <div className='body-divide container-fluid'></div>
@@ -48,14 +59,15 @@ function Home() {
     <hr></hr>
      
      <div className='container cont2 d-flex mt-5'>
-      <Col className='office-desk'>
-      <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h1.jpg?v=1631239898'></img>
+      <Col className='office-desk animate__animated animate__jackInTheBox'>
+      <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h1.jpg?v=1631239898' className='animate__animated animate__flipInX animate__delay-1s'></img>
       <div className='top-left'>
           <p>Sale Up To 15% Off</p>
           <h2>Home Office Desks</h2>
           <Button className='shop-now'>Shop Now</Button>
         </div>
       </Col>
+      
 
       <Col className='office-desk cont2'>
       <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h2.jpg?v=1631239898'></img>
@@ -91,8 +103,9 @@ function Home() {
       <p className='mt-5'>LIMITED QUANTITES</p>
       <h1 className='mt-5'>Deal of The Day</h1>
       <p>Give thank to the most high</p>
-      <Countdown date={Date.now() +1000 + 50000} className="count"></Countdown>
-      <button>View all deals</button>
+      <Countdown date={Date.parse('2022-12-21 01:02:03') + 10000} className='count' />
+      <p> days,hours, seconds</p>
+      <Button className='shop-now'>View all deals</Button>
       <Row className='d-flex mt-5'>
         <Col>
         <img src='https://cdn3d.iconscout.com/3d/premium/thumb/notebook-and-pencil-5261879-4403131.png' className='deal-img'></img>
@@ -115,6 +128,18 @@ function Home() {
       </Row>
       
      </div>
+
+        <Card style={{ width: '18rem' }}>
+       <Card.Img variant="top" src={`./uploads/${Items.Image}`} />
+      {/* <Card.Img variant="top" src='https://images.unsplash.com/photo-1576665665113-e262f19a3fa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80' /> */}
+      <Card.Body>
+        <Card.Title>{Items.ProductName}</Card.Title>
+        <Card.Text>
+         {Items.Description}
+        </Card.Text>
+        <Button variant="success">Add to Cart</Button>
+      </Card.Body>
+    </Card>   
 
 
 

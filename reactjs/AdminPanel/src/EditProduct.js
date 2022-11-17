@@ -92,7 +92,7 @@ function EditProduct() {
 
             <div className="panel-body">
 
-              <form  action='POST'  className="form-horizontal" role="form">
+              <form  action='POST'  className="form-horizontal" role="form" enctype="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product ID</label>
                   <div className="col-sm-9">

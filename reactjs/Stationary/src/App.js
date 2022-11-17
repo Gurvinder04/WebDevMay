@@ -1,9 +1,11 @@
 import React, { createContext, useReducer, useState } from 'react'
 import {Route,Routes} from 'react-router-dom'
+import 'animate.css'
 import Home from './Home'
 import Sign from './Sign'
 import Layout from './Components/Layout'
 import Header from './Components/Header'
+
 
 import { initialstate,reducer } from './reducer/UseReducer'
 export const UserContext = createContext()
