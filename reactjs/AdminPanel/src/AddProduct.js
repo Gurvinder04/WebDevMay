@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
 import { Navigate, useNavigate } from 'react-router-dom';
-import {MdDelete} from 'react-icons/md'
+
 
 function AddProduct() {
   
@@ -69,7 +69,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form  action='POST'  className="form-horizontal" role="form">
+              <form  action='POST'  className="form-horizontal" role="form" enctype="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import {MdDelete} from 'react-icons/md'
+//import {MdDelete} from 'react-icons/md'
 
 function EditProduct() {
     const {id} = useParams()
@@ -92,7 +92,7 @@ function EditProduct() {
 
             <div className="panel-body">
 
-              <form  action='POST'  className="form-horizontal" role="form">
+              <form  action='POST'  className="form-horizontal" role="form" enctype="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product ID</label>
                   <div className="col-sm-9">

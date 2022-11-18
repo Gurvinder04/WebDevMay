@@ -1,10 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const multer  = require('multer')
 const admin = express()
 //middleware
 admin.use(express.json())
 admin.use(cors())
+admin.use('/uploads',express.static('./uploads'))
 
 mongoose.connect('mongodb://localhost:27017/Stationary',(err)=>console.log('connected....'))
 
@@ -20,6 +22,22 @@ const ProductSchema = mongoose.Schema({
 
 const Product = mongoose.model('Product',ProductSchema)
 
+const storage = multer.diskStorage({
+    destination:(req,file,cb)=>cb(null,'./uploads'),
+    filename:(req,file,cb)=>cb(null,file.originalname)
+})
+const uploader = multer({
+    storage,
+    fileFilter:(req,file,callback)=>{
+        const extensions =['image/png','image/jpeg','image/webp']
+        if(extensions.includes(file.mimetype)){
+            callback(null,true)
+        }
+        else{
+            callback(new Error("Not Allowed!!!!!"))
+        }
+    }
+})
 admin.get('/product',async(req,res)=>{
     console.log('showing products')
    const data = await Product.find()
@@ -36,7 +54,7 @@ admin.get('/product/:id',async(req,res)=>{
     
 })
 
-admin.post('/product',(req,res)=>{
+admin.post('/product',uploader.single('document'),(req,res)=>{
     const newProduct = new Product({ ProductName: req.body.productname,Category:req.body.category,Description: req.body.description, Price: req.body.rate, Quantity: req.body.quantity, Image:req.body.fileimage})
     newProduct.save()
         .then(result => {

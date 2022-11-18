@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
-import {MdDelete} from 'react-icons/md'
+//import {FiDelete} from 'react-icons/fi'
 import { json, Link, useParams } from 'react-router-dom'
 
 function ProductInfo() {
@@ -82,7 +82,7 @@ function ProductInfo() {
                                 ))
                               }
                               <td><Link to={`/editproduct/${val._id}`} ><Button>EDIT</Button></Link></td>
-                             <td><MdDelete onClick={(e)=>DeleteData(val._id)}></MdDelete></td>
+                             {/* <td><FiDelete onClick={(e)=>DeleteData(val._id)}></FiDelete></td> */}
                             </tr>  
                             
                           ))
