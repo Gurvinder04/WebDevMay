@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import {UserContext} from './App'
 import {User} from './Login'
+import Header from './Component/Header'
 
 function Home() {
     const { state, dispatch } = useContext(UserContext)
             return (
-
+     
                 <>
+                <Header />
                 {/* <div class="container1">
               <div class="header">
                <div class="header-logo">

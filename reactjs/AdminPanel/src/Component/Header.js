@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import {UserContext} from '../App'
 import {User} from '../Login'
 
@@ -7,7 +7,7 @@ function Header() {
     const { state, dispatch } = useContext(UserContext)
   return (
     <>
-     <div className="container1">
+     {/* <div className="container1">
               <div className="header">
                <div className="header-logo">
                  <svg className="site-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -18,9 +18,9 @@ function Header() {
                  </div>
                  <div className="header-search">
                    <button className="button-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385 385">
-                       {/* <path d="M12 120.3h361a12 12 0 000-24H12a12 12 0 000 24zM373 180.5H12a12 12 0 000 24h361a12 12 0 000-24zM373 264.7H132.2a12 12 0 000 24H373a12 12 0 000-24z" /> */}
+                        <path d="M12 120.3h361a12 12 0 000-24H12a12 12 0 000 24zM373 180.5H12a12 12 0 000 24h361a12 12 0 000-24zM373 264.7H132.2a12 12 0 000 24H373a12 12 0 000-24z" />
                      </svg></button>
-                  {/* <input type="search" placeholder="Search Documentation..." /> */}
+                  <input type="search" placeholder="Search Documentation..." />
                  </div>
                  <Button className='AdminLogout'>LogOut</Button>
                </div>
@@ -28,18 +28,41 @@ function Header() {
                  <div className="sidebar">
                    <ul>
                     <li><a href="/" className="active"><i className="lni lni-home"></i><span>Dashboard</span></a></li>
-                     <li><a href="/addproduct"><i className="lni lni-text-format"></i><span>Add Product</span></a></li>
+                     <li><a href=><i className="lni lni-text-format"></i><span>Add Product</span></a></li>
                     <li><a href="#"><i className="lni lni-bar-chart"></i><span>Customer</span></a></li>
                      <li><a href="#"><i className="lni lni-grid"></i><span>Events</span></a></li>
                      <li><a href="#"><i className="lni lni-bullhorn"></i><span>Notifications</span></a></li>
                      <li><a href="/productinfo"><i className="lni lni-support"></i><span>Show Products</span></a></li>
                    </ul>
-                 </div>
+                 </div>"/addproduct"
                 <div className="page-content">
                    <h1>Welcome back, Gurvinder!</h1>
                  </div>
                </div>
-             </div>
+             </div> */}
+             
+             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">Shopify</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Dashboard</Nav.Link>
+            <Nav.Link href="/addproduct">Add Product</Nav.Link>
+            <Nav.Link href="#pricing">Customer</Nav.Link>
+            <Nav.Link href="/productinfo">Show Product</Nav.Link>
+            <Nav.Link href="#pricing">Notification</Nav.Link>
+            <Nav.Link href="#pricing">Help & Support</Nav.Link>
+           
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">LogOut</Nav.Link>
+            
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  
     
     
     </>

@@ -25,7 +25,7 @@ function Login() {
     const SubmitData = ()=>{
       if(User.email ==='admin@gmail.com' && User.password ==='admin'){
         dispatch({type:"USER",payload:true})
-         navigate('/header')
+         navigate('/home')
       }
       else{
         console.log('wrong')

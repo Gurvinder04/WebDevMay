@@ -69,7 +69,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form action='/product'   className="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+              <form action='/product'   className="form-horizontal" role="form" method='post'  enctype="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">
