@@ -1,16 +1,65 @@
 import React, { useContext } from 'react'
-import { Button } from 'react-bootstrap'
-import {UserContext} from './App'
-import {User} from './Login'
+import { Button, Card } from 'react-bootstrap'
+import { UserContext } from './App'
+import { User } from './Login'
 import Header from './Component/Header'
+import {FaMale,FaBell,FaClipboardCheck,FaUserFriends,FaPeopleCarry} from 'react-icons/fa'
 
 function Home() {
-    const { state, dispatch } = useContext(UserContext)
-            return (
-     
-                <>
-                <Header />
-                {/* <div class="container1">
+
+  return (
+
+    <>
+      <Header />
+      <div className='body-divide container-fluid'>
+        <div className='d-flex p-5 card1'>
+        <Card style={{ width: '18rem','text-align': 'center' ,boxShadow:'0px 4px 4px 4px #495057bd'}}>
+          <Card.Body>
+            <Card.Title>CUSTOMER</Card.Title>
+            <Card.Text>
+              <FaUserFriends style={{'font-size': '70px',color: 'lightseagreen'}}></FaUserFriends>
+            </Card.Text>
+            <Card.Link href="#">See All Customer</Card.Link> 
+          </Card.Body>
+        </Card>
+
+        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+          <Card.Body>
+            <Card.Title>SELLER</Card.Title>
+            <Card.Text>
+              <FaPeopleCarry style={{'font-size': '70px',color: 'lightseagreen'}}></FaPeopleCarry>
+            </Card.Text>
+            <Card.Link href="#">See All Seller</Card.Link> 
+          </Card.Body>
+        </Card>
+
+        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+          <Card.Body>
+            <Card.Title>ORDERS</Card.Title>
+            <Card.Text>
+              <FaClipboardCheck style={{'font-size': '70px',color: 'lightseagreen'}}></FaClipboardCheck>
+            </Card.Text>
+            <Card.Link href="#">See All Orders</Card.Link> 
+          </Card.Body>
+        </Card>
+
+        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+          <Card.Body>
+            <Card.Title>NOTIFICATION</Card.Title>
+            <Card.Text>
+              <FaBell style={{'font-size': '70px',color: 'lightseagreen'}}></FaBell>
+            </Card.Text>
+            <Card.Link href="#">See All Notifications</Card.Link> 
+          </Card.Body>
+        </Card>
+        </div>
+
+
+
+
+
+      </div>
+      {/* <div class="container1">
               <div class="header">
                <div class="header-logo">
                  <svg class="site-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -43,8 +92,8 @@ function Home() {
                  </div>
                </div>
              </div> */}
-            </>
-              )
+    </>
+  )
 }
 
 export default Home

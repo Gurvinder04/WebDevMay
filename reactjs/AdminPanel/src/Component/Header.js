@@ -4,7 +4,7 @@ import {UserContext} from '../App'
 import {User} from '../Login'
 
 function Header() {
-    const { state, dispatch } = useContext(UserContext)
+   
   return (
     <>
      {/* <div className="container1">
@@ -47,12 +47,12 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Dashboard</Nav.Link>
+            <Nav.Link href="/home">Dashboard</Nav.Link>
             <Nav.Link href="/addproduct">Add Product</Nav.Link>
             <Nav.Link href="#pricing">Customer</Nav.Link>
             <Nav.Link href="/productinfo">Show Product</Nav.Link>
             <Nav.Link href="#pricing">Notification</Nav.Link>
-            <Nav.Link href="#pricing">Help & Support</Nav.Link>
+           
            
           </Nav>
           <Nav>

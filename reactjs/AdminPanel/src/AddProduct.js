@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
 import { Navigate, useNavigate } from 'react-router-dom';
+import Header from './Component/Header';
 
 
 function AddProduct() {
@@ -44,6 +45,14 @@ function AddProduct() {
       else {
         //dispatch({type:"USER",payload:true})
         window.alert("successfully submitted")
+        setsample({
+          productname: '',
+          category:'',
+          description: '',
+          rate: '',
+          quantity:'',
+          fileimage:''
+        })
 
 
       }
@@ -60,16 +69,18 @@ function AddProduct() {
  
   return (
     <>
+    <Header/>
+    <div className='body-divide container-fluid'>
         <div className="container container_product">
 
-          <section className="panel panel-default">
+          <section className="panel panel-default p-5">
           <div className="panel-heading">
           <h3 className="panel-title">Product Form</h3>
         </div>
 
             <div className="panel-body">
 
-              <form action='/product'   className="form-horizontal" role="form" method='post'  enctype="multipart/form-data">
+              <form action='/home'   className="form-horizontal" method='post'   encType="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">
@@ -119,7 +130,7 @@ function AddProduct() {
                 <hr></hr>
                 <div className="form-group">
                   <div className="col-sm-offset-3 col-sm-9">
-                    <button type="submit" className="btn btn-primary addbutton" onClick={SubmitData}>Add Product</button>
+                    <button type="submit" className="btn btn-dark addbutton" onClick={SubmitData}>Add Product</button>
                    
                     
                   </div>
@@ -130,6 +141,7 @@ function AddProduct() {
           </section>
 
 
+        </div>
         </div>
       
 

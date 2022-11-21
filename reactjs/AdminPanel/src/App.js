@@ -9,7 +9,7 @@ import Layout from './Component/Layout'
 import Header from './Component/Header'
 import Home from './Home'
 import { initialstate,reducer } from './reducer/UseReducer'
-export const UserContext = createContext()
+
 
 function App() {
     const[state,dispatch]= useReducer(reducer,initialstate)
@@ -17,17 +17,6 @@ function App() {
        
     
   return (
-    <>
-       {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-          <Nav className="me-auto">
-            <Nav.Link href="/login">Login</Nav.Link>
-            </Nav>  
-      </Container>
-    </Navbar> */}
-
-
-<UserContext.Provider value={{state,dispatch}}>
 
   
     <Routes>
@@ -38,9 +27,6 @@ function App() {
     <Route path='/editproduct/:id' element={<EditProduct/>} />
     </Routes>
     
-    </UserContext.Provider>
-    
-    </>
     
     
   )

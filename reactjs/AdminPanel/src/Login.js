@@ -3,11 +3,11 @@ import {Form,Button,Navigate, Container} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
 import {addproduct} from './AddProduct'
 import {home} from './Home'
-import {UserContext} from './App'
+// import {UserContext} from './App'
 
 
 function Login() {
-  const{state,dispatch} = useContext(UserContext)
+  
     const navigate = useNavigate();
     const[User,setUser] = useState({
         email:'',
@@ -24,7 +24,7 @@ function Login() {
 
     const SubmitData = ()=>{
       if(User.email ==='admin@gmail.com' && User.password ==='admin'){
-        dispatch({type:"USER",payload:true})
+        
          navigate('/home')
       }
       else{

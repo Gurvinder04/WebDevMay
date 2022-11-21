@@ -26,7 +26,10 @@ function App() {
   //   })
 }
   return (
+    <>
+    
    <Layout>
+    
    <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/:mid' element ={<ReceipeDetail/>} />
@@ -34,6 +37,7 @@ function App() {
     <Route path='/signup' element={<SignUp/>} />
    </Routes>
    </Layout>
+   </>
   )
 }
 
