@@ -15,6 +15,7 @@ function EditProduct() {
     quantity:'',
     fileimage:''
   })
+  
   let name, value;
   const Data = (e) => {
     console.log('entered data')
@@ -43,17 +44,14 @@ function EditProduct() {
       else {
         //dispatch({type:"USER",payload:true})
         window.alert("successfully submitted")
-
-
       }
     }
-
     else {
       console.log('INVALID INPUT')
     }
 
   }
-  
+
   const  fetchData =async()=>{
     let data= await   fetch(`/product/${id}`,{
            method:'GET',
@@ -63,14 +61,23 @@ function EditProduct() {
            body:JSON.stringify()
          })
       let res = await data.json()
-      console.log(res)
-      setsample(res)
+        console.log('hey with id',res)
+        let obj ={
+         productid: res._id,
+         productname: res.ProductName,
+         category:res.Category,
+         description: res.Description,
+         rate: res.Price,
+         quantity:res.Quantity,
+         fileimage:res.Image
+        }
+        console.log('In Object',obj)
+       
       console.log('hey sample1',Sample)
-      
    }
 
   useEffect(()=>{
-    //fetchData();
+    fetchData();
   
     },[])
 
@@ -96,7 +103,7 @@ function EditProduct() {
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product ID</label>
                   <div className="col-sm-9">
-                    <input type="text" className="form-control" name='productid' value={Sample.productid} onChange={Data} />
+                    <input type="text" className="form-control" name='productid' value={Sample.productid}  onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">

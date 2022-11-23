@@ -80,7 +80,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form action='/home'   className="form-horizontal" method='post'   encType="multipart/form-data">
+              <form action='/product'   className="form-horizontal" method='post'   encType="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">

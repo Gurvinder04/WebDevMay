@@ -7,24 +7,52 @@ import Header from './Component/Header'
 function ProductInfo() {
   const [showItems, setshowItems] = useState([])
   const [itemState, setitemState] = useState(false)
+  const [showCategory, setshowCategory] = useState([])
 
-    // const ShowProduct = async () => {
-    //   let data = await fetch('/product', {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify()
-    //   })
+
+  const ShowProduct = async () => {
+    let data = await fetch('/product', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify()
+    })
+
+    let res = await data.json()
+    setshowItems(res)
+    
+    console.log('hey kidaa show', res)
+    console.log('hey ', showItems)
+    setitemState(!itemState)
+   
+  }
+
+
+
+
+
+
+    const SearchCategory = async (param) => {
+      setitemState (!itemState)
+      console.log(param)
+      let category = param
+      let data = await fetch(`/product/${category}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+      })
   
-    //   let res = await data.json()
-    //   setshowItems(res)
+      let res = await data.json()
+      setshowCategory(res)
       
-    //   console.log('hey kidaa', res)
-    //   console.log('hey ', showItems)
-    //   setitemState(!itemState)
+      console.log('hey kidaa cat', res)
+      console.log('hey ', showCategory)
+      
      
-    // }
+    }
   
   
 
@@ -49,24 +77,8 @@ function ProductInfo() {
 
 
     useEffect(()=>{
-      const ShowProduct = async () => {
-        let data = await fetch('/product', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify()
-        })
-    
-        let res = await data.json()
-        setshowItems(res)
-        
-        console.log('hey kidaa', res)
-        console.log('hey ', showItems)
-        setitemState(!itemState)
-       
-      }
       ShowProduct()
+      
      
     },[showItems])
   return (
@@ -75,18 +87,16 @@ function ProductInfo() {
         
 
    <div className='body-divide container-fluid'>
-   {/* {
-    itemState ===false ?
-     <Button onClick={ShowProduct}>Show Products</Button>
-    : */}
+   
      <Form className="d-flex justify-content-center p-4">
-              <Form.Control style={{width: '25%'}}
+              <Form.Control style={{width: '25%'}}µ
+              onChange={(e)=>SearchCategory(e.target.value)}
                 type="search"
-                placeholder="Search Products"
+                placeholder="Search Products by Category"
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success" onClick={ShowProduct}>Search</Button>
             </Form>
      <table className="table" style={{boxShadow:'0px 4px 4px 4px #495057bd'}}>
                     <thead>
@@ -101,35 +111,65 @@ function ProductInfo() {
                         <th className="a-right">Image</th>
                       </tr>
                     </thead>
-                    <tbody>
-                        
-                         {
+                    <tbody className='text-center'>
+                         {/* {
                          showItems.length != 0 ?
                            showItems.map(val=>(
                             <tr>
                               {
                                 Object.keys(val).filter(check => !check.includes("__v")).map((item,index)=>(
-                                  <td key={index}>{val[item]}</td>
-                                  
+                                  <td key={index}>{val[item]}</td> 
                                 ))
                               }
                               <td><Link to={`/editproduct/${val._id}`} ><Button variant="outline-success">EDIT</Button></Link></td>
                              <td><BsFillTrashFill onClick={(e)=>DeleteData(val._id)}></BsFillTrashFill></td>
-                            </tr>  
-                            
+                            </tr>    
                           ))
                          :
                           ''
+                         } */}
+
+
+                         {
+                          /* SEARCH POINT */
+                            showCategory.length == 0 ?
+                            (
+                            showItems.length != 0 ?
+                            showItems.map(val=>(
+                           <tr>
+                             {
+                               Object.keys(val).filter(check => !check.includes("__v")).map((item,index)=>(
+                                 <td key={index}>{val[item]}</td> 
+                               ))
+                             }
+                             <td><Link to={`/editproduct/${val._id}`} ><Button variant="outline-success">EDIT</Button></Link></td>
+                            <td><BsFillTrashFill onClick={(e)=>DeleteData(val._id)}></BsFillTrashFill></td>
+                           </tr>    
+                         ))  
+                          :
+                          'for all'
+                          )  
+                          :
+                          showCategory != undefined ?
+                          showCategory.map(val=>(
+                            <tr>
+                              {
+                                Object.keys(val).filter(check => !check.includes("__v")).map((item,index)=>(
+                                  <td key={index}>{val[item]}</td> 
+                                ))
+                              }
+                              <td><Link to={`/editproduct/${val._id}`} ><Button variant="outline-success">EDIT</Button></Link></td>
+                             <td><BsFillTrashFill onClick={(e)=>DeleteData(val._id)}></BsFillTrashFill></td>
+                            </tr>    
+                          ))
+                         :
+                         'for category'
                          }
-                        
-      
-                        
-                     
                     </tbody>
                     
                   </table>
                  
-{/* } */}
+
                   
                  
                   

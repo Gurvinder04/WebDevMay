@@ -9,7 +9,7 @@ admin.use(express.json())
 admin.use(cors())
 admin.use(express.static(__dirname+"../uploads/"))
 
-mongoose.connect('mongodb://localhost:27017/Stationary',(err)=>console.log('connected....'))
+mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/<Stationary>?retryWrites=true&w=majority',(err)=>console.log('connected....'))
 
 const ProductSchema = mongoose.Schema({
     ProductName:String,
@@ -57,6 +57,15 @@ admin.get('/product/:id',async(req,res)=>{
     res.send(data)
     
 })
+
+// admin.get('/product/:category',async(req,res)=>{
+//     console.log('with category')
+//     const cid = req.params.category
+//    const data = await Product.find({Category:cid})
+//    console.log('db ala data',data)
+//     res.send(data)
+    
+// })
 
 admin.post('/product', upload.single('fileimage'),(req,res)=>{
     console.log(req.body.file,'sucesssssssss')

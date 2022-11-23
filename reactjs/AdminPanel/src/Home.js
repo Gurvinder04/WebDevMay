@@ -13,41 +13,41 @@ function Home() {
       <Header />
       <div className='body-divide container-fluid'>
         <div className='d-flex p-5 card1'>
-        <Card style={{ width: '18rem','text-align': 'center' ,boxShadow:'0px 4px 4px 4px #495057bd'}}>
+        <Card style={{ width: '18rem','textAlign': 'center' ,boxShadow:'0px 4px 4px 4px #495057bd'}}>
           <Card.Body>
             <Card.Title>CUSTOMER</Card.Title>
             <Card.Text>
-              <FaUserFriends style={{'font-size': '70px',color: 'lightseagreen'}}></FaUserFriends>
+              <FaUserFriends style={{'fontSize': '70px',color: 'lightseagreen'}}></FaUserFriends>
             </Card.Text>
             <Card.Link href="#">See All Customer</Card.Link> 
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+        <Card style={{ width: '18rem','textAlign': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
           <Card.Body>
             <Card.Title>SELLER</Card.Title>
             <Card.Text>
-              <FaPeopleCarry style={{'font-size': '70px',color: 'lightseagreen'}}></FaPeopleCarry>
+              <FaPeopleCarry style={{'fontSize': '70px',color: 'lightseagreen'}}></FaPeopleCarry>
             </Card.Text>
             <Card.Link href="#">See All Seller</Card.Link> 
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+        <Card style={{ width: '18rem','textAlign': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
           <Card.Body>
             <Card.Title>ORDERS</Card.Title>
             <Card.Text>
-              <FaClipboardCheck style={{'font-size': '70px',color: 'lightseagreen'}}></FaClipboardCheck>
+              <FaClipboardCheck style={{'fontSize': '70px',color: 'lightseagreen'}}></FaClipboardCheck>
             </Card.Text>
             <Card.Link href="#">See All Orders</Card.Link> 
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem','text-align': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
+        <Card style={{ width: '18rem','textAlign': 'center',boxShadow:'0px 4px 4px 4px #495057bd' }}>
           <Card.Body>
             <Card.Title>NOTIFICATION</Card.Title>
             <Card.Text>
-              <FaBell style={{'font-size': '70px',color: 'lightseagreen'}}></FaBell>
+              <FaBell style={{'fontSize': '70px',color: 'lightseagreen'}}></FaBell>
             </Card.Text>
             <Card.Link href="#">See All Notifications</Card.Link> 
           </Card.Body>
