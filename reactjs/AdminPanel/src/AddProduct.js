@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
 import { Navigate, useNavigate } from 'react-router-dom';
 import Header from './Component/Header';
@@ -7,6 +7,7 @@ import Header from './Component/Header';
 function AddProduct() {
   
   const navigate = useNavigate()
+  let formref = useRef()
 
   
   const [Sample, setsample] = useState({
@@ -45,14 +46,8 @@ function AddProduct() {
       else {
         //dispatch({type:"USER",payload:true})
         window.alert("successfully submitted")
-        setsample({
-          productname: '',
-          category:'',
-          description: '',
-          rate: '',
-          quantity:'',
-          fileimage:''
-        })
+        formref.current?.reset()
+      
 
 
       }
@@ -80,7 +75,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form action='/product'   className="form-horizontal" method='post'   encType="multipart/form-data">
+              <form action='/product'   className="form-horizontal" method='post'   encType="multipart/form-data" ref={formref}>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">

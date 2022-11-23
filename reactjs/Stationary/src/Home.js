@@ -8,7 +8,7 @@ import {Animated} from "react-animated-css";
 function Home() {
   const [Items,setItems] = useState()
   const fetchData = async()=> {
-    let response = await fetch('http://localhost:4000/product/637643b9cac7bd40baf09c6f')
+    let response = await fetch('http://localhost:4000/product/637e92bf557ece2f307cb839')
     let data = await response.json()
     setItems(data)
   }
@@ -129,17 +129,17 @@ function Home() {
       
      </div>
 
-        {/* <Card style={{ width: '18rem' }}>
-       <Card.Img variant="top" src={`./uploads/${Items.Image}`} />
-      {/* <Card.Img variant="top" src='https://images.unsplash.com/photo-1576665665113-e262f19a3fa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80' />
+         <Card style={{ width: '18rem' }}>
+        {/* <Card.Img variant="top" src={`./uploads/${Items.Image}`} /> */}
+       {/* <Card.Img variant="top" src='https://images.unsplash.com/photo-1576665665113-e262f19a3fa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80' />
       <Card.Body>
         <Card.Title>{Items.ProductName}</Card.Title>
         <Card.Text>
          {Items.Description}
         </Card.Text>
         <Button variant="success">Add to Cart</Button>
-      </Card.Body>
-    </Card>    */}
+      </Card.Body> */}
+    </Card> 
 
 
 

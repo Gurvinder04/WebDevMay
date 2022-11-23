@@ -170,10 +170,7 @@ function EditProduct() {
         
     
         
-      <Button onClick={fetchData}>get data</Button>
-{
-    console.log(id)
-}
+      {console.log(id)}
       
 
 

@@ -37,7 +37,7 @@ function ProductInfo() {
       setitemState (!itemState)
       console.log(param)
       let category = param
-      let data = await fetch(`/product/${category}`, {
+      let data = await fetch(`/products/${category}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -98,9 +98,9 @@ function ProductInfo() {
               />
               <Button variant="outline-success" onClick={ShowProduct}>Search</Button>
             </Form>
-     <table className="table" style={{boxShadow:'0px 4px 4px 4px #495057bd'}}>
+     <table className="table" style={{boxShadow:'0px 4px 4px 4px #495057bd',tableLayout: 'fixed'}}>
                     <thead>
-                      <tr className="first text-center">
+                      <tr className="first text-center" style={{height:'2rem',overflow:'hidden'}}>
                         {/* <th>Image</th> */}
                         <th>Product ID</th>
                         <th>Product Name</th>
@@ -136,10 +136,10 @@ function ProductInfo() {
                             (
                             showItems.length != 0 ?
                             showItems.map(val=>(
-                           <tr>
+                           <tr style={{height:'2rem'}}>
                              {
                                Object.keys(val).filter(check => !check.includes("__v")).map((item,index)=>(
-                                 <td key={index}>{val[item]}</td> 
+                                 <td key={index} style={{overflow:'hidden',whiteSpace:'nowrap',textOverflow:'ellipsis',width:'200'}}>{val[item]}</td> 
                                ))
                              }
                              <td><Link to={`/editproduct/${val._id}`} ><Button variant="outline-success">EDIT</Button></Link></td>

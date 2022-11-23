@@ -80,7 +80,7 @@ a.nav-link {
 .vl {
     border-left: 1px solid  grey;
     height: 70px;
-    margin-left: 53px;
+    /* margin-left: 53px; */
   }
 
   .office-desk{
@@ -118,4 +118,7 @@ a.nav-link {
 
 .count{
     font-size: 40px;
+}
+td:nth-child(1) {
+    width: 60%;
 }
