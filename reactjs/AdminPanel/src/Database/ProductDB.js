@@ -16,12 +16,12 @@ admin.use(express.static(__dirname+"../uploads/"))
 mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
 
 const ProductSchema = mongoose.Schema({
-    ProductName:String,
-    Category:String,
-    Description:String,
-    Price:String,
-    Quantity:String,
-    Image:String
+    productname:String,
+    category:String,
+    description:String,
+    price:String,
+    quantity:String,
+    image:String
 })
 
 
@@ -73,7 +73,8 @@ admin.get('/products/:category',async(req,res)=>{
 
 admin.post('/product', upload.single('fileimage'),(req,res)=>{
     //console.log(req.body.file,'sucesssssssss')
-    const newProduct = new Product({ ProductName: req.body.productname,Category:req.body.category,Description: req.body.description, Price: req.body.rate, Quantity: req.body.quantity, Image:req.file.filename})
+    const newProduct = new Product({ productname: req.body.productname,category:req.body.category,description: req.body.description, price: req.body.rate, quantity: req.body.quantity, image:req.file.filename})
+    // req.files[0].paths
     newProduct.save()
         .then(result => {
             console.log('successfully saved')
@@ -82,11 +83,9 @@ admin.post('/product', upload.single('fileimage'),(req,res)=>{
 
 
 admin.patch('/product/:id',(req,res)=>{
-      const uid = req.params.id
-    
-      let data = Product.findById(uid)
+      const uid = req.params.id  
+      let data = Product.findByIdAndUpdate(uid,req.body) 
       res.send(data)
-
 })
 
 

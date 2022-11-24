@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate} from 'react-router-dom'
 import {UserContext} from './App'
-
-
-
-
-
+import {home} from './Home'
 
 function Sign() {
+  const navigate = useNavigate();
   const{state,dispatch} = useContext(UserContext)
    const[User,setUser] = useState({
     firstname:'',
@@ -16,7 +13,10 @@ function Sign() {
     email:'',
     password:''
    })
-   
+   const[LoginUser,setLoginUser] = useState({
+    email:'',
+    password:''
+   })
 let name,value
     const getData=(e)=>{
        name=e.target.name
@@ -49,12 +49,12 @@ let name,value
     const LoginData=(e)=>{
       name=e.target.name
       value=e.target.value
-      setUser({...User,[name]:value})
+      setLoginUser({...LoginUser,[name]:value})
       console.log(value)
    }
    const LoginVerify= async()=>{
        console.log('helooooooo')
-       const {email,password} = User
+       const {email,password} = LoginUser
         if(email && password){
           let data = await fetch('/login',{
               method:'POST',
@@ -72,11 +72,9 @@ let name,value
           else{
            dispatch({type:"USER",payload:true})
            window.alert("successfully logged in")
+          navigate('/')
           
-          }
-           
-         
-         
+          }  
       }
       
       else{
@@ -93,6 +91,7 @@ let name,value
     <>
     <Form action='POST' onSubmit={(e)=>{
       e.preventDefault()
+      
     }}>
     <Row className="mb-3">
     <Form.Group as={Col}>
@@ -126,21 +125,20 @@ let name,value
   </Form>
 
 
-  <Form action='POST' onSubmit={(e)=>{
-    e.preventDefault()
+  <Form method='post' 
     // const NewEntry={email:User.email,password:User.password}
     // setallentry([...allentry,NewEntry])
     // console.log(allentry)
-  }}>
+  >
     <Row className="mb-3">
     <Form.Group as={Col}>
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email"  name='email'  value={User.email} onChange={LoginData} placeholder="Enter email"/>
+      <Form.Control type="email"  name='email'  value={LoginUser.email} onChange={LoginData} placeholder="Enter email"/>
     </Form.Group>
 
     <Form.Group as={Col}>
       <Form.Label>Password</Form.Label>
-      <Form.Control type="text" name='password'  value={User.password} onChange={LoginData}  placeholder="Password"/>
+      <Form.Control type="text" name='password'  value={LoginUser.password} onChange={LoginData}  placeholder="Password"/>
     </Form.Group>
   </Row>
 

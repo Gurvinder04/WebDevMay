@@ -8,6 +8,7 @@ import EditProduct from './EditProduct'
 import Layout from './Component/Layout'
 import Header from './Component/Header'
 import Home from './Home'
+import AllCustomer from './AllCustomer'
 import { initialstate,reducer } from './reducer/UseReducer'
 
 
@@ -22,6 +23,7 @@ function App() {
     <Routes>
     <Route path='/' element={<Login/>} />
     <Route path='/home' element={<Home/>} />
+    <Route path='/allcustomer' element={<AllCustomer/>} />
     <Route path='/addproduct' element={<AddProduct/>} />
     <Route path='/productinfo' element={<ProductInfo/>} />
     <Route path='/editproduct/:id' element={<EditProduct/>} />

@@ -46,10 +46,6 @@ function AddProduct() {
       else {
         //dispatch({type:"USER",payload:true})
         window.alert("successfully submitted")
-        formref.current?.reset()
-      
-
-
       }
     }
 
@@ -75,7 +71,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form action='/product'   className="form-horizontal" method='post'   encType="multipart/form-data" ref={formref}>
+              <form action='/product'  method='post'    className="form-horizontal"   encType="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">

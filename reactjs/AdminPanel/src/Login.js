@@ -8,7 +8,7 @@ import {home} from './Home'
 
 function Login() {
   
-    const navigate = useNavigate();
+  const navigate = useNavigate();
     const[User,setUser] = useState({
         email:'',
         password:''

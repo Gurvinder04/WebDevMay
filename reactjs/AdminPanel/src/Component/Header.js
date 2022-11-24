@@ -49,7 +49,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/home">Dashboard</Nav.Link>
             <Nav.Link href="/addproduct">Add Product</Nav.Link>
-            <Nav.Link href="#pricing">Customer</Nav.Link>
+            <Nav.Link href="/allcustomer">Customer</Nav.Link>
             <Nav.Link href="/productinfo">Show Product</Nav.Link>
             <Nav.Link href="#pricing">Notification</Nav.Link>
            

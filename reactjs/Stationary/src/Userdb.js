@@ -1,53 +1,84 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { Link } = require('react-router-dom');
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 const server = express();
 
 server.use(express.json())
 server.use(cors())
 
-  mongoose.connect('mongodb://localhost:27017/Stationary',(err)=>console.log('connected....'));
+  mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'));
   
 const StatUser =mongoose.Schema({
-    FirstName:String,
-    LastName:String,
-    Email:String,
-    Password:String
+    firstname:String,
+    lastname:String,
+    email:String,
+    password:String
 })
 const User = mongoose.model('User',StatUser)
 
 
 server.post('/sign',(req,res)=>{
   console.log('entered')
-  const user_data = new User({ Firstname: req.body.firstname,Lastname: req.body.lastname, Email: req.body.email, Password:req.body.password })
+  const password = bcrypt.hashSync(req.body.password,10)
+  console.log(req.body)
+  const user_data = new User({ firstname: req.body.firstname,lastname: req.body.lastname, email: req.body.email, password:password })
     user_data.save()
         .then(result => {
             console.log('successfully saved')
         })
+        
 })
+
+// server.post('/login',(req, res) => {
+//   console.log('entered login')
+//    const {email,password} = req.body
+//    console.log(email,password)
+//     User.find({Email:email,Password:password})
+//     .then(result=>{
+//      //console.log(result)
+//      if(result.length >0){
+//        console.log(result.length)
+//        const currentuser = {
+//           mail:result[0].Email,
+//           pass :result[0].Password
+//           }
+//           res.status(200).send(currentuser)
+//          console.log(currentuser)
+        
+//      }
+//      else{
+//          res.status(400).send(0)
+     
+//     }
+//      })
+   
+//   })
 
 server.post('/login',(req, res) => {
   console.log('entered login')
    const {email,password} = req.body
    console.log(email,password)
-    User.find({Email:email,Password:password})
-    .then(result=>{
+    User.find({Email:email})
+    .then(user=>{
      //console.log(result)
-     if(result.length >0){
-       console.log(result.length)
-       const currentuser = {
-          mail:result[0].Email,
-          pass :result[0].Password
-          }
-         // res.status(200).send(currentuser)
-         console.log(currentuser)
-        
+     if(user.length >0){
+       console.log(user)
+       const loggedpass = user[0].user.password
+       console.log(loggedpass)
+    //    const isPasscorrect =  bcrypt.compareSync(password,loggedpass)
+    //    if(isPasscorrect){
+    //     res.json({msg:'password is correct'})
+    // }else{
+    //     res.json({msg:' password is incorrect'})
+    // }   
      }
      else{
-         res.status(400).send(0)
-     
-    }
+      res.json({
+          msg:'username or password incorrect'
+      })
+  }
      })
    
   })

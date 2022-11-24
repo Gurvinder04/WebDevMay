@@ -6,7 +6,7 @@ import Header from './Component/Header'
 import {FaMale,FaBell,FaClipboardCheck,FaUserFriends,FaPeopleCarry} from 'react-icons/fa'
 
 function Home() {
-
+    
   return (
 
     <>

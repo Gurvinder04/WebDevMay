@@ -9,7 +9,7 @@ const admin = express()
 admin.use(express.json())
 admin.use(cors())
 // admin.use(express.static(__dirname+"./public/"))
-mongoose.connect('mongodb://localhost:27017/Stationary',(err)=>console.log('connected....'))
+mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
 
 const ProductSchema = mongoose.Schema({
     ProductName:String,

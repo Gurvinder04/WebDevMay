@@ -6,30 +6,31 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 function EditProduct() {
     const {id} = useParams()
   const navigate = useNavigate()
-  const [Sample, setsample] = useState({
+  const [singleData,setSingleData] = useState({
     productid: '',
-    productname: '',
+    productname:'',
     category:'',
-    description: '',
-    rate: '',
-    quantity:'',
-    fileimage:''
+    description:'',
+    price:'',
+    quantity:''
+    
   })
+  
   
   let name, value;
   const Data = (e) => {
     console.log('entered data')
     name = e.target.name
     value = e.target.value
-    setsample({ ...Sample, [name]: value })
-    console.log(Sample)
+    setSingleData({ ...singleData, [name]: value })
+    console.log(singleData)
   }
 
-  const SubmitData = async () => {
-    const { productname,category, description, rate,quantity,fileimage } = Sample
+  const UpdateData = async () => {
+    const { productname,category, description, rate,quantity,fileimage } = singleData
     if (productname && category && description && rate &&quantity && fileimage) {
-      let data = await fetch('/product', {
-        method: 'POST',
+      let data = await fetch(`/product/${id}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -62,20 +63,30 @@ function EditProduct() {
          })
       let res = await data.json()
         console.log('hey with id',res)
-        let obj ={
-         productid: res._id,
-         productname: res.ProductName,
-         category:res.Category,
-         description: res.Description,
-         rate: res.Price,
-         quantity:res.Quantity,
-         fileimage:res.Image
-        }
-        console.log('In Object',obj)
-       
-      console.log('hey sample1',Sample)
-   }
+        // let obj ={
+        //   productid: res._id,
+        //   productname: res.productname,
+        //   category:res.category,
+        //   description: res.description,
+        //   price: res.price,
+        //   quantity:res.quantity,
+        //   //fileimage:res.image
 
+        // }
+       
+        console.log('In Object') 
+        setSingleData({
+          productid: res._id,
+          productname: res.productname,
+          category:res.category,
+          description: res.description,
+          price: res.price,
+          quantity:res.quantity,
+          //fileimage:res.image
+        })
+        console.log('single data is here',singleData)
+      
+   }
   useEffect(()=>{
     fetchData();
   
@@ -87,11 +98,8 @@ function EditProduct() {
   
  
   return (
-    <>
-    
-        
+    <>    
         <div className="container container_product">
-
           <section className="panel panel-default">
           <div className="panel-heading">
           <h3 className="panel-title">Edit Product</h3>
@@ -99,23 +107,23 @@ function EditProduct() {
 
             <div className="panel-body">
 
-              <form  action='POST'  className="form-horizontal" role="form" enctype="multipart/form-data">
+              <form  method='POST'  className="form-horizontal" enctype="multipart/form-data">
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product ID</label>
                   <div className="col-sm-9">
-                    <input type="text" className="form-control" name='productid' value={Sample.productid}  onChange={Data} />
+                    <input type="text" className="form-control" name='productid' value={singleData.productid}  onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">
-                    <input type="text" className="form-control" name='productname' value={Sample.productname} onChange={Data} />
+                    <input type="text" className="form-control" name='productname' value={singleData.productname} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Category</label>
                   <div className="col-sm-3">
-                    <select className="form-control" name='category' value={Sample.category} onChange={Data}>
+                    <select className="form-control" name='category' value={singleData.category} onChange={Data}>
                       <option value=""></option>
                       <option value="Pens&Pencils">Pens&Pencils</option>
                       <option value="Notebooks">Notebooks</option>
@@ -128,26 +136,26 @@ function EditProduct() {
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Description</label>
                   <div className="col-sm-9">
-                    <textarea className="form-control" name='description' value={Sample.description} onChange={Data}></textarea>
+                    <textarea className="form-control" name='description' value={singleData.description} onChange={Data}></textarea>
                   </div>
                 </div>
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Price</label>
                   <div className="col-sm-3">
-                    <input type="text" className="form-control" name='rate' value={Sample.rate} onChange={Data} />
+                    <input type="text" className="form-control" name='rate' value={singleData.price} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Availability</label>
                   <div className="col-sm-3">
-                    <input type="text" className=" col-sm-3 form-control"  name='quantity' value={Sample.quantity} onChange={Data} />
+                    <input type="text" className=" col-sm-3 form-control"  name='quantity' value={singleData.quantity} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Upload Image</label>
                   <div className="col-sm-3">
                     <label className="control-label small" 
-                    >informat like (jpg/png):</label> <input type="file" name="fileimage" value={Sample.fileimage} onChange={Data} />
+                    >informat like (jpg/png):</label> <input type="file" name="fileimage" value={singleData.fileimage} onChange={Data} />
                   </div>
 
                 </div>
@@ -155,7 +163,7 @@ function EditProduct() {
                 <hr></hr>
                 <div className="form-group">
                   <div className="col-sm-offset-3 col-sm-9">
-                    <button type="submit" className="btn btn-primary addbutton" onClick={SubmitData}>UPDATE</button>
+                    <button type="submit" className="btn btn-primary addbutton" onClick={UpdateData}>UPDATE</button>
                    
                     
                   </div>
