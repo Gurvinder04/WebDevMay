@@ -48,10 +48,12 @@ const upload = multer({
 
 admin.get('/product',async(req,res)=>{
     console.log('showing products')
-   const data = await Product.find()
+   const data = await User.find()
     res.send(data)
 
 })
+
+
 
 admin.get('/product/:id',async(req,res)=>{
     console.log('with id')
@@ -82,9 +84,12 @@ admin.post('/product', upload.single('fileimage'),(req,res)=>{
 })
 
 
-admin.patch('/product/:id',(req,res)=>{
+
+
+admin.patch('/product/:id',async(req,res)=>{
       const uid = req.params.id  
-      let data = Product.findByIdAndUpdate(uid,req.body) 
+      const changes = req.body
+      let data = await Product.findByIdAndUpdate(uid,changes,{new:true}) 
       res.send(data)
 })
 

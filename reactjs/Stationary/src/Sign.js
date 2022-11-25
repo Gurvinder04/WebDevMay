@@ -6,6 +6,7 @@ import {home} from './Home'
 
 function Sign() {
   const navigate = useNavigate();
+  const [show, setShow] = useState(true)
   const{state,dispatch} = useContext(UserContext)
    const[User,setUser] = useState({
     firstname:'',
@@ -82,14 +83,100 @@ let name,value
       }
        }
        
-
+       const toggleForm = () => {
+        setShow(!show)
+       
+    }
    
    useEffect(()=>{
 
 },[])
   return (
     <>
-    <Form action='POST' onSubmit={(e)=>{
+     <section className='body-divide container-fluid'>
+                <div className={`container  ${show ? "active" : " "} `}>
+                    <div className='user signinBx'>
+                        <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
+                        <div className="formBx">
+                            <form action="POST" onSubmit={(e) => {
+                                e.preventDefault()
+                               
+                            }}>
+                                <h2>Sign In</h2>
+                                <input type="email" name='email' value={LoginUser.email} onChange={LoginData} placeholder="Email Address" />
+                                <input type="password"name='password' value={LoginUser.password} onChange={LoginData} placeholder=" Password" />
+                                <input type="submit" onClick={LoginVerify} value="Login" />
+                                <p className="signup">
+                                    Don't have an account ?
+                                    <a href="#" onClick={toggleForm}>Sign Up.</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="user signupBx">
+                        <div className="formBx">
+                            <form onSubmit={(e) => {
+                                e.preventDefault()
+                                setUser({
+                                  firstname:'',
+                                  lastname:'',
+                                  email:'',
+                                  password:''
+                                 })
+                            }}>
+                                <h2>Create an account</h2>
+                                <input type="text" name='firstname' value={User.firstname} onChange={getData} placeholder="firstname" />
+                                <input type="text" name='lastname' value={User.lastname} onChange={getData} placeholder="lastname" />
+                                <input type="email" name='email' value={User.email} onChange={getData} placeholder="Email Address" />
+                                <input type="password"name='password' value={User.password} onChange={getData} placeholder=" Password" />
+
+                                <input type="submit" name="" value="Sign Up" onClick={DBData} />
+                                <p className="signup">
+                                    Already have an account ?
+                                    <a href="#" onClick={toggleForm} >Sign in.</a>
+                                </p>
+                            </form>
+                        </div>
+                        <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* <Form action='POST' onSubmit={(e)=>{
       e.preventDefault()
       
     }}>
@@ -125,11 +212,7 @@ let name,value
   </Form>
 
 
-  <Form method='post' 
-    // const NewEntry={email:User.email,password:User.password}
-    // setallentry([...allentry,NewEntry])
-    // console.log(allentry)
-  >
+  <Form method='post' >
     <Row className="mb-3">
     <Form.Group as={Col}>
       <Form.Label>Email</Form.Label>
@@ -149,17 +232,10 @@ let name,value
   <Button variant="primary" type="submit" onClick={LoginVerify}>
    login
   </Button>
-</Form>
-<div>
+</Form> */}
 
-
-</div>
 </>
  
-
-
-
-
   )
 }
 

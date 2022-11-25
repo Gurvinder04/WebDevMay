@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, Col, Row } from 'react-bootstrap'
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import productinfo from './ProductInfo'
 //import {MdDelete} from 'react-icons/md'
 
 function EditProduct() {
@@ -12,7 +13,8 @@ function EditProduct() {
     category:'',
     description:'',
     price:'',
-    quantity:''
+    quantity:'',
+    fileimage:''
     
   })
   
@@ -27,14 +29,14 @@ function EditProduct() {
   }
 
   const UpdateData = async () => {
-    const { productname,category, description, rate,quantity,fileimage } = singleData
-    if (productname && category && description && rate &&quantity && fileimage) {
+    const { productname,category, description, price,quantity,fileimage } = singleData
+    if (productname || category || description || price || quantity || fileimage) {
       let data = await fetch(`/product/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ productname,category, description, rate,quantity,fileimage })
+        body: JSON.stringify({ productname,category, description, price,quantity,fileimage })
       })
 
       let res = await data.json()
@@ -45,6 +47,7 @@ function EditProduct() {
       else {
         //dispatch({type:"USER",payload:true})
         window.alert("successfully submitted")
+        navigate('/productinfo')
       }
     }
     else {
@@ -142,7 +145,7 @@ function EditProduct() {
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Price</label>
                   <div className="col-sm-3">
-                    <input type="text" className="form-control" name='rate' value={singleData.price} onChange={Data} />
+                    <input type="text" className="form-control" name='price' value={singleData.price} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
@@ -157,23 +160,17 @@ function EditProduct() {
                     <label className="control-label small" 
                     >informat like (jpg/png):</label> <input type="file" name="fileimage" value={singleData.fileimage} onChange={Data} />
                   </div>
-
                 </div>
-
                 <hr></hr>
                 <div className="form-group">
                   <div className="col-sm-offset-3 col-sm-9">
                     <button type="submit" className="btn btn-primary addbutton" onClick={UpdateData}>UPDATE</button>
                    
-                    
                   </div>
                 </div>
               </form>
-
             </div>
           </section>
-
-
         </div>
         
     
