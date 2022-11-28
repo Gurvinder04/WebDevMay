@@ -11,7 +11,7 @@ function Header() {
     if (state) {
       return (
         <>
-          <Navbar collapseOnSelect expand="lg" variant="dark">
+           <Navbar collapseOnSelect expand="lg" variant="dark">
             <Container>
              
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -62,8 +62,8 @@ function Header() {
     <div className='marquee'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
         </div> 
-        <Row className='stationero mt-5 text-center'>
-          <Col className='mt-5'>
+         <Row className='stationero mt-5 text-center'>
+           <Col className='mt-5'>
           <h2 className='heading'><span className='stat'>S</span>tati<span className='onero'>Onero</span></h2>
           </Col>
      
@@ -87,14 +87,14 @@ function Header() {
         <FaSearch className='fasearch'></FaSearch>
        
       </InputGroup>
-      </Col>
+      </Col> 
       <Col className='mt-5'>
       <FaRegHeart className='fasearch'></FaRegHeart>
        <FaShoppingCart className='fasearch'></FaShoppingCart>
       </Col>
+       
       
-      
-    </Row>          
+    </Row>         
     <RenderMenu />
     </>
   )

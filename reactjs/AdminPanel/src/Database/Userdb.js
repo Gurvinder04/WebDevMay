@@ -63,18 +63,22 @@ server.post('/sign',(req,res)=>{
    
 //   })
 
-server.post('/login',(req, res) => {
+server.post('/login',async(req, res) => {
   console.log('entered login')
-   const {email,password} = req.body
-   console.log(email,password)
-    User.findOne({Email:email})
-    .then(user=>{
-     //console.log(result)
-     if(user.length ===1){
-       console.log(user.length)
-       const loggedpass = user[1].password
+   const email = req.body.email
+   const password1 = req.body.password
+   console.log(email,password1)
+    User.find({email:email})
+    .then(result=>{
+     console.log(result)
+     if(result.length >0){
+       console.log(result.length)
+       const loggedpass = result[0].password
        console.log(loggedpass)
-      const isPasscorrect =  bcrypt.compareSync(password,loggedpass)
+      const isPasscorrect = bcrypt.compareSync(password1,loggedpass,(err, result) => {
+        if (err) console.log(err);
+         // result == true
+        })
         if(isPasscorrect){
          res.json({msg:'password is correct'})
      }else{

@@ -54,7 +54,7 @@ let name,value
       console.log(value)
    }
    const LoginVerify= async()=>{
-       console.log('helooooooo')
+       console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
           let data = await fetch('/login',{

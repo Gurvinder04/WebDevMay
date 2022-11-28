@@ -2,6 +2,7 @@ import React, { createContext, useReducer, useState } from 'react'
 import {Route,Routes} from 'react-router-dom'
 import 'animate.css'
 import Home from './Home'
+import ProductDetail from './ProductDetail'
 import Sign from './Sign'
 import Layout from './Components/Layout'
 import Header from './Components/Header'
@@ -22,6 +23,7 @@ function App() {
          <Header />
          <Routes>
          <Route path='/' element={<Home/>} />
+         <Route path='/detail/:id' element={<ProductDetail/>} />
          <Route path='/sign' element={<Sign/>} />
          
          </Routes>
