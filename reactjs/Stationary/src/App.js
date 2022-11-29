@@ -10,6 +10,7 @@ import Header from './Components/Header'
 
 
 import { initialstate,reducer } from './reducer/UseReducer'
+import CartTable from './Components/CartTable'
 export const UserContext = createContext()
 
 
@@ -25,7 +26,7 @@ function App() {
          <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/detail/:id' element={<ProductDetail/>} />
-         <Route path='/addtocart' element={<AddToCart/>} />
+         <Route path='/carttable' element={<CartTable/>} />
          <Route path='/sign' element={<Sign/>} />
          
          </Routes>

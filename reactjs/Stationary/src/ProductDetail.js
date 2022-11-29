@@ -4,11 +4,12 @@ import { BsDash, BsFileMinus, BsPlus } from 'react-icons/bs'
 import { Link, useParams } from 'react-router-dom'
 import AddToCart from './AddToCart'
 import { useCartContext } from './Context/CartContext'
+import CartTable from './Components/CartTable'
 
 
 
 function ProductDetail() {
-    const {AddCart} = useCartContext()
+    
     const { id } = useParams()
     const [detail, setdetail] = useState([])
     const [BuyQuantity,setBuyQuantity] = useState(0)
@@ -52,7 +53,7 @@ function ProductDetail() {
        <BsDash onClick={(e)=>minQuantity(id)}></BsDash>
         </div>
         <div class="cta">
-         <Button><Link to={'/addtocart'}>ADD TO CART</Link></Button>
+         <AddToCart  product ={detail}/>
     </div>
 </div>  
 {console.log('here comes deatil',detail)}

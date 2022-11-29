@@ -6,8 +6,8 @@ if(action.type==="USER"){
 }
 
 if(action.type==="ADD_TO_CART"){
-    let {detail} = action.payload
-    console.log('problem',detail)
+    let {product} = action.payload
+    console.log('problem',product)
 }
 return state;
 }
