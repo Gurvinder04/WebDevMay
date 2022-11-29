@@ -134,32 +134,42 @@ function Home() {
         </Row>
 
       </div> 
-      <Row className='m-5'>
+      <div className='container'>
+      <Row className='m-5 text-center'>
       {
         Items.length != 0 ?
           Items.map((product, index) => (
             
-            <Col md={3} className='p-4'>
-            <Card style={{ width: '18rem',height:'55vh' }}>
+            <Col md={3} className='pt-3'>
+              <Card style={{ width: '16rem',height:'50vh' }} className='card'>
               {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
-             <Link to={`detail/${product._id}`}><Card.Img variant="top" src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' style={{ width: '18rem',height:'30vh' }} /></Link>
+             <div className='content'>
+             <div className='front'>
+              <Link to={`detail/${product._id}`}><Card.Img variant="top" src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
+              </div>
               <Card.Body>
                 <Card.Title>{product.productname}</Card.Title>
-                <div class="description-prod text-center">
+                <div className='back1 from-right'>
+                  <h5>{product.productname}</h5>
+                  <p>€{product.price}</p>
+                <div class="description-prod">
                             <BsStarFill fill='#fd7e14'></BsStarFill>
                             <BsStarFill fill='#fd7e14'></BsStarFill>
                             <BsStarFill fill='#fd7e14'></BsStarFill>
                             <BsStarFill fill='#fd7e14'></BsStarFill>
                             <BsStarHalf fill='#fd7e14'></BsStarHalf>
                         </div>
-                <Card.Text className='text-center'>
+                 {/* <Card.Text className='text-center'>
                 €{product.price}
-                </Card.Text>
-                <Button variant="success">Add to Cart</Button>
-                <FaRegHeart className='faregheart'></FaRegHeart>
+                </Card.Text> */}
+                <Button variant="success" className='cart-button'>Add to Cart</Button>
+                <FaRegHeart className='faregheart social-icon'></FaRegHeart>
+                </div>
               </Card.Body>
+              </div>
             </Card>
             </Col>
+
             
 
           ))
@@ -167,6 +177,8 @@ function Home() {
           'uffff ik hor dikat'
 
       }
+      </Row>
+  
 
       <h2 className='text-center text-success mt-5'>Shop By Category</h2>
       <div className='d-flex fast-delivery'>
@@ -191,7 +203,30 @@ function Home() {
       <p className='text-center'>Notebooks</p>
       </Col>
       </div>
-      </Row>
+      </div>
+
+      {/* FOOTER */}
+      <footer class="footer" >
+	<div class="waves">
+		<div class="wave" id="wave1"></div>
+		<div class="wave" id="wave2"></div>
+		<div class="wave" id="wave3"></div>
+		<div class="wave" id="wave4"></div>
+	</div>
+
+	<ul class="menu">
+		<li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+		<li class="menu__item"><a class="menu__link" href="#">About us</a></li>
+		<li class="menu__item"><a class="menu__link" href="#">Contact us</a></li>
+	</ul>
+  
+                    
+        
+	<p style={{opacity: '0.75'}}>Copyright &copy; 2018, All Right Reserved</p>
+
+</footer>
+
+      
 
 
 
