@@ -3,7 +3,7 @@ import {Route,Routes} from 'react-router-dom'
 import 'animate.css'
 import Home from './Home'
 import ProductDetail from './ProductDetail'
-import AddToCart from './AddToCart'
+import AddToCart from './Components/AddToCart'
 import Sign from './Sign'
 import Layout from './Components/Layout'
 import Header from './Components/Header'
@@ -11,6 +11,7 @@ import Header from './Components/Header'
 
 import { initialstate,reducer } from './reducer/UseReducer'
 import CartTable from './Components/CartTable'
+import Cart from './Cart'
 export const UserContext = createContext()
 
 
@@ -26,7 +27,7 @@ function App() {
          <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/detail/:id' element={<ProductDetail/>} />
-         <Route path='/carttable' element={<CartTable/>} />
+         <Route path='/cart' element={<Cart/>} />
          <Route path='/sign' element={<Sign/>} />
          
          </Routes>

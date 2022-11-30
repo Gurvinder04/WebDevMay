@@ -50,10 +50,10 @@ admin.get('/product',async(req,res)=>{
 })
 
 admin.get('/product/:id',async(req,res)=>{
-    console.log('with id')
+    //console.log('with id')
     const rid = req.params.id
    const data = await Product.findById({_id:rid})
-   console.log(data)
+   //console.log(data)
     res.send(data)
     
 })

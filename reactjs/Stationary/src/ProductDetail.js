@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
-import { BsDash, BsFileMinus, BsPlus } from 'react-icons/bs'
 import { Link, useParams } from 'react-router-dom'
-import AddToCart from './AddToCart'
+import AddToCart from './Components/AddToCart'
+import CardAmount from './Components/CardAmount'
 import { useCartContext } from './Context/CartContext'
-import CartTable from './Components/CartTable'
+
 
 
 
@@ -12,21 +12,20 @@ function ProductDetail() {
     
     const { id } = useParams()
     const [detail, setdetail] = useState([])
-    const [BuyQuantity,setBuyQuantity] = useState(0)
-    const addQuantity =(id)=>{
-         setBuyQuantity(BuyQuantity++)
+    const [amount,setamount] = useState(1)
+    const setIncrease=()=>{
+     amount >0 ? setIncrease(amount+1):setIncrease(10)
     }
 
-    const minQuantity =(id)=>{
-        setBuyQuantity(BuyQuantity--)
-        
+    const setDecrease=()=>{
+      amount > 0 ? setDecrease(amount-1):setDecrease(0)
     }
 
     useEffect(() => {
         fetch(`http://localhost:4000/product/${id}`)
           .then(response => response.json())
           .then(data => {
-            console.log(data)
+            //console.log(data)
             setdetail(data)
     })
           },[detail])
@@ -48,15 +47,13 @@ function ProductDetail() {
         <p>{detail.description}</p>  
         <div>
         <label>Quantity:</label>
-        <BsPlus onClick={(e)=>addQuantity(id)}></BsPlus>
-        <input type='text' placeholder='' className='quantity-plus' value={BuyQuantity}></input>
-       <BsDash onClick={(e)=>minQuantity(id)}></BsDash>
+       <CardAmount amount={amount} setIncrease={setIncrease} setDecrease={setDecrease}/>
         </div>
         <div class="cta">
          <AddToCart  product ={detail}/>
     </div>
 </div>  
-{console.log('here comes deatil',detail)}
+{/* {console.log('here comes deatil',detail)} */}
 </div> 
   )
 }
