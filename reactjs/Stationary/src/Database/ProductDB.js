@@ -12,12 +12,13 @@ admin.use(cors())
 mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
 
 const ProductSchema = mongoose.Schema({
-    ProductName:String,
-    Category:String,
-    Description:String,
-    Price:String,
-    Quantity:String,
-    Image:String
+    productname:String,
+    category:String,
+    description:String,
+    price:String,
+    quantity:String,
+    image:String,
+    feature:Boolean
 })
 
 
@@ -58,6 +59,14 @@ admin.get('/product/:id',async(req,res)=>{
     
 })
 
+// admin.get('/detail/:cat',async(req,res)=>{
+//     console.log('with category')
+//     const search = req.params.cat
+//    const data = await Product.find({category:search})
+//    console.log(data)
+//     res.send(data)
+    
+// })
 admin.post('/product',upload.single('fileimage'),(req,res)=>{
     
     console.log(req.body.file,'sucesssssssss')

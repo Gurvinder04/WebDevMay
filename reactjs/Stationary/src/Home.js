@@ -6,6 +6,7 @@ import {FaRegHeart} from 'react-icons/fa'
 import Countdown from 'react-countdown';
 import { Animated } from "react-animated-css";
 import {Link} from 'react-router-dom'
+import CardLayout from './Components/CardLayout'
 
 
 function Home() {
@@ -139,39 +140,7 @@ function Home() {
       {
         Items.length != 0 ?
           Items.map((product, index) => (
-            
-            <Col md={3} className='pt-3'>
-              <Card style={{ width: '16rem',height:'50vh' }} className='card'>
-              {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
-             <div className='content'>
-             <div className='front'>
-              <Link to={`detail/${product._id}`}><Card.Img variant="top" src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
-              </div>
-              <Card.Body>
-                <Card.Title>{product.productname}</Card.Title>
-                <div className='back1 from-right'>
-                  <h5>{product.productname}</h5>
-                  <p>€{product.price}</p>
-                <div class="description-prod">
-                            <BsStarFill fill='#fd7e14'></BsStarFill>
-                            <BsStarFill fill='#fd7e14'></BsStarFill>
-                            <BsStarFill fill='#fd7e14'></BsStarFill>
-                            <BsStarFill fill='#fd7e14'></BsStarFill>
-                            <BsStarHalf fill='#fd7e14'></BsStarHalf>
-                        </div>
-                 {/* <Card.Text className='text-center'>
-                €{product.price}
-                </Card.Text> */}
-                <Button variant="success" className='cart-button'>Add to Cart</Button>
-                <FaRegHeart className='faregheart social-icon'></FaRegHeart>
-                </div>
-              </Card.Body>
-              </div>
-            </Card>
-            </Col>
-
-            
-
+          <CardLayout product={product} key={index} />
           ))
           :
           'uffff ik hor dikat'
@@ -183,41 +152,41 @@ function Home() {
       <h2 className='text-center text-success mt-5'>Shop By Category</h2>
       <div className='d-flex fast-delivery'>
       <Col md={2}>
-        <img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img>
+        <Link to={'/detail/Notebooks'}><img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img></Link>
         <p className='text-center'>Notebooks</p>
       </Col>
       <Col md={2}>
-      <img src='https://www.100directions.com/wp-content/uploads/2020/03/organizing-pens-pencils-feature-jen-goode-768x1024.jpg' className='shop-cat'></img>
+      <Link to={'/detail/Pen&Pencils'}><img src='https://www.100directions.com/wp-content/uploads/2020/03/organizing-pens-pencils-feature-jen-goode-768x1024.jpg' className='shop-cat'></img></Link>
       <p className='text-center'>Pen & Pencils</p>
       </Col>
       <Col md={2}>
-      <img src='https://www.northeaststationery.co.uk/wp-content/uploads/2016/10/office-1084x473.jpg' className='shop-cat'></img>
+      <Link to={'/detail/Office Stationary'}><img src='https://www.northeaststationery.co.uk/wp-content/uploads/2016/10/office-1084x473.jpg' className='shop-cat'></img></Link>
       <p className='text-center'>Office Stationary</p>
       </Col>
       <Col md={2}>
-      <img src='https://www.creativeboom.com/uploads/articles/82/8213a5686b6f2ba1d10aecd7c223928d159e1886_810.jpg' className='shop-cat'></img>
+      <Link to={'/detail/Cover Stuff'}><img src='https://www.creativeboom.com/uploads/articles/82/8213a5686b6f2ba1d10aecd7c223928d159e1886_810.jpg' className='shop-cat'></img></Link>
       <p className='text-center'>Cover Stuff</p>
       </Col>
       <Col md={2}>
-      <img src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' className='shop-cat'></img>
+      <Link to={'/detail/Notebooks'}><img src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' className='shop-cat'></img></Link>
       <p className='text-center'>Notebooks</p>
       </Col>
       </div>
       </div>
 
       {/* FOOTER */}
-      <footer class="footer" >
-	<div class="waves">
-		<div class="wave" id="wave1"></div>
-		<div class="wave" id="wave2"></div>
-		<div class="wave" id="wave3"></div>
-		<div class="wave" id="wave4"></div>
+      <footer className="footer" >
+	<div className="waves">
+		<div className="wave" id="wave1"></div>
+		<div className="wave" id="wave2"></div>
+		<div className="wave" id="wave3"></div>
+		<div className="wave" id="wave4"></div>
 	</div>
 
-	<ul class="menu">
-		<li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-		<li class="menu__item"><a class="menu__link" href="#">About us</a></li>
-		<li class="menu__item"><a class="menu__link" href="#">Contact us</a></li>
+	<ul className="menu">
+		<li className="menu__item"><a className="menu__link" href="#">Home</a></li>
+		<li className="menu__item"><a className="menu__link" href="#">About us</a></li>
+		<li className="menu__item"><a className="menu__link" href="#">Contact us</a></li>
 	</ul>
   
                     
