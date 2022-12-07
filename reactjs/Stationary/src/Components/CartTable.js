@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { BsFillTrashFill } from 'react-icons/bs'
-import { useCartContext } from '../Context/CartContext'
+import { useCartContext } from '../Context/CartContext.js'
 
 
 function CartTable({cartItems}) {

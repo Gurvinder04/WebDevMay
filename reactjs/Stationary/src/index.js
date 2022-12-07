@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App.js';
 import './Style/stat.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CartProvider } from './Context/CartContext';
-import { FilterContextProvider } from './Context/FilterContext';
-import { AppProvider } from './Context/ProductContext';
+import { CartProvider } from './Context/CartContext.js';
+import { FilterContextProvider } from './Context/FilterContext.js';
+import { AppProvider } from './Context/ProductContext.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

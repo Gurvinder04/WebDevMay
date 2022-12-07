@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../Context/CartContext'
+import { useCartContext } from '../Context/CartContext.js'
 
 function AddToCart({product}) {
     const {AddCart} = useCartContext()

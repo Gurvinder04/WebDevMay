@@ -17,7 +17,7 @@ function Products() {
             <Sort />
         </div>
         <div className='main-product'>
-            <ProductList />
+             <ProductList />
         </div>
 
      </section>

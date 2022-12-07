@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import {UserContext} from '../App'
-import { useFilterContext } from '../Context/FilterContext'
+import {UserContext} from '../App.js'
+import { useFilterContext } from '../Context/FilterContext.js'
 
 
 function Header() {

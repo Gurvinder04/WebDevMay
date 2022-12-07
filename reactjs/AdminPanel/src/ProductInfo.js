@@ -109,6 +109,7 @@ function ProductInfo() {
                         <th className="a-center">Price</th>
                         <th className="a-right">Quantity</th>
                         <th className="a-right">Image</th>
+                        <th className="a-right">Featured</th>
                       </tr>
                     </thead>
                     <tbody className='text-center'>

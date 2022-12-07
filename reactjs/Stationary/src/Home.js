@@ -7,21 +7,24 @@ import Countdown from 'react-countdown';
 import { Animated } from "react-animated-css";
 import {Link} from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
+import { useProductContext } from './Context/ProductContext.js'
 
 
 function Home() {
   const [Items, setItems] = useState([])
-  const fetchData = async () => {
-    let response = await fetch('http://localhost:4000/product')
-    let data = await response.json()
-    setItems(data)
-    console.log('Data showing', data)
-    console.log('Items showing', Items)
-    console.log('productname', data[0].productname)
-  }
+  const {isLoading,featureProducts,products} = useProductContext()
+  console.log('All products r here...',products)
+  // const fetchData = async () => {
+  //   let response = await fetch('http://localhost:4000/product')
+  //   let data = await response.json()
+  //   setItems(data)
+  //   console.log('Data showing', data)
+  //   console.log('Items showing', Items)
+  //   console.log('productname', data[0].productname)
+  // }
 
   useEffect(() => {
-    fetchData()
+    // fetchData()
   }, [])
   return (
     <>
@@ -137,13 +140,24 @@ function Home() {
       </div> 
       <div className='container'>
       <Row className='m-5 text-center'>
-      {
+      {/* {
         Items.length != 0 ?
           Items.map((product, index) => (
           <CardLayout product={product} key={index} />
           ))
           :
-          'uffff ik hor dikat'
+          <div>.......Loading</div>
+
+      } */}
+
+{           
+          featureProducts.length != 0 ?
+          featureProducts.map((product,index) => (
+          <CardLayout product={product} key={index} />
+      
+          ))
+          :
+          <div>.......Loading</div>
 
       }
       </Row>
@@ -194,6 +208,7 @@ function Home() {
 	<p style={{opacity: '0.75'}}>Copyright &copy; 2018, All Right Reserved</p>
 
 </footer>
+
 
       
 

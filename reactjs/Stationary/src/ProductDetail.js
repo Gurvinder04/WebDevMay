@@ -3,7 +3,8 @@ import { Button } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import AddToCart from './Components/AddToCart'
 import CardAmount from './Components/CardAmount'
-import { useCartContext } from './Context/CartContext'
+import { useCartContext } from './Context/CartContext.js'
+import { useProductContext } from './Context/ProductContext'
 
 
 
@@ -11,23 +12,27 @@ import { useCartContext } from './Context/CartContext'
 function ProductDetail() {
     
     const { id } = useParams()
+    const {getSingleProduct} = useProductContext()
     const [detail, setdetail] = useState([])
     const [amount,setamount] = useState(1)
+    const API = 'http://localhost:4000/product'
     const setIncrease=()=>{
-     amount >0 ? setIncrease(amount+1):setIncrease(10)
-    }
-
-    const setDecrease=()=>{
-      amount > 0 ? setDecrease(amount-1):setDecrease(0)
-    }
+      amount >0 ? setIncrease(amount+1):setIncrease(10)
+     }
+ 
+     const setDecrease=()=>{
+       amount > 0 ? setDecrease(amount-1):setDecrease(0)
+     }
 
     useEffect(() => {
-        fetch(`http://localhost:4000/product/${id}`)
-          .then(response => response.json())
-          .then(data => {
-            //console.log(data)
-            setdetail(data)
-    })
+    //     fetch(`http://localhost:4000/product/${id}`)
+    //       .then(response => response.json())
+    //       .then(data => {
+    //         //console.log(data)
+    //         setdetail(data)
+    // })
+
+    getSingleProduct(`${API}/${id}`)
           },[detail])
   return (
     <div id="product">

@@ -14,7 +14,8 @@ function EditProduct() {
     description:'',
     price:'',
     quantity:'',
-    fileimage:''
+    fileimage:'',
+    feature:''
     
   })
   
@@ -29,14 +30,14 @@ function EditProduct() {
   }
 
   const UpdateData = async () => {
-    const { productname,category, description, price,quantity,fileimage } = singleData
-    if (productname || category || description || price || quantity || fileimage) {
+    const { productname,category, description, price,quantity,fileimage,feature } = singleData
+    if (productname || category || description || price || quantity || fileimage || feature) {
       let data = await fetch(`/product/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ productname,category, description, price,quantity,fileimage })
+        body: JSON.stringify({ productname,category, description, price,quantity,fileimage,feature })
       })
 
       let res = await data.json()
@@ -152,6 +153,12 @@ function EditProduct() {
                   <label className="col-sm-3 control-label">Availability</label>
                   <div className="col-sm-3">
                     <input type="text" className=" col-sm-3 form-control"  name='quantity' value={singleData.quantity} onChange={Data} />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label  className="col-sm-3 control-label">Featured</label>
+                  <div className="col-sm-3">
+                    <input type="text" className="form-control" name='feature' value={singleData.feature} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">

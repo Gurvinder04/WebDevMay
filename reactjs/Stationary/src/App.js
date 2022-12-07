@@ -10,7 +10,7 @@ import Layout from './Components/Layout'
 import Header from './Components/Header'
 
 
-import { initialstate,reducer } from './reducer/UseReducer'
+import { initialstate,reducer } from './reducer/UseReducer.js'
 import CartTable from './Components/CartTable'
 import Cart from './Cart'
 import Products from './Products'

@@ -16,7 +16,8 @@ function AddProduct() {
     description: '',
     rate: '',
     quantity:'',
-    fileimage:''
+    fileimage:'',
+    feature:''
   })
   let name, value;
   const Data = (e) => {
@@ -28,14 +29,14 @@ function AddProduct() {
   }
 
   const SubmitData = async () => {
-    const { productname,category, description, rate,quantity,fileimage } = Sample
-    if (productname && category && description && rate &&quantity && fileimage) {
+    const { productname,category, description, rate,quantity,fileimage,feature } = Sample
+    if (productname && category && description && rate &&quantity && fileimage && feature) {
       let data = await fetch('/product', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ productname,category, description, rate,quantity,fileimage })
+        body: JSON.stringify({ productname,category, description, rate,quantity,fileimage,feature })
       })
 
       let res = await data.json()
@@ -107,6 +108,12 @@ function AddProduct() {
                   <label className="col-sm-3 control-label">Availability</label>
                   <div className="col-sm-3">
                     <input type="text" className=" col-sm-3 form-control"  name='quantity' value={Sample.quantity} onChange={Data} />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label  className="col-sm-3 control-label">Featured</label>
+                  <div className="col-sm-3">
+                    <input type="text" className="form-control" name='feature' value={Sample.feature} onChange={Data} />
                   </div>
                 </div>
                 <div className="form-group">
