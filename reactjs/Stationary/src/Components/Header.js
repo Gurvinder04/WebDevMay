@@ -8,7 +8,6 @@ import { useFilterContext } from '../Context/FilterContext.js'
 
 function Header() {
   const { state, dispatch } = useContext(UserContext)
-  const {filters:{text},searchValue} = useFilterContext()
   const RenderMenu = () => {
     if (state) {
       return (
@@ -71,8 +70,8 @@ function Header() {
           <h2 className='heading'><span className='stat'>S</span>tati<span className='onero'>Onero</span></h2>
           </Col>
      
-      <Col className='mt-4 searchbar'>
-        <Form onSubmit={(e)=>e.preventdefault()}>
+      {/* <Col className='mt-4 searchbar'>
+        <form onSubmit={(e)=>e.preventDefault()}>
       <InputGroup className="mt-2 form-style">
         <Form.Control aria-label="Text input with dropdown button" name='text' value={text} onChange={searchValue} >
           </Form.Control>
@@ -92,8 +91,8 @@ function Header() {
         <FaSearch className='fasearch'></FaSearch>
        
       </InputGroup>
-      </Form>
-      </Col> 
+      </form>
+      </Col>  */}
       <Col className='mt-5'>
       <FaRegHeart className='fasearch'></FaRegHeart>
        <FaShoppingCart className='fasearch'></FaShoppingCart>
@@ -104,7 +103,7 @@ function Header() {
       
     </Row>         
     <RenderMenu />
-    {console.log('searchinggg',text)}
+   
     </>
   )
 }

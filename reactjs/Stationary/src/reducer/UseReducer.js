@@ -15,16 +15,18 @@ if(action.type==="USER"){
     }
     if(action.type==="MY_API_DATA"){
         const featureData = action.payload.filter((curr)=>{
-            return curr.feature===true      
-  })
+            return curr.feature===true  
+         })
+         console.log('featuring',featureData)
         return{
             ...state,
             isLoading:false,
             products:action.payload,
-            featureProducts:featureData
+            feature:featureData
         }
 
     } 
+   
     
     if(action.type==="MY_API_ERROR"){
         return {
@@ -34,7 +36,12 @@ if(action.type==="USER"){
         }
     }
         
-
+if(action.type==="SET_SINGLE_PRODUCT"){
+    return{
+        ...state,
+        SingleProduct:action.payload
+    }
+}
 
 
 
@@ -45,7 +52,8 @@ if(action.type==="ADD_TO_CART"){
     cartProduct={
         id:product._id,
         name: product.productname,
-        price:product.price
+        price:product.price,
+        quantity:product.quantity
     }
     return{
         ...state,
@@ -63,16 +71,6 @@ if(action.type==="REMOVE_ITEM"){
 
 }
 
-if(action.type==="SEARCHED_VALUE"){
-    const {name,value} =action.payload
-            return{
-                ...state,
-                filters:{
-                    ...state.filters,
-                [name]:value
-                }  
-            }
-}
 return state;
 }
 

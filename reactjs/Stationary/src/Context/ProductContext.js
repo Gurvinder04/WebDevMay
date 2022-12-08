@@ -9,7 +9,7 @@ const initialstate1={
     isLoading:false,
     isError:false,
     products:[],
-    featureProducts:[],
+    feature:[],
     isSingleLoading: false,
     SingleProduct:{}
 }
@@ -17,31 +17,29 @@ const initialstate1={
  const AppProvider = ({children})=>{
 
     const[state,dispatch] = useReducer(reducer,initialstate1)
-    const[dataItems,setdataItems]=useState([])
+    
      
     //API CALL FOR ALL RPODUCTS
     const getProducts= async()=>{
         //dispatch({type:'SET_LOADING'})
         try{
             let res = await fetch('http://localhost:4000/product')
-            let data = await res.json()
-            dispatch({type:"MY_API_DATA",payload:data})
-            console.log('dekhlo data',data)
-            setdataItems(data)
-            console.log('dekhlo dataItems',dataItems)
-            
+            let products = await res.json()
+            dispatch({type:"MY_API_DATA",payload:products})
         }catch(err){
            dispatch({type:'API_ERROR'})
         }
-
+       
         }
            
 //API CALL FOR SINGLE PRODUCT
 const getSingleProduct= async(url)=>{
     try{
         let res = await fetch(url)
-        let SingleProduct = await res.json()
-        console.log('dekhlo singledata',SingleProduct)
+        let oneProduct = await res.json()
+        dispatch({type:"SET_SINGLE_PRODUCT",payload:oneProduct})
+        console.log('dekhlo singledata',oneProduct)
+
         
     }catch(err){
       

@@ -8,11 +8,13 @@ import { Animated } from "react-animated-css";
 import {Link} from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
 import { useProductContext } from './Context/ProductContext.js'
+import { useFilterContext } from './Context/FilterContext'
 
 
 function Home() {
   const [Items, setItems] = useState([])
-  const {isLoading,featureProducts,products} = useProductContext()
+  const {isLoading,feature,products} = useProductContext()
+  const {filters:{category},searchValue} = useFilterContext()
   console.log('All products r here...',products)
   // const fetchData = async () => {
   //   let response = await fetch('http://localhost:4000/product')
@@ -151,8 +153,8 @@ function Home() {
       } */}
 
 {           
-          featureProducts.length != 0 ?
-          featureProducts.map((product,index) => (
+          feature.length != 0 ?
+          feature.map((product,index) => (
           <CardLayout product={product} key={index} />
       
           ))
@@ -166,8 +168,8 @@ function Home() {
       <h2 className='text-center text-success mt-5'>Shop By Category</h2>
       <div className='d-flex fast-delivery'>
       <Col md={2}>
-        <Link to={'/detail/Notebooks'}><img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img></Link>
-        <p className='text-center'>Notebooks</p>
+        <img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img>
+        <p className='text-center'><Link to={'/allproduct'} name="category" value="Notebooks" onClick={searchValue}>Notebooks</Link></p>
       </Col>
       <Col md={2}>
       <Link to={'/detail/Pen&Pencils'}><img src='https://www.100directions.com/wp-content/uploads/2020/03/organizing-pens-pencils-feature-jen-goode-768x1024.jpg' className='shop-cat'></img></Link>
@@ -186,6 +188,15 @@ function Home() {
       <p className='text-center'>Notebooks</p>
       </Col>
       </div>
+      </div>
+
+      <div className='text-center m-5'>
+        <h2>SUbscribe NewsLETTER</h2>
+        <form>
+          <input type='email' name='email' placeholder='enter your email'></input>
+          <button type='button'>Send</button>
+          <p>Have u any query! <Link to={'/contact'}>contact US</Link></p>
+        </form>
       </div>
 
       {/* FOOTER */}

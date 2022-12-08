@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AppProvider>
-     <CartProvider>
-      <FilterContextProvider>
+     <FilterContextProvider>
+      <CartProvider>
         <App />
-      </FilterContextProvider>
-     </CartProvider>
+      </CartProvider>
+     </FilterContextProvider>
     </AppProvider>
 </React.StrictMode>
 );

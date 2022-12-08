@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import AddToCart from './Components/AddToCart'
-import CardAmount from './Components/CardAmount'
+import PageNavigation from './Components/PageNavigation'
 import { useCartContext } from './Context/CartContext.js'
 import { useProductContext } from './Context/ProductContext'
 
@@ -12,17 +12,11 @@ import { useProductContext } from './Context/ProductContext'
 function ProductDetail() {
     
     const { id } = useParams()
-    const {getSingleProduct} = useProductContext()
-    const [detail, setdetail] = useState([])
-    const [amount,setamount] = useState(1)
+    const {getSingleProduct,SingleProduct} = useProductContext()
+   // const [detail, setdetail] = useState([])
+   
     const API = 'http://localhost:4000/product'
-    const setIncrease=()=>{
-      amount >0 ? setIncrease(amount+1):setIncrease(10)
-     }
- 
-     const setDecrease=()=>{
-       amount > 0 ? setDecrease(amount-1):setDecrease(0)
-     }
+
 
     useEffect(() => {
     //     fetch(`http://localhost:4000/product/${id}`)
@@ -33,33 +27,39 @@ function ProductDetail() {
     // })
 
     getSingleProduct(`${API}/${id}`)
-          },[detail])
+          },[])
   return (
+    <>
+    <div>
+      <PageNavigation title={SingleProduct.category} />
+    </div>
+
+  
     <div id="product">
     <div class="product_images">
-    <img variant="top" src='https://images.all-free-download.com/images/graphiclarge/color_stationery_03_hd_pictures_166662.jpg' />
+    <img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{width:'40rem',height:'110vh'}} />
     </div>
     <div class="product_details">
-        <h2>{detail.productname}</h2>
-        <h3>€{detail.price}</h3>
+        <h2>{SingleProduct.productname}</h2>
+        <h3>€{SingleProduct.price}</h3>
 
         <div class="about">
-            <p>Availability :<span>{detail.quantity}</span></p>
+            <p>Availability :<span>{SingleProduct.quantity}</span></p>
             <p>Product Code : <span>#4657</span></p>   
             <p>Tags : <span>Fashion, Hood, Classic</span> </p>
         </div>
 
-        <p>{detail.description}</p>  
+        <p>{SingleProduct.description}</p>  
         <div>
         <label>Quantity:</label>
-       <CardAmount amount={amount} setIncrease={setIncrease} setDecrease={setDecrease}/>
         </div>
         <div class="cta">
-         <AddToCart  product ={detail}/>
+         <AddToCart  product ={SingleProduct}/>
     </div>
 </div>  
 {/* {console.log('here comes deatil',detail)} */}
 </div> 
+</>
   )
 }
 

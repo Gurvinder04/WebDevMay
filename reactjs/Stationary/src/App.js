@@ -14,6 +14,7 @@ import { initialstate,reducer } from './reducer/UseReducer.js'
 import CartTable from './Components/CartTable'
 import Cart from './Cart'
 import Products from './Products'
+import ContactPage from './ContactPage'
 export const UserContext = createContext()
 
 
@@ -33,6 +34,7 @@ function App() {
          <Route path ='/allproduct' element={<Products/>} />
          <Route path='/cart' element={<Cart/>} />
          <Route path='/sign' element={<Sign/>} />
+         <Route path='/contact' element={<ContactPage/>} />
          
          </Routes>
          </Layout>

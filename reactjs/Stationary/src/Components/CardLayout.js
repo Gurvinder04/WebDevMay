@@ -4,7 +4,7 @@ import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'rea
 import { Link } from 'react-router-dom'
 import {FaRegHeart} from 'react-icons/fa'
 
-function CardLayout( product) {
+function CardLayout( {product}) {
     useEffect(()=>{
 
     },[product])
@@ -14,7 +14,7 @@ function CardLayout( product) {
     {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
    <div className='content'>
    <div className='front'>
-    <Link to={`product/${product._id}`}><Card.Img variant="top" src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
+    <Link to={`product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
     </div>
     <Card.Body>
       <Card.Title>{product.productname}</Card.Title>
