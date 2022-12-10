@@ -1,9 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .body-divide{
   height:55vh;
-  background: linear-gradient(-25deg, #9e9e9e24 50%, #8bc34a 50%);
+  background: linear-gradient(-25deg, #9e9e9e24 50%,  #8bc34a 50%);
 }
-.marquee{
+.marquee1{
   width: 100%; 
   background-color: #8bc34a;
   text-transform: uppercase;
@@ -11,15 +11,15 @@
   overflow: hidden;
 }
 
-.marquee div {
+.marquee1 div {
   
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  animation: animate 10s linear infinite;
+  animation: animate1 10s linear infinite;
   padding-left: 100%;
   display: inline-block;
 }
 
-@keyframes animate{
+@keyframes animate1{
   100%{
       transform: translate(-100%,0);
   }
@@ -32,21 +32,50 @@ a.navbar-brand{
 
 a.nav-link {
   color: green !important;
+    margin-left: 10px;
 }
 
-.stationero{
-  background-color: #9e9e9e24;
-  height: 12vh;
-  
+img.d-block.w-100 {
+  height: 100vh;
+}
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 12.25rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  top: 30% !important;
 }
 
-.heading{
-  float: right;
-  color: yellowgreen;
+.blue{
+  color: blue;
 }
-.stat,.onero{
-  color: #8bc34a ;
+.green{
+  color: green;
 }
+
+.yellow{
+  color: yellow;
+}
+.black{
+  color: black;
+}
+
+.red{
+  color: red;
+}
+.orange{
+  color: orange;
+}
+.h1Size{
+  font-size: 4.5rem;
+  font-family: 'Pacifico', cursive;
+}
+  /* color: yellowgreen; */
+
 
 .form-style {
   width: 650px !important;
@@ -58,11 +87,6 @@ a.nav-link {
   padding: 10px !important;
 }
 
-.fasearch{
-  font-size: 23px;
-  color: #777;
-  
-}
 
 .form-control{
   border: none !important;

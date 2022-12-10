@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
+import { Button, Card, Carousel, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
 import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { MdPayment } from 'react-icons/md'
 import {FaRegHeart} from 'react-icons/fa'
@@ -30,7 +30,46 @@ function Home() {
   }, [])
   return (
     <>
-       <div className='body-divide container-fluid'></div>
+       {/* <div className='body-divide container-fluid'></div> */}
+       <Carousel fade>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RhdGlvbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://media.istockphoto.com/id/1333039392/photo/frame-of-shcool-supplies-and-keyboard-on-white-background-back-to-school-distance-learning.jpg?s=170667a&w=0&k=20&c=fv-lcP_ayvq-KdeHK3Y7PIC69xjIUUbep3j3qxs3824="
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://media.istockphoto.com/id/1264689237/photo/school-or-office-supplies-border-on-blackboard-background-copy-space.jpg?s=612x612&w=0&k=20&c=PDl6EgQzOhc5RLC9ylAlZd28HgJ2J8fkAgyuo3eqHIc="
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
         <Container>
         <Row className='justify-content-center text-center mt-4'>
           <Col className='d-flex fast-delivery'>
@@ -76,7 +115,7 @@ function Home() {
           <div className='top-left'>
             <p>Sale Up To 15% Off</p>
             <h2>Home Office Desks</h2>
-            <Button className='shop-now'>Shop Now</Button>
+            <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Office Stationary' onClick={searchValue}>Shop Now</Button></Link>
           </div>
         </Col>
 
@@ -86,7 +125,7 @@ function Home() {
           <div className='top-left'>
             <p>All Page Types</p>
             <h2>Notebooks</h2>
-            <Button className='shop-now'>Shop Now</Button>
+           <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Notebooks' onClick={searchValue}>Shop Now</Button></Link> 
           </div>
         </Col>
 
@@ -96,7 +135,7 @@ function Home() {
             <div className='top-left'>
               <p>Office / Home</p>
               <h2>Metal Pens</h2>
-              <Button className='shop-now'>Shop Now</Button>
+             <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Pens&Pencils' onClick={searchValue}>Shop Now</Button></Link> 
             </div>
           </div>
           <br></br>
@@ -105,7 +144,7 @@ function Home() {
             <div className='top-left'>
               <p>Office Adhesive</p>
               <h2>Tape</h2>
-              <Button className='shop-now'>Shop Now</Button>
+             <Link to={'/allprodut'}><Button className='shop-now' name='category' value='Stuffs' onClick={searchValue}>Shop Now</Button></Link> 
             </div>
           </div>
         </Col>

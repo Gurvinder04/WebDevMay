@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row } from 'react-bootstrap'
 import styled from "styled-components"
 import FilterSection from './Components/FilterSection'
@@ -12,7 +12,9 @@ function Products() {
   const {filters:{text,category},searchValue,all_products} = useFilterContext()
 
 
-
+useEffect(()=>{
+  
+})
   return (
     <Container className=''>
       {console.log('filtering',filter_products)}
