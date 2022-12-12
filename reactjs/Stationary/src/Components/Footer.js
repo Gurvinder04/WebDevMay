@@ -9,7 +9,7 @@ function Footer() {
   return (
     <Container fluid={true} className='p-0'>
     < div className='footer-bg text-center'>
-        <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px',paddingTop:'40px'}}>Subscribe And Get 20% Off Your First<br></br> Purchase</h2>
+        <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px',paddingTop:'50px'}}>Subscribe And Get 20% Off Your First<br></br> Purchase</h2>
         <div className='form-bg'>
          <form className='d-flex newsletter-form'>
           <input type='email' name='email' placeholder='Your email' className='newsletterform-border'></input>
