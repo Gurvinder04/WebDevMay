@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Card, Carousel, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
 import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { MdPayment } from 'react-icons/md'
-import {FaRegHeart} from 'react-icons/fa'
+import {FaArrowCircleRight, FaPlus, FaRegHeart} from 'react-icons/fa'
 import Countdown from 'react-countdown';
 import { Animated } from "react-animated-css";
 import {Link} from 'react-router-dom'
@@ -151,13 +151,18 @@ function Home() {
       </div>
 
        <div className='container-fluid deal mt-5 text-center'>
-        <p className='mt-5'>LIMITED QUANTITES</p>
-        <h1 className='mt-5'>Deal of The Day</h1>
-        <p>Give thank to the most high</p>
-        <Countdown date={Date.parse('2022-12-21 01:02:03') + 10000} className='count' />
-        <p> days,hours, seconds</p>
-        <Button className='shop-now'>View all deals</Button>
-        <Row className='d-flex mt-5'>
+        <h2 style={{fontFamily:"'Ultra', serif",paddingTop:"40px",fontSize:'55px'}}>Open Up To A New<br></br> Experience.</h2>
+        <h6 className=''>Deal of The Day</h6>
+        <h2><Countdown date={Date.parse('2022-12-21 01:02:03') + 10000} className='count' /></h2>
+       
+        <div className='d-flex fast-delivery text-center'>
+           <p style={{paddingLeft:'393px'}}>Days</p>
+           <p>Hours</p>
+           <p>Minutes</p>
+           <p>Seconds</p>
+           </div>
+        <Button className='shop-now' style={{backgroundColor:'#e84f69',marginBottom:'20px'}}>View all deals</Button>
+        {/* <Row className='d-flex'>
           <Col>
             <img src='https://cdn3d.iconscout.com/3d/premium/thumb/notebook-and-pencil-5261879-4403131.png' className='deal-img'></img>
           </Col>
@@ -176,7 +181,7 @@ function Home() {
           <Col>
             <img src='https://www.freeiconspng.com/thumbs/book-png/book-png-17.jpg' className='deal-img'></img>
           </Col>
-        </Row>
+        </Row> */}
 
       </div> 
       <div className='container'>
@@ -202,62 +207,62 @@ function Home() {
 
       }
       </Row>
-  
 
-      <h2 className='text-center text-success mt-5'>Shop By Category</h2>
-      <div className='d-flex fast-delivery'>
-      <Col md={2}>
-        <img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img>
-        <p className='text-center'><Link to={'/allproduct'} name="category" value="Notebooks" onClick={searchValue}>Notebooks</Link></p>
-      </Col>
-      <Col md={2}>
-      <Link to={'/detail/Pen&Pencils'}><img src='https://www.100directions.com/wp-content/uploads/2020/03/organizing-pens-pencils-feature-jen-goode-768x1024.jpg' className='shop-cat'></img></Link>
-      <p className='text-center'>Pen & Pencils</p>
-      </Col>
-      <Col md={2}>
-      <Link to={'/detail/Office Stationary'}><img src='https://www.northeaststationery.co.uk/wp-content/uploads/2016/10/office-1084x473.jpg' className='shop-cat'></img></Link>
-      <p className='text-center'>Office Stationary</p>
-      </Col>
-      <Col md={2}>
-      <Link to={'/detail/Cover Stuff'}><img src='https://www.creativeboom.com/uploads/articles/82/8213a5686b6f2ba1d10aecd7c223928d159e1886_810.jpg' className='shop-cat'></img></Link>
-      <p className='text-center'>Cover Stuff</p>
-      </Col>
-      <Col md={2}>
-      <Link to={'/detail/Notebooks'}><img src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' className='shop-cat'></img></Link>
-      <p className='text-center'>Notebooks</p>
-      </Col>
-      </div>
+      <div className='d-flex m-5 tech'>
+        <Col>
+        <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549'></img>
+        </Col>
+        <Col className='find-more'>
+        <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'45px'}}>The Stationary<br></br>Company</h2>
+        <hr style={{color:'#8bc34a'}}></hr>
+        <p className='find-description'>Our office supplies will help you organize your workspace from all kinds of desk essentials to top quality staplers, calculators and organizers.</p>
+        <button className='find-button'>Find out more<FaArrowCircleRight className='Arrow'></FaArrowCircleRight></button>
+        </Col>
+
       </div>
 
       <div className='text-center m-5'>
-        <h2>SUbscribe NewsLETTER</h2>
-        <form>
-          <input type='email' name='email' placeholder='enter your email'></input>
-          <button type='button'>Send</button>
-          <p>Have u any query! <Link to={'/contact'}>contact US</Link></p>
-        </form>
+       <h3 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px'}} className='extraMargin'>From Our Blog</h3>
+       <Row className='d-flex text-center blog-flex'>
+       <Col>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/25/574_322/b-blog-2.jpg' className='blog-img'></img>
+       <div className='d-flex text-center blog-parts mt-4'>
+        <p>DEMO DEMO</p>
+        <p>SUB CATEGORY</p>
+        <p style={{color:'gray'}}>12 DEC 2022</p>
+       </div>
+       <h5>Esterbrook X Accutron Fountain Pen Review</h5>
+       <button className='read-button'>Read More<FaPlus className='readArrow'></FaPlus></button>
+       </Col>
+       <Col>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/24/574_322/b-blog-1.jpg' className='blog-img'></img>
+       <div className='d-flex text-center blog-parts mt-4'>
+        <p>DEMO DEMO</p>
+        <p>SUB CATEGORY</p>
+        <p style={{color:'gray'}}>12 DEC 2022</p>
+       </div>
+       <h5>Review: Yoobi X Marvel HB Pencils</h5>
+       <button  className='read-button'>Read More<FaPlus className='readArrow'></FaPlus></button>
+       </Col>
+       <Col>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/23/574_322/b-blog-7.jpg' className='blog-img'></img>
+       <div className='d-flex text-center blog-parts mt-4'>
+        <p>DEMO DEMO</p>
+        <p>SUB CATEGORY</p>
+        <p style={{color:'gray'}}>12 DEC 2022</p>
+       </div>
+       <h5>State Of The Art: Gelatin Printmaking, Gelli Prints</h5>
+       <button  className='read-button'>Read More<FaPlus className='readArrow'></FaPlus></button>
+       </Col>
+       </Row>
+
       </div>
 
-      {/* FOOTER */}
-      <footer className="footer" >
-	<div className="waves">
-		<div className="wave" id="wave1"></div>
-		<div className="wave" id="wave2"></div>
-		<div className="wave" id="wave3"></div>
-		<div className="wave" id="wave4"></div>
-	</div>
+      </div>
 
-	<ul className="menu">
-		<li className="menu__item"><a className="menu__link" href="#">Home</a></li>
-		<li className="menu__item"><a className="menu__link" href="#">About us</a></li>
-		<li className="menu__item"><a className="menu__link" href="#">Contact us</a></li>
-	</ul>
+
   
-                    
-        
-	<p style={{opacity: '0.75'}}>Copyright &copy; 2018, All Right Reserved</p>
-
-</footer>
+     
 
 
       

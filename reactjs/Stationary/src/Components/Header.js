@@ -38,7 +38,7 @@ function Header() {
         <>
         <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-center">
         <Container className='mt-4'>
-        <Navbar.Brand>StatiOnerO</Navbar.Brand>
+        <Navbar.Brand className='brandName'>StatiOnerO</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

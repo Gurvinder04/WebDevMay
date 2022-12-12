@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {BrowserRouter} from 'react-router-dom'
+import Footer from './Footer'
 import Header from './Header'
 
 function Layout({children}) {
@@ -8,6 +9,7 @@ function Layout({children}) {
     <BrowserRouter>
    
     {children}
+    <Footer />
     </BrowserRouter>
     
   )
