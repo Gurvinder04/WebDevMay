@@ -8,7 +8,8 @@ const initialstate = {
     all_products:[],
     filters:{
         text: "",
-        category:"all"
+        category:"all",
+        price:''
     }
 
 }

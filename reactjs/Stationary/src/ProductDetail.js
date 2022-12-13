@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import AddToCart from './Components/AddToCart'
+import FormatPrice from './Helpers/FormatPrice'
 import PageNavigation from './Components/PageNavigation'
 import { useCartContext } from './Context/CartContext.js'
 import { useProductContext } from './Context/ProductContext'
@@ -41,7 +42,7 @@ function ProductDetail() {
     </div>
     <div class="product_details">
         <h2>{SingleProduct.productname}</h2>
-        <h3>€{SingleProduct.price}</h3>
+        <h3>{<FormatPrice price={SingleProduct.price}/>}</h3>
 
         <div class="about">
             <p>Availability :<span>{SingleProduct.quantity}</span></p>

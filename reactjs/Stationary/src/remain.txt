@@ -35,3 +35,20 @@
            </div>
 
            TIMER END   --!>
+
+
+           <!--SELECT CATEGORY
+            <select
+          name="category"
+          onClick={searchValue}
+        >
+          
+          <option  name="category" value="all">All</option>
+          <option name="category"  value="Notebooks">Notebooks</option>
+          <option  name="category" value="Pens&Pencils">Pens&Pencils</option>
+          <option  name="category" value="Office Stationary">Office Stationary</option>
+          <Dropdown.Divider />
+          <option>Discount Offers</option>
+        </select>
+        
+        END SELECT CATEGORY ---!>

@@ -30,7 +30,7 @@ function Footer() {
             </Col>
             <Col>
              <h5>USEFUL LINKS</h5>
-             <ul>
+             <ul className='Footer-ul'>
              <li>About Us</li>
              <li>Contact Us</li>
              <li>Delivery Policy</li>
