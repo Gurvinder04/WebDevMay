@@ -4,21 +4,12 @@ import { BsDash, BsFileMinus, BsPlus } from 'react-icons/bs'
 
 function CardAmount({amount,setIncrease,setDecrease}) {
   return (
-    <div className='cart-button'>
+     
         <div className='amount-toggle'>
-            <Button  onClick={()=>setDecrease()}>
-            <BsDash></BsDash>
-            </Button>
-            <div className='amount-style'>{amount}</div>
-            <Button onClick={()=>setIncrease()}>
-            <BsPlus ></BsPlus>
-            </Button>
+            <Button className='toggle-btn' onClick={()=>setDecrease()}><BsDash></BsDash></Button><p className='amount-style'>{amount}</p>
+            <Button className='toggle-btn' onClick={()=>setIncrease()}><BsPlus ></BsPlus></Button>
            
             {/* {console.log(amount)} */}
-
-        </div>
-
-
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'rea
 import { Link } from 'react-router-dom'
 import {FaRegHeart} from 'react-icons/fa'
 
-function CardLayout( {product}) {
+function CardLayout({product}) {
     useEffect(()=>{
 
     },[product])

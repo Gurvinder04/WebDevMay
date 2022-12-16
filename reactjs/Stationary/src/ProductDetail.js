@@ -38,7 +38,7 @@ function ProductDetail() {
   
     <div id="product">
     <div class="product_images">
-    <img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{width:'40rem',height:'110vh'}} />
+    <img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{width:'41rem',height:'71vh'}} />
     </div>
     <div class="product_details">
         <h2>{SingleProduct.productname}</h2>
@@ -55,6 +55,7 @@ function ProductDetail() {
         <label>Quantity:</label>
         </div>
         <div class="cta">
+        <label>Quantity:</label>
          <AddToCart  product ={SingleProduct}/>
     </div>
 </div>  

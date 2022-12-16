@@ -392,6 +392,15 @@ section .container.active .signinBx .imgBx {
 
 /*PRODUCT DETAIL */
 
+.amount-toggle {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn{
+  height: fit-content;
+}
 #product {
 width: 1148px;
 margin: 0 auto;
@@ -420,9 +429,9 @@ color: #111111;
 .product_details p {
 font-size: 14px;
 color: #555555;
-font-weight: 300;
+/* font-weight: 300;
 margin-top: 35px;
-margin-bottom: 30px;
+margin-bottom: 30px; */
 line-height: 24px;
 }
 .product_details ul {
@@ -449,7 +458,7 @@ margin-left: -1em;
 /* Also needed for space (tweak if needed) */
 }
 .cta {
-display: flex;
+display: flex; 
 width: 100%;
 margin: 40px 0;
 }
@@ -659,9 +668,12 @@ margin-bottom: 2rem;
 
 .cat-Border{
   border: 1px solid gray;
-  width: 16rem;
+  width: 16rem !important;
+  margin: 0px !important;
 }
-
+.try{
+  width: 18rem !important;
+}
 .cat-ul{
   color: black !important;
   text-align: start;
@@ -671,7 +683,7 @@ margin-bottom: 2rem;
   padding: 9px;
 }
 
-li:hover{
+.cat-btn:hover{
   cursor: pointer;
   color: #8bc34a;
 }
@@ -680,19 +692,26 @@ li:hover{
   padding-left: 23px;
 }
 
-.cat-hr{
+.cat-btn {
+  border: 0px;
+  background: transparent;
+}
+
+/* .cat-hr{
      margin: 1rem !important;
       width: 14rem !important;
       position: relative !important;
      
-}
+} */
 
+.cat-mainForm{
+  text-align: -webkit-center !important;
+}
 .cat-form{
   width: 280px !important;
   height: 37px !important;
   background-color: white !important;
   border-radius: 30px !important;
-  display: flex !important;
   align-items: center !important;
   padding: 10px !important;
 }
@@ -708,7 +727,7 @@ li:hover{
   margin: 0px !important;
   width: 16rem !important;
   position: relative !important;
-  left:19px
+  left:513px
   
 }
 

@@ -9,7 +9,9 @@ const initialstate = {
     filters:{
         text: "",
         category:"all",
-        price:''
+        maxPrice:0,
+        minPrice:0,
+        price:0
     }
 
 }
@@ -26,6 +28,11 @@ export const FilterContextProvider=({children})=>{
 
     }
 
+    //to clear all filters
+     const clearFilters=()=>{
+        dispatch({type:'CLEAR_FILTERS'})
+     }
+
     // const CategoryFilter =async()=>{
     //     let response = await fetch(`http://localhost:4000/detail/${cat}`)
     //     let data = await response.json()
@@ -33,12 +40,15 @@ export const FilterContextProvider=({children})=>{
     // }
 
     useEffect(()=>{
-        dispatch({type:'FILTER_PRODUCTS',payload:products})
         dispatch({type:'SEARCHED_PRODUCTS'})
-    },[products,state.filters])
+    },[state.filters])
    
+    //to show all products
+    useEffect(()=>{
+        dispatch({type:'FILTER_PRODUCTS',payload:products})
+    },[products])
 return( 
-    <FilterContext.Provider value={{...state,searchValue}}>
+    <FilterContext.Provider value={{...state,searchValue,clearFilters}}>
         {children}
     </FilterContext.Provider>
     )

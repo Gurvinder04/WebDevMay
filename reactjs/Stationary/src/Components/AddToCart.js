@@ -15,14 +15,13 @@ function AddToCart({product}) {
        amount > 1 ? setamount(amount-1):setamount(1)
      }
   return (
-    <div>
+  <div>
        <CardAmount amount={amount} setIncrease={setIncrease} setDecrease={setDecrease}/>
-
         <Link to={'/cart'} onClick={()=>AddCart(product)}>
         <Button>ADD TO CART</Button>
         </Link>
    {/* {console.log('addcart data',product)} */}
-    </div>
+  </div>
     
   )
 }

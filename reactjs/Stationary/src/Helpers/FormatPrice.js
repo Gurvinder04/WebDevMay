@@ -6,7 +6,7 @@ function FormatPrice({price}) {
       style:'currency',
       currency:'EUR',
       maximumFractionDigits:2,
-    }).format(price /100)
+    }).format(price)
   )
 }
 
