@@ -69,6 +69,7 @@ function Home() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+     
     </Carousel>
         <Container>
         <Row className='justify-content-center text-center mt-4'>
@@ -110,6 +111,7 @@ function Home() {
        <hr></hr>
 
       <div className='container cont2 d-flex mt-5'>
+        
         <Col className='office-desk animate__animated animate__jackInTheBox'>
           <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h1.jpg?v=1631239898' className='animate__animated animate__flipInX animate__delay-1s'></img>
           <div className='top-left'>

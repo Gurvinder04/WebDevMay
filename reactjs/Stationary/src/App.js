@@ -15,6 +15,7 @@ import CartTable from './Components/CartTable'
 import Cart from './Cart'
 import Products from './Products'
 import ContactPage from './ContactPage'
+import Blog from './Blog'
 export const UserContext = createContext()
 
 
@@ -34,6 +35,7 @@ function App() {
          <Route path ='/allproduct' element={<Products/>} />
          <Route path='/cart' element={<Cart/>} />
          <Route path='/sign' element={<Sign/>} />
+         <Route path='/blog' element={<Blog/>} />
          <Route path='/contact' element={<ContactPage/>} />
          
          </Routes>

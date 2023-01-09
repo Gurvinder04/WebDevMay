@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 .extraMargin{
   margin-top: 8rem !important;
   margin-bottom: 2rem !important;
@@ -790,3 +790,31 @@ input.newsletterform-border:focus{
 ul{
   list-style: none;
 }
+
+
+/*CONTACT US */
+.contactInput{
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contactFormControl{
+  border: 1px solid grey !important;
+}
+
+  /*BLOG */
+  .blogTitle{
+    font-size: 3.5rem !important;
+    font-family: 'Courgette', cursive;
+  }
+  .blogread-button{
+    float: left;
+    margin-top: 19px;
+    border-radius: 30px;
+    border: transparent;
+    width: 7rem;
+    height: 5vh;
+    font-size: small;
+    background: rgba(224, 218, 218, 0.52);
+    font-family:'Secular One', sans-serif
+  }
