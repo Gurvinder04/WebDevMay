@@ -69,6 +69,21 @@ function Home() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+
+      <Carousel.Item>
+      {/* <iframe style={{width:"1280px", height:"315px"}} src="https://media.istockphoto.com/id/1418149084/fr/vid%C3%A9o/vue-du-drone-%C3%A0-la-tour-gsm-et-communications-radio-dans-les-montagnes-dans-les-nuages.mp4?s=mp4-640x640-is&k=20&c=Ibey7rwrK1wQEasxazWGpLmoHgfIfxMmNKpHIcwMMDY=" frameborder="0" allowfullscreen></iframe> */}
+       <video style={{width:"1280px", height:"1000px"}} controls autoplay>
+        <source src="C:\Users\singh\Downloads\Sunrise - 7127.mp4"
+                    type="video/mp4" />
+        
+       </video>
+        <Carousel.Caption>
+        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
      
     </Carousel>
         <Container>

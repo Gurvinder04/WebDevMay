@@ -13,7 +13,7 @@ function Home() {
       <img src='https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80' style={{"width":"550px" ,"height":"750px","borderRadius":"30px","marginLeft":"54px"}}/>
       
       </Col>
-      <Col md={6}>
+      <Col md={6} className="col1">
         <h1 className='name typing-demo '>- I'M GURVINDER KAUR.</h1>
         <h1 className='info'>WEB DESIGNER</h1>
       <p className='text-light fs-5'>I'm a Tunisian based web designer & front‑end developer focused<br></br> on crafting clean & user‑friendly experiences, I am passionate<br></br> about building excellent software that improves the lives of those<br></br> around me.</p>
