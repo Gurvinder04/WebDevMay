@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+
+
 import { Button, Card, Carousel, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row, SplitButton } from 'react-bootstrap'
 import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { MdPayment } from 'react-icons/md'
@@ -27,6 +29,7 @@ function Home() {
 
   useEffect(() => {
     // fetchData()
+    
   }, [])
   return (
     <>
@@ -35,7 +38,8 @@ function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RhdGlvbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
+          // src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RhdGlvbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
+          src="https://ae01.alicdn.com/kf/HTB16KLkeDnI8KJjy0Ffq6AdoVXaS/3d-wallpaper-photo-mural-custom-size-room-3d-abstract-green-tree-colour-HD-painting-room-sofa.jpg_Q90.jpg_.webp"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -46,7 +50,8 @@ function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://media.istockphoto.com/id/1333039392/photo/frame-of-shcool-supplies-and-keyboard-on-white-background-back-to-school-distance-learning.jpg?s=170667a&w=0&k=20&c=fv-lcP_ayvq-KdeHK3Y7PIC69xjIUUbep3j3qxs3824="
+          // src="https://media.istockphoto.com/id/1333039392/photo/frame-of-shcool-supplies-and-keyboard-on-white-background-back-to-school-distance-learning.jpg?s=170667a&w=0&k=20&c=fv-lcP_ayvq-KdeHK3Y7PIC69xjIUUbep3j3qxs3824="
+          src="https://wallpaperboat.com/wp-content/uploads/2020/11/09/59337/back-to-school-05.jpg"
           alt="Second slide"
         />
 
@@ -58,8 +63,9 @@ function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://media.istockphoto.com/id/1264689237/photo/school-or-office-supplies-border-on-blackboard-background-copy-space.jpg?s=612x612&w=0&k=20&c=PDl6EgQzOhc5RLC9ylAlZd28HgJ2J8fkAgyuo3eqHIc="
-          alt="Third slide"
+          // src="https://media.istockphoto.com/id/1264689237/photo/school-or-office-supplies-border-on-blackboard-background-copy-space.jpg?s=612x612&w=0&k=20&c=PDl6EgQzOhc5RLC9ylAlZd28HgJ2J8fkAgyuo3eqHIc="
+          src="https://wallpaperaccess.com/full/1691943.jpg"
+         alt="Third slide"
         />
 
         <Carousel.Caption>
@@ -125,9 +131,9 @@ function Home() {
       </Container>
        <hr></hr>
 
-      <div className='container cont2 d-flex mt-5'>
+      <div className='container cont2 d-flex mt-5' data-aos="zoom-in">
         
-        <Col className='office-desk animate__animated animate__jackInTheBox'>
+        <Col className='office-desk'>
           <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h1.jpg?v=1631239898' className='animate__animated animate__flipInX animate__delay-1s'></img>
           <div className='top-left'>
             <p>Sale Up To 15% Off</p>
@@ -225,7 +231,7 @@ function Home() {
       }
       </Row>
 
-      <div className='d-flex m-5 tech'>
+      <div className='d-flex m-5 tech' data-aos="fade-up">
         <Col>
         <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549'></img>
         </Col>
@@ -240,7 +246,7 @@ function Home() {
 
       <div className='text-center m-5'>
        <h3 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px'}} className='extraMargin'>From Our Blog</h3>
-       <Row className='d-flex text-center blog-flex'>
+       <Row className='d-flex text-center blog-flex' data-aos="fade-right">
        <Col>
        <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/25/574_322/b-blog-2.jpg' className='blog-img'></img>
        <div className='d-flex text-center blog-parts mt-4'>

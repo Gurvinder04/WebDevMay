@@ -1,18 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import  { useRef, useState } from "react";
-import Swiper,{Navigation, Pagination } from 'swiper';
-import {SwiperSlide } from "swiper/react";
-  // import Swiper and modules styles
- 
 
-
-
- // init Swiper:
-//  const Swiper = new Swiper('.swiper', {
-//   // configure Swiper to use modules
-//   modules: [Navigation, Pagination],
-// })
 
 
 function ContactPage() {
@@ -65,11 +54,7 @@ function ContactPage() {
 
     </Container>
 
-    <Swiper slidesperview={3} slidespercolumn={2} spacebetween={30} pagination={{
-  "clickable": true
-}} className="mySwiper">
-  <SwiperSlide>Slide 1</SwiperSlide><SwiperSlide>Slide 2</SwiperSlide><SwiperSlide>Slide 3</SwiperSlide><SwiperSlide>Slide 4</SwiperSlide><SwiperSlide>Slide 5</SwiperSlide><SwiperSlide>Slide 6</SwiperSlide><SwiperSlide>Slide 7</SwiperSlide><SwiperSlide>Slide 8</SwiperSlide><SwiperSlide>Slide 9</SwiperSlide>
-  </Swiper>
+   
     </>
   )
 }

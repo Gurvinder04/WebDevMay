@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from 'react'
+import React, { createContext, useEffect, useReducer, useState } from 'react'
 import {Route,Routes} from 'react-router-dom'
 import 'animate.css'
 import Home from './Home'
@@ -16,12 +16,21 @@ import Cart from './Cart'
 import Products from './Products'
 import ContactPage from './ContactPage'
 import Blog from './Blog'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 export const UserContext = createContext()
 
 
 
 function App() {
   const[state,dispatch] = useReducer(reducer,initialstate)
+  useEffect(() => {
+    
+    Aos.init({
+      offset:300,
+      duration:1000
+    })
+  }, [])
   
   return (
    

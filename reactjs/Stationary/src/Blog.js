@@ -19,7 +19,7 @@ function Blog() {
     </div>
 
     <Row className='mt-5'>
-    <Col style={{height:"35vh"}}>
+    <Col style={{height:"35vh"}}  data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="200">
          <Card style={{ width: '18rem',border:"none",boxShadow:"none"  }}>
       <Card.Img variant="top" src="https://demo2.prestabrain.com/stationero/wp-content/uploads/2022/03/blog-7-1000x565.jpg" />
       <Card.Body className='p-0'>
@@ -31,7 +31,7 @@ function Blog() {
       </Card.Body>
     </Card>
     </Col>
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="350">
     <div>
          <Card style={{ width: '18rem',border:"none",boxShadow:"none" }}>
       <Card.Img variant="top" src="https://demo2.prestabrain.com/stationero/wp-content/uploads/2022/03/blog-5-1000x565.jpg" style={{height:"34vh"}} />
@@ -46,7 +46,7 @@ function Blog() {
     </div>
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="500">
     <div>
          <Card style={{ width: '18rem',border:"none",boxShadow:"none"  }}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/letter_ex.jpg?v=1624542734" />
@@ -61,7 +61,7 @@ function Blog() {
     </div>
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="700">
          <Card style={{ width: '18rem',border:"none",boxShadow:"none" }}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/JT_Blog_Image_Kirsty_Thomas-10_1__blogex.jpg?v=1638274620" style={{height:"34vh"}} />
       <Card.Body className='p-0'>
@@ -74,7 +74,7 @@ function Blog() {
     </Card>
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="850">
          <Card style={{ width: '18rem',border:"none",boxShadow:"none"  }}>
       <Card.Img variant="top" src="http://cdn.shopify.com/s/files/1/0626/5209/files/blog_2.jpg?v=1542627826" />
       <Card.Body className='p-0'>
@@ -88,7 +88,7 @@ function Blog() {
 
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="1100">
          <Card style={{ width: '18rem',border:"none",boxShadow:"none" }}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/unlimited_ex_4b38def9-7094-43e5-92d3-69042f3fb8d5.jpg?15685043269210702853" style={{height:"55vh"}} />
       <Card.Body className='p-0'>
@@ -102,7 +102,7 @@ function Blog() {
     
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="1200">
     
          <Card style={{ width: '18rem',border:"none",boxShadow:"none"  }}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/crail_excerpt.jpg?3609884679083538716" />
@@ -117,7 +117,7 @@ function Blog() {
 
     </Col>
 
-    <Col>
+    <Col data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="1300">
          <Card style={{ width: '18rem',border:"none",boxShadow:"none"  }}>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/crail_excerpt.jpg?3609884679083538716" />
       <Card.Body className='p-0'>
