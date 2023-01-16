@@ -5,7 +5,7 @@ import { useCartContext } from '../Context/CartContext.js'
 import CardAmount from './CardAmount.js'
 
 function AddToCart({product}) {
-    const {AddCart} = useCartContext()
+    const {addToCart} = useCartContext()
     const [amount,setamount] = useState(1)
     const setIncrease=()=>{
       amount <product.quantity ? setamount(amount+1):setamount(product.quantity)
@@ -17,7 +17,7 @@ function AddToCart({product}) {
   return (
   <div>
        <CardAmount amount={amount} setIncrease={setIncrease} setDecrease={setDecrease}/>
-        <Link to={'/cart'} onClick={()=>AddCart(product)}>
+        <Link to={'/cart'} onClick={()=>addToCart(amount,product)}>
         <Button>ADD TO CART</Button>
         </Link>
    {/* {console.log('addcart data',product)} */}

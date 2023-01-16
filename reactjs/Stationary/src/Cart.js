@@ -26,6 +26,7 @@ function Cart() {
     
 }
 </table>
+{console.log('cart is ',cart)}
 </Container>
     
   )

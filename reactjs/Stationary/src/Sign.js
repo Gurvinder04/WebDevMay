@@ -6,7 +6,7 @@ import {home} from './Home'
 
 function Sign() {
   const navigate = useNavigate();
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const{state,dispatch} = useContext(UserContext)
    const[User,setUser] = useState({
     firstname:'',
@@ -57,7 +57,7 @@ let name,value
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch('/login',{
+          let data = await fetch('/sign',{
               method:'POST',
               headers:{
                   'Content-Type':'application/json'

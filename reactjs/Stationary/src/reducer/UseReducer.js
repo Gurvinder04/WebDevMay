@@ -46,14 +46,13 @@ if(action.type==="SET_SINGLE_PRODUCT"){
 
 
 if(action.type==="ADD_TO_CART"){
-    let {product} = action.payload
+    let {amount,product} = action.payload
     //console.log('problem',product)
-    let cartProduct;
-    cartProduct={
+   const cartProduct={
         id:product._id,
         name: product.productname,
         price:product.price,
-        quantity:product.quantity
+        quantity:amount
     }
     return{
         ...state,

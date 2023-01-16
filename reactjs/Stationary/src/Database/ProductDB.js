@@ -24,6 +24,14 @@ const ProductSchema = mongoose.Schema({
 
 const Product = mongoose.model('Product',ProductSchema)
 
+const StatUser =mongoose.Schema({
+    firstname:String,
+    lastname:String,
+    email:String,
+    password:String
+})
+const User = mongoose.model('User',StatUser)
+
 //storage
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, './public/uploads/'),
@@ -59,6 +67,15 @@ admin.get('/product/:id',async(req,res)=>{
     
 })
 
+admin.get('product/product/:id',async(req,res)=>{
+    //console.log('with id')
+    const rid = req.params.id
+   const data = await Product.findById({_id:rid})
+   //console.log(data)
+    res.send(data)
+    
+})
+
 // admin.get('/detail/:cat',async(req,res)=>{
 //     console.log('with category')
 //     const search = req.params.cat
@@ -76,6 +93,34 @@ admin.post('/product',upload.single('fileimage'),(req,res)=>{
             console.log('successfully saved')
         })
 })
+
+admin.post('/sign',(req, res) => {
+    console.log('entered login')
+     const {email,password} = req.body
+     console.log(email,password)
+      User.findOne({Email:email})
+      .then(user=>{
+       //console.log(result)
+       if(user.length >0){
+         console.log(user)
+        //  const loggedpass = user[0].user.password
+         //console.log(loggedpass)
+      //    const isPasscorrect =  bcrypt.compareSync(password,loggedpass)
+      //    if(isPasscorrect){
+      //     res.json({msg:'password is correct'})
+      // }else{
+      //     res.json({msg:' password is incorrect'})
+      // }   
+       }
+       else{
+        res.json({
+            msg:'username or password incorrect'
+        })
+    }
+       })
+     
+    })
+  
 
 
 admin.patch('/product/:id',(req,res)=>{

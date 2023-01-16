@@ -14,15 +14,15 @@ const CartProvider=({children})=>{
     }
     const [state,dispatch] = useReducer(reducer,initialstate1)
 
-    const AddCart=(product)=>{
-       dispatch({type:"ADD_TO_CART",payload:{product}})
+    const addToCart=(amount,product)=>{
+       dispatch({type:"ADD_TO_CART",payload:{amount,product}})
     }
     const removeItem=(id)=>{
         dispatch({type:"REMOVE_ITEM",payload:id})
 
     }
     return( 
-    <CartContext.Provider value={{...state,AddCart,removeItem}}>
+    <CartContext.Provider value={{...state,addToCart,removeItem}}>
         {children}
     </CartContext.Provider>
     )

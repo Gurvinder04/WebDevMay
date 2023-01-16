@@ -22,7 +22,7 @@ function CartTable({cartItems}) {
         <div>
           <p>Total Bill:</p>
         </div>
-      {console.log(cartItems)}
+      {console.log('cartitems are',cartItems)}
    
 </>
     

@@ -13,19 +13,19 @@ function Header() {
       return (
         <>
            <Navbar collapseOnSelect expand="lg" variant="dark">
-            <Container>
-             
+            <Container className='mt-4'>
+            <Navbar.Brand className='brandName'>StatiOnerO</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/">Notebooks</Nav.Link>
-                  <Nav.Link href="/">Pens & Pencil</Nav.Link>
-                  <Nav.Link href="/">Office Stationary</Nav.Link>
-                  <Nav.Item><Link to={'/allproduct'}>All Products</Link></Nav.Item>
+                  <Nav.Link href="/product">Products</Nav.Link>
+                  <Nav.Link href="/">Category</Nav.Link>
+                  <Nav.Link href="/blog">Blog</Nav.Link>
+                  <Nav.Link href="/contact">Contact</Nav.Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/'} className="nav-link text-decoration-none">Logout</Link>
+                  <Link to={'/sign'} className="nav-link text-decoration-none">Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
                         </Container>
@@ -43,7 +43,7 @@ function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/allproduct">Products</Nav.Link>
+            <Nav.Link href="/product">Products</Nav.Link>
                   <Nav.Link href="/">Category</Nav.Link>
                   <Nav.Link href="/blog">Blog</Nav.Link>
                   <Nav.Link href="/contact">Contact</Nav.Link>

@@ -231,7 +231,7 @@ function Home() {
       }
       </Row>
 
-      <div className='d-flex m-5 tech' data-aos="fade-up">
+      <div className='d-flex m-5 tech' data-aos="fade-up" data-aos-offset="600">
         <Col>
         <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549'></img>
         </Col>
