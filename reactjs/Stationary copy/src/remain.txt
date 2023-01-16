@@ -1,0 +1,93 @@
+       <!---    SHOP BY CATEGORY
+
+<h2 className='text-center text-success mt-5'>Shop By Category</h2>
+      <div className='d-flex fast-delivery'>
+      <Col md={2}>
+        <img src='https://www.howjoyful.com/wp-content/uploads/2021/01/the-best-notebooks-for-designers.jpg.webp' className='shop-cat'></img>
+        <p className='text-center'><Link to={'/allproduct'} name="category" value="Notebooks" onClick={searchValue}>Notebooks</Link></p>
+      </Col>
+      <Col md={2}>
+      <Link to={'/detail/Pen&Pencils'}><img src='https://www.100directions.com/wp-content/uploads/2020/03/organizing-pens-pencils-feature-jen-goode-768x1024.jpg' className='shop-cat'></img></Link>
+      <p className='text-center'>Pen & Pencils</p>
+      </Col>
+      <Col md={2}>
+      <Link to={'/detail/Office Stationary'}><img src='https://www.northeaststationery.co.uk/wp-content/uploads/2016/10/office-1084x473.jpg' className='shop-cat'></img></Link>
+      <p className='text-center'>Office Stationary</p>
+      </Col>
+      <Col md={2}>
+      <Link to={'/detail/Cover Stuff'}><img src='https://www.creativeboom.com/uploads/articles/82/8213a5686b6f2ba1d10aecd7c223928d159e1886_810.jpg' className='shop-cat'></img></Link>
+      <p className='text-center'>Cover Stuff</p>
+      </Col>
+      <Col md={2}>
+      <Link to={'/detail/Notebooks'}><img src='https://i.pinimg.com/736x/e5/19/27/e51927451af0eb0b2f89d300943c84f6--muji-study-muji-stationary.jpg' className='shop-cat'></img></Link>
+      <p className='text-center'>Notebooks</p>
+      </Col>
+      </div>
+                
+                END SHOP BY CATEGORY --!>
+
+                <!---TIMER
+                 <div className='d-flex fast-delivery text-center'>
+           <p>Days</p>
+           <p>Hours</p>
+           <p>Minutes</p>
+           <p>Seconds</p>
+           </div>
+
+           TIMER END   --!>
+
+
+           <!--SELECT CATEGORY
+            <select
+          name="category"
+          onClick={searchValue}
+        >
+          
+          <option  name="category" value="all">All</option>
+          <option name="category"  value="Notebooks">Notebooks</option>
+          <option  name="category" value="Pens&Pencils">Pens&Pencils</option>
+          <option  name="category" value="Office Stationary">Office Stationary</option>
+          <Dropdown.Divider />
+          <option>Discount Offers</option>
+        </select>
+        
+        END SELECT CATEGORY ---!>
+
+
+
+        .backcolor {
+    background-color: #f1c40f;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 0px;
+    box-shadow: 4px 0px 4px 0px;
+    margin-top: -85px;
+    float: left;
+    margin-left: 12px;
+}
+
+.main.d-flex{
+  display:none;
+}
+
+.setmargin1 {
+    margin-top: 22px;
+}
+
+.sidechange{
+  float:none;
+}
+
+.fruit {
+     float: none;
+    margin-top: 106px;
+}
+
+.setmargin2 {
+    margin-top: 58px;
+    margin-left: 341px;
+}
