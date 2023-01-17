@@ -6,14 +6,20 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const server = express();
 var cookie = require('cookie');
+var cookieParser = require('cookie-parser')
+const authorize = require('../src/Middleware/authorize')
 
 
 server.use(express.json())
-server.use(cors())
+server.use(cookieParser())
+// server.use(cors({
+//   origin:'http://localhost:4000',
+//   credentials:true
+// }))
 
 
-  mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'));
-  //mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'));
+  //mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'));
+  mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'));
   
 const StatUser =mongoose.Schema({
     firstname:String,
@@ -21,13 +27,18 @@ const StatUser =mongoose.Schema({
     email:String,
     password:String,
     tokens:{
-      type:Object
-    }
+      type:String
+      }
 })
 const User = mongoose.model('User',StatUser)
  
+console.log(process.env.SECRET_KEY)
 
-server.post('/sign',(req,res)=>{
+server.get('/hidden',authorize,(req,res)=>{
+        return true
+})
+
+server.post('/login',(req,res)=>{
   console.log('entered')
   const password = bcrypt.hashSync(req.body.password,10)
   console.log(req.body)
@@ -36,17 +47,20 @@ server.post('/sign',(req,res)=>{
      lastname: req.body.lastname, 
      email: req.body.email, 
      password:password,
-     tokens : jwt.sign({_id:this._id},process.env.SECRET_KEY)
+    tokens : jwt.sign({_id:this._id},process.env.SECRET_KEY)
+    //tokens:this.tokens.concat({token:token})
      })
+    
      res.cookie("firstjwt",user_data.tokens,{
-      httpOnly:true
-     })
-     console.log(cookie)
+      // domain: "localhost",
+      // path: "/",
+      httpOnly: true
+     });
+     console.log(user_data.tokens)
   user_data.save()
         .then(result => {
             console.log('successfully saved')
         })
-        
 })
 
 // server.post('/login',(req, res) => {
@@ -90,33 +104,46 @@ const IsTokenExist=(req,res,next)=>{
 
 }
 
-server.post('/login',IsTokenExist,(req, res) => {
+server.post('/sign',(req, res) => {
   console.log('entered login')
    const {email,password} = req.body
    console.log(email,password)
-    User.find({Email:email})
+    User.find({email:email})
     .then(user=>{
-     //console.log(result)
-     if(user.length >0){
-       console.log(user)
-       const loggedpass = user[0].user.password
-       console.log('token verified')
+     console.log('user is',user)
+    let tokens = jwt.sign({_id:this._id},process.env.SECRET_KEY)
+    
+    res.cookie("firstjwt",user.tokens,{
+      expires:new Date(Date.now() + 50000),
+      // domain: "localhost",
+      // path: "/",
+      httpOnly: true
+     });
+     console.log('user logintoken is',tokens)
+     //console.log(`this is checking cookie ${req.cookies.firstjwt}`)
+     res.status(201).send(user)
+    //  if(user.length >0){
+    //    console.log(user)
+    //    const loggedpass = user[0].user.password
+    //    console.log('token verified')
     //    const isPasscorrect =  bcrypt.compareSync(password,loggedpass)
     //    if(isPasscorrect){
     //     res.json({msg:'password is correct'})
     // }else{
     //     res.json({msg:' password is incorrect'})
     // }   
-     }
-     else{
-      res.json({
-          msg:'username or password incorrect'
-      })
-  }
+     //}
+  //    else{
+  //     res.json({
+  //         msg:'username or password incorrect'
+  //     })
+  // }
      })
-   
-  })
+})
+  
 
 
 
 server.listen(4000,()=>console.log('I M running on 4000'))
+
+module.exports = User

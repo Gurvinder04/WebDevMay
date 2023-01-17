@@ -57,7 +57,7 @@ let name,value
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch('/login',{
+          let data = await fetch('/sign',{
               method:'POST',
               headers:{
                   'Content-Type':'application/json'
@@ -108,7 +108,7 @@ let name,value
                                 <input type="submit" onClick={LoginVerify} value="Login" />
                                 <p className="signup">
                                     Don't have an account ?
-                                    <a href="#" onClick={toggleForm}>Sign Up.</a>
+                                    <a  onClick={toggleForm}>Sign Up.</a>
                                 </p>
                             </form>
                         </div>
@@ -133,7 +133,7 @@ let name,value
                                 <input type="submit" name="" value="Sign Up" onClick={DBData} />
                                 <p className="signup">
                                     Already have an account ?
-                                    <a href="#" onClick={toggleForm} >Sign in.</a>
+                                    <a  onClick={toggleForm} >Sign in.</a>
                                 </p>
                             </form>
                         </div>

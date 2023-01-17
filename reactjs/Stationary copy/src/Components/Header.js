@@ -23,9 +23,10 @@ function Header() {
                   <Nav.Link href="/">Category</Nav.Link>
                   <Nav.Link href="/blog">Blog</Nav.Link>
                   <Nav.Link href="/contact">Contact</Nav.Link>
+                  <Nav.Link href="/hidden">Hide</Nav.Link>
                 </Nav>
                 <Nav>
-                  <FaShoppingCart></FaShoppingCart>
+                  <Nav.Link href='/cart'><FaShoppingCart></FaShoppingCart></Nav.Link>
                   <Link to={'/sign'} className="nav-link text-decoration-none">Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
@@ -48,6 +49,7 @@ function Header() {
                   <Nav.Link href="/">Category</Nav.Link>
                   <Nav.Link href="/blog">Blog</Nav.Link>
                   <Nav.Link href="/contact">Contact</Nav.Link>
+                  
                   
             </Nav>
             <Nav>

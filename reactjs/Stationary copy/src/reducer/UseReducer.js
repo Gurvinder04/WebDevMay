@@ -1,7 +1,7 @@
 import { init } from "aos";
 
 
-export const initialstate = false
+export var initialstate = false
 
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
