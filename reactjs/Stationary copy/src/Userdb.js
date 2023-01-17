@@ -35,10 +35,10 @@ const User = mongoose.model('User',StatUser)
 console.log(process.env.SECRET_KEY)
 
 server.get('/hidden',authorize,(req,res)=>{
-        return true
+       // res.sendStatus(201)
 })
 
-server.post('/login',(req,res)=>{
+server.post('/sign',(req,res)=>{
   console.log('entered')
   const password = bcrypt.hashSync(req.body.password,10)
   console.log(req.body)
@@ -104,16 +104,16 @@ const IsTokenExist=(req,res,next)=>{
 
 }
 
-server.post('/sign',(req, res) => {
+server.post('/login',(req, res) => {
   console.log('entered login')
    const {email,password} = req.body
    console.log(email,password)
     User.find({email:email})
     .then(user=>{
      console.log('user is',user)
-    let tokens = jwt.sign({_id:this._id},process.env.SECRET_KEY)
+    let tokens = jwt.sign({_id:user._id},process.env.SECRET_KEY)
     
-    res.cookie("firstjwt",user.tokens,{
+    res.cookie("firstjwt",tokens,{
       expires:new Date(Date.now() + 50000),
       // domain: "localhost",
       // path: "/",

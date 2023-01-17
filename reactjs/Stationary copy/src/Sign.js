@@ -32,7 +32,8 @@ let name,value
             let data = await fetch('/sign',{
                 method:'POST',
                 headers:{
-                    'Content-Type':'application/json'
+                    'Content-Type':'application/json',
+                    //'Access-Control-Allow-Origin': '*'
                 },
                 body:JSON.stringify({firstname,lastname, email,password})
             })
@@ -57,10 +58,11 @@ let name,value
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch('/sign',{
+          let data = await fetch('/login',{
               method:'POST',
               headers:{
-                  'Content-Type':'application/json'
+                  'Content-Type':'application/json',
+                  //'Access-Control-Allow-Origin': '*'
               },
               body:JSON.stringify({email,password})
           })

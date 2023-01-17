@@ -11,7 +11,7 @@ function Hidden() {
 
 
     useEffect(()=>{
-        //fetchHidden()
+      fetchHidden()
     },[])
   return (
     <div>Hidden</div>
