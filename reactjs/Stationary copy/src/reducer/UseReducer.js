@@ -5,6 +5,7 @@ export var initialstate = false
 
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
+    initialstate=true
     return action.payload;
 }
 
@@ -108,7 +109,13 @@ if(action.type==="CART_TOTAL_PRICE"){
     }
 }
 
-
+// if(action.type==="TOTAL ARTICLES"){
+//     let{ total_articles} = action.payload.total_items
+// }
+// return{
+//    ...state,
+//    total_items:state.total_articles
+// }
 return state;
 }
 

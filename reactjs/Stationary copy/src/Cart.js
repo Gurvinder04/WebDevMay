@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
@@ -7,6 +7,18 @@ import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
+    const fetchHidden =async()=>{
+      let data = await fetch('/hidden')
+      let res = await data.json()
+      if(res !== undefined){
+          console.log('Hurrryyyyy')
+      }
+      }
+  
+  
+      useEffect(()=>{
+        fetchHidden()
+      },[])
   return (
     <Container>
       <table className="table" style={{boxShadow:'0px 4px 0px 4px white',tableLayout: 'fixed'}}>
@@ -28,7 +40,8 @@ function Cart() {
     
 }
 </table>
-<div className='d-flex'>
+<hr className='cartHR'></hr>
+<div className='d-flex shop'>
           <NavLink to ={'/allproduct'}>
           <Button className='bg-primary'>Continue Shopping</Button>
           </NavLink>
@@ -36,19 +49,23 @@ function Cart() {
           <Button className='bg-danger' onClick={clearCart}>Clear Cart</Button>
         </div>
 
-        <div className=''>
-           <p>Subtotal:</p>
-           <p>
+        <div className='pricingBox'>
+          <div className='p-3 fst-italic text-uppercase'>
+            <h5>Subtotal:</h5> 
+            <p>
             <FormatPrice price={total_price} />
            </p>
-           <p>Shipping fee:</p>
+           <h5>Shipping fee:</h5>
            <p>
             <FormatPrice price={shipping_fee} />
            </p>
-           <p>Total Price:</p>
+           <hr></hr>
+           <h5>Total Price:</h5>
            <p>
             <FormatPrice price={shipping_fee+total_price} />
            </p>
+           </div>
+           <Button className='bg-primary m-2 w-50 fs-5'>PAYMENT</Button>
         </div>
 {console.log('cart is ',cart)}
 </Container>

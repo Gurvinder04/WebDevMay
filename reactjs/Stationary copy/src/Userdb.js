@@ -26,17 +26,27 @@ const StatUser =mongoose.Schema({
     lastname:String,
     email:String,
     password:String,
-    tokens:{
-      type:String
+    tokens:[{
+      token:{
+        type:String
       }
+    
+      }]
 })
 const User = mongoose.model('User',StatUser)
  
 console.log(process.env.SECRET_KEY)
 
 server.get('/hidden',authorize,(req,res)=>{
-       // res.sendStatus(201)
+       if(error){
+        console.log('getting error')
+       }
+       else{
+        console.log('I m Fine')
+       }
 })
+
+
 
 server.post('/sign',(req,res)=>{
   console.log('entered')
@@ -47,20 +57,22 @@ server.post('/sign',(req,res)=>{
      lastname: req.body.lastname, 
      email: req.body.email, 
      password:password,
-    tokens : jwt.sign({_id:this._id},process.env.SECRET_KEY)
-    //tokens:this.tokens.concat({token:token})
+  //  tokens : jwt.sign({_id:this._id},process.env.SECRET_KEY)   normal
      })
+    let tokens =jwt.sign({_id:this._id},process.env.SECRET_KEY)  //abnormal
+     //user_data.tokens=user_data.tokens.concat({token:token})     //abnormal
     
-     res.cookie("firstjwt",user_data.tokens,{
+     res.cookie("firstjwt",tokens,{
       // domain: "localhost",
       // path: "/",
       httpOnly: true
      });
-     console.log(user_data.tokens)
+     console.log('userdb toke is',tokens)
   user_data.save()
         .then(result => {
             console.log('successfully saved')
         })
+        //res.status(200).send(JSON.stringify(tokens))
 })
 
 // server.post('/login',(req, res) => {
@@ -108,11 +120,15 @@ server.post('/login',(req, res) => {
   console.log('entered login')
    const {email,password} = req.body
    console.log(email,password)
-    User.find({email:email})
+    User.findOne({email:email})
     .then(user=>{
+      if(user){     //abnormal 1
      console.log('user is',user)
-    let tokens = jwt.sign({_id:user._id},process.env.SECRET_KEY)
-    
+   let tokens = jwt.sign({_id:user._id},process.env.SECRET_KEY) //normal
+   //localStorage.setItem('public',tokens)
+   //let token = jwt.sign({_id:this._id},process.env.SECRET_KEY)  //abnormal
+     //user.tokens=token.concat({token:token})     //abnormal
+     
     res.cookie("firstjwt",tokens,{
       expires:new Date(Date.now() + 50000),
       // domain: "localhost",
@@ -138,7 +154,14 @@ server.post('/login',(req, res) => {
   //         msg:'username or password incorrect'
   //     })
   // }
-     })
+    }
+        else{                                     //abnormal 1
+          console.log('login else part running')   //abnormal 1
+          console.log(user)                         //abnormal 1
+          res.status(404).send(user)                //abnormal 1
+        }                                           //abnormal 1
+     })                                              
+     
 })
   
 

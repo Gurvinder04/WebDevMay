@@ -3,11 +3,14 @@ import { Button, Form, Row ,Col} from 'react-bootstrap'
 import { Link,useNavigate} from 'react-router-dom'
 import {UserContext} from './App.js'
 import {home} from './Home'
+import { FcGoogle } from "react-icons/fc";
 
 function Sign() {
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
   const{state,dispatch} = useContext(UserContext)
+ //const{localToken,setlocalToken} = useState('fbhjbgvjfvkj')
+ let localToken ;
    const[User,setUser] = useState({
     firstname:'',
     lastname:'',
@@ -39,7 +42,8 @@ let name,value
             })
            
             let res = await data.json()
-            console.log(res)  
+            console.log('token is',res)  
+           //let localToken=res
         }
         else{
             console.log('INVALID INPUT')
@@ -67,9 +71,9 @@ let name,value
               body:JSON.stringify({email,password})
           })
          
-          let res = await data.json()
-          console.log('hey',res) 
-          if(res.status === 400 || res === null){
+           let res = await data
+           console.log('hey',res) 
+          if(res.status === 404 ){
            window.alert("Invalid details")
           }
           else{
@@ -91,8 +95,8 @@ let name,value
     }
    
    useEffect(()=>{
-
-},[])
+   //localStorage.setItem('public',JSON.stringify(localToken))
+},[localToken])
   return (
     <>
      <section className='body-divide container-fluid'>
@@ -112,6 +116,13 @@ let name,value
                                     Don't have an account ?
                                     <a  onClick={toggleForm}>Sign Up.</a>
                                 </p>
+
+                                <p className='text-center'>Or</p>
+                                <div className='google'>
+                                    <FcGoogle className='googleSVG'></FcGoogle>
+                                    <p className='googleBtn'>Continue with Google</p>
+                                    
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -137,6 +148,12 @@ let name,value
                                     Already have an account ?
                                     <a  onClick={toggleForm} >Sign in.</a>
                                 </p>
+                                <p className='text-center'>Or</p>
+                                <div className='google'>
+                                    <FcGoogle className='googleSVG'></FcGoogle>
+                                    <p className='googleBtn'>Continue with Google</p>
+                                    
+                                </div>
                             </form>
                         </div>
                         <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>

@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
-import { Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
+import { Badge, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import {UserContext} from '../App.js'
+import { useCartContext } from '../Context/CartContext.js'
 import { useFilterContext } from '../Context/FilterContext.js'
 
 
 function Header() {
+  
   const { state, dispatch } = useContext(UserContext)
   const RenderMenu = () => {
     if (state) {
@@ -26,7 +28,7 @@ function Header() {
                   <Nav.Link href="/hidden">Hide</Nav.Link>
                 </Nav>
                 <Nav>
-                  <Nav.Link href='/cart'><FaShoppingCart></FaShoppingCart></Nav.Link>
+                  <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>1</Badge></Nav.Link>
                   <Link to={'/sign'} className="nav-link text-decoration-none">Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
