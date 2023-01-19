@@ -91,3 +91,49 @@
     margin-top: 58px;
     margin-left: 341px;
 }
+
+
+
+const IsTokenExist=(req,res,next)=>{
+  console.log(req.query)
+  const token = this.tokens
+  console.log(token)
+  jwt.verify(token,"nevereverthinkyouarealonewaheguruisalwayswithyou",(err,decode)=>{
+    if(decode !==undefined){
+      req.user=decode
+      next()
+    }
+    else{
+      console.log('taaraaaaaaa error coming')
+    }
+  })
+
+}
+
+
+
+
+// server.post('/login',(req, res) => {
+//   console.log('entered login')
+//    const {email,password} = req.body
+//    console.log(email,password)
+//     User.find({Email:email,Password:password})
+//     .then(result=>{
+//      //console.log(result)
+//      if(result.length >0){
+//        console.log(result.length)
+//        const currentuser = {
+//           mail:result[0].Email,
+//           pass :result[0].Password
+//           }
+//           res.status(200).send(currentuser)
+//          console.log(currentuser)
+        
+//      }
+//      else{
+//          res.status(400).send(0)
+     
+//     }
+//      })
+   
+//   })

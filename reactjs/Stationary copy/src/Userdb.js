@@ -12,14 +12,11 @@ const authorize = require('../src/Middleware/authorize')
 
 server.use(express.json())
 server.use(cookieParser())
-// server.use(cors({
-//   origin:'http://localhost:4000',
-//   credentials:true
-// }))
 
 
-  //mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'));
-  mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'));
+
+  mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'));
+  //mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'));
   
 const StatUser =mongoose.Schema({
     firstname:String,
@@ -44,6 +41,9 @@ server.get('/hidden',authorize,(req,res)=>{
        else{
         console.log('I m Fine')
        }
+       let cid = cid
+       const loggedUser=  User.find({_id:cid})
+       console.log('token user detail',loggedUser)
 })
 
 
@@ -75,46 +75,8 @@ server.post('/sign',(req,res)=>{
         //res.status(200).send(JSON.stringify(tokens))
 })
 
-// server.post('/login',(req, res) => {
-//   console.log('entered login')
-//    const {email,password} = req.body
-//    console.log(email,password)
-//     User.find({Email:email,Password:password})
-//     .then(result=>{
-//      //console.log(result)
-//      if(result.length >0){
-//        console.log(result.length)
-//        const currentuser = {
-//           mail:result[0].Email,
-//           pass :result[0].Password
-//           }
-//           res.status(200).send(currentuser)
-//          console.log(currentuser)
-        
-//      }
-//      else{
-//          res.status(400).send(0)
-     
-//     }
-//      })
-   
-//   })
 
-const IsTokenExist=(req,res,next)=>{
-  console.log(req.query)
-  const token = this.tokens
-  console.log(token)
-  jwt.verify(token,"nevereverthinkyouarealonewaheguruisalwayswithyou",(err,decode)=>{
-    if(decode !==undefined){
-      req.user=decode
-      next()
-    }
-    else{
-      console.log('taaraaaaaaa error coming')
-    }
-  })
 
-}
 
 server.post('/login',(req, res) => {
   console.log('entered login')

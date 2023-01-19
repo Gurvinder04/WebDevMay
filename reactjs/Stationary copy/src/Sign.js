@@ -32,7 +32,7 @@ let name,value
         console.log('helooooooo')
         const { firstname,lastname, email,password} = User
         if(firstname && lastname && email && password){
-            let data = await fetch('/sign',{
+            let data = await fetch('/signin',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
-const User = require('../Userdb')
+const User = require('../Database/ProductDB')
+
 
 const authorize = async(req,res,next)=>{
     try {
@@ -8,8 +9,9 @@ const authorize = async(req,res,next)=>{
         const checkToken = jwt.verify(token,process.env.SECRET_KEY)
         console.log('checking token...',checkToken)
         let cid =checkToken._id
-        const loggedUser= await User.findOne({_id:cid})
+        const loggedUser= await User.find({_id:cid})
         console.log('token user detail',loggedUser)
+        return cid
         next()
         
     } catch (error) {

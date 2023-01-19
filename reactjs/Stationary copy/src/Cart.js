@@ -8,7 +8,7 @@ import FormatPrice from './Helpers/FormatPrice'
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
     const fetchHidden =async()=>{
-      let data = await fetch('/hidden')
+      let data = await fetch('/hidden')    
       let res = await data.json()
       if(res !== undefined){
           console.log('Hurrryyyyy')
