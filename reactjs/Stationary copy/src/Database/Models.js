@@ -25,5 +25,12 @@ const StatUser =mongoose.Schema({
     
       }]
 })
-module.exports = Product = mongoose.model('Product',ProductSchema)
-module.exports = User = mongoose.model('User',StatUser)
+const Product = mongoose.model('Product',ProductSchema)
+const User = mongoose.model('User',StatUser)
+module.exports = {Product,User}
+
+// module.exports = mongoose.model.Product || mongoose.model('Product',ProductSchema)
+// module.exports = mongoose.model.User || mongoose.model('User',StatUser)
+ 
+ 
+

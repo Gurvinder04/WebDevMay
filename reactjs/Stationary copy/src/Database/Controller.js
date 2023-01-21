@@ -1,5 +1,7 @@
 require('dotenv').config()
+const {User} = require('./Models')
 const {Product} = require('./Models')
+
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')

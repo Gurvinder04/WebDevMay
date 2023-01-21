@@ -17,8 +17,8 @@ const getLocalCart=()=>{
 
 const CartProvider=({children})=>{
     const initialstate1 = {
-        //cart:[],
-        cart:getLocalCart(),
+        cart:[],
+        //cart:getLocalCart(),     trycart1
         total_items:"",
         total_price:"",
         shipping_fee:50
@@ -45,7 +45,7 @@ const CartProvider=({children})=>{
         dispatch({type:"CART_TOTAL_PRICE"})
         dispatch({type:"TOTAL ARTICLES", payload:{initialstate1}})
          //Local storage for cart
-    localStorage.setItem("customercart",JSON.stringify(state.cart))
+    //localStorage.setItem("customercart",JSON.stringify(state.cart))  trycart1
 
     },[state.cart])
    

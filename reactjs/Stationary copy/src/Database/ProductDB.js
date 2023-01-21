@@ -10,6 +10,7 @@ var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
 
+
 const admin = express()
 //middleware
 admin.use(express.json())
@@ -38,16 +39,13 @@ const StatUser =mongoose.Schema({
     lastname:String,
     email:String,
     password:String,
-    tokens:[{
-      token:{
+    usercart:[{
         type:String
-      }
-    
-      }]
+    }]
 })
 const User = mongoose.model('User',StatUser)
  
-//console.log(process.env.SECRET_KEY)
+console.log(process.env.SECRET_KEY)
 //storage
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, './public/uploads/'),
@@ -73,16 +71,18 @@ admin.get('/product',async(req,res)=>{
     res.send(data)
 
 })
-admin.get('/hidden',authorize,(req,res)=>{
-    if(error){
-     console.log('getting error')
-    }
-    else{
-     console.log('I m Fine')
-    }
-    let cid = cid
-    const loggedUser=  User.find({_id:cid})
-    console.log('token user detail',loggedUser)
+admin.get('/hidden',authorize,async(req,res)=>{
+    //  if(error){
+    //  console.log('getting error')
+    // }
+    // else{
+    //  console.log('I m Fine')
+    // }
+    //let {check} = checkToken 
+   let check ;
+    console.log('hiddden checktoken is' ,authorize)
+    // const loggedUser=  User.find({_id:check._id})
+    // console.log('token user detail',loggedUser)
 })
 
 admin.get('/product/:id',async(req,res)=>{
@@ -178,15 +178,13 @@ admin.post('/signin',(req,res)=>{
        password:password,
     //  tokens : jwt.sign({_id:this._id},process.env.SECRET_KEY)   normal
        })
-      let tokens =jwt.sign({_id:this._id},process.env.SECRET_KEY)  //abnormal
-       //user_data.tokens=user_data.tokens.concat({token:token})     //abnormal
+      //let tokens =jwt.sign({_id:this._id},process.env.SECRET_KEY)  //abnormal
+       //user_data.tokens=user_data.tokens.concat({token:tokens})     //abnormal
       
-       res.cookie("firstjwt",tokens,{
-        // domain: "localhost",
-        // path: "/",
-        httpOnly: true
-       });
-       console.log('userdb toke is',tokens)
+      //  res.cookie("firstjwt",tokens,{       //no
+      //   httpOnly: true                      //no
+      //  });                                  //no
+      //  console.log('userdb toke is',tokens) //no
     user_data.save()
           .then(result => {
               console.log('successfully saved')
@@ -206,19 +204,21 @@ admin.post('/signin',(req,res)=>{
         if(user){     //abnormal 1
        console.log('user is',user)
      let tokens = jwt.sign({_id:user._id},process.env.SECRET_KEY) //normal
-     //localStorage.setItem('public',tokens)
+     
+    
+     //User.localStorage.setItem('trytoken',tokens)
      //let token = jwt.sign({_id:this._id},process.env.SECRET_KEY)  //abnormal
        //user.tokens=token.concat({token:token})     //abnormal
        
       res.cookie("firstjwt",tokens,{
-        expires:new Date(Date.now() + 50000),
+        expires:new Date(Date.now() + 30000),
         // domain: "localhost",
         // path: "/",
         httpOnly: true
        });
        console.log('user logintoken is',tokens)
        //console.log(`this is checking cookie ${req.cookies.firstjwt}`)
-       res.status(201).send(user)
+       res.status(201).send(JSON.stringify(tokens))
       //  if(user.length >0){
       //    console.log(user)
       //    const loggedpass = user[0].user.password

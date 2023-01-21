@@ -9,8 +9,12 @@ const jwt = require('jsonwebtoken')
 var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
+const {User} = require('./Models')
+const {Product} = require('./Models')
 const{showProducts,productById,addProducts,adminSign,userSign,userLogin,updateProducts,deleteProducts} = require('./Controller')
 const admin = express()
+
+
 //middleware
 admin.use(express.json())
 admin.use(cors())
