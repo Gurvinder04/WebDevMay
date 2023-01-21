@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
@@ -7,12 +7,15 @@ import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
+    const {cartUser,setcartUser} = useState({})
     const fetchHidden =async()=>{
       let data = await fetch('/hidden')    
       let res = await data.json()
-      if(res !== undefined){
-          console.log('Hurrryyyyy')
+      if(res !== null){
+          console.log('Hurrryyyyy',res)
+          //setcartUser(res)
       }
+      //console.log('achieved user is',cartUser)
       }
   
   

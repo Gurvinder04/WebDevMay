@@ -12,6 +12,7 @@ const authorize = async(req,res,next)=>{
         // console.log('token user detail',loggedUser)
         
        //res.send(checkToken)
+       req.body = checkToken
         next()
         
         

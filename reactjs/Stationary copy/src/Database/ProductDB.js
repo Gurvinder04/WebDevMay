@@ -78,11 +78,20 @@ admin.get('/hidden',authorize,async(req,res)=>{
     // else{
     //  console.log('I m Fine')
     // }
-    //let {check} = checkToken 
-   let check ;
-    console.log('hiddden checktoken is' ,authorize)
-    // const loggedUser=  User.find({_id:check._id})
-    // console.log('token user detail',loggedUser)
+    
+    let uid = req.body._id
+    console.log('hiddden checktoken is' ,uid)  
+      User.findOne({_id:uid})
+      .then(um=>{
+        console.log('token user detail',um)
+        if(um){
+            res.status(200).send(JSON.stringify(um))
+        }
+        else{
+            res.status(400).send(error)
+        }
+      })
+     
 })
 
 admin.get('/product/:id',async(req,res)=>{
