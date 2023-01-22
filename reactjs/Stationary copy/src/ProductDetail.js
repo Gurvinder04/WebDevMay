@@ -19,7 +19,16 @@ function ProductDetail() {
    
     const API = 'http://localhost:4000/product'
 
-
+    const [cartUser,setcartUser] = useState({})
+    const fetchHidden =async()=>{
+      let data = await fetch('/hidden')    
+      let res = await data.json()
+      if(res !== null){
+          //console.log('Hurrryyyyy',res)
+          setcartUser(res)
+      }
+      console.log('detail vala',cartUser)
+      }
     useEffect(() => {
     //     fetch(`http://localhost:4000/product/${id}`)
     //       .then(response => response.json())
@@ -27,7 +36,7 @@ function ProductDetail() {
     //         //console.log(data)
     //         setdetail(data)
     // })
-
+     fetchHidden()
     getSingleProduct(`${API}/${id}`)
           },[])
   return (

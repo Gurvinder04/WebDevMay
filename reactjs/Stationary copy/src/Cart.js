@@ -7,7 +7,7 @@ import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
-    const {cartUser,setcartUser} = useState({})
+    const [cartUser,setcartUser] = useState({})
     const fetchHidden =async()=>{
       let data = await fetch('/hidden')    
       let res = await data.json()

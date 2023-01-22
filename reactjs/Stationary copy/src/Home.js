@@ -11,10 +11,12 @@ import {Link} from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
 import { useProductContext } from './Context/ProductContext.js'
 import { useFilterContext } from './Context/FilterContext'
+import { STATES } from 'mongoose'
 
 
 function Home() {
   const [Items, setItems] = useState([])
+  const [cartUser,setcartUser] = useState({})
   const {isLoading,feature,products} = useProductContext()
   const {filters:{category},searchValue} = useFilterContext()
   console.log('All products r here...',products)
@@ -26,11 +28,21 @@ function Home() {
   //   console.log('Items showing', Items)
   //   console.log('productname', data[0].productname)
   // }
+  
+  const fetchHidden =async()=>{
+    let data = await fetch('/hidden')    
+    let res = await data.json()
+    if(res !== null){
+        console.log('Hurrryyyyy home',res)
+    }
+    setcartUser(res)
+    console.log('achieved user is',cartUser)
+    }
 
   useEffect(() => {
-    // fetchData()
+    fetchHidden() 
     
-  }, [])
+  }, [cartUser])
   return (
     <>
        {/* <div className='body-divide container-fluid'></div> */}
@@ -222,7 +234,7 @@ function Home() {
 {           
           feature.length != 0 ?
           feature.map((product,index) => (
-          <CardLayout product={product} key={index} />
+          <CardLayout product={product} key={index} cartUser={cartUser} />
       
           ))
           :

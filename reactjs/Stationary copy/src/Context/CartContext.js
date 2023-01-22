@@ -26,8 +26,9 @@ const CartProvider=({children})=>{
     }
     const [state,dispatch] = useReducer(reducer,initialstate1)
 
-    const addToCart=(amount,product)=>{
-       dispatch({type:"ADD_TO_CART",payload:{amount,product}})
+    const addToCart=(amount,product,cartUser)=>{
+        {console.log('cartcontext vala ',cartUser)}
+       dispatch({type:"ADD_TO_CART",payload:{amount,product,cartUser}})
     }
     const removeItem=(id)=>{
         dispatch({type:"REMOVE_ITEM",payload:id})

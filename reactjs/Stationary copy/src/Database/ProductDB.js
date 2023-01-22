@@ -39,9 +39,9 @@ const StatUser =mongoose.Schema({
     lastname:String,
     email:String,
     password:String,
-    usercart:[{
-        type:String
-    }]
+    usercart:{
+        type:Array
+    }
 })
 const User = mongoose.model('User',StatUser)
  
@@ -93,7 +93,21 @@ admin.get('/hidden',authorize,async(req,res)=>{
       })
      
 })
-
+ admin.get('/',authorize,async(res,req)=>{
+    let uid = req.body._id
+    console.log('hiddden checktoken is' ,uid)  
+      User.findOne({_id:uid})
+      .then(um=>{
+        console.log('token user detail',um)
+        if(um){
+            res.status(200).send(JSON.stringify(um))
+        }
+        else{
+            res.status(400).send(error)
+        }
+      })
+     
+ })
 admin.get('/product/:id',async(req,res)=>{
     //console.log('with id')
     const rid = req.params.id

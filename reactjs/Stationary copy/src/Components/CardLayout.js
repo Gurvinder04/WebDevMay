@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import {FaRegHeart} from 'react-icons/fa'
 import AddToCart from './AddToCart'
 
-function CardLayout({product}) {
+function CardLayout({product,cartUser}) {
     useEffect(()=>{
 
     },[product])
@@ -33,13 +33,15 @@ function CardLayout({product}) {
       €{product.price}
       </Card.Text> */}
       {/* <Button variant="success" className='cart-button'>Add to Cart</Button> */}
-      <AddToCart  product ={product}/>
+      <AddToCart  product ={product} cartUser={cartUser}/>
       <FaRegHeart className='faregheart social-icon'></FaRegHeart>
       </div>
     </Card.Body>
     </div>
   </Card>
+  {console.log('cardlayout vala ',cartUser)}
   </Col>
+  
   )
 }
 

@@ -57,7 +57,8 @@ if(action.type==="ADD_TO_CART"){
 //         quantity:amount
 //     }
 
-let {amount,product} = action.payload
+let {amount,product,cartUser} = action.payload
+console.log('reducer vala ',cartUser)
 if(amount == undefined){
      amount = 1
 }
@@ -74,6 +75,7 @@ const cartProduct={
 
     return{
         ...state,
+        //cartUser.usercart:[...state.cart,cartProduct]
         cart:[...state.cart,cartProduct]
     }
 
