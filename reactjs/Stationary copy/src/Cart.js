@@ -1,26 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import { STATES } from 'mongoose'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
 import { useCartContext } from './Context/CartContext.js'
+import { useProductContext } from './Context/ProductContext'
 import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
     const [cartUser,setcartUser] = useState({})
-    const fetchHidden =async()=>{
-      let data = await fetch('/hidden')    
+    const[newCart,setnewCart] = useState([])
+    // const fetchHidden =async()=>{
+    //   let data = await fetch('/hidden')    
+    //   let res = await data.json()
+    //   if(res !== null){
+    //       console.log('Hurrryyyyy',res)
+    //       setcartUser(res)
+    //   }
+    //   console.log('achieved user is',cartUser)
+    //   }
+
+     
+  
+    const fetchCart = async()=>{
+      let data = await fetch('/cart')
       let res = await data.json()
-      if(res !== null){
-          console.log('Hurrryyyyy',res)
-          //setcartUser(res)
-      }
-      //console.log('achieved user is',cartUser)
-      }
+      console.log('newcart',res)
+      let cart = res.usercart
+
+      setnewCart(cart)
+      console.log('succeed',newCart)
+    }
   
-  
+   
       useEffect(()=>{
-        fetchHidden()
+        fetchCart()
+        
       },[])
   return (
     <Container>
@@ -36,7 +52,12 @@ function Cart() {
           </tr>
         </thead>
     {
-        cart.map((items,index)=>{
+        // cart.map((items,index)=>{
+        //   return  <CartTable key={index} cartItems ={newCart}/>
+
+        // })
+
+        newCart.map((items,index)=>{
           return  <CartTable key={index} cartItems ={items}/>
 
         })

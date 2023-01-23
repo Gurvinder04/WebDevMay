@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { BsFillTrashFill } from 'react-icons/bs'
 import { useCartContext } from '../Context/CartContext.js'
 
 
 function CartTable({cartItems}) {
-  const{removeItem}=useCartContext()
+  //const{removeItem}=useCartContext()
+  const removeItem= async (id)=>{
+    //e.preventDefault();
+      
+      console.log('removing process start',id)
+      let data = await fetch(`/cart/${id}`,{
+          method:'DELETE',
+          headers:{
+              'Content-Type':'application/json'
+          },
+          body:JSON.stringify()
+      })
+     
+      let res = await data.json()
+      console.log('hey',res) 
+  }
+ 
   return (
     <>
         <tbody>
@@ -15,11 +31,15 @@ function CartTable({cartItems}) {
             <td>{cartItems.name}</td>
             <td>{cartItems.quantity}</td>
             <td>{cartItems.price*cartItems.quantity}</td>
-            <td><BsFillTrashFill onClick={()=>removeItem(cartItems.id)}></BsFillTrashFill></td>
-
+            {/* <td><BsFillTrashFill onClick={()=>removeItem(cartItems.id)}></BsFillTrashFill></td> */}
+            <td><BsFillTrashFill onClick={()=>removeItem(cartItems._id)}></BsFillTrashFill></td>
+           
           </tr>
+         
+
+          
         </tbody>
-      {console.log('cartitems are',cartItems)}
+      {console.log('cartitems are',cartItems)} 
    
 </>
     

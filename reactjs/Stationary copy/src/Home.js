@@ -16,33 +16,18 @@ import { STATES } from 'mongoose'
 
 function Home() {
   const [Items, setItems] = useState([])
-  const [cartUser,setcartUser] = useState({})
+  const[cartUser,setcartUser] = useState({})
   const {isLoading,feature,products} = useProductContext()
   const {filters:{category},searchValue} = useFilterContext()
   console.log('All products r here...',products)
-  // const fetchData = async () => {
-  //   let response = await fetch('http://localhost:4000/product')
-  //   let data = await response.json()
-  //   setItems(data)
-  //   console.log('Data showing', data)
-  //   console.log('Items showing', Items)
-  //   console.log('productname', data[0].productname)
-  // }
   
-  const fetchHidden =async()=>{
-    let data = await fetch('/hidden')    
-    let res = await data.json()
-    if(res !== null){
-        console.log('Hurrryyyyy home',res)
-    }
-    setcartUser(res)
-    console.log('achieved user is',cartUser)
-    }
+  
+  
 
   useEffect(() => {
-    fetchHidden() 
+     //fetchHidden()
     
-  }, [cartUser])
+  }, [])
   return (
     <>
        {/* <div className='body-divide container-fluid'></div> */}

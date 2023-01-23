@@ -5,6 +5,7 @@ import {UserContext} from './App.js'
 import {home} from './Home'
 import { FcGoogle } from "react-icons/fc";
 
+
 function Sign() {
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
@@ -74,13 +75,14 @@ let name,value
          
            let res = await data.json()
            console.log('hey',res) 
+           let logged = res
            //localStorage.setItem('trytoken',JSON.stringify(res))
           if(res.status === 404 ){
            window.alert("Invalid details")
           }
           else{
              
-           dispatch({type:"USER",payload:true})
+           dispatch({type:"USER",payload:{logged}})
            window.alert("successfully logged in")
           navigate('/')
           //res.render('/')

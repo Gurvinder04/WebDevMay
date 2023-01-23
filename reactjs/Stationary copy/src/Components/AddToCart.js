@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../Context/CartContext.js'
 import CardAmount from './CardAmount.js'
 
-function AddToCart({product,amount,cartUser}) {
+function AddToCart({product,amount}) {
     const {addToCart} = useCartContext()
     // const [amount,setamount] = useState(1)
     // const setIncrease=()=>{
@@ -14,14 +14,26 @@ function AddToCart({product,amount,cartUser}) {
     //  const setDecrease=()=>{
     //    amount > 1 ? setamount(amount-1):setamount(1)
     //  }
+    
+     
+   
+ useEffect(()=>{
+
+ },[])
+ 
+
   return (
   <div>
        {/* <CardAmount amount={amount} setIncrease={setIncrease} setDecrease={setDecrease}/> */}
-        <Link to={'/cart'} onClick={()=>addToCart(amount,product,cartUser)}>
+        <Link to={'/cart'} onClick={()=>addToCart(amount,product)}>
         <Button>ADD TO CART</Button>
         </Link>
-        {console.log('Addcart vala ',cartUser)}
-   {/* {console.log('addcart data',product)} */}
+
+
+        
+        
+        
+   {console.log('addcart data',product)}
   </div>
     
   )

@@ -5,8 +5,8 @@ export var initialstate = false
 
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
-    initialstate=true
-    return action.payload;
+   console.log('reducer vala' ,action.payload)
+    return initialstate =true;
 }
 
     if(action.type==="SET_LOADING"){
@@ -57,8 +57,8 @@ if(action.type==="ADD_TO_CART"){
 //         quantity:amount
 //     }
 
-let {amount,product,cartUser} = action.payload
-console.log('reducer vala ',cartUser)
+let {amount,product} = action.payload
+
 if(amount == undefined){
      amount = 1
 }

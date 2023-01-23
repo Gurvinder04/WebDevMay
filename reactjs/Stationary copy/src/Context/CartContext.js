@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { reducer } from '../reducer/UseReducer.js'
 //import { UserContext } from './App'
 
@@ -26,9 +27,26 @@ const CartProvider=({children})=>{
     }
     const [state,dispatch] = useReducer(reducer,initialstate1)
 
-    const addToCart=(amount,product,cartUser)=>{
-        {console.log('cartcontext vala ',cartUser)}
-       dispatch({type:"ADD_TO_CART",payload:{amount,product,cartUser}})
+    const addToCart=async(amount,product)=>{
+            console.log('click button',product)
+            
+            let data = await fetch('/cart',{
+              method:'POST',
+              headers:{
+                  'Content-Type':'application/json',
+                  //'Access-Control-Allow-Origin': '*'
+              },
+              body:JSON.stringify(product)
+          })
+          
+          let res = await data.json()
+          console.log('cart addded',res)
+          if(res.status === 401){
+           window.alert('U have to login')
+          }  
+          
+          
+       //dispatch({type:"ADD_TO_CART",payload:{amount,product}})
     }
     const removeItem=(id)=>{
         dispatch({type:"REMOVE_ITEM",payload:id})

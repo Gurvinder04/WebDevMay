@@ -39,7 +39,7 @@ function CardLayout({product,cartUser}) {
     </Card.Body>
     </div>
   </Card>
-  {console.log('cardlayout vala ',cartUser)}
+  
   </Col>
   
   )

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import { Badge, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
@@ -6,10 +6,13 @@ import {UserContext} from '../App.js'
 import { useCartContext } from '../Context/CartContext.js'
 import { useFilterContext } from '../Context/FilterContext.js'
 
+import { initialstate, reducer } from '../reducer/UseReducer.js'
+
 
 function Header() {
   
   const { state, dispatch } = useContext(UserContext)
+
   const RenderMenu = () => {
     if (state) {
       return (
@@ -65,12 +68,16 @@ function Header() {
           )
      }
 }
-
+useEffect(()=>{
+    //RenderMenu()
+},[state])
   return (
     <>  
     <div className='marquee1'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
-        </div>          
+        </div> 
+
+        
     <RenderMenu />
     </>
   )

@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken')
 var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
+const { stringify } = require('querystring')
 
 
 const admin = express()
@@ -17,8 +18,9 @@ admin.use(express.json())
 admin.use(cors())
 admin.use(cookieParser())
 // admin.use(express.static(__dirname+"./public/"))
-mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
 
+//mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
+mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 const ProductSchema = mongoose.Schema({
     productname:String,
     category:String,
@@ -93,23 +95,24 @@ admin.get('/hidden',authorize,async(req,res)=>{
       })
      
 })
- admin.get('/',authorize,async(res,req)=>{
-    let uid = req.body._id
-    console.log('hiddden checktoken is' ,uid)  
-      User.findOne({_id:uid})
-      .then(um=>{
-        console.log('token user detail',um)
-        if(um){
-            res.status(200).send(JSON.stringify(um))
-        }
-        else{
-            res.status(400).send(error)
-        }
-      })
+//  admin.get('/',authorize,async(res,req)=>{
+//     let uid = req.body._id
+//     console.log('hiddden checktoken is' ,uid)  
+//       User.findOne({_id:uid})
+//       .then(um=>{
+//         console.log('token user detail',um)
+//         if(um){
+//             res.status(200).send(JSON.stringify(um))
+//         }
+//         else{
+//             res.status(400).send(JSON.stringify(error))
+//         }
+//       })
      
- })
+//  })
 admin.get('/product/:id',async(req,res)=>{
     //console.log('with id')
+   
     const rid = req.params.id
    const data = await Product.findById({_id:rid})
    //console.log(data)
@@ -241,7 +244,7 @@ admin.post('/signin',(req,res)=>{
        });
        console.log('user logintoken is',tokens)
        //console.log(`this is checking cookie ${req.cookies.firstjwt}`)
-       res.status(201).send(JSON.stringify(tokens))
+       res.status(201).send(JSON.stringify(user))
       //  if(user.length >0){
       //    console.log(user)
       //    const loggedpass = user[0].user.password
@@ -267,6 +270,61 @@ admin.post('/signin',(req,res)=>{
        })                                              
        
   })
+
+
+//   admin.post('/cart',(res,req)=>{
+//          const product= req.body
+//          console.log('database vala',product, typeof product, req.body)
+//          User.findByIdAndUpdate('63ce47c390f3ff85f11f3c23',{
+//             usercart:product
+//          })
+//          .then(res=>{
+//              console.log('cart API',res)
+//          })
+        
+//   })
+// admin.post('/cart',(req,res)=>{
+//    // const {description} = req.body.description
+//     User.findByIdAndUpdate('63ce47c390f3ff85f11f3c23',{usercart:req.body})
+//     .then(output=>{
+//         res.json({
+//             msg:"ok",
+//             data:output
+//         })
+//     })
+   
+// })
+
+admin.post('/cart',authorize,(req,res)=>{
+            User.updateOne({_id:'63ce47c390f3ff85f11f3c23'},{$push:{ usercart:req.body}})
+            .then(output=>{
+                res.json({
+                    msg:"ok",
+                    data:output
+                })
+            })
+        })
+
+
+        admin.get('/cart',async(req,res)=>{
+            let thik={}
+            User.findById('63ce47c390f3ff85f11f3c23')
+            .then(output=>{
+                console.log('testing',output)
+                res.send(JSON.stringify(output))
+               
+            }) 
+        })
+
+    admin.delete('/cart/:id',async(req,res)=>{
+          let {id} = req.params
+        console.log('deleting processss',id)
+        let data = User.updateOne({ _id:'63ce47c390f3ff85f11f3c23'},
+            { $pull: { 'usercart': { _id: '63ce47c390f3ff85f11f3c23' } } }
+          );
+        console.log('hey u did it',data)
+        //res.send(JSON.stringify(data))
+    })
 
 admin.listen(4000,(err)=>console.log('running on 4000'))
 module.exports = User

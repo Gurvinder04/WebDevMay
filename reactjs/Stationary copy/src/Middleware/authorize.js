@@ -17,10 +17,11 @@ const authorize = async(req,res,next)=>{
         
         
     } catch (error) {
-        res.status(401).send(error)
+        //res.status(401).send(error)
         console.log('errorrrr')
         
     }
 }
+
 
 module.exports = authorize
