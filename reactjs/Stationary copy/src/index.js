@@ -9,12 +9,13 @@ import 'swiper/css/pagination';
 import { CartProvider } from './Context/CartContext.js';
 import { FilterContextProvider } from './Context/FilterContext.js';
 import { AppProvider } from './Context/ProductContext.js';
+import { AuthProvider } from './Context/AuthContext.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
+   
     <AppProvider>
      <FilterContextProvider>
       <CartProvider>
@@ -22,6 +23,8 @@ root.render(
       </CartProvider>
      </FilterContextProvider>
     </AppProvider>
+    
+    
     
 </React.StrictMode>
 );

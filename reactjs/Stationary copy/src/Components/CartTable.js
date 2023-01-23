@@ -10,12 +10,12 @@ function CartTable({cartItems}) {
     //e.preventDefault();
       
       console.log('removing process start',id)
-      let data = await fetch(`/cart/${id}`,{
+      let data = await fetch('/cart',{
           method:'DELETE',
           headers:{
               'Content-Type':'application/json'
           },
-          body:JSON.stringify()
+          body:JSON.stringify({id})
       })
      
       let res = await data.json()

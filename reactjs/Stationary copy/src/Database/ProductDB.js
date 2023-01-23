@@ -19,8 +19,8 @@ admin.use(cors())
 admin.use(cookieParser())
 // admin.use(express.static(__dirname+"./public/"))
 
-//mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
-mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
+mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
+//mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 const ProductSchema = mongoose.Schema({
     productname:String,
     category:String,
@@ -55,16 +55,6 @@ const Storage = multer.diskStorage({
 })
 const upload = multer({
    storage: Storage
-    // fileFilter:(req,file,callback)=>{
-    //     const extensions =['image/png','image/jpeg','image/jpg','image/webp']
-    //     if(extensions.includes(file.mimetype)){
-    //         callback(null,true)
-    //         console.log('added image')
-    //     }
-    //     else{
-    //         callback(new Error("Not Allowed!!!!!"))
-    //     }
-    // }
 })
 
 admin.get('/product',async(req,res)=>{
@@ -74,13 +64,6 @@ admin.get('/product',async(req,res)=>{
 
 })
 admin.get('/hidden',authorize,async(req,res)=>{
-    //  if(error){
-    //  console.log('getting error')
-    // }
-    // else{
-    //  console.log('I m Fine')
-    // }
-    
     let uid = req.body._id
     console.log('hiddden checktoken is' ,uid)  
       User.findOne({_id:uid})
@@ -90,7 +73,9 @@ admin.get('/hidden',authorize,async(req,res)=>{
             res.status(200).send(JSON.stringify(um))
         }
         else{
-            res.status(400).send(error)
+            res.status(400).json({
+                message:'LOgin Failed'
+            })
         }
       })
      
@@ -295,8 +280,8 @@ admin.post('/signin',(req,res)=>{
    
 // })
 
-admin.post('/cart',authorize,(req,res)=>{
-            User.updateOne({_id:'63ce47c390f3ff85f11f3c23'},{$push:{ usercart:req.body}})
+admin.post('/cart',(req,res)=>{
+            User.updateOne({_id:'63cda929f09ae32a58c9fc0b'},{$push:{ usercart:req.body}})
             .then(output=>{
                 res.json({
                     msg:"ok",
@@ -306,9 +291,10 @@ admin.post('/cart',authorize,(req,res)=>{
         })
 
 
-        admin.get('/cart',async(req,res)=>{
+        admin.get('/cart',authorize,async(req,res)=>{
             let thik={}
-            User.findById('63ce47c390f3ff85f11f3c23')
+            let uid = req.body._id
+            User.findById({_id:uid})
             .then(output=>{
                 console.log('testing',output)
                 res.send(JSON.stringify(output))
@@ -316,13 +302,17 @@ admin.post('/cart',authorize,(req,res)=>{
             }) 
         })
 
-    admin.delete('/cart/:id',async(req,res)=>{
-          let {id} = req.params
+    admin.delete('/cart',async(req,res)=>{
+          let {id} = req.body
         console.log('deleting processss',id)
-        let data = User.updateOne({ _id:'63ce47c390f3ff85f11f3c23'},
-            { $pull: { 'usercart': { _id: '63ce47c390f3ff85f11f3c23' } } }
+        let data =await User.updateMany({ _id:"63cda929f09ae32a58c9fc0b"},
+            { $pull: { usercart: {_id:"6384a0e9fab9cd20ed78778b" } } }
           );
         console.log('hey u did it',data)
+        User.findById('63cda929f09ae32a58c9fc0b')
+        .then(out=>{
+            console.log('OUTPUT',out.usercart)
+        })
         //res.send(JSON.stringify(data))
     })
 
