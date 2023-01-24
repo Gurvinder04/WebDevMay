@@ -7,6 +7,7 @@ import Sort from './Components/Sort'
 import { useFilterContext } from './Context/FilterContext'
 import { FaSearch } from 'react-icons/fa'
 import FormatPrice from './Helpers/FormatPrice'
+import Dummy from './Dummy'
 
 function Products() {
   const{filter_products} = useFilterContext()
@@ -17,7 +18,7 @@ useEffect(()=>{
   
 })
   return (
-    <Container className='mt-5'>
+    <Container fluid={true} className='mt-5'>
       {console.log('filtering',filter_products)}
       <div className='mb-4'>
       <form className='cat-mainForm' onSubmit={(e)=>e.preventDefault()}>
@@ -27,10 +28,10 @@ useEffect(()=>{
       </InputGroup>
       </form>
       <hr className='cat-hr2'></hr>
-      </div>
+      </div> 
       
-      <Row className='d-flex flex-delivery'>
-        <Col>
+      <div className='row flex-delivery'>
+        {/* <Col>
           <div className='cat-Border'>
         <h6 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'20px'}} className='cat-padding' >Categories</h6>
         <hr className='cat-hr'></hr>
@@ -61,24 +62,27 @@ useEffect(()=>{
         </div>
         <div> <Button className='bg-danger m-5' onClick={clearFilters}>Clear Filters</Button></div>
        
-        </Col>
-        <Col>
-        <Row>
+        </Col> */}
+        <div className='col d-flex colrough'>
           {
+            
               filter_products.length != 0 ?
               filter_products.map((product,index) => (
-                <CardLayout product={product} key={index} />
+                //<CardLayout product={product} key={index} />
+                 <Dummy product={product} key={index} />
           
               ))
               :
               <div>.......Loading</div>
+            
           }
-          </Row>
-          </Col>
+          </div>
+
+        
           
   
 
-    </Row>
+    </div>
     {console.log('searching',text)}
     </Container>
 

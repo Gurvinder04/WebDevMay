@@ -22,7 +22,7 @@ admin.use(cookieParser())
 // admin.use(express.static(__dirname+"./public/"))
 
 //mongoose.connect(process.env.MONGO_URI,(err)=>console.log('connected....'))
-mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
+//mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, './public/uploads/'),

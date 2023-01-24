@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
 import { useProductContext } from './Context/ProductContext.js'
 import { useFilterContext } from './Context/FilterContext'
+import Dummy from './Dummy'
 
 
 function Home() {
@@ -205,8 +206,8 @@ function Home() {
         </Row> */}
 
       </div> 
-      <div className='container'>
-      <Row className='m-5 text-center'>
+      <div className='row'>
+      <div className='col d-flex colrough m-5 text-center'>
       {/* {
         Items.length != 0 ?
           Items.map((product, index) => (
@@ -220,14 +221,15 @@ function Home() {
 {           
           feature.length != 0 ?
           feature.map((product,index) => (
-          <CardLayout product={product} key={index} />
+          //<CardLayout product={product} key={index} />
+          <Dummy product={product} key={index} />
       
           ))
           :
           <div>.......Loading</div>
 
       }
-      </Row>
+      </div>
 
       <div className='d-flex  tech extraMargin' data-aos="fade-up" data-aos-offset="450">
         <Col>
