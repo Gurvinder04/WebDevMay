@@ -135,7 +135,7 @@ module.exports = {
         const {id,loggedId} = req.body
         console.log('logged id',loggedId)
          console.log('deleting processss',id)
-             let data = User.updateMany({ _id:loggedId},
+             let data = User.updateOne({ _id:loggedId},
                  { $pull: { usercart: {_id:id } } }
               );
             console.log('hey u did it',data)

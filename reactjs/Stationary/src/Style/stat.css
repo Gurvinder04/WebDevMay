@@ -49,7 +49,14 @@ a.nav-link {
 }
 
 img.d-block.w-100 {
-  height: 100vh;
+  height: 85vh;
+}
+
+.carousel_div{
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  
 }
 .carousel-caption {
   position: absolute;
@@ -147,6 +154,8 @@ img.d-block.w-100 {
 .deal{
   background-color: #673ab7c2;
   color: white;
+  height: 60vh;
+  margin-top: 8rem;
 }
 
 .deal-img{
@@ -818,3 +827,28 @@ ul{
     background: rgba(224, 218, 218, 0.52);
     font-family:'Secular One', sans-serif
   }
+
+
+
+          /* MEDIA QUERY */
+@media (max-width:768px){
+  .top-left {
+    position: absolute;
+    top: 73px;
+    left: 115px;
+}
+.d-flex.text-center.blog-flex.mediaflex.row.aos-init.aos-animate {
+  display: grid !important;
+}
+ .d-flex.tech.extraMargin.aos-init.aos-animate {
+  display: grid !important;
+}
+.container-fluid.deal.text-center {
+  width: max-content;
+  height: max-content;
+}
+.text-center.m-5 {
+  width: max-content;
+  margin: 6rem !important;
+}
+   }
