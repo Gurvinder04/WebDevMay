@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken')
 var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
-const { stringify } = require('querystring')
+
 
 
 const admin = express()
@@ -19,8 +19,8 @@ admin.use(cors())
 admin.use(cookieParser())
 // admin.use(express.static(__dirname+"./public/"))
 
-mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
-//mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
+//mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
+mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 const ProductSchema = mongoose.Schema({
     productname:String,
     category:String,
@@ -47,7 +47,7 @@ const StatUser =mongoose.Schema({
 })
 const User = mongoose.model('User',StatUser)
  
-console.log(process.env.SECRET_KEY)
+
 //storage
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, './public/uploads/'),
@@ -302,19 +302,19 @@ admin.post('/cart',(req,res)=>{
             }) 
         })
 
-    admin.delete('/cart',async(req,res)=>{
-          let {id} = req.body
-        console.log('deleting processss',id)
-        let data =await User.updateMany({ _id:"63cda929f09ae32a58c9fc0b"},
-            { $pull: { usercart: {_id:"6384a0e9fab9cd20ed78778b" } } }
-          );
-        console.log('hey u did it',data)
-        User.findById('63cda929f09ae32a58c9fc0b')
-        .then(out=>{
-            console.log('OUTPUT',out.usercart)
-        })
-        //res.send(JSON.stringify(data))
-    })
+    // admin.delete('/cart',async(req,res)=>{
+    //       let {id} = req.body
+    //     console.log('deleting processss',id)
+    //     let data =await User.updateMany({ _id:"63cda929f09ae32a58c9fc0b"},
+    //         { $pull: { usercart: {_id:"6384a0e9fab9cd20ed78778b" } } }
+    //       );
+    //     console.log('hey u did it',data)
+    //     User.findById('63cda929f09ae32a58c9fc0b')
+    //     .then(out=>{
+    //         console.log('OUTPUT',out.usercart)
+    //     })
+    //     //res.send(JSON.stringify(data))
+    // })
 
 admin.listen(4000,(err)=>console.log('running on 4000'))
 module.exports = User

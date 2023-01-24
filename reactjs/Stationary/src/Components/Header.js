@@ -1,15 +1,19 @@
 import React, { useContext } from 'react'
-import { Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
+import { useReducer } from 'react'
+import { useEffect } from 'react'
+import { Badge,Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import {UserContext} from '../App.js'
+import { useAuthContext } from '../Context/AuthContext.js'
 import { useFilterContext } from '../Context/FilterContext.js'
 
 
 function Header() {
-  const { state, dispatch } = useContext(UserContext)
+  const { loggedin} = useAuthContext()
+  
   const RenderMenu = () => {
-    if (state) {
+    if (loggedin) {
       return (
         <>
            <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -25,7 +29,7 @@ function Header() {
                   <Nav.Link href="/contact">Contact</Nav.Link>
                 </Nav>
                 <Nav>
-                  <FaShoppingCart></FaShoppingCart>
+                <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>1</Badge></Nav.Link>
                   <Link to={'/sign'} className="nav-link text-decoration-none">Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
@@ -61,13 +65,16 @@ function Header() {
           )
      }
 }
-
+useEffect(()=>{
+     //dispatch({type:"USER"})
+},[loggedin])
   return (
     <>  
     <div className='marquee1'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
         </div>          
-    <RenderMenu />
+     <RenderMenu />
+
     </>
   )
 }

@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
 import { Link,useNavigate} from 'react-router-dom'
 import {UserContext} from './App.js'
+import { useAuthContext } from './Context/AuthContext.js'
 import {home} from './Home'
 
 function Sign() {
+  const {auth} = useAuthContext()
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
-  const{state,dispatch} = useContext(UserContext)
+  //const{state,dispatch} = useContext(UserContext)
    const[User,setUser] = useState({
     firstname:'',
     lastname:'',
@@ -29,7 +31,7 @@ let name,value
         console.log('helooooooo')
         const { firstname,lastname, email,password} = User
         if(firstname && lastname && email && password){
-            let data = await fetch('/sign',{
+            let data = await fetch('/signin',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -57,7 +59,7 @@ let name,value
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch('/sign',{
+          let data = await fetch('/login',{
               method:'POST',
               headers:{
                   'Content-Type':'application/json'
@@ -71,7 +73,8 @@ let name,value
            window.alert("Invalid details")
           }
           else{
-           dispatch({type:"USER",payload:true})
+            auth(res)
+           //dispatch({type:"USER",payload:true})
            window.alert("successfully logged in")
           navigate('/')
           

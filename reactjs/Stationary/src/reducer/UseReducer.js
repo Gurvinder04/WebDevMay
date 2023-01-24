@@ -1,11 +1,17 @@
 import { init } from "aos";
 
 
-export const initialstate = false
+//export const initialstate = false
 
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
-    return action.payload;
+    const check = action.payload
+    return {
+        ...state,
+        loggedin:true,
+        loggedUser:check._id       
+}
+
 }
 
     if(action.type==="SET_LOADING"){

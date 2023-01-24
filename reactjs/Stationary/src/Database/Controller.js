@@ -10,13 +10,24 @@ var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
 
 module.exports = {
-    showProducts: async function (res, req) {
+    showProducts: async function  (req,res) {
         console.log('showing products')
         const data = await Product.find()
         res.send(data)
     },
+     
+    getCart:function(req,res){
+        let uid = req.body._id
+        User.findById({_id:uid})
+        .then(output=>{
+            console.log('testing',output.usercart)
+            res.send(output.usercart)
+           
+        }) 
 
-    productById: async function (res, req) {
+    },
+
+    productById: async function (req,res) {
         //console.log('with id')
         const rid = req.params.id
         const data = await Product.findById({ _id: rid })
@@ -24,7 +35,7 @@ module.exports = {
         res.send(data)
     },
 
-    addProducts: async function (res, req) {
+    addProducts: async function (req,res) {
         console.log(req.body.file, 'sucesssssssss')
         const newProduct = new Product({ ProductName: req.body.productname, Category: req.body.category, Description: req.body.description, Price: req.body.rate, Quantity: req.body.quantity, Image: req.file.filename })
         newProduct.save()
@@ -32,12 +43,24 @@ module.exports = {
                 console.log('successfully saved')
             })
     },
+    addCart:function (req,res){ 
+        const {product,checkUser} = req.body
+        console.log('backend id',checkUser)
+        console.log('backend product',product)
+        User.updateOne({_id:checkUser},{$push:{ usercart:product}})
+        .then(output=>{
+            res.json({
+                msg:"ok",
+                data:output
+            })
+        })
+    },
 
-    adminSign: async function (res, req) {
+    adminSign: async function (req,res) {
         console.log('entered Admin panel login')
         const { email, password } = req.body
         console.log(email, password)
-        User.findOne({ Email: email })
+        User.findOne({ email: email })
             .then(user => {
                 //console.log(result)
                 if (user.length > 0) {
@@ -52,7 +75,7 @@ module.exports = {
 
     },
 
-    userSign: async function (res, req) {
+    userSign: async function (req,res) {
         console.log('entered')
         const password = bcrypt.hashSync(req.body.password,10)
         console.log(req.body)
@@ -62,20 +85,13 @@ module.exports = {
            email: req.body.email, 
            password:password,
            })
-          let tokens =jwt.sign({_id:this._id},process.env.SECRET_KEY)
-           res.cookie("firstjwt",tokens,{
-            // domain: "localhost",
-            // path: "/",
-            httpOnly: true
-           });
-           console.log('userdb toke is',tokens)
         user_data.save()
               .then(result => {
                   console.log('successfully saved')
               })
     },
 
-    userLogin: async function (res, req) {
+    userLogin: async function (req,res) {
         console.log('entered login')
         const { email, password } = req.body
         console.log(email, password)
@@ -91,8 +107,8 @@ module.exports = {
                         httpOnly: true
                     });
                     console.log('user logintoken is', tokens)
-                    //console.log(`this is checking cookie ${req.cookies.firstjwt}`)
-                    res.status(201).send(user)
+                    
+                    res.status(201).send(JSON.stringify(user))
                 }
                 else {
                     console.log('login else part running')
@@ -102,18 +118,33 @@ module.exports = {
             })
     },
 
-    updateProducts: async function (res, req) {
+    updateProducts: async function (req,res) {
         const uid = req.params.id
         let data = Product.findById(uid)
         res.send(data)
     },
 
-    deleteProducts: async function (res, req) {
+    deleteProducts: async function (req,res) {
         console.log('deleting processss')
         let data = await Product.findByIdAndDelete({ _id: req.params.id })
         console.log('hey u did it')
         res.send(data)
+    },
 
+    deleteCart:  function(req,res){
+        const {id,loggedId} = req.body
+        console.log('logged id',loggedId)
+         console.log('deleting processss',id)
+             let data = User.updateMany({ _id:loggedId},
+                 { $pull: { usercart: {_id:id } } }
+              );
+            console.log('hey u did it',data)
+          User.findById({_id:loggedId})
+          .then(out=>{
+               console.log('OUTPUT',out.usercart)
+            })
+            //res.send(JSON.stringify(data))
+    
     }
 
 

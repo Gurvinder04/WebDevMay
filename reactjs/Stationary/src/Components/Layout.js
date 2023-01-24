@@ -7,7 +7,7 @@ function Layout({children}) {
  
   return (
     <BrowserRouter>
-   
+   <Header/>
     {children}
     <Footer />
     </BrowserRouter>

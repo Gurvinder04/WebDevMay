@@ -10,7 +10,7 @@ import Layout from './Components/Layout'
 import Header from './Components/Header'
 
 
-import { initialstate,reducer } from './reducer/UseReducer.js'
+//import { initialstate,reducer } from './reducer/UseReducer.js'
 import CartTable from './Components/CartTable'
 import Cart from './Cart'
 import Products from './Products'
@@ -18,12 +18,12 @@ import ContactPage from './ContactPage'
 import Blog from './Blog'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-export const UserContext = createContext()
+//export const UserContext = createContext()
 
 
 
 function App() {
-  const[state,dispatch] = useReducer(reducer,initialstate)
+  //const[state,dispatch] = useReducer(reducer,initialstate)
   useEffect(() => {
     
     Aos.init({
@@ -34,9 +34,8 @@ function App() {
   
   return (
    
-      <UserContext.Provider value={{state,dispatch}}>
+      //<UserContext.Provider value={{state,dispatch}}>
          <Layout>
-         <Header />
          <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/product/:id' element={<ProductDetail/>} />
@@ -50,7 +49,7 @@ function App() {
          </Routes>
          </Layout>
       
-        </UserContext.Provider>       
+        //</UserContext.Provider>       
    
     
   )

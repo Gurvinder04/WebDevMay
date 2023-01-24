@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
@@ -7,6 +7,22 @@ import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
+    const[newCart,setnewCart] = useState([])
+
+    const fetchCart = async()=>{
+      let data = await fetch('/cart')
+      let res = await data.json()
+      console.log('newcart',res)
+
+     setnewCart(res)
+      console.log('succeed',newCart)
+    }
+  
+   
+      useEffect(()=>{
+        fetchCart()
+        
+      },[])
   return (
     <Container>
       <table className="table" style={{boxShadow:'0px 4px 0px 4px white',tableLayout: 'fixed'}}>
@@ -21,7 +37,7 @@ function Cart() {
           </tr>
         </thead>
     {
-        cart.map((items,index)=>{
+        newCart.map((items,index)=>{
           return  <CartTable key={index} cartItems ={items}/>
 
         })

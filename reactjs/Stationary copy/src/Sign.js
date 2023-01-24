@@ -5,11 +5,11 @@ import {UserContext} from './App.js'
 import {home} from './Home'
 import { FcGoogle } from "react-icons/fc";
 import authorize from './Middleware/authorize.js'
-import { useAuthContext } from './Context/AuthContext.js'
+
 
 
 function Sign() {
-  //const {auth} = useAuthContext()
+
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
   const{state,dispatch} = useContext(UserContext)
@@ -84,11 +84,10 @@ let name,value
            window.alert("Invalid details")
           }
           else{
-           // auth(logged)
-           //dispatch({type:"USER",payload:{logged}})
+           dispatch({type:"USER",payload:{logged}})
            window.alert("successfully logged in")
           navigate('/')
-          //res.render('/')
+          
           
           }  
       }
