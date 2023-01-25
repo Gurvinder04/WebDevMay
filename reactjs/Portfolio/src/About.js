@@ -36,29 +36,29 @@ function About() {
       <Row className='justify-content-center'>
         <h1 className='text-decoration-underline text-light text-center m-5'>MY SKILLS</h1>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={90} text={`90%`} />
+        <CircularProgressbar value={99} text={`99%`} />
         <p className='text-light text-center'>HTML</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={66} text={`66%`} />
+        <CircularProgressbar value={98} text={`98%`} />
         <p className='text-light text-center'>CSS</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={50} text={`50%`} />
+        <CircularProgressbar value={95} text={`95%`} />
         <p className='text-light text-center'>JAVASCRIPT</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={30} text={`30%`} />
+        <CircularProgressbar value={80} text={`80%`} />
         <p className='text-light text-center'>REACT</p>
         </Col>  
       </Row>
       <Row className='justify-content-center'>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={50} text={`50%`} />
+        <CircularProgressbar value={85} text={`85%`} />
         <p className='text-light text-center'>NODEJS</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={66} text={`66%`} />
+        <CircularProgressbar value={90} text={`90%`} />
         <p className='text-light text-center'>MONGODB</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
@@ -66,7 +66,7 @@ function About() {
         <p className='text-light text-center'>PHP</p>
         </Col>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
-        <CircularProgressbar value={40} text={`40%`} />
+        <CircularProgressbar value={85} text={`85%`} />
         <p className='text-light text-center'>expressjs</p>
         </Col>  
       </Row> 

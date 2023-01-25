@@ -34,10 +34,10 @@ function Header() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
           <Nav.Link href="/"><BsFillHouseFill className="icon"></BsFillHouseFill></Nav.Link>
-          <Nav.Link href="about"><BsFillPersonFill className="icon"></BsFillPersonFill></Nav.Link>
-          <Nav.Link href="portfolio"><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill></Nav.Link>
-          <Nav.Link href="contact"><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill></Nav.Link>
-          <Nav.Link href="blog"><BsCardChecklist className="icon"></BsCardChecklist></Nav.Link>
+          <Nav.Link href="/about"><BsFillPersonFill className="icon"></BsFillPersonFill></Nav.Link>
+          <Nav.Link href="/projects"><BsFillBriefcaseFill className="icon"></BsFillBriefcaseFill></Nav.Link>
+          <Nav.Link href="/contact"><BsChatSquareDotsFill className="icon"></BsChatSquareDotsFill></Nav.Link>
+          <Nav.Link href="/blog"><BsCardChecklist className="icon"></BsCardChecklist></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

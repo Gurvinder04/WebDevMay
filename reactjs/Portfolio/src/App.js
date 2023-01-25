@@ -7,6 +7,7 @@ import Contact from './Contact'
 import Blog from './Blog'
 import Layout from './Components/Layout';
 import Header from './Components/Header';
+import Projects from './Projects';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/about' element={<About/>} />
+    <Route path='/projects' element={<Projects/>} />
     <Route path='/contact' element={<Contact/>} />
     <Route path='/blog' element={<Blog/>} />
     </Routes>

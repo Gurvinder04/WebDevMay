@@ -1,4 +1,10 @@
+/* *{
+    background-color: #212529;
+} */
 
+body {
+    background-color: #212529 !important;
+}
 
 .navbar-nav{
     position: absolute;
@@ -82,6 +88,7 @@ svg.arrow{
     padding-top: 53px;
     font-size: 60px;
     font-weight: 800;
+    margin-bottom: 50px !important;
 }
 .personal{
     margin-top: 35px;
@@ -231,6 +238,7 @@ hr {
 .Acard{
     color: black !important;
 }
+
 .typing-demo  {
     width: 22ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
@@ -309,6 +317,7 @@ hr {
     }
     .about-heading {
         padding-top: 82px;
+        
     }
 
     .bio.d-flex,.bio.d-flex.div>p>span{
@@ -362,5 +371,105 @@ hr {
     }
 
    }
-      
+
+   .project-Hover:hover{
+          background-color: #f1c40f;
+   }
+
+   .card{
+    border: none !important;
+   }
+
+   img.card-img-top {
+    height: 30vh !important;
+}
+.card-title{
+    text-align: center;
+    text-decoration: underline;
+    color: #fff;
   
+}
+
+.card-title:hover{
+    color: #f1c40f;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/*PROJECT */
+
+.cardp{
+    height: 300px;
+    width: 400px;
+     padding: 20px;
+    color: white;
+     background-image: url("https://wallpapercave.com/wp/wp3138465.jpg"); 
+    background-size: cover; 
+    display: flex;
+  position: relative;
+    cursor: pointer;
+}
+
+.cardp1{
+    height: 300px;
+    width: 400px;
+     padding: 20px;
+    color: white;
+     background-image: url("https://image.winudf.com/v2/image1/Y29tLnF1ZWVubW92aWVzLndhdGNoLmZyZWUuaGQubW92aWVzLm9ubGluZV9zY3JlZW5fM18xNjY3ODk4NDY1XzA1Mw/screen-3.jpg?fakeurl=1&type=.webp"); 
+    background-size: cover; 
+    display: flex;
+  position: relative;
+    cursor: pointer;
+}
+
+.cardp2{
+    height: 300px;
+    width: 400px;
+     padding: 20px;
+    color: white;
+     background-image: url("https://image.winudf.com/v2/image1/Y29tLnF1ZWVubW92aWVzLndhdGNoLmZyZWUuaGQubW92aWVzLm9ubGluZV9zY3JlZW5fM18xNjY3ODk4NDY1XzA1Mw/screen-3.jpg?fakeurl=1&type=.webp"); 
+    background-size: cover; 
+    display: flex;
+  position: relative;
+    cursor: pointer;
+}
+
+.contentp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(31, 31, 31, 0.85);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.contentp *{
+    transform: translateY(-70%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.contentp h2{
+    font-size: 35px;
+    margin: 15px;
+    font-weight: 700;
+    text-decoration: underline !important;
+}
+
+.contentp h3{
+    font-size: 23px;
+    text-transform: uppercase;
+    text-align: center !important;
+}
+
+.cardp:hover .contentp,.cardp1:hover .contentp,.cardp2:hover .contentp{
+    opacity: 1;
+}
+
+.cardp:hover .contentp *,.cardp1:hover .contentp *,.cardp2:hover .contentp *{
+    opacity: 1;
+    transform: translateY(0);
+}

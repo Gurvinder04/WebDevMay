@@ -15,8 +15,8 @@ function contact() {
                     <p className=''>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                     <RiMailOpenFill className='mail'></RiMailOpenFill><h6>MAIL ME</h6>
                     <p>kaurgurvinder19304@gmail.com</p>
-                    <IoMdCall className='mail'></IoMdCall><h6>CALL ME</h6>
-                    <p>+216 21 184 010</p>
+                     <IoMdCall className='mail'></IoMdCall><h6>CALL ME</h6>
+                    <p></p>
 
                 </Col>
                 <Col md={4} style={{ 'paddingTop': '50px'}}>
