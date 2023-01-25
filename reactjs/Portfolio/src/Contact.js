@@ -12,9 +12,9 @@ function contact() {
             <Row className='getIn m-5'>
                 <Col md={3} style={{'paddingTop': '50px' }} >
                     <h2 className='typing-demo '>DON'T BE SHY !</h2>
-                    <p className=''>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    <p className='contactPara'>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                     <RiMailOpenFill className='mail'></RiMailOpenFill><h6>MAIL ME</h6>
-                    <p>kaurgurvinder19304@gmail.com</p>
+                    <p className='contactPara'>kaurgurvinder19304@gmail.com</p>
                      <IoMdCall className='mail'></IoMdCall><h6>CALL ME</h6>
                     <p></p>
 
@@ -36,7 +36,7 @@ function contact() {
 
                         </Row>
                     </Form>
-                    <Button className='about'><Link to={''}>send message</Link><FiSend className='arrow'></FiSend></Button>
+                    <Button className='about'><Link to={''} className='aboutQuery'>send message</Link><FiSend className='arrow'></FiSend></Button>
 
                 </Col>
             </Row>

@@ -15,19 +15,16 @@ function About() {
           <div>
            <p><span  className='span2'>First Name :</span> Gurvinder</p>
            <p><span  className='span2'>Last Name :</span> Kaur</p>
-           <p><span  className='span2'>Age :</span> 27 Years</p>
-           <p><span  className='span2'>Nationality :</span> Indian</p>
            <p><span  className='span2'>Freelance :</span> Available</p>
           </div>
           <div>
            <p><span  className='span2'>Address :</span> Sint-truiden</p>
-           <p><span  className='span2'>Phone :</span> +21621184010 </p>
-           <p><span  className='span2'>Email :</span> kaurgurvinder868@gmail.com</p>
+           <p><span  className='span2'>Email :</span> kaurgurvinder19304@gmail.com</p>
            <p><span  className='span2'>Languages :</span> English,Dutch</p>
-           <p><span  className='span2'>Skype :</span> kaur.guru</p>
+           
           </div>
            </div>
-           <Button className='cv about'>DOWNLOAD CV</Button>
+           <Button className='cv about1'>DOWNLOAD CV</Button>
         </Col>
         <Col></Col>
         
@@ -71,20 +68,19 @@ function About() {
         </Col>  
       </Row> 
     </Container>
-     
-    <h1 className=' text-center m-5 text-decoration-underline'>EXPERIENCE & EDUCATION</h1>
+    <h1 className=' text-center m-5 text-decoration-underline querycheck'>EXPERIENCE & EDUCATION</h1> 
     <div className='d-flex main'>
-      <Col className=''>
+      <Col className='leftcol'>
       <div className='animate__animated animate__flipInX animate__delay-1s backcolor sidechange setmargin1'>
         <Badge className='bg-dark year'>2022</Badge><FaBriefcase></FaBriefcase><br></br>
         <h5 className='web'>PRODUCTIE-<span className='span2'> A&L JEUBIS</span></h5>
-       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+       <p className='description'>Here I was responsible for packing cosmetic products where I had to make sure that the labels and stamps were correct.</p>
         </div>
         <hr></hr>
         <div className='animate__animated animate__flipInX animate__delay-3s backcolor fruit'>
         <Badge className='bg-dark year'>2022</Badge><FaBriefcase></FaBriefcase><br></br>
-       <h5 className='web'>FRUIT SECTOR-<span className='span2'> A&L JEUBIS</span></h5>
-       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+       <h5 className='web'>FRUIT SECTOR-<span className='span2'></span></h5>
+       <p className='description'>In this sector, I used to do the work of harvesting and packaging different types of fruits. </p>
         </div>
        
       </Col>
@@ -94,22 +90,24 @@ function About() {
         <Badge className='bg-dark year'>2022</Badge><FaGraduationCap></FaGraduationCap><br></br>
         
        <h5 className='web'>WEB DEVELOPER-<span className='span2'> INTEC BRUSSEL</span></h5>
-       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+       <p className='description'>I have learned a lot of web languages ​​like javascript,reactjs,HTML,CSS and server side languages ​​like nodejs,Frameworks like expressjs.Not only this, gained knowledge over  API's, what is API, how to make RESTFUL API.I have practically created many interesting projects by implementing all these languages</p>
         </div>
        
       <div className='animate__animated animate__flipInX animate__delay-2s backcolor setmargin2'>
       <Badge className='bg-dark year'>2016-2020</Badge><FaGraduationCap></FaGraduationCap><br></br>
        <h5 className='web'>BACHELOR IN COMPUTER WETENSCHAPPEN-<span className='span2'> ACE COLLEGE</span></h5>
-       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+       <p className='description'>Studied Various subjects like Programming languages(c,c++,python),Database Managment,Data Structure,Computer Networks.</p>
       </div>
       
       <div className='animate__animated animate__flipInX animate__delay-4s backcolor setmargin2'>
        <Badge className='bg-dark year'>2017</Badge><FaGraduationCap></FaGraduationCap><br></br>
        <h5 className='web'>INFOSYS CAMPUS CONNECT 5.0-<span className='span2'> ACE COLLEGE</span></h5>
-       <p className='description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+       <p className='description'>The campus program where i had learned the basics of python and its implementation.</p>
       </div>
       </Col>
     </div>
+
+
      
 
      </>
