@@ -337,12 +337,12 @@ hr {
 
     .info {
         margin-top: 57px !important;
-        margin-left: 86px !important;
         text-decoration: overline !important;
+        padding-left: 0px !important;
     }
 
     button.about.btn.btn-primary {
-        margin-left: 234px !important;
+        /* margin-left: 234px !important; */
         margin-bottom: 30px !important;
     }
 
@@ -483,6 +483,11 @@ hr {
         font-size: xxx-large !important;
     }
 
+    img.card-img-top {
+        height: 69vh !important;
+    
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -505,10 +510,7 @@ hr {
     border: none !important;
 }
 
-img.card-img-top {
-    height: 69vh !important;
 
-}
 
 .card-title {
     text-align: center;

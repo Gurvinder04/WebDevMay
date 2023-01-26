@@ -30,7 +30,7 @@ function About() {
         
       </Row>
       <hr></hr>
-      <Row className='justify-content-center'>
+      <Row className='justify-content-center' data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
         <h1 className='text-decoration-underline text-light text-center m-5'>MY SKILLS</h1>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
         <CircularProgressbar value={99} text={`99%`} />
@@ -49,7 +49,7 @@ function About() {
         <p className='text-light text-center'>REACT</p>
         </Col>  
       </Row>
-      <Row className='justify-content-center'>
+      <Row className='justify-content-center' data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
         <CircularProgressbar value={85} text={`85%`} />
         <p className='text-light text-center'>NODEJS</p>
@@ -70,7 +70,7 @@ function About() {
     </Container>
     <h1 className=' text-center m-5 text-decoration-underline querycheck'>EXPERIENCE & EDUCATION</h1> 
     <div className='d-flex main'>
-      <Col className='leftcol'>
+      <Col className='leftcol' data-aos="slide-left"  data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
       <div className='animate__animated animate__flipInX animate__delay-1s backcolor sidechange setmargin1'>
         <Badge className='bg-dark year'>2022</Badge><FaBriefcase></FaBriefcase><br></br>
         <h5 className='web'>PRODUCTIE-<span className='span2'> A&L JEUBIS</span></h5>

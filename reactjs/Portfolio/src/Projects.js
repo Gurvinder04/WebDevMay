@@ -7,7 +7,7 @@ function Projects() {
     <Container fluid={true} className='bg-dark'>
     <h1 className='text-light text-center about-heading'>MY<span className='span1'> PROJECTS</span></h1>
       
-      <div className='d-flex m-5 justify-content-center'>
+      <div className='d-flex m-5 justify-content-center' data-aos='flip-left' data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
      <div className="cardp m-5">
         <div className="contentp" >
         <a href='https://dishroom.netlify.app/'>

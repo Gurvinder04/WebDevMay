@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Routes,Route,Link} from 'react-router-dom'
 import 'animate.css'
 import Home from './Home';
@@ -8,9 +8,15 @@ import Blog from './Blog'
 import Layout from './Components/Layout';
 import Header from './Components/Header';
 import Projects from './Projects';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 function App() {
+
+  useEffect(()=>{
+      Aos.init()
+  },[])
   return (
    <Layout>
     <Routes>

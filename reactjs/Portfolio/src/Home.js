@@ -15,8 +15,8 @@ function Home() {
       </Col>
       <Col md={6} className="col1">
         <h1 className='name typing-demo '>- I'M GURVINDER KAUR.</h1>
-        <h1 className='info'>WEB DESIGNER</h1>
-      <p className='text-light fs-5'>I'm a web designer & front‑end developer focuse on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.</p>
+        <h1 className='info' data-aos="fade-up"  data-aos-offset="50" data-aos-easing="ease-in-sine" >WEB DESIGNER</h1>
+      <p className='text-light fs-5' data-aos="fade-up"  data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="600">I'm a web designer & front‑end developer focuse on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.</p>
       <Button className='about' style={{marginTop:'93px'}}><Link to={'/about'}>MORE ABOUT ME</Link><FaArrowRight className='arrow'></FaArrowRight></Button>
       </Col>
      

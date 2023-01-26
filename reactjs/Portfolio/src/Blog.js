@@ -9,7 +9,7 @@ function Blog() {
     <h1 className='text-light text-center about-heading'>MY<span className='span1'> BLOG</span></h1>
     
     
-     <div className='row m-5'>
+     <div className='row m-5' data-aos='slide-left' data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
       <div className='col mb-5'>
       <Card style={{ width: '18rem',backgroundColor:'transparent'  }}>
       <Card.Img variant="top" src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/26d46869-bad3-4702-ba05-4053a7cb6473/smashing-logo-avatar-opt.png" />
