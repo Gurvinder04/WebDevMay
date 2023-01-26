@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
+    <>
+
    <Container fluid={true} className='bg-dark' style={{ "height": "800px" }}>
     <Row className='justify-content-center align-items-center partition'>
       <Col md={6}>
@@ -24,6 +26,7 @@ function Home() {
     
     
    </Container>
+   </>
   )
 }
 

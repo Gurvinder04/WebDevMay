@@ -2,8 +2,14 @@ import React from 'react'
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import {FaGraduationCap,FaBriefcase} from 'react-icons/fa'
+import FileSaver from 'file-saver';
 
 function About() {
+  const saveFile=()=>{
+  FileSaver.saveAs(
+    process.env.PUBLIC_URL + "/resource/Cv.pdf",
+    "Gurvinder-kaur.pdf");
+  }
   return (
     <>
     <Container fluid={true} className='bg-dark'>
@@ -24,13 +30,13 @@ function About() {
            
           </div>
            </div>
-           <Button className='cv about1'>DOWNLOAD CV</Button>
+           <Button className='cv about1' onClick={saveFile}>DOWNLOAD CV</Button>
         </Col>
         <Col></Col>
         
       </Row>
       <hr></hr>
-      <Row className='justify-content-center' data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+      <Row className='justify-content-center' data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="600">
         <h1 className='text-decoration-underline text-light text-center m-5'>MY SKILLS</h1>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
         <CircularProgressbar value={99} text={`99%`} />
@@ -49,7 +55,7 @@ function About() {
         <p className='text-light text-center'>REACT</p>
         </Col>  
       </Row>
-      <Row className='justify-content-center' data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+      <Row className='justify-content-center'>
         <Col md={3} style={{ 'width':'10rem',margin:'27px'}}>
         <CircularProgressbar value={85} text={`85%`} />
         <p className='text-light text-center'>NODEJS</p>
