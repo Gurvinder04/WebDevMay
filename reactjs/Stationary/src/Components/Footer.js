@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <Container fluid={true} className='p-0'>
+    <Container fluid={true} className='p-0 media-img' >
     < div className='footer-bg text-center'>
         <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px',paddingTop:'50px'}}>Subscribe And Get 20% Off Your First<br></br> Purchase</h2>
         <div className='form-bg'>

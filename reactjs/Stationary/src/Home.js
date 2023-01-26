@@ -36,7 +36,7 @@ function Home() {
     <>
     
        {/* <div className='body-divide container-fluid'></div> */}
-      
+       <div className='carousel_div'>
        <Carousel fade>
       <Carousel.Item>
         <img
@@ -95,6 +95,7 @@ function Home() {
       </Carousel.Item>
      
     </Carousel>
+    </div>
         <Container>
         <Row className='justify-content-center text-center mt-4'>
           <Col className='d-flex fast-delivery'>
@@ -132,7 +133,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
-       <hr></hr>
+      <hr></hr>
 
       <div className='container cont2 d-flex mt-5' data-aos="zoom-in" data-aos-offset="200">
         
@@ -147,7 +148,7 @@ function Home() {
 
 
         <Col className='office-desk cont2'>
-          <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h2.jpg?v=1631239898'></img>
+          <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h2.jpg?v=1631239898' className='media-img'></img>
           <div className='top-left'>
             <p>All Page Types</p>
             <h2>Notebooks</h2>
@@ -157,7 +158,7 @@ function Home() {
 
         <Col className='office-desk cont2'>
           <div className='office-desk cont2'>
-            <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h3.jpg?v=1631239898'></img>
+            <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h3.jpg?v=1631239898' className='media-img'></img>
             <div className='top-left'>
               <p>Office / Home</p>
               <h2>Metal Pens</h2>
@@ -166,7 +167,7 @@ function Home() {
           </div>
           <br></br>
           <div className='office-desk cont2'>
-            <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h4.jpg?v=1631239898'></img>
+            <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h4.jpg?v=1631239898' className='media-img'></img>
             <div className='top-left'>
               <p>Office Adhesive</p>
               <h2>Tape</h2>
@@ -176,7 +177,7 @@ function Home() {
         </Col>
       </div>
 
-       <div className='container-fluid deal  text-center'>
+      <div className='container-fluid deal  text-center'>
         <h2 style={{fontFamily:"'Ultra', serif",paddingTop:"40px",fontSize:'55px'}}>Open Up To A New<br></br> Experience.</h2>
         <h6 className=''>Deal of The Day</h6>
         <h2><Countdown date={Date.parse('2023-01-27') + 10000} className='count' /></h2>
@@ -204,20 +205,11 @@ function Home() {
           </Col>
         </Row> */}
 
-      </div> 
+       </div>
       <div className='row'>
-      <div className='col d-flex colrough m-5 text-center'>
-      {/* {
-        Items.length != 0 ?
-          Items.map((product, index) => (
-          <CardLayout product={product} key={index} />
-          ))
-          :
-          <div>.......Loading</div>
+     <div className='col d-flex m-5 text-center'>
 
-      } */}
-
-{           
+  {           
           feature.length != 0 ?
           feature.map((product,index) => (
           <CardLayout product={product} key={index} />
@@ -229,10 +221,11 @@ function Home() {
 
       }
       </div>
+      </div>
 
       <div className='d-flex  tech extraMargin' data-aos="fade-up" data-aos-offset="450">
         <Col>
-        <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549'></img>
+        <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549' className='media-img'></img>
         </Col>
         <Col className='find-more'>
         <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'45px'}}>The Stationary<br></br>Company</h2>
@@ -247,7 +240,7 @@ function Home() {
        <h3 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'35px'}} className='extraMargin'>From Our Blog</h3>
        <Row className='d-flex text-center blog-flex mediaflex' data-aos="fade-right" data-aos-offset="450">
        <Col>
-       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/25/574_322/b-blog-2.jpg' className='blog-img'></img>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/25/574_322/b-blog-2.jpg' className='blog-img media-img'></img>
        <div className='d-flex text-center blog-parts mt-4'>
         <p>DEMO DEMO</p>
         <p>SUB CATEGORY</p>
@@ -257,7 +250,7 @@ function Home() {
        <button className='read-button'>Read More<FaPlus className='readArrow'></FaPlus></button>
        </Col>
        <Col>
-       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/24/574_322/b-blog-1.jpg' className='blog-img'></img>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/24/574_322/b-blog-1.jpg' className='blog-img media-img'></img>
        <div className='d-flex text-center blog-parts mt-4'>
         <p>DEMO DEMO</p>
         <p>SUB CATEGORY</p>
@@ -267,7 +260,7 @@ function Home() {
        <button  className='read-button'>Read More<FaPlus className='readArrow'></FaPlus></button>
        </Col>
        <Col>
-       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/23/574_322/b-blog-7.jpg' className='blog-img'></img>
+       <img src='https://demo74.leotheme.com/prestashop/leo_stationero_demo/img/leoblog/b/1/23/574_322/b-blog-7.jpg' className='blog-img media-img'></img>
        <div className='d-flex text-center blog-parts mt-4'>
         <p>DEMO DEMO</p>
         <p>SUB CATEGORY</p>
@@ -280,7 +273,6 @@ function Home() {
 
       </div>
 
-      </div>
       
     
       
