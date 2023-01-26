@@ -82,9 +82,9 @@ useEffect(()=>{
 },[loggedin])
   return (
     <>  
-    <div className='marquee1'>
+     <div className='marquee1'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
-        </div>          
+        </div>           
        <RenderMenu />
         
      {console.log('header user is',loggedin)}

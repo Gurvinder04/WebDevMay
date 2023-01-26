@@ -36,7 +36,7 @@ function Home() {
     <>
     
        {/* <div className='body-divide container-fluid'></div> */}
-       <div className='carousel_div'>
+      
        <Carousel fade>
       <Carousel.Item>
         <img
@@ -95,7 +95,6 @@ function Home() {
       </Carousel.Item>
      
     </Carousel>
-    </div>
         <Container>
         <Row className='justify-content-center text-center mt-4'>
           <Col className='d-flex fast-delivery'>
@@ -221,8 +220,8 @@ function Home() {
 {           
           feature.length != 0 ?
           feature.map((product,index) => (
-          //<CardLayout product={product} key={index} />
-          <Dummy product={product} key={index} />
+          <CardLayout product={product} key={index} />
+          //<Dummy product={product} key={index} />
       
           ))
           :

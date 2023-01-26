@@ -68,8 +68,8 @@ useEffect(()=>{
             
               filter_products.length != 0 ?
               filter_products.map((product,index) => (
-                //<CardLayout product={product} key={index} />
-                 <Dummy product={product} key={index} />
+                <CardLayout product={product} key={index} />
+                 //<Dummy product={product} key={index} />
           
               ))
               :
