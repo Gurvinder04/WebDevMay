@@ -35,6 +35,17 @@ module.exports = {
         res.send(data)
     },
 
+    userLogout: async function(req,res){
+        try {
+            res.clearCookie("firstjwt")
+             console.log('logout successfully')
+             res.send(req.body)
+         } catch (error) {
+             res.status(500).send(error)
+        }
+
+    },
+
     addProducts: async function (req,res) {
         console.log(req.body.file, 'sucesssssssss')
         const newProduct = new Product({ ProductName: req.body.productname, Category: req.body.category, Description: req.body.description, Price: req.body.rate, Quantity: req.body.quantity, Image: req.file.filename })

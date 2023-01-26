@@ -7,13 +7,13 @@ function Dummy({product}) {
 
     },[product])
   return (
-    <div class="product-card">
-    <div class="product-img img-one"></div>
-    <div class="product-text">
+    <div className="product-card">
+    <div className="product-img img-one"></div>
+    <div className="product-text">
       <h3 className='product-text-duplicate'>{product.productname}</h3>
       <p>{product.price}</p>
     </div>
-    <div class="product-cart">
+    <div className="product-cart">
       <button type="submit" className='btnclr'>Add to cart</button>
     </div>
   </div>

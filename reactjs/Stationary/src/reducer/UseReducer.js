@@ -14,6 +14,15 @@ if(action.type==="USER"){
 
 }
 
+if(action.type==="USER_LOGOUT"){
+    return {
+        ...state,
+        loggedin:action.payload,
+        loggedUser:""       
+}
+
+}
+
     if(action.type==="SET_LOADING"){
         return {
             ...state,

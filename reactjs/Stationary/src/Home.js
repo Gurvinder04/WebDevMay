@@ -180,7 +180,7 @@ function Home() {
        <div className='container-fluid deal  text-center'>
         <h2 style={{fontFamily:"'Ultra', serif",paddingTop:"40px",fontSize:'55px'}}>Open Up To A New<br></br> Experience.</h2>
         <h6 className=''>Deal of The Day</h6>
-        <h2><Countdown date={Date.parse('2023-01-25') + 10000} className='count' /></h2>
+        <h2><Countdown date={Date.parse('2023-01-27') + 10000} className='count' /></h2>
        
         
         <Button className='shop-now' style={{backgroundColor:'#e84f69',marginBottom:'20px'}}>View all deals</Button>

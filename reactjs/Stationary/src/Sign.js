@@ -7,6 +7,8 @@ import {home} from './Home'
 
 function Sign() {
   const {auth} = useAuthContext()
+  const {state,dispatch} = useAuthContext()
+
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
   //const{state,dispatch} = useContext(UserContext)

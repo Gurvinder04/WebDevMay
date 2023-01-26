@@ -11,7 +11,7 @@ var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
 const {User} = require('./Models')
 const {Product} = require('./Models')
-const{showProducts,productById,addProducts,adminSign,userSign,userLogin,updateProducts,deleteProducts,addCart,getCart,deleteCart} = require('./Controller')
+const{showProducts,productById,addProducts,adminSign,userSign,userLogin,userLogout,updateProducts,deleteProducts,addCart,getCart,deleteCart} = require('./Controller')
 const admin = express()
 
 
@@ -35,6 +35,7 @@ const upload = multer({
 admin.get('/product',showProducts)
 admin.get('/product/:id',productById)
 admin.get('/cart',authorize,getCart)
+admin.get('/logout',authorize,userLogout)
 
 admin.post('/product',upload.single('fileimage'), addProducts)
 admin.post('/sign',adminSign)

@@ -22,13 +22,18 @@ const AuthProvider = ({ children }) => {
     dispatch({type:"USER",payload:logged})
    
   }
+
+  const notAuth= ()=>{
+    dispatch({type:"USER_LOGOUT",payload:false})
+   
+  }
  
   useEffect(() => {
     
   }, []);
 
   return (
-    <AuthContext.Provider value={{ ...state,auth }}>
+    <AuthContext.Provider value={{ ...state,auth,notAuth}}>
       {children}
     </AuthContext.Provider>
   );

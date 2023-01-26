@@ -3,14 +3,25 @@ import { useReducer } from 'react'
 import { useEffect } from 'react'
 import { Badge,Col, Container, Dropdown, DropdownButton, Form, InputGroup, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 import { FaRegHeart, FaSearch, FaShoppingCart } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import {UserContext} from '../App.js'
 import { useAuthContext } from '../Context/AuthContext.js'
-import { useFilterContext } from '../Context/FilterContext.js'
+import { reducer } from '../reducer/UseReducer';
 
 
 function Header() {
-  const { loggedin} = useAuthContext()
+  const navigate = useNavigate()
+  const {loggedin,notAuth} = useAuthContext()
+
+  const logout= async()=>{
+    let data = await fetch('/logout')
+    let res = await data.json()
+    console.log('user is logout',res)
+    if(res !== null){
+      notAuth()
+      navigate('/sign')
+    }
+  }
   
   const RenderMenu = () => {
     if (loggedin) {
@@ -30,7 +41,7 @@ function Header() {
                 </Nav>
                 <Nav>
                 <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>1</Badge></Nav.Link>
-                  <Link to={'/sign'} className="nav-link text-decoration-none">Logout</Link>
+                  <Link to={''} className="nav-link text-decoration-none" onClick={logout}>Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
                         </Container>
@@ -67,13 +78,16 @@ function Header() {
 }
 useEffect(()=>{
      //dispatch({type:"USER"})
+     RenderMenu()
 },[loggedin])
   return (
     <>  
     <div className='marquee1'>
           <div>25% Off Your First Month Subscription for Chegg Study Packat Chegg</div>
         </div>          
-     <RenderMenu />
+       <RenderMenu />
+        
+     {console.log('header user is',loggedin)}
 
     </>
   )
