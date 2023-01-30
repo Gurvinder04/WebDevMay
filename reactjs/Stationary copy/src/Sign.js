@@ -1,12 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
 import { Link,useNavigate} from 'react-router-dom'
 import {UserContext} from './App.js'
 import { useAuthContext } from './Context/AuthContext.js'
 import {home} from './Home'
+import { reducer } from './reducer/UseReducer.js'
 
 function Sign() {
-  const {authUser} = useAuthContext()
+  const {authUser,setUserState} = useAuthContext()
+  
 
 
   const navigate = useNavigate();

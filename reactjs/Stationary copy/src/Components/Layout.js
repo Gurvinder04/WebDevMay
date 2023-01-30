@@ -6,11 +6,15 @@ import Header from './Header'
 
 function Layout({children}) {
   return (
-    <BrowserRouter>
+   
+     <BrowserRouter>
    <Header/>
     {children}
     <Footer />
     </BrowserRouter>
+   
+   
+    
     
   )
   

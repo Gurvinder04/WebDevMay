@@ -13,6 +13,8 @@ const initial = {
  const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,initial);
   
+  
+  
 
   const authUser= (logged)=>{
     //console.log('authentication',logged)

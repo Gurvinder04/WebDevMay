@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useReducer, useState } from 'react'
-import {Route,Routes} from 'react-router-dom'
+import {BrowserRouter, Route,Routes} from 'react-router-dom'
 import 'animate.css'
 import Home from './Home'
 import ProductDetail from './ProductDetail'
@@ -36,7 +36,7 @@ function App() {
   return (
    
       //<UserContext.Provider value={{state,dispatch}}>
-      <AuthProvider>
+      
          <Layout>
          <Routes>
          <Route path='/' element={<Home/>} />
@@ -50,7 +50,8 @@ function App() {
          
          </Routes>
          </Layout>
-         </AuthProvider>
+         
+        
       
         //</UserContext.Provider>       
    
