@@ -42,7 +42,7 @@ const getSingleProduct= async(url)=>{
 
         
     }catch(err){
-      
+        console.log('singleproduct not running')
     }
 
     }

@@ -5,7 +5,7 @@ import { reducer } from '../reducer/UseReducer';
 const AuthContext = createContext();
 
 const initial = {
-  loggedin:false,
+  loggedin:"",
   loggedUser:""
 }
 

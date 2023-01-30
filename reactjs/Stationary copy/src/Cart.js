@@ -1,35 +1,20 @@
-import { STATES } from 'mongoose'
-import React, { useContext, useEffect, useReducer, useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
 import { useCartContext } from './Context/CartContext.js'
-import { useProductContext } from './Context/ProductContext'
 import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
-    const [cartUser,setcartUser] = useState({})
     const[newCart,setnewCart] = useState([])
-    // const fetchHidden =async()=>{
-    //   let data = await fetch('/hidden')    
-    //   let res = await data.json()
-    //   if(res !== null){
-    //       console.log('Hurrryyyyy',res)
-    //       setcartUser(res)
-    //   }
-    //   console.log('achieved user is',cartUser)
-    //   }
 
-     
-  
     const fetchCart = async()=>{
       let data = await fetch('/cart')
       let res = await data.json()
       console.log('newcart',res)
-      let cart = res.usercart
 
-      setnewCart(cart)
+     setnewCart(res)
       console.log('succeed',newCart)
     }
   
@@ -52,11 +37,6 @@ function Cart() {
           </tr>
         </thead>
     {
-        // cart.map((items,index)=>{
-        //   return  <CartTable key={index} cartItems ={newCart}/>
-
-        // })
-
         newCart.map((items,index)=>{
           return  <CartTable key={index} cartItems ={items}/>
 
@@ -64,8 +44,7 @@ function Cart() {
     
 }
 </table>
-<hr className='cartHR'></hr>
-<div className='d-flex shop'>
+<div className='d-flex'>
           <NavLink to ={'/allproduct'}>
           <Button className='bg-primary'>Continue Shopping</Button>
           </NavLink>
@@ -73,23 +52,19 @@ function Cart() {
           <Button className='bg-danger' onClick={clearCart}>Clear Cart</Button>
         </div>
 
-        <div className='pricingBox'>
-          <div className='p-3 fst-italic text-uppercase'>
-            <h5>Subtotal:</h5> 
-            <p>
+        <div className=''>
+           <p>Subtotal:</p>
+           <p>
             <FormatPrice price={total_price} />
            </p>
-           <h5>Shipping fee:</h5>
+           <p>Shipping fee:</p>
            <p>
             <FormatPrice price={shipping_fee} />
            </p>
-           <hr></hr>
-           <h5>Total Price:</h5>
+           <p>Total Price:</p>
            <p>
             <FormatPrice price={shipping_fee+total_price} />
            </p>
-           </div>
-           <Button className='bg-primary m-2 w-50 fs-5'>PAYMENT</Button>
         </div>
 {console.log('cart is ',cart)}
 </Container>

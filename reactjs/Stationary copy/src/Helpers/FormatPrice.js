@@ -2,9 +2,9 @@ import React from 'react'
 
 function FormatPrice({price}) {
   return (
-    Intl.NumberFormat("nl-BE",{
-      style:'currency',
-      currency:'EUR',
+    Intl.NumberFormat("en-IN",{
+      //style:'currency',
+      //currency:'RUPEES',
       maximumFractionDigits:2,
     }).format(price)
   )

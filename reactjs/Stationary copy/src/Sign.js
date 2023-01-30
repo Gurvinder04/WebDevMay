@@ -2,19 +2,16 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form, Row ,Col} from 'react-bootstrap'
 import { Link,useNavigate} from 'react-router-dom'
 import {UserContext} from './App.js'
+import { useAuthContext } from './Context/AuthContext.js'
 import {home} from './Home'
-import { FcGoogle } from "react-icons/fc";
-import authorize from './Middleware/authorize.js'
-
-
 
 function Sign() {
+  const {authUser} = useAuthContext()
+
 
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
-  const{state,dispatch} = useContext(UserContext)
- //const{localToken,setlocalToken} = useState('fbhjbgvjfvkj')
- let localToken ;
+  //const{state,dispatch} = useContext(UserContext)
    const[User,setUser] = useState({
     firstname:'',
     lastname:'',
@@ -39,15 +36,13 @@ let name,value
             let data = await fetch('/signin',{
                 method:'POST',
                 headers:{
-                    'Content-Type':'application/json',
-                    //'Access-Control-Allow-Origin': '*'
+                    'Content-Type':'application/json'
                 },
                 body:JSON.stringify({firstname,lastname, email,password})
             })
            
             let res = await data.json()
-            console.log('token is',res)  
-           //let localToken=res
+            console.log(res)  
         }
         else{
             console.log('INVALID INPUT')
@@ -63,31 +58,27 @@ let name,value
       console.log(value)
    }
    const LoginVerify= async()=>{
-
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
           let data = await fetch('/login',{
               method:'POST',
               headers:{
-                  'Content-Type':'application/json',
-                  //'Access-Control-Allow-Origin': '*'
+                  'Content-Type':'application/json'
               },
               body:JSON.stringify({email,password})
           })
          
-           let res = await data.json()
-           console.log('hey',res) 
-           let logged = res
-           //localStorage.setItem('trytoken',JSON.stringify(res))
-          if(res.status === 404 ){
+          let res = await data.json()
+          //console.log('hey',res) 
+          if(res.status === 400 || res === null){
            window.alert("Invalid details")
           }
           else{
-           dispatch({type:"USER",payload:{logged}})
+            authUser(res)
+           //dispatch({type:"USER",payload:true})
            window.alert("successfully logged in")
           navigate('/')
-          
           
           }  
       }
@@ -103,7 +94,7 @@ let name,value
     }
    
    useEffect(()=>{
-   
+
 },[])
   return (
     <>
@@ -122,21 +113,14 @@ let name,value
                                 <input type="submit" onClick={LoginVerify} value="Login" />
                                 <p className="signup">
                                     Don't have an account ?
-                                    <a  onClick={toggleForm}>Sign Up.</a>
+                                    <a href="#" onClick={toggleForm}>Sign Up.</a>
                                 </p>
-
-                                <p className='text-center'>Or</p>
-                                <div className='google'>
-                                    <FcGoogle className='googleSVG'></FcGoogle>
-                                    <p className='googleBtn'>Continue with Google</p>
-                                    
-                                </div>
                             </form>
                         </div>
                     </div>
                     <div className="user signupBx">
                         <div className="formBx">
-                            <form  onSubmit={(e) => {
+                            <form onSubmit={(e) => {
                                 e.preventDefault()
                                 setUser({
                                   firstname:'',
@@ -154,14 +138,8 @@ let name,value
                                 <input type="submit" name="" value="Sign Up" onClick={DBData} />
                                 <p className="signup">
                                     Already have an account ?
-                                    <a  onClick={toggleForm} >Sign in.</a>
+                                    <a href="#" onClick={toggleForm} >Sign in.</a>
                                 </p>
-                                <p className='text-center'>Or</p>
-                                <div className='google'>
-                                    <FcGoogle className='googleSVG'></FcGoogle>
-                                    <p className='googleBtn'>Continue with Google</p>
-                                    
-                                </div>
                             </form>
                         </div>
                         <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>

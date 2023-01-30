@@ -17,9 +17,9 @@ function ProductDetail() {
     const {getSingleProduct,SingleProduct} = useProductContext()
    // const [detail, setdetail] = useState([])
    
-    const API = 'http://localhost:4000/product'
+    const API = 'http://localhost:4000'
 
-    const [cartUser,setcartUser] = useState({})
+
     useEffect(() => {
     //     fetch(`http://localhost:4000/product/${id}`)
     //       .then(response => response.json())
@@ -27,8 +27,8 @@ function ProductDetail() {
     //         //console.log(data)
     //         setdetail(data)
     // })
-     
-    getSingleProduct(`${API}/${id}`)
+
+    getSingleProduct(`${API}/product/${id}`)
           },[])
   return (
     <>
@@ -38,14 +38,14 @@ function ProductDetail() {
 
   
     <div id="product">
-    <div class="product_images">
+    <div className="product_images">
     <img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{width:'41rem',height:'71vh'}} />
     </div>
-    <div class="product_details">
+    <div className="product_details">
         <h2>{SingleProduct.productname}</h2>
         <h3>{<FormatPrice price={SingleProduct.price}/>}</h3>
 
-        <div class="about">
+        <div className="about">
             <p>Availability :<span>{SingleProduct.quantity}</span></p>
             <p>Product Code : <span>#4657</span></p>   
             <p>Tags : <span>Fashion, Hood, Classic</span> </p>
@@ -53,7 +53,7 @@ function ProductDetail() {
 
         <p>{SingleProduct.description}</p>  
         
-        <div class="cta">
+        <div className="cta">
         <label>Quantity:</label>
         <CardAmount product={SingleProduct}/>
          {/* <AddToCart  product ={SingleProduct}/> */}

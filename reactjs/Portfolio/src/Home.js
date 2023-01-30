@@ -7,8 +7,8 @@ function Home() {
   return (
 
    <Container fluid={true} className='bg-dark' style={{ "height": "800px" }}>
-    <Row className='justify-content-center align-items-center partition'>
-      <Col md={6}>
+    <Row className='justify-content-between align-items-center partition'>
+      <Col md={6} className=''>
         <div className='color-block d-none d-lg-block'></div>
       {/* <p className='text-light'>Hello world</p> */}
       {/* <img src='https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80' style={{"width":"550px" ,"height":"750px","borderRadius":"30px","marginLeft":"54px"}}/> */}

@@ -78,7 +78,7 @@ function Header() {
 }
 useEffect(()=>{
      //dispatch({type:"USER"})
-     RenderMenu()
+     //RenderMenu()
 },[loggedin])
   return (
     <>  

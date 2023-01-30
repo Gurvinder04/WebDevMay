@@ -68,8 +68,9 @@ svg.arrow {
 }
 
 .partition {
-    top: 5%;
+    top: 7%;
     position: relative;
+    width: 90% !important;
 }
 
 p.text-light.fs-5 {
@@ -319,6 +320,10 @@ hr {
     }
 } */
 @media (max-width:768px) {
+
+    .partition{
+        width: 100% !important;
+    }
     .justify-content-center.align-items-center.partition.row {
         display: flex !important;
         flex-direction: column !important;

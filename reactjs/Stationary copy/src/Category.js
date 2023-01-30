@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
+import { useAuthContext } from './Context/AuthContext'
 
 function Category({Product}) {
+  const {loggedin} = useAuthContext()
     const {cat} = useParams()
     const[CategoryProduct,setCategoryProduct] = useState([])
    
@@ -31,6 +33,7 @@ function Category({Product}) {
 
       }
       </Row>
+      {console.log('category vala user',loggedin)}
     {/* {console.log('category is',cat)}
     {console.log('category data',CategoryProduct)} */}
     </>

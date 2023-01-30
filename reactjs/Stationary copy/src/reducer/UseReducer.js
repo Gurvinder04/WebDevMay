@@ -1,12 +1,24 @@
-import { init } from "aos";
 
-
-export var initialstate = false
+//export const initialstate = false
 
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
-   console.log('reducer vala' ,action.payload)
-    return initialstate =true;
+    const check = action.payload
+    return {
+        ...state,
+        isLoggedIn:true,
+        loggedUser:check._id       
+}
+
+}
+
+if(action.type==="USER_LOGOUT"){
+    return {
+        ...state,
+        loggedin:action.payload,
+        loggedUser:""       
+}
+
 }
 
     if(action.type==="SET_LOADING"){
@@ -58,7 +70,6 @@ if(action.type==="ADD_TO_CART"){
 //     }
 
 let {amount,product} = action.payload
-
 if(amount == undefined){
      amount = 1
 }
@@ -75,7 +86,6 @@ const cartProduct={
 
     return{
         ...state,
-        //cartUser.usercart:[...state.cart,cartProduct]
         cart:[...state.cart,cartProduct]
     }
 
@@ -111,13 +121,7 @@ if(action.type==="CART_TOTAL_PRICE"){
     }
 }
 
-// if(action.type==="TOTAL ARTICLES"){
-//     let{ total_articles} = action.payload.total_items
-// }
-// return{
-//    ...state,
-//    total_items:state.total_articles
-// }
+
 return state;
 }
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import {FaRegHeart} from 'react-icons/fa'
 import AddToCart from './AddToCart'
 
-function CardLayout({product,cartUser}) {
+function CardLayout({product}) {
     useEffect(()=>{
 
     },[product])
@@ -15,7 +15,7 @@ function CardLayout({product,cartUser}) {
     {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
    <div className='content'>
    <div className='front'>
-    <Link to={`product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
+    <Link to={`/product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
     </div>
     <Card.Body>
       <Card.Title>{product.productname}</Card.Title>
@@ -33,15 +33,13 @@ function CardLayout({product,cartUser}) {
       €{product.price}
       </Card.Text> */}
       {/* <Button variant="success" className='cart-button'>Add to Cart</Button> */}
-      <AddToCart  product ={product} cartUser={cartUser}/>
+      <AddToCart  product ={product}/>
       <FaRegHeart className='faregheart social-icon'></FaRegHeart>
       </div>
     </Card.Body>
     </div>
   </Card>
-  
   </Col>
-  
   )
 }
 
