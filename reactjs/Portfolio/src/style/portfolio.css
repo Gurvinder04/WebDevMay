@@ -320,6 +320,16 @@ hr {
     }
 } */
 @media (max-width:768px) {
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+        width: 691px !important;
+        margin-left: 0px !important;
+    }
+    .bg-dark.container-fluid {
+        width: 691px !important;
+        margin-left: 0px !important;
+        text-align: -webkit-center !important;
+        height: 1354px !important;
+    }
 
     .partition{
         width: 100% !important;
@@ -376,17 +386,6 @@ hr {
 
     div.col-md-6>img {
         margin-left: 20px !important;
-    }
-
-    .bg-dark.container-fluid {
-        width: 620px;
-        margin-left: 73.5px !important;
-        text-align: -webkit-center !important;
-    }
-
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
-        width: 620px;
-        margin-left: 73.5px;
     }
 
     .about-heading {
@@ -530,6 +529,53 @@ hr {
     transform: scale(1.2);
 }
 
+
+@media only screen and (max-width:992px) and (min-width:768px) {
+    img.profile-img {
+        width: 316px !important;
+        height: 479px !important;
+        border-radius: 30px !important;
+        margin-left: 0px !important;
+        top: 0% !important;
+       
+        
+    }
+    h1.name.typing-demo {
+        font-size: 2rem !important;
+        padding-top: 50px !important;
+        
+    }
+    .info {
+        text-decoration: overline !important;
+        padding-left: 0px !important;
+        padding-top: 50px !important;
+        /* text-align: center !important; */
+    }
+    p.text-light.fs-5 {
+        margin:  0px !important;
+        padding-top: 10px !important;
+         /* margin-left: 27px !important;
+         width: 361px !important; */
+         word-break: break-word !important;
+        
+    }
+
+    .about {
+        margin-top: 21px !important;
+        margin-left: 68px !important;
+    }
+    .col-md-3 {
+        padding-top:  0px !important;
+        margin-left: -159px !important;
+    }
+    p.contactPara {
+        width: 403px !important;
+    }
+    button.about.btn.btn-primary{
+        margin-bottom: 10px !important;
+    }
+
+}
 /*PROJECT */
 
 .cardp {

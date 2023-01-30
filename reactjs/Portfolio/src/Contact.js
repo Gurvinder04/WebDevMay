@@ -20,7 +20,7 @@ function contact() {
 
                 </Col>
                 <Col md={4} style={{ 'paddingTop': '50px'}}>
-                    <Form>
+                    <Form  action="https://formspree.io/f/xwkjvnlg" method="POST">
                         <Row>
                             <Col>
                                 <Form.Control placeholder="Your name" />
