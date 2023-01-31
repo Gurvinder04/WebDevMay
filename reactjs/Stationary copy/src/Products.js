@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Dropdown, DropdownButton, Form, InputGroup, Row } from 'react-bootstrap'
 import styled from "styled-components"
 import FilterSection from './Components/FilterSection'
 import CardLayout from './Components/CardLayout'
@@ -18,35 +18,35 @@ useEffect(()=>{
   
 })
   return (
-    <Container fluid={true} className='mt-5'>
+    <div className='container-fluid mt-5'>
       {console.log('filtering',filter_products)}
-      <div className='mb-4'>
-      <form className='cat-mainForm' onSubmit={(e)=>e.preventDefault()}>
-      <InputGroup className="mt-2 cat-form">
-        <Form.Control aria-label="Text input with dropdown button" name='text' value={text} onChange={searchValue} placeholder="Search Something...." className='cat-inputForm'>
-          </Form.Control>
-      </InputGroup>
-      </form>
-      <hr className='cat-hr2'></hr>
-      </div> 
-      
-      <div className='row flex-delivery'>
-         <Col>
-          <div className='cat-Border'>
-        <h6 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'20px'}} className='cat-padding' >Categories</h6>
-        <hr className='cat-hr'></hr>
-        <ul className='cat-ul'>
-        <li><button className='cat-btn'  name="category"  value="all"  onClick={searchValue}>All</button></li>
-        <li><button className='cat-btn'  name="category" value="Notebooks"  onClick={searchValue}>Notebooks</button></li>
-        <li><button className='cat-btn'   name="category"value="Pens&Pencils"  onClick={searchValue}>Pens&Pencils</button></li>
-        <li><button className='cat-btn'   name="category"value="Office Stationary"  onClick={searchValue}>Office Stationary</button></li>
-        <li><button className='cat-btn'   name="category"value="Files & Folders"  onClick={searchValue}>Files & Folders</button></li>
-        <li><button className='cat-btn'   name="category"value="Desk Accessories"  onClick={searchValue}>Desk Accessories</button></li>
-        <li><button className='cat-btn'   name="category"value="Others"  onClick={searchValue}>Others</button></li>
-        </ul>
-        </div>
+    <div className=' row mb-4'>
+  <form className='cat-mainForm' onSubmit={(e)=>e.preventDefault()}>
+  <InputGroup className="mt-2 cat-form">
+    <Form.Control aria-label="Text input with dropdown button" name='text' value={text} onChange={searchValue} placeholder="Search Something...." className='cat-inputForm'>
+      </Form.Control>
+  </InputGroup>
+  </form>
+  <hr className='cat-hr2'></hr>
+  </div> 
 
-        <div className='cat-Border mt-3'>
+
+  < div className='row checkrow-Css flex-delivery'>
+    < div className='col-md-2'>
+    <div className='cat-Border'>
+    <h6 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'20px'}} className='cat-padding' >Categories</h6>
+    <hr className='cat-hr'></hr>
+    <ul className='cat-ul'>
+    <li><button className='cat-btn'  name="category" value="all"  onClick={searchValue}>All</button></li>
+    <li><button className='cat-btn'  name="category" value="Notebooks"  onClick={searchValue}>Notebooks</button></li>
+    <li><button className='cat-btn'  name="category" value="Pens&Pencils"  onClick={searchValue}>Pens&Pencils</button></li>
+    <li><button className='cat-btn'  name="category" value="Office Stationary"  onClick={searchValue}>Office Stationary</button></li>
+    <li><button className='cat-btn'  name="category" value="Files & Folders"  onClick={searchValue}>Files & Folders</button></li>
+    <li><button className='cat-btn'  name="category" value="Desk Accessories"  onClick={searchValue}>Desk Accessories</button></li>
+    <li><button className='cat-btn'  name="category" value="others"  onClick={searchValue}>Others</button></li>
+    </ul>
+    </div>
+    <div className='cat-Border mt-3'>
         <h6 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'20px'}} className='cat-padding' >Filter by price</h6>
         <p>
            <FormatPrice price={price}/>
@@ -62,29 +62,29 @@ useEffect(()=>{
         </div>
         <div> <Button className='bg-danger m-5' onClick={clearFilters}>Clear Filters</Button></div>
        
-        </Col>
-        <div className='col d-flex colrough'>
-          {
-            
-              filter_products.length != 0 ?
-              filter_products.map((product,index) => (
-                <CardLayout product={product} key={index} />
-                 //<Dummy product={product} key={index} />
-          
-              ))
-              :
-              <div>.......Loading</div>
-            
-          }
-          </div>
-
-        
-          
-  
 
     </div>
-    {console.log('searching',text)}
-    </Container>
+    <div className=' col-md-6 check-Css'>
+        <div className='col-md-2'>
+        {
+            
+            filter_products.length != 0 ?
+            filter_products.map((product,index) => (
+              <CardLayout product={product} key={index} />
+              //<Dummy product={product} key={index} />
+        
+            ))
+            :
+            <div>.......Loading</div>
+          
+        }
+    
+</div>
+    </div>
+</div>
+
+
+</div>
 
    
   )

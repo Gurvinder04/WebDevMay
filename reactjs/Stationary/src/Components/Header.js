@@ -34,7 +34,7 @@ function Header() {
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/allproduct">Products</Nav.Link>
+                  <Nav.Link href="/product">Products</Nav.Link>
                   <Nav.Link href="/">Category</Nav.Link>
                   <Nav.Link href="/blog">Blog</Nav.Link>
                   <Nav.Link href="/contact">Contact</Nav.Link>
@@ -59,7 +59,7 @@ function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/allproduct">Products</Nav.Link>
+            <Nav.Link href="/product">Products</Nav.Link>
                   <Nav.Link href="/">Category</Nav.Link>
                   <Nav.Link href="/blog">Blog</Nav.Link>
                   <Nav.Link href="/contact">Contact</Nav.Link>

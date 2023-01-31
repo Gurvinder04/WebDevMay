@@ -42,40 +42,40 @@ function Home() {
         <img
           className="d-block w-100"
           // src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RhdGlvbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-          src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RhdGlvbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
+          src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?cs=srgb&dl=pexels-huseyn-kamaladdin-667838.jpg&fm=jpg"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          {/* <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
           // src="https://media.istockphoto.com/id/1333039392/photo/frame-of-shcool-supplies-and-keyboard-on-white-background-back-to-school-distance-learning.jpg?s=170667a&w=0&k=20&c=fv-lcP_ayvq-KdeHK3Y7PIC69xjIUUbep3j3qxs3824="
-          src="https://wallpapercave.com/wp/wp6715875.jpg"
+          src="https://wallpapercave.com/wp/wp3222116.jpg"
           alt="Second slide"
         />
 
         <Carousel.Caption>
-        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        {/* <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
           // src="https://media.istockphoto.com/id/1264689237/photo/school-or-office-supplies-border-on-blackboard-background-copy-space.jpg?s=612x612&w=0&k=20&c=PDl6EgQzOhc5RLC9ylAlZd28HgJ2J8fkAgyuo3eqHIc="
-          src="https://i.pinimg.com/736x/23/77/7b/23777b0190342bb5305682abeb52e50c.jpg"
+          src="https://png.pngtree.com/thumb_back/fw800/background/20210415/pngtree-school-background-with-accessories-image_624094.jpg"
          alt="Third slide"
         />
 
         <Carousel.Caption>
-        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+        {/* <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          </p> */}
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -87,10 +87,10 @@ function Home() {
           alt="Forth slide"
         />
         <Carousel.Caption>
-        <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
+        {/* <h1 className='h1Size animate__animated animate__jackInTheBox'><em><span className='red'>C</span><span className='green'>om</span><span className='black'>P</span><span className='yellow'>le<span className='blue'>te</span></span><span className='red'> Y</span><span className='yellow'>OU</span><span className='blue'>R</span><span className='orange'> B</span><span className='green'>ag</span></em></h1>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          </p> */}
         </Carousel.Caption>
       </Carousel.Item>
      
@@ -142,7 +142,7 @@ function Home() {
           <div className='top-left'>
             <p>Sale Up To 15% Off</p>
             <h2>Home Office Desks</h2>
-            <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Office Stationary' onClick={searchValue}>Shop Now</Button></Link>
+            <Link to={'/product'} ><Button className='shop-now' name='category' value='Office Stationary' onClick={searchValue}>Shop Now</Button></Link>
           </div>
         </Col>
 
@@ -152,7 +152,7 @@ function Home() {
           <div className='top-left'>
             <p>All Page Types</p>
             <h2>Notebooks</h2>
-           <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Notebooks' onClick={searchValue}>Shop Now</Button></Link> 
+           <Link to={'/product'} ><Button className='shop-now' name='category' value='Notebooks' onClick={searchValue}>Shop Now</Button></Link> 
           </div>
         </Col>
 
@@ -162,7 +162,7 @@ function Home() {
             <div className='top-left'>
               <p>Office / Home</p>
               <h2>Metal Pens</h2>
-             <Link to={'/allproduct'} ><Button className='shop-now' name='category' value='Pens&Pencils' onClick={searchValue}>Shop Now</Button></Link> 
+             <Link to={'/product'} ><Button className='shop-now' name='category' value='Pens&Pencils' onClick={searchValue}>Shop Now</Button></Link> 
             </div>
           </div>
           <br></br>
@@ -171,13 +171,13 @@ function Home() {
             <div className='top-left'>
               <p>Office Adhesive</p>
               <h2>Tape</h2>
-             <Link to={'/allprodut'}><Button className='shop-now' name='category' value='Stuffs' onClick={searchValue}>Shop Now</Button></Link> 
+             <Link to={'/produt'}><Button className='shop-now' name='category' value='Stuffs' onClick={searchValue}>Shop Now</Button></Link> 
             </div>
           </div>
         </Col>
       </div>
 
-      <div className='container-fluid deal  text-center'>
+      <div className='container-fluid deal  text-center' data-aos="flip-up">
         <h2 style={{fontFamily:"'Ultra', serif",paddingTop:"40px",fontSize:'55px'}}>Open Up To A New<br></br> Experience.</h2>
         <h6 className=''>Deal of The Day</h6>
         <h2><Countdown date={Date.parse('2023-01-27') + 10000} className='count' /></h2>
@@ -206,7 +206,7 @@ function Home() {
         </Row> */}
 
        </div>
-      <div className='row'>
+      <div className='row overflow-Row'>
      <div className='col d-flex m-5 text-center'>
 
   {           
@@ -223,7 +223,7 @@ function Home() {
       </div>
       </div>
 
-      <div className='d-flex  tech extraMargin' data-aos="fade-up" data-aos-offset="450">
+      <div className='d-flex  tech extraMargin' data-aos="fade-up" data-aos-offset="350">
         <Col>
         <img src='https://cdn.shopify.com/s/files/1/0905/2012/files/station-h6.jpg?v=1632208549' className='media-img'></img>
         </Col>

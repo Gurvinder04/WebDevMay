@@ -17,7 +17,7 @@ function ProductDetail() {
     const {getSingleProduct,SingleProduct} = useProductContext()
    // const [detail, setdetail] = useState([])
    
-    const API = 'http://localhost:4000/product'
+    const API = 'http://localhost:4000'
 
 
     useEffect(() => {
@@ -28,7 +28,7 @@ function ProductDetail() {
     //         setdetail(data)
     // })
 
-    getSingleProduct(`${API}/${id}`)
+    getSingleProduct(`${API}/product/${id}`)
           },[])
   return (
     <>
