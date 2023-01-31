@@ -559,12 +559,25 @@ hr {
          word-break: break-word !important;
         
     }
+    h2.text-center.personal {
+        margin-left: 144px !important;
+    }
+    
+    
+    .bio.d-flex {
+        margin-left: 239px !important;
+        width: max-content !important;
+        display: flex !important;
+    }
+    .personal-Info {
+        padding-right: 10px !important;
+    }
 
     .about {
         margin-top: 21px !important;
         margin-left: 68px !important;
     }
-    .col-md-3 {
+    .col-md-3.contactCol {
         padding-top:  0px !important;
         margin-left: -159px !important;
     }
@@ -573,6 +586,68 @@ hr {
     }
     button.about.btn.btn-primary{
         margin-bottom: 10px !important;
+    }
+
+    .backcolor {
+        background-color: #f1c40f;
+        width: -moz-fit-content;
+        width: 390px !important;
+        border-radius: 15px;
+        padding-top: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 0px;
+        box-shadow: 4px 0px 4px 0px;
+        /* margin-top: -85px !important;
+        float: right !important;
+        margin-left: 12px !important;
+        margin-top: -360px !important; */
+    }
+
+    .v1 {
+        display: none !important;
+    }
+
+    .d-flex.main  {
+        display: grid !important;
+        width: -webkit-fill-available !important;
+       
+    }
+
+    .leftcol.col {
+        margin-left: 260px !important;
+    }
+
+    .education.col {
+        margin-left: 214px !important;
+    }
+
+    .setmargin1 {
+        margin-top: 21px !important;
+    }
+
+    .sidechange {
+        float: none !important;
+    }
+
+    .fruit {
+        float: none !important;
+        margin-top: 0px !important; 
+    }
+
+    .setmargin2 {
+        margin-top: 55px !important;
+        /* margin-left: 341px !important; */
+    }
+
+    .d-flex.m-5.justify-content-center {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .getIn.m-5.row {
+        display: flex;
+        flex-direction: column;
     }
 
 }

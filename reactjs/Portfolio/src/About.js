@@ -18,7 +18,7 @@ function About() {
         <Col>
         <h2 className='text-center personal'>PERSONAL INFOS</h2>
         <div className='bio d-flex'>
-          <div>
+          <div className='personal-Info'>
            <p><span  className='span2'>First Name :</span> Gurvinder</p>
            <p><span  className='span2'>Last Name :</span> Kaur</p>
            <p><span  className='span2'>Freelance :</span> Available</p>

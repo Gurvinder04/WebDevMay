@@ -10,7 +10,7 @@ function contact() {
         <Container fluid={true} className='bg-dark text-light'>
             <h1 className='text-light text-center about-heading'>GET IN<span className='span1'> TOUCH</span></h1>
             <Row className='getIn m-5'>
-                <Col md={3} style={{'paddingTop': '50px' }} >
+                <Col md={3} style={{'paddingTop': '50px' }} className='contactCol'>
                     <h2 className='typing-demo '>DON'T BE SHY !</h2>
                     <p className='contactPara'>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                     <RiMailOpenFill className='mail'></RiMailOpenFill><h6>MAIL ME</h6>
