@@ -55,7 +55,7 @@ useEffect(()=>{
          type='range'
          name='price'
          min={minPrice}
-         max= {maxPrice}
+         max={maxPrice} 
          value={price}
          onChange={searchValue}
          />

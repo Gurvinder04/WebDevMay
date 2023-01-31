@@ -17,7 +17,8 @@ import Dummy from './Dummy'
 function Home() {
   const [Items, setItems] = useState([])
   const {isLoading,feature,products} = useProductContext()
-  const {filters:{category},searchValue} = useFilterContext()
+  const{filter_products} = useFilterContext()
+  const {filters:{text,category,price,minPrice,maxPrice},searchValue,all_products,clearFilters} = useFilterContext()
   console.log('All products r here...',products)
   // const fetchData = async () => {
   //   let response = await fetch('http://localhost:4000/product')
