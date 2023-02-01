@@ -10,7 +10,6 @@ function CardLayout({product}) {
 
     },[product])
   return (
-    <Col md={3} className='pt-3'>
     <Card style={{ width: '16rem',height:'50vh' }} className='card'>
     {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
    <div className='content'>
@@ -39,7 +38,7 @@ function CardLayout({product}) {
     </Card.Body>
     </div>
   </Card>
-  </Col>
+  
   )
 }
 
