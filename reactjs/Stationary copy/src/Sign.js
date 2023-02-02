@@ -7,7 +7,7 @@ import {home} from './Home'
 import { reducer } from './reducer/UseReducer.js'
 
 function Sign() {
-  const {authUser,setUserState} = useAuthContext()
+  const {authUser,validateCheck} = useAuthContext()
   
 
 
@@ -72,12 +72,14 @@ let name,value
           })
          
           let res = await data.json()
-          //console.log('hey',res) 
+          console.log('hey localstorage token',res) 
+          localStorage.setItem('trytoken',JSON.stringify(res))
           if(res.status === 400 || res === null){
            window.alert("Invalid details")
           }
           else{
-            authUser(res)
+            validateCheck()
+            //authUser(res)
            //dispatch({type:"USER",payload:true})
            window.alert("successfully logged in")
           navigate('/')

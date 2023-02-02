@@ -6,13 +6,33 @@ import { init } from "aos";
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
     const check = action.payload
-    return {
-        ...state,
-        loggedin:true,
-        loggedUser:check._id       
+        return {
+            ...state,
+            isLoggedIn:true, 
+            loggedUser:check._id   
+    }
 }
 
+if(action.type==="CHECK_USER"){
+    const check = action.payload
+    console.log('reducer vala check',check)
+    if(check){
+        return {
+            ...state,
+            isLoggedIn:true,       
+    }
+    }
+    else{
+        return {
+            ...state,
+            isLoggedIn:false,       
+    }
+    }
+    
+
 }
+    
+              
 
 if(action.type==="USER_LOGOUT"){
     return {

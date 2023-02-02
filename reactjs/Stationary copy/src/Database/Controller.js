@@ -9,6 +9,7 @@ var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
 
+
 module.exports = {
     showProducts: async function  (req,res) {
         console.log('showing products')
@@ -119,7 +120,7 @@ module.exports = {
                     });
                     console.log('user logintoken is', tokens)
                     
-                    res.status(201).send(JSON.stringify(user))
+                    res.status(201).send(JSON.stringify(tokens))
                 }
                 else {
                     console.log('login else part running')

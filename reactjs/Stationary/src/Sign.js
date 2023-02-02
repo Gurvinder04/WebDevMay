@@ -6,8 +6,8 @@ import { useAuthContext } from './Context/AuthContext.js'
 import {home} from './Home'
 
 function Sign() {
-  const {auth} = useAuthContext()
-  const {state,dispatch} = useAuthContext()
+  const {auth,validateCheck} = useAuthContext()
+ 
 
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
@@ -71,12 +71,13 @@ let name,value
          
           let res = await data.json()
           console.log('hey',res) 
+          localStorage.setItem('trytoken',JSON.stringify(res))
           if(res.status === 400 || res === null){
            window.alert("Invalid details")
           }
           else{
-            auth(res)
-           //dispatch({type:"USER",payload:true})
+            validateCheck()
+            //auth(res)
            window.alert("successfully logged in")
           navigate('/')
           

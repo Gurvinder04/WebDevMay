@@ -4,6 +4,7 @@ import { BsTruck, BsFillGiftFill, BsChatDots, BsStarFill, BsStarHalf } from 'rea
 import { Link } from 'react-router-dom'
 import {FaRegHeart} from 'react-icons/fa'
 import AddToCart from './AddToCart'
+//import {uploads}  from '../../../AdminPanel/src/uploads'
 
 function CardLayout({product}) {
     useEffect(()=>{
@@ -14,7 +15,8 @@ function CardLayout({product}) {
     {/* <Card.Img variant="top" src={`../AdminPanel/src/uploads/${product.image}`} /> */}
    <div className='content'>
    <div className='front'>
-    <Link to={`/product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
+    {/* <Link to={`/product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link> */}
+    <Link to={`/product/${product._id}`}><Card.Img variant="top" src={`uploads/${product.image}`} style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
     </div>
     <Card.Body>
       <Card.Title>{product.productname}</Card.Title>
@@ -37,7 +39,9 @@ function CardLayout({product}) {
       </div>
     </Card.Body>
     </div>
+    { console.log('image v',product.image)}
   </Card>
+
   
   )
 }

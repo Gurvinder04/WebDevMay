@@ -12,10 +12,32 @@ if(action.type==="USER"){
 
 }
 
+if(action.type==="CHECK_USER"){
+    const check = action.payload
+    console.log('reducer vala check',check)
+    if(check){
+        return {
+            ...state,
+            isLoggedIn:true,       
+    }
+    }
+    else{
+        return {
+            ...state,
+            isLoggedIn:false,       
+    }
+    }
+    
+
+}
+
+
+
 if(action.type==="USER_LOGOUT"){
+    console.log('reducer vala logoutcheck',action.payload)
     return {
         ...state,
-        loggedin:action.payload,
+        loggedin:false,
         loggedUser:""       
 }
 

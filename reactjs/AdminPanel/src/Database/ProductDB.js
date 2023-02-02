@@ -31,8 +31,8 @@ const Product = mongoose.model('Product',ProductSchema)
 //storage
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, '../uploads/'),
-    filename:(req,file,cb)=>cb(null, file.originalname + "_" + Date.now() +path.extname(file.originalname))
-})
+    filename:(req,file,cb)=>cb(null,file.originalname)
+})  //+ "_" + Date.now() +path.extname(file.originalname)
 const upload = multer({
    storage: Storage
     // fileFilter:(req,file,callback)=>{

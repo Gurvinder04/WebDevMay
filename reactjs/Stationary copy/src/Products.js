@@ -65,7 +65,6 @@ useEffect(()=>{
 
     </div>
     <div className=' col-md-6 check-Css'>
-      <div className='col-md-2'>
         {
             
             filter_products.length != 0 ?
@@ -80,7 +79,7 @@ useEffect(()=>{
         }
     
 
-    </div>
+    
     </div>
 </div>
 </div>

@@ -11,20 +11,21 @@ import { reducer } from '../reducer/UseReducer';
 
 function Header() {
   const navigate = useNavigate()
-  const {loggedin,notAuth} = useAuthContext()
+  const {isLoggedIn,notAuthUser} = useAuthContext()
 
   const logout= async()=>{
-    let data = await fetch('/logout')
-    let res = await data.json()
-    console.log('user is logout',res)
-    if(res !== null){
-      notAuth()
-      navigate('/sign')
-    }
+    // let data = await fetch('/logout')
+    // let res = await data.json()
+    // console.log('user is logout',res)
+    // if(res !== null){
+    //   notAuth()
+    //   navigate('/sign')
+    // }
+    notAuthUser()
   }
   
   const RenderMenu = () => {
-    if (loggedin) {
+    if (isLoggedIn) {
       return (
         <>
            <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -79,7 +80,7 @@ function Header() {
 useEffect(()=>{
      //dispatch({type:"USER"})
      //RenderMenu()
-},[loggedin])
+},[isLoggedIn])
   return (
     <>  
      <div className='marquee1'>
@@ -87,7 +88,7 @@ useEffect(()=>{
         </div>           
        <RenderMenu />
         
-     {console.log('header user is',loggedin)}
+     {console.log('header user is',isLoggedIn)}
 
     </>
   )

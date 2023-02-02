@@ -12,16 +12,19 @@ import { reducer } from '../reducer/UseReducer';
 
 function Header() {
   const navigate = useNavigate()
-  const {isLoggedIn,authUser,notAuthUser} = useAuthContext()
+  const {isLoggedIn,notAuthUser} = useAuthContext()
 
   const logout= async()=>{
-    let data = await fetch('/logout')
-    let res = await data.json()
-    console.log('user is logout',res)
-    if(res !== null){
-      notAuthUser()
-      navigate('/sign')
-    }
+    // let data = await fetch('/logout')
+    // let res = await data.json()
+    // console.log('user is logout',res)
+    // if(res !== null){
+    //   notAuthUser()
+    //   navigate('/sign')
+    // }
+    notAuthUser()
+    navigate('/sign')
+
   }
   
   const RenderMenu = () => {
@@ -103,7 +106,7 @@ useEffect(()=>{
                 </Nav>
                 <Nav>
                 <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>1</Badge></Nav.Link>
-                  <Link to={''} className="nav-link text-decoration-none">Logout</Link>
+                  <Link to={''} className="nav-link text-decoration-none" onClick={logout}>Logout</Link>
                 </Nav>
                 </Navbar.Collapse>
                         </Container>
