@@ -8,6 +8,7 @@ const AuthContext = createContext();
 const initial = {
   isLoggedIn:false,
   loggedUser:"",
+  loggedCart:0
   
 }
 

@@ -17,23 +17,20 @@ const AuthProvider = ({ children }) => {
   
 
    const authUser= (logged)=>{
-     console.log('authentication',logged)
-     initial.loggedUser = logged._id
-    console.log('logged user vala',initial.loggedUser)
-     dispatch({type:"USER",payload:logged})
+    //console.log('logged user vala',logged)
+    dispatch({type:"USER",payload:logged})
    
    }
 
   const validateCheck=()=>{
     setcheckToken( localStorage.getItem("trytoken"))
-    console.log('checktoken is',checkToken)
+    //console.log('checktoken id is',checkToken)
     dispatch({type:"CHECK_USER",payload:checkToken})
   }
 
   const notAuthUser= ()=>{
     localStorage.removeItem("trytoken")
     setcheckToken()
-    console.log('trygj',checkToken)
     //dispatch({type:"USER_LOGOUT",payload:false})
    
   }

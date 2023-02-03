@@ -15,7 +15,6 @@ if(action.type==="USER"){
 
 if(action.type==="CHECK_USER"){
     const check = action.payload
-    console.log('reducer vala check',check)
     if(check){
         return {
             ...state,

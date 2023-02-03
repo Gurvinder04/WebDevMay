@@ -118,8 +118,14 @@ module.exports = {
                         httpOnly: true
                     });
                     console.log('user logintoken is', tokens)
+                    const user1={
+                        email:user.email,
+                        _id:user._id,
+                        usercart:user.usercart,
+                        tokens:tokens
+                    }
                     
-                    res.status(201).send(JSON.stringify(tokens))
+                    res.status(201).send(JSON.stringify(user1))
                 }
                 else {
                     console.log('login else part running')

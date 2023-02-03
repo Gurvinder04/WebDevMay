@@ -12,7 +12,7 @@ import { reducer } from '../reducer/UseReducer';
 
 function Header() {
   const navigate = useNavigate()
-  const {isLoggedIn,notAuthUser} = useAuthContext()
+  const {isLoggedIn,notAuthUser,loggedCart} = useAuthContext()
 
   const logout= async()=>{
     // let data = await fetch('/logout')
@@ -105,7 +105,7 @@ useEffect(()=>{
                   <Nav.Link href="/contact">Contact</Nav.Link>
                 </Nav>
                 <Nav>
-                <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>1</Badge></Nav.Link>
+                <Nav.Link href='/cart'><FaShoppingCart className='fs-4'></FaShoppingCart><Badge className='bg-danger cartCount'>{loggedCart}</Badge></Nav.Link>
                   <Link to={''} className="nav-link text-decoration-none" onClick={logout}>Logout</Link>
                 </Nav>
                 </Navbar.Collapse>

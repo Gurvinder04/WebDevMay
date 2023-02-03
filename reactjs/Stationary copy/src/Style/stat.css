@@ -4,6 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
+span.bg-danger.cartCount.badge.bg-primary {
+  font-size: 9px !important;
+  position: fixed !important;
+  /* left: 5%; */
+  right: 13% !important;
+}
 .navbar-toggler {
   background-color: #8bc34a !important;
  

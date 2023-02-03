@@ -7,7 +7,8 @@ if(action.type==="USER"){
     return {
         ...state,
         isLoggedIn:true,
-        loggedUser:check._id       
+        loggedUser:check._id,  
+        loggedCart:check.usercart.length     
 }
 
 }
