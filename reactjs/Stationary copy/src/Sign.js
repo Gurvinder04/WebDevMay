@@ -72,15 +72,14 @@ let name,value
           })
          
           let res = await data.json()
-          console.log('hey localstorage token',res) 
-          localStorage.setItem('trytoken',JSON.stringify(res))
+          //console.log('hey user with token',res) 
           if(res.status === 400 || res === null){
            window.alert("Invalid details")
           }
           else{
+            localStorage.setItem('trytoken',JSON.stringify(res.tokens))
             validateCheck()
-            //authUser(res)
-           //dispatch({type:"USER",payload:true})
+            authUser(res)
            window.alert("successfully logged in")
           navigate('/')
           

@@ -19,25 +19,19 @@ const initial = {
   
 
   const authUser= (logged)=>{
-    setcheckToken(logged)
-    //console.log('authentication',logged)
-    //initial.loggedUser = logged._id
-    //console.log('logged user vala',initial.loggedUser)
-    //dispatch({type:"USER",payload:logged})
-    dispatch({type:"CHECK_USER",payload:checkToken})
-   
+    //console.log('logged user vala',logged)
+    dispatch({type:"USER",payload:logged})
   }
 
   const notAuthUser= ()=>{
     localStorage.removeItem("trytoken")
     setcheckToken()
-    console.log('trygj',checkToken)
     //dispatch({type:"USER_LOGOUT",payload:checkToken})
    
   }
   const validateCheck=()=>{
     setcheckToken( localStorage.getItem("trytoken"))
-    console.log('checktoken is',checkToken)
+    //console.log('checktoken id is',checkToken)
     dispatch({type:"CHECK_USER",payload:checkToken})
   }
  

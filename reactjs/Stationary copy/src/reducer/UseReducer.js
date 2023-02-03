@@ -14,7 +14,7 @@ if(action.type==="USER"){
 
 if(action.type==="CHECK_USER"){
     const check = action.payload
-    console.log('reducer vala check',check)
+    //console.log('reducer vala check',check)
     if(check){
         return {
             ...state,
@@ -34,7 +34,7 @@ if(action.type==="CHECK_USER"){
 
 
 if(action.type==="USER_LOGOUT"){
-    console.log('reducer vala logoutcheck',action.payload)
+    //console.log('reducer vala logoutcheck',action.payload)
     return {
         ...state,
         loggedin:false,
