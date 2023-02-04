@@ -3,6 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+.row.checkrow-Css{
+  justify-content: space-around;
+}
+.col-md-6.check-Css{
+  display: contents !important;
+}
+span.bg-danger.cartCount.badge.bg-primary {
+  font-size: 9px !important;
+  position: fixed !important;
+  /* left: 5%; */
+  right: 13% !important;
+}
+.navbar-toggler {
+  background-color: #8bc34a !important;
+ 
+}
+
 .extraMargin{
   margin-top: 8rem !important;
   margin-bottom: 2rem !important;
@@ -897,4 +915,22 @@ img.animate__animated.animate__flipInX.animate__delay-1s,img.media-img,.p-0.medi
   flex-direction: column !important;
 }
   
+   }
+
+   @media (min-width: 768px){
+    .col-md-2 {
+        flex: 0 0 auto;
+        width: 32.666667% !important;
+    }
+
+.cat-hr2 {
+  position: relative !important;
+  left: 199px !important;
+}
+.card.card{
+  width: 14rem !important;
+}
+.blog_card.card{
+  width: 43rem !important;
+}
    }

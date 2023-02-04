@@ -6,7 +6,8 @@ const AuthContext = createContext();
 
 const initial = {
   isLoggedIn:false,
-  loggedUser:""
+  loggedUser:"",
+  loggedCart:0
 }
 
 const AuthProvider = ({ children }) => {

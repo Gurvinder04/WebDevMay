@@ -6,7 +6,7 @@ function Blog() {
   return (
     <Container>
         <div className='mb-4'>
-         <Card style={{ width: '78rem', border:"none" }}>
+         <Card style={{ width: '43rem', border:"none" }} className='blog_card'>
       <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0626/5209/files/stilenben_3.jpg?3577612155944146263" style={{height:"70vh"}} />
       <Card.Body>
         <Card.Title className='blogTitle'>Comfort Dressing: The nostalgic value of the high jewelry</Card.Title>
