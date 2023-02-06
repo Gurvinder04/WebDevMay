@@ -21,7 +21,7 @@ const CartProvider=({children})=>{
     const addToCart= async(amount,product)=>{
         console.log('click button',product)
           let checkUser = loggedUser
-           console.log('check vali id',checkUser)
+           console.log('check vali id', checkUser)
         let data = await fetch('/cart',{
           method:'POST',
           headers:{
@@ -54,7 +54,7 @@ const CartProvider=({children})=>{
          //Local storage for cart
     localStorage.setItem("customercart",JSON.stringify(state.cart))
 
-    },[state.cart])
+    },[state.cart,loggedUser])
    
     return( 
     <CartContext.Provider value={{...state,addToCart,removeItem,clearCart}}>

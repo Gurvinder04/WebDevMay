@@ -8,11 +8,12 @@ import { useFilterContext } from './Context/FilterContext'
 import { FaSearch } from 'react-icons/fa'
 import FormatPrice from './Helpers/FormatPrice'
 import Dummy from './Dummy'
+import { useAuthContext } from './Context/AuthContext'
 
 function Products() {
   const{filter_products} = useFilterContext()
   const {filters:{text,category,price,minPrice,maxPrice},searchValue,all_products,clearFilters} = useFilterContext()
-
+ const {loggedUser} = useAuthContext()
 
 useEffect(()=>{
   
@@ -79,7 +80,6 @@ useEffect(()=>{
         }
     
 
-    
     </div>
 </div>
 </div>

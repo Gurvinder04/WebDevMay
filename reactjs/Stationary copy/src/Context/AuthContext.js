@@ -18,9 +18,10 @@ const initial = {
   
   
   
+  
 
   const authUser= (logged)=>{
-    //console.log('logged user vala',logged)
+    console.log('logged user vala',logged)
     dispatch({type:"USER",payload:logged})
   }
 

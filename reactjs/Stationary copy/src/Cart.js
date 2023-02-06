@@ -2,12 +2,14 @@ import React,{ useEffect, useState } from 'react'
 import { Button, Container} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
+import { useAuthContext } from './Context/AuthContext'
 import { useCartContext } from './Context/CartContext.js'
 import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
     const[newCart,setnewCart] = useState([])
+    const {loggedUser} = useAuthContext()
 
     const fetchCart = async()=>{
       let data = await fetch('/cart')

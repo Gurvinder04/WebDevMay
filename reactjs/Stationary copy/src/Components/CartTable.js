@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { BsFillTrashFill } from 'react-icons/bs'
 import { useAuthContext } from '../Context/AuthContext.js'
@@ -6,7 +6,7 @@ import { useCartContext } from '../Context/CartContext.js'
 
 
 function CartTable({cartItems}) {
-  const {loggedUser} =useAuthContext()
+  const {initial:loggedUser} =useAuthContext()
   //const{removeItem}=useCartContext()
   const removeItem= async (id)=>{
     //e.preventDefault();
@@ -25,7 +25,9 @@ function CartTable({cartItems}) {
       let res = await data.json()
       console.log('hey new usercart is',res) 
   }
- 
+ useEffect(()=>{
+
+ },[loggedUser])
   return (
     <>
         <tbody>
@@ -35,7 +37,7 @@ function CartTable({cartItems}) {
             <td>{cartItems.productname}</td>
             <td>{cartItems.quantity}</td>
             <td>{(cartItems.price)*(cartItems.quantity)}</td>
-            <td><BsFillTrashFill onClick={()=>removeItem(cartItems._id)}></BsFillTrashFill></td>
+            <td><BsFillTrashFill  onClick={()=>removeItem(cartItems._id)} className='delete_svg'></BsFillTrashFill></td>
 
           </tr>
         </tbody>

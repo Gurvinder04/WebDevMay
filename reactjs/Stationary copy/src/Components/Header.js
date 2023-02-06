@@ -12,7 +12,7 @@ import { reducer } from '../reducer/UseReducer';
 
 function Header() {
   const navigate = useNavigate()
-  const {isLoggedIn,notAuthUser,loggedCart} = useAuthContext()
+  const {isLoggedIn,notAuthUser,loggedCart,loggedUser} = useAuthContext()
 
   const logout= async()=>{
     // let data = await fetch('/logout')
@@ -135,7 +135,7 @@ useEffect(()=>{
               </Navbar>
        }
         
-     {console.log('header user is',isLoggedIn)}
+     {console.log('logged user is',loggedUser)}
 
     </>
   )

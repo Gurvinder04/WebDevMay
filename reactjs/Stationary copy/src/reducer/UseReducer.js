@@ -4,6 +4,7 @@
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
     const check = action.payload
+    console.log('user reducer running',check._id)
     return {
         ...state,
         isLoggedIn:true,
