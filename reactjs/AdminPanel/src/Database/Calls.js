@@ -15,6 +15,7 @@ const{showProducts,productById,addProducts,adminSign,userSign,userLogin,userLogo
 const admin = express()
 
 
+
 //middleware
 admin.use(express.json())
 admin.use(cors())
@@ -22,11 +23,9 @@ admin.use(cookieParser())
 //admin.use('/uploads',express.static('./uploads'))
 admin.use(express.static("uploads"))
 
-//mongoose.connect(process.env.MONGO_URI,(err)=>console.log('connected....'))
-//mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 
 const Storage = multer.diskStorage({
-    destination:(req,file,cb)=>cb(null, './uploads/'),
+    destination:(req,file,cb)=>cb(null, '../uploads/'),
     filename:(req,file,cb)=>cb(null, file.originalname + "_" + Date.now() +path.extname(file.originalname))
 })
 const upload = multer({

@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
-
+const fs = require('fs')
 
 module.exports = {
     showProducts: async function  (req,res) {
@@ -49,7 +49,15 @@ module.exports = {
 
     addProducts: async function (req,res) {
         console.log(req.body.file, 'sucesssssssss')
-        const newProduct = new Product({ ProductName: req.body.productname, Category: req.body.category, Description: req.body.description, Price: req.body.rate, Quantity: req.body.quantity, Image: req.file.filename })
+        console.log(req.files)
+        const newProduct = new Product({ 
+            productname: req.body.productname, 
+            category: req.body.category,
+             description: req.body.description,
+             price: req.body.rate, 
+             quantity: req.body.quantity, 
+             image: req.file.filename })
+
         newProduct.save()
             .then(result => {
                 console.log('successfully saved')

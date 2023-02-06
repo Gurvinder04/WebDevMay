@@ -13,8 +13,8 @@ admin.use(express.static(__dirname+"../uploads/"))
 
 //mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary
 //mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/<Stationary>?retryWrites=true&w=majority
-mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
-
+//mongoose.connect('mongodb+srv://root:190430@cluster0.4aeqend.mongodb.net/Stationary',(err)=>console.log('connected....'))
+mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 const ProductSchema = mongoose.Schema({
     productname:String,
     category:String,
