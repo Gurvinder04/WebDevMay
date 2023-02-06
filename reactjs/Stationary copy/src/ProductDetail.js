@@ -7,6 +7,7 @@ import PageNavigation from './Components/PageNavigation'
 import { useCartContext } from './Context/CartContext.js'
 import { useProductContext } from './Context/ProductContext'
 import CardAmount from './Components/CardAmount'
+import { BASE_URL } from './Helpers/Base-url'
 
 
 
@@ -28,7 +29,7 @@ function ProductDetail() {
     //         setdetail(data)
     // })
 
-    getSingleProduct(`${API}/product/${id}`)
+    getSingleProduct(`${BASE_URL}/product/${id}`)
           },[])
   return (
     <>

@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import {reducer } from "../reducer/UseReducer.js";
 
-
+import { BASE_URL } from "../Helpers/Base-url.js";
 const AppContext = createContext()
 const API = 'http://localhost:4000/product'
 
@@ -23,7 +23,7 @@ const initialstate1={
     const getProducts= async()=>{
         //dispatch({type:'SET_LOADING'})
         try{
-            let res = await fetch('http://localhost:4000/product')
+            let res = await fetch(`${BASE_URL}/product`)
             let products = await res.json()
             dispatch({type:"MY_API_DATA",payload:products})
         }catch(err){
