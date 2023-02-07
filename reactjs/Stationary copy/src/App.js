@@ -16,7 +16,6 @@ import Cart from './Cart'
 import Products from './Products'
 import ContactPage from './ContactPage'
 import Blog from './Blog'
-import Check from './Check'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { AuthProvider } from './Context/AuthContext'
@@ -48,7 +47,6 @@ function App() {
          <Route path='/sign' element={<Sign/>} />
          <Route path='/blog' element={<Blog/>} />
          <Route path='/contact' element={<ContactPage/>} />
-         <Route path='/check' element={<Check/>} />
          
          </Routes>
          </Layout>

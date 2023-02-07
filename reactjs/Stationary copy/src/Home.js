@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom'
 import CardLayout from './Components/CardLayout'
 import { useProductContext } from './Context/ProductContext.js'
 import { useFilterContext } from './Context/FilterContext'
-import Dummy from './Dummy'
+
 
 
 function Home() {

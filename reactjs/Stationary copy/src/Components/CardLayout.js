@@ -16,7 +16,7 @@ function CardLayout({product}) {
    <div className='content'>
    <div className='front'>
     {/* <Link to={`/product/${product._id}`}><Card.Img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{ width: '18rem',height:'35vh' }} className='profile'/></Link> */}
-    <Link to={`/product/${product._id}`}><Card.Img variant="top" src={`uploads/${product.image}`} style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
+    <Link to={`/product/${product._id}`}><Card.Img variant="top" src={`${product.image}`} style={{ width: '18rem',height:'35vh' }} className='profile'/></Link>
     </div>
     <Card.Body>
       <Card.Title>{product.productname}</Card.Title>

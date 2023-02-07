@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import CartTable from './Components/CartTable'
 import { useAuthContext } from './Context/AuthContext'
 import { useCartContext } from './Context/CartContext.js'
+import { BASE_URL } from './Helpers/Base-url'
 import FormatPrice from './Helpers/FormatPrice'
 
 function Cart() {
@@ -12,7 +13,7 @@ function Cart() {
     const {loggedUser} = useAuthContext()
 
     const fetchCart = async()=>{
-      let data = await fetch('/cart')
+      let data = await fetch(`${BASE_URL}/cart`)
       let res = await data.json()
       console.log('newcart',res)
 

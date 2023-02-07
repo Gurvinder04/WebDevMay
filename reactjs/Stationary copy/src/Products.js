@@ -7,7 +7,6 @@ import Sort from './Components/Sort'
 import { useFilterContext } from './Context/FilterContext'
 import { FaSearch } from 'react-icons/fa'
 import FormatPrice from './Helpers/FormatPrice'
-import Dummy from './Dummy'
 import { useAuthContext } from './Context/AuthContext'
 
 function Products() {

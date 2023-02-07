@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
+import { BASE_URL } from '../Helpers/Base-url.js'
 import { reducer } from '../reducer/UseReducer.js'
 import { useAuthContext } from './AuthContext.js'
 //import { UserContext } from './App'
@@ -22,7 +23,7 @@ const CartProvider=({children})=>{
         console.log('click button',product)
           let checkUser = loggedUser
            console.log('check vali id', checkUser)
-        let data = await fetch('/cart',{
+        let data = await fetch(`${BASE_URL}/cart`,{
           method:'POST',
           headers:{
               'Content-Type':'application/json',
