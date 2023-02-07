@@ -143,7 +143,7 @@ module.exports = {
                         usercart:user.usercart,
                         tokens:tokens
                     }
-                    
+
                     res.status(201).send(JSON.stringify(user1))
                 }
                 else {
