@@ -23,7 +23,7 @@ const CartProvider=({children})=>{
         console.log('click button',product)
           let checkUser = loggedUser
            console.log('check vali id', checkUser)
-        let data = await fetch('/cart',{
+        let data = await fetch(`${BASE_URL}/cart`,{
           method:'POST',
           headers:{
               'Content-Type':'application/json',

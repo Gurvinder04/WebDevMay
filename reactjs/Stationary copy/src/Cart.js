@@ -13,7 +13,7 @@ function Cart() {
     const {loggedUser} = useAuthContext()
 
     const fetchCart = async()=>{
-      let data = await fetch('/cart')
+      let data = await fetch(`${BASE_URL}/cart`)
       let res = await data.json()
       console.log('newcart',res)
 
