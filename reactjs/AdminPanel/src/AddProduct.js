@@ -19,6 +19,7 @@ function AddProduct() {
     fileimage:'',
     feature:''
   })
+  const [file, setFile] = useState(null);
   let name, value;
   const Data = (e) => {
     console.log('entered data')
@@ -29,30 +30,42 @@ function AddProduct() {
   }
 
   const SubmitData = async () => {
-    const { productname,category, description, rate,quantity,fileimage,feature } = Sample
-    if (productname && category && description && rate &&quantity && fileimage && feature) {
-      let data = await fetch('/product', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ productname,category, description, rate,quantity,fileimage,feature })
-      })
+    const form = new FormData();
+       form.append("Sample", Sample);
+       const options = {
+          method: 'POST',
+          headers: {'content-type': 'multipart/form-data;boundary=---011000010111000001101001'}
+      };
+ options.body = form; 
 
-      let res = await data.json()
-      console.log('hey', res)
-      if (res.status === 400 || res === null) {
-        window.alert("Invalid details")
-      }
-      else {
-        //dispatch({type:"USER",payload:true})
-        window.alert("successfully submitted")
-      }
-    }
+fetch('http://localhost:4000/product', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+    // const { productname,category, description, rate,quantity,fileimage,feature } = Sample
+    // if (productname && category && description && rate &&quantity && fileimage && feature) {
+    //   let data = await fetch('/product', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ productname,category, description, rate,quantity,fileimage,feature })
+    //   })
 
-    else {
-      console.log('INVALID INPUT')
-    }
+    //   let res = await data.json()
+    //   console.log('hey', res)
+    //   if (res.status === 400 || res === null) {
+    //     window.alert("Invalid details")
+    //   }
+    //   else {
+    //     //dispatch({type:"USER",payload:true})
+    //     window.alert("successfully submitted")
+    //   }
+    // }
+
+    // else {
+    //   console.log('INVALID INPUT')
+    // }
 
   }
 
@@ -72,7 +85,7 @@ function AddProduct() {
 
             <div className="panel-body">
 
-              <form action='/product'  method='post'    className="form-horizontal"   encType="multipart/form-data">
+              <form method='post'  className="form-horizontal"   encType="multipart/form-data" onSubmit={SubmitData}>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">Product Name</label>
                   <div className="col-sm-9">
@@ -101,7 +114,7 @@ function AddProduct() {
                 <div className="form-group">
                   <label  className="col-sm-3 control-label">Price</label>
                   <div className="col-sm-3">
-                    <input type="text" className="form-control" name='rate' value={Sample.rate} onChange={Data} />
+                    <input type="text" className="form-control" name='rate' value={Sample.rate} onChange={Data}/>
                   </div>
                 </div>
                 <div className="form-group">
@@ -128,7 +141,7 @@ function AddProduct() {
                 <hr></hr>
                 <div className="form-group">
                   <div className="col-sm-offset-3 col-sm-9">
-                    <button type="submit" className="btn btn-dark addbutton" onClick={SubmitData}>Add Product</button>
+                    <button type="submit" className="btn btn-dark addbutton">Add Product</button>
                    
                     
                   </div>

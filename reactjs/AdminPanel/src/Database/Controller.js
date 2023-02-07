@@ -9,6 +9,7 @@ var cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('../Middleware/authorize')
 const fs = require('fs')
+const { ok } = require('assert')
 
 module.exports = {
     showProducts: async function  (req,res) {
@@ -48,8 +49,8 @@ module.exports = {
     },
 
     addProducts: async function (req,res) {
-        console.log(req.body.file, 'sucesssssssss')
-        console.log(req.files)
+        //console.log(req.body.file, 'sucesssssssss')
+        //console.log(req.files)
         const newProduct = new Product({ 
             productname: req.body.productname, 
             category: req.body.category,
@@ -61,6 +62,10 @@ module.exports = {
         newProduct.save()
             .then(result => {
                 console.log('successfully saved')
+                res.json({
+                    message:"ok",
+                    data:result
+                })
             })
     },
     addCart:function (req,res){ 
