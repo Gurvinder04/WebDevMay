@@ -26,10 +26,15 @@ module.exports = {
      
     getCart:function(req,res){
         let uid = req.body._id
+        console.log('uid is',uid)
         User.findById({_id:uid})
         .then(output=>{
             console.log('testing',output.usercart)
-            res.send(output.usercart)          
+            //res.send(output.usercart) 
+            res.json({
+                message:"ok",
+                data:output.usercart
+            })         
         }) 
 
     },

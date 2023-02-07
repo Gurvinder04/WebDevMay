@@ -10,9 +10,10 @@ import FormatPrice from './Helpers/FormatPrice'
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
     const[newCart,setnewCart] = useState([])
-    const {loggedUser} = useAuthContext()
+    const {loggedCart} = useAuthContext()
 
     const fetchCart = async()=>{
+      console.log('entered cartfun')
       let data = await fetch(`${BASE_URL}/cart`)
       let res = await data.json()
       console.log('newcart',res)
