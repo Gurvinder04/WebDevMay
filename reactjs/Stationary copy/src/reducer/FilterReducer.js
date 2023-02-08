@@ -3,10 +3,10 @@ export const reducer=(state,action)=>{
     switch(action.type){
         case "FILTER_PRODUCTS":
             let PriceArr = action.payload.map((curElem)=>curElem.price)
-            console.log('pricing',PriceArr)
+            //console.log('pricing',PriceArr)
             // let maxPrice = PriceArr.reduce((initialval,curval)=>Math.max(initialval,curval),0)
             let maxPrice = Math.max(...PriceArr)
-            console.log('Maximum price is',maxPrice)
+            //console.log('Maximum price is',maxPrice)
             return{
                 ...state,
                 filter_products:[...action.payload],

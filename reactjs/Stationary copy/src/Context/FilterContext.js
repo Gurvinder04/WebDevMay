@@ -23,7 +23,7 @@ export const FilterContextProvider=({children})=>{
     const searchValue=(event)=>{
         let name = event.target.name
         let value = event.target.value
-        console.log(value)
+        //console.log(value)
         return dispatch({type:'SEARCHED_VALUE',payload:{name,value}})
 
     }

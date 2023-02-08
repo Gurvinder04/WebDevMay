@@ -4,7 +4,7 @@
 export const reducer=(state,action)=>{
 if(action.type==="USER"){
     const check = action.payload
-    console.log('user reducer running',check._id)
+    //console.log('user reducer running',check._id)
     return {
         ...state,
         isLoggedIn:true,
@@ -55,7 +55,7 @@ if(action.type==="USER_LOGOUT"){
         const featureData = action.payload.filter((curr)=>{
             return curr.feature===true  
          })
-         console.log('featuring',featureData)
+         //console.log('featuring',featureData)
         return{
             ...state,
             isLoading:false,
@@ -100,7 +100,7 @@ if(amount == undefined){
 else{
     amount = action.payload.amount
 }
-console.log('amount is',amount)
+//console.log('amount is',amount)
 const cartProduct={
     id:product._id,
     name: product.productname,
@@ -136,7 +136,7 @@ if(action.type==="CART_TOTAL_PRICE"){
         let {price,quantity} = curElem
 
         initalval = initalval + price*quantity;
-        console.log(initalval)
+        //console.log(initalval)
         return initalval
     },0)
     return{

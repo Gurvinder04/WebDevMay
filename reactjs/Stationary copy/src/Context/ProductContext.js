@@ -38,7 +38,7 @@ const getSingleProduct= async(url)=>{
         let res = await fetch(url)
         let oneProduct = await res.json()
         dispatch({type:"SET_SINGLE_PRODUCT",payload:oneProduct})
-        console.log('dekhlo singledata',oneProduct)
+        //console.log('dekhlo singledata',oneProduct)
 
         
     }catch(err){
