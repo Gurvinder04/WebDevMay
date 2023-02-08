@@ -40,7 +40,7 @@ function ProductDetail() {
   
     <div id="product">
     <div className="product_images">
-    <img variant="top" src='https://wallpapers.com/images/hd/cute-colorful-confetti-stars-rxuh1k7oq89g2b1i.jpg' style={{width:'41rem',height:'71vh'}} />
+    <img variant="top" src={`https://stationary-backend-side.onrender.com/static/Uploads/${SingleProduct.image}`} style={{width:'41rem',height:'71vh'}} />
     </div>
     <div className="product_details">
         <h2>{SingleProduct.productname}</h2>

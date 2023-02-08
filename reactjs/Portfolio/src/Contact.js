@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { RiMailOpenFill } from 'react-icons/ri'
-import { IoMdCall } from 'react-icons/io'
+import { BsGithub } from 'react-icons/bs'
 import { FiSend } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ function contact() {
                     <p className='contactPara'>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                     <RiMailOpenFill className='mail'></RiMailOpenFill><h6>MAIL ME</h6>
                     <p className='contactPara'>kaurgurvinder19304@gmail.com</p>
-                     <IoMdCall className='mail'></IoMdCall><h6>CALL ME</h6>
+                    <a href ="https://github.com/Gurvinder04" ><BsGithub className='mail'></BsGithub><h6>GITHUB</h6></a>
                     <p></p>
 
                 </Col>

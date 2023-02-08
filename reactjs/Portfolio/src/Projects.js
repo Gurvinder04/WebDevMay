@@ -26,6 +26,15 @@ function Projects() {
         </div>
     </div>
 
+    <div className="cardp2 m-5">
+        <div className="contentp" >
+        <a href='https://stationero.netlify.app'>
+              <h2>STATIONERO</h2>
+              <h3>READY TO SHOP</h3>  
+        </a>  
+        </div>
+    </div>
+
 
     </div>
 

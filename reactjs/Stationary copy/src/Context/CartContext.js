@@ -17,7 +17,8 @@ const CartProvider=({children})=>{
 
     }
     const [state,dispatch] = useReducer(reducer,initialstate1)
-    const {loggedUser} = useAuthContext()
+    const {loggedUser,loggedCart} = useAuthContext()
+
 
     const addToCart= async(amount,product)=>{
         console.log('click button',product)

@@ -19,7 +19,10 @@ const admin = express()
 //const upload = require('../../public/uploads')
 //middleware
 admin.use(express.json())
-admin.use(cors())
+admin.use(cors({
+    origin: "http://localhost:4000",
+    credentials: true,
+}))
 admin.use(cookieParser())
 //admin.use('/static',express.static('uploads'))
 admin.use('http://localhost:3000/uploads',express.static(path.join(__dirname, '../../public')))
