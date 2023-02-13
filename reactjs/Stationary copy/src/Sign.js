@@ -64,10 +64,11 @@ let name,value
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch(`${BASE_URL}/login`,{
+          let data = await fetch('/login',{
               method:'POST',
               headers:{
-                  'Content-Type':'application/json'
+                  'Content-Type':'application/json',
+    
                   
               },
               body:JSON.stringify({email,password})
