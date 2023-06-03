@@ -8,7 +8,8 @@ const AuthContext = createContext();
 const initial = {
   isLoggedIn:false,
   loggedUser:"",
-  loggedCart:0
+  loggedCart:0,
+  loggedCartItems:[]
   
 }
 
@@ -22,6 +23,8 @@ const initial = {
 
   const authUser= (logged)=>{
     //console.log('logged user vala',logged)
+    initial.loggedCartItems=logged.usercart
+    console.log('logged user vala cart',initial.loggedCartItems)
     dispatch({type:"USER",payload:logged})
   }
 

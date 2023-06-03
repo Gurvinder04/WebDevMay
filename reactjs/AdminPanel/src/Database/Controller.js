@@ -135,20 +135,21 @@ module.exports = {
                 if (user) {
                     console.log('user is', user)
                     let tokens = jwt.sign({ _id: user._id }, process.env.SECRET_KEY)
-                    res.cookie("firstjwt", tokens, {
-                        expires: new Date(Date.now() + 50000),
-                        // domain: "localhost",
-                        // path: "/",
-                        httpOnly: true
-                    });
-                    console.log('user logintoken is', tokens)
+                    // res.cookie("firstjwt", tokens, {
+                    //     expires: new Date(Date.now() + 50000),
+                    //     domain: "http://localhost:3000",
+                    //     // path: "/",
+                    //     httpOnly: true
+                    // });
+                    console.log('user login token is', tokens)
                     const user1={
                         email:user.email,
                         _id:user._id,
                         usercart:user.usercart,
                         tokens:tokens
                     }
-
+                    console.log('user is', user1)
+       
                     res.status(201).send(JSON.stringify(user1))
                 }
                 else {

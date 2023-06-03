@@ -6,9 +6,11 @@ import { useAuthContext } from './Context/AuthContext.js'
 import { BASE_URL } from './Helpers/Base-url.js'
 import {home} from './Home'
 import { reducer } from './reducer/UseReducer.js'
+import { useCookies } from 'react-cookie'
 
 function Sign() {
   const {authUser,validateCheck} = useAuthContext()
+  const [cookies, setCookie] = useCookies(['access_token'])
   
 
 
@@ -58,13 +60,14 @@ let name,value
       name=e.target.name
       value=e.target.value
       setLoginUser({...LoginUser,[name]:value})
-      console.log(value)
+      console.log(value); 
+      
    }
    const LoginVerify= async()=>{
        console.log('helooooooo login')
        const {email,password} = LoginUser
         if(email && password){
-          let data = await fetch('/login',{
+          let data = await fetch(`${BASE_URL}/login`,{
               method:'POST',
               headers:{
                   'Content-Type':'application/json',
@@ -75,14 +78,17 @@ let name,value
           })
          
           let res = await data.json()
-          //console.log('hey user with token',res) 
-          if(res.status === 400 || res === null){
-           window.alert("Invalid details")
+          console.log('hey user with token',res) 
+          if(res._id === null){
+           window.alert("Exist no account ");
           }
           else{
             localStorage.setItem('trytoken',JSON.stringify(res.tokens))
+            setCookie('access_token', res.tokens)
+           //console.log('cookie is',cookies)
             validateCheck()
             authUser(res)
+            console.log('user signside',res)
            window.alert("successfully logged in")
           navigate('/')
           
@@ -92,6 +98,7 @@ let name,value
       else{
           console.log('INVALID INPUT')
       }
+      
        }
        
        const toggleForm = () => {
@@ -109,8 +116,9 @@ let name,value
                     <div className='user signinBx'>
                         <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
                         <div className="formBx">
-                            <form action="POST" onSubmit={(e) => {
+                            <form action="POST" id="myForm" onSubmit={(e) => {
                                 e.preventDefault()
+                                
                                
                             }}>
                                 <h2>Sign In</h2>

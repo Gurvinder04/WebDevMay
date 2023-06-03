@@ -9,7 +9,8 @@ if(action.type==="USER"){
         ...state,
         isLoggedIn:true,
         loggedUser:check._id,  
-        loggedCart:check.usercart.length     
+        loggedCart:check.usercart.length
+        //loggedCartItems:check.usercart     
 }
 
 }

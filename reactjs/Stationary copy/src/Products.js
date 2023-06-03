@@ -48,10 +48,12 @@ useEffect(()=>{
     </div>
     <div className='cat-Border mt-3'>
         <h6 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'20px'}} className='cat-padding' >Filter by price</h6>
-        <p>
+        {/* <p>
            <FormatPrice price={price}/>
-        </p>
-         <input
+        </p> */}
+         <p style={{paddingLeft:'23px',marginBottom:'0px'}}>€{price}</p>
+         {console.log('price is',price)}
+         <input style={{marginLeft:'23px'}}
          type='range'
          name='price'
          min={minPrice}

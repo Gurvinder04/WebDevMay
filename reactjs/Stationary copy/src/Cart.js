@@ -10,27 +10,27 @@ import FormatPrice from './Helpers/FormatPrice'
 function Cart() {
     const {cart,clearCart,total_price,shipping_fee} = useCartContext()
     const[newCart,setnewCart] = useState([])
-    const {loggedCart} = useAuthContext()
+    const {loggedCartItems} = useAuthContext()
 
     const fetchCart = async()=>{
       console.log('entered cartfun')
-      let data = await fetch('/cart')
+      let data = await fetch('/cartm')
       let res = await data.json()
-      console.log('newcart',res)
+      console.log(res)
 
      setnewCart(res)
       console.log('succeed',newCart)
     }
-    const showCart=()=>{
-      console.log('showcart is',loggedCart)
-          setnewCart(loggedCart)
-    }
+    // const showCart=()=>{
+    //   console.log('showcart is',loggedCart)
+    //       setnewCart(loggedCart)
+    // }
   
    
       useEffect(()=>{
         fetchCart()
-        //showCart()
-      },[newCart])
+        
+      },[])
   return (
     <Container>
       <table className="table" style={{boxShadow:'0px 4px 0px 4px white',tableLayout: 'fixed'}}>
@@ -74,7 +74,7 @@ function Cart() {
             <FormatPrice price={shipping_fee+total_price} />
            </p>
         </div>
-{console.log('cart is ',cart)}
+{console.log('cart is ',loggedCartItems)}
 </Container>
     
   )

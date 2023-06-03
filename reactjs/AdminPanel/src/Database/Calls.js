@@ -20,8 +20,8 @@ const admin = express()
 //middleware
 admin.use(express.json())
 admin.use(cors({
-    origin: "http://localhost:4000",
-    credentials: true,
+    // origin: "http://localhost:4000",
+    // credentials: true,
 }))
 admin.use(cookieParser())
 //admin.use('/static',express.static('uploads'))
