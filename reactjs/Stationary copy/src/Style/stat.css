@@ -203,7 +203,12 @@ td:nth-child(1) {
 
 
 /*REGISTRATION FROM CSS*/
+.sign_message{
+  font-size: 12px;
+  font-weight:bolder;
+  text-align: left;
 
+}
 section {
   position: relative;
   min-height: 100vh;

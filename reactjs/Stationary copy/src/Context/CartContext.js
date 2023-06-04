@@ -6,16 +6,16 @@ import { useAuthContext } from './AuthContext.js'
 
 const CartContext = createContext()
 
+const initialstate1 = {
+    cart:[],
+    total_items:"",
+    total_price:"",
+    shipping_fee:50
 
+}
 
 const CartProvider=({children})=>{
-    const initialstate1 = {
-        cart:[],
-        total_items:"",
-        total_price:"",
-        shipping_fee:50
-
-    }
+   
     const [state,dispatch] = useReducer(reducer,initialstate1)
     const {loggedUser,loggedCart} = useAuthContext()
 

@@ -16,6 +16,7 @@ const initial = {
  const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,initial);
   const [checkToken,setcheckToken] =useState()
+  const [cartAuth,setcartAuth] =useState([])
   
   
   
@@ -25,9 +26,13 @@ const initial = {
     //console.log('logged user vala',logged)
     initial.loggedCartItems=logged.usercart
     console.log('logged user vala cart',initial.loggedCartItems)
+      let temp =[];
+      temp.push(logged.usercart);
+      console.log('temp is',temp)
+    setcartAuth(temp)  
     dispatch({type:"USER",payload:logged})
   }
-
+  console.log('new catAuth is',cartAuth)
   const notAuthUser= ()=>{
     localStorage.removeItem("trytoken")
     setcheckToken()
@@ -45,7 +50,7 @@ const initial = {
   }, [checkToken]);
 
   return (
-    <AuthContext.Provider value={{ ...state,authUser,notAuthUser,validateCheck}}>
+    <AuthContext.Provider value={{ ...state,authUser,notAuthUser,validateCheck,cartAuth}}>
       {children}
     </AuthContext.Provider>
   );
