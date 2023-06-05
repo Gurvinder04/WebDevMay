@@ -45,9 +45,9 @@ admin.get('/users',showUser)
 
 admin.post('/product',upload.single('fileimage'), addProducts)
 admin.post('/sign',adminSign)
-admin.post('/signin',userSign)
-admin.post('/login',userLogin)
-admin.post('/cart',addCart)
+// admin.post('/signin',userSign)
+// admin.post('/login',userLogin)
+// admin.post('/cart',addCart)
 
 admin.patch('/product/:id',updateProducts)
 admin.delete('/product/:id',deleteProducts)

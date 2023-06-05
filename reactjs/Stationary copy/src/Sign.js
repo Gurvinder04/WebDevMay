@@ -7,6 +7,7 @@ import { BASE_URL } from './Helpers/Base-url.js'
 import { home } from './Home'
 import { reducer } from './reducer/UseReducer.js'
 import { useCookies } from 'react-cookie'
+import { ToastContainer, toast } from 'react-toastify';
 
 function Sign() {
   const { authUser, validateCheck } = useAuthContext()
@@ -14,6 +15,17 @@ function Sign() {
   const [found, setfound] = useState(false)
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
+  const notify = () => toast.success('🦄 Wow so easy!', {
+    position: "top-center",
+    autoClose: false,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+
   //const{state,dispatch} = useContext(UserContext)
   const [User, setUser] = useState({
     firstname: '',
@@ -31,7 +43,7 @@ function Sign() {
     value = e.target.value
     setUser({ ...User, [name]: value })
     console.log(User)
-    
+
   }
   const DBData = async () => {
     console.log('helooooooo')
@@ -47,6 +59,7 @@ function Sign() {
 
       let res = await data.json()
       console.log(res)
+      notify()
     }
     else {
       console.log('INVALID INPUT')
@@ -60,7 +73,7 @@ function Sign() {
     value = e.target.value
     setLoginUser({ ...LoginUser, [name]: value })
     console.log(value);
-    
+
 
   }
   const LoginVerify = async () => {
@@ -76,7 +89,7 @@ function Sign() {
       })
 
       let res = await data.json()
-      console.log('hey user with id', res)
+      //console.log('hey user with id', res)
       if (res._id === null) {
         //window.alert("Exist no account ");
         setfound(true)
@@ -103,7 +116,7 @@ function Sign() {
   const toggleForm = () => {
     setShow(!show)
     setfound(false)
-   
+
 
   }
 
@@ -118,11 +131,11 @@ function Sign() {
             <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
             <div className="formBx">
               <form action="POST" id="myForm" onSubmit={(e) => {
-                e.preventDefault()
-               
-               
-
-
+                e.preventDefault();
+                setLoginUser({
+                  email: '',
+                  password: ''
+                })
               }}>
                 <h2>Sign In</h2>
                 {found ? (
@@ -160,6 +173,16 @@ function Sign() {
                 <input type="password" name='password' value={User.password} onChange={getData} placeholder=" Password" />
 
                 <input type="submit" name="" value="Sign Up" onClick={DBData} />
+                <ToastContainer
+                  position="top-center"
+                  autoClose={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  theme="light"
+                />
                 <p className="signup">
                   Already have an account ?
                   <a href="#" onClick={toggleForm} >Sign in.</a>
