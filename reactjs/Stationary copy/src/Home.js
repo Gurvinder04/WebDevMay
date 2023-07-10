@@ -231,7 +231,7 @@ function Home() {
         <Col className='find-more'>
         <h2 style={{fontFamily:" 'Secular One', sans-serif",fontSize:'45px'}}>The Stationary<br></br>Company</h2>
         <hr style={{color:'#8bc34a'}}></hr>
-        <p className='find-description'>Our office supplies will help you organize your workspace from all kinds of desk essentials to top quality staplers, calculators and organizers.</p>
+        <p className='find-description' style={{userSelect:'none'}}>Our office supplies will help you organize your workspace from all kinds of desk essentials to top quality staplers, calculators and organizers.</p>
         <button className='find-button'>Find out more<FaArrowCircleRight className='Arrow'></FaArrowCircleRight></button>
         </Col>
 
